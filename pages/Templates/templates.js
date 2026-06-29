@@ -195,8 +195,7 @@ function render() {
     // Hide all cards first
     allCards.forEach(card => {
         card.style.display = 'none';
-        card.style.opacity = '0';
-        card.style.transform = 'translateY(20px)';
+        card.classList.remove('revealed');
     });
 
     // Handle "No Results" message
@@ -232,14 +231,18 @@ function render() {
 
     pageCards.forEach((card, index) => {
         card.style.display = 'flex';
-        // Staggered entry animation for premium feel
-        setTimeout(() => {
-            card.style.opacity = '1';
-            card.style.transform = 'translateY(0)';
-        }, index * 80);
+        // Add staggered delay for smooth standard reveal
+        card.style.setProperty('--reveal-delay', `${0.1 + (index % 3) * 0.1}s`);
     });
 
     renderPagination();
+
+    // Re-initialize scroll reveal so it smoothly animates newly visible items
+    setTimeout(() => {
+        if (typeof window.initScrollReveal === 'function') {
+            window.initScrollReveal();
+        }
+    }, 50);
 }
 
 // Render and bind pagination controls
