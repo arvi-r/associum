@@ -661,9 +661,9 @@
 .role-tab:first-child {
     border-radius: 15px 0 0 0;
 }
-
-
-
+.role-tab:last-child {
+    border-bottom: 1px solid #EAEDF2;
+}
 .role-tab:hover {
     background: rgba(0, 0, 0, 0.02);
 }
