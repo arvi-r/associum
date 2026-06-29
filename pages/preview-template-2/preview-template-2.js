@@ -100,7 +100,7 @@ function renderRelatedTemplates() {
             category: "Finance",
             img: "/assets/images/templates/templates/template-04.png",
             fileType: "PDF Report",
-            link: "../preview-template/preview-template.html"
+            link: "../preview-template-1/preview-template-1.html"
         },
         {
             title: "Private Equity Buyout IC Paper",
@@ -108,7 +108,7 @@ function renderRelatedTemplates() {
             category: "Finance",
             img: "/assets/images/templates/templates/template-05.png",
             fileType: "PDF Report",
-            link: "../preview-template/preview-template.html"
+            link: "../preview-template-1/preview-template-1.html"
         },
         {
             title: "Equity Research Initiation Report",
@@ -116,7 +116,7 @@ function renderRelatedTemplates() {
             category: "Finance",
             img: "/assets/images/templates/templates/template-04.png",
             fileType: "PDF Report",
-            link: "../preview-template/preview-template.html"
+            link: "../preview-template-1/preview-template-1.html"
         }
     ];
 

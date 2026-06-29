@@ -445,7 +445,7 @@ function renderCards() {
                     ${iconSvg}
                     <span>${item.fileType}</span>
                 </div>
-                <button class="btn-preview" onclick="window.location.href='../preview-template/preview-template.html'">Preview Template</button>
+                <button class="btn-preview" onclick="window.location.href='../preview-template-1/preview-template-1.html'">Preview Template</button>
             </div>
         `;
 

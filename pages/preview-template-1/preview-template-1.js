@@ -80,7 +80,7 @@ function renderRelatedTemplates() {
             category: "Research",
             img: "/assets/images/templates/templates/template-02.png",
             fileType: "PDF Report",
-            link: "preview-template.html"
+            link: "preview-template-1.html"
         },
         {
             title: "Regulatory Change Brief",
@@ -88,7 +88,7 @@ function renderRelatedTemplates() {
             category: "Research",
             img: "/assets/images/templates/templates/template-07.png",
             fileType: "PPT Deck",
-            link: "preview-template.html"
+            link: "preview-template-1.html"
         }
     ];
 
