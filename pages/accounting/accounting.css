@@ -662,9 +662,7 @@
     border-radius: 15px 0 0 0;
 }
 
-.role-tab:last-child {
-    border-radius: 0 0 0 15px;
-}
+
 
 .role-tab:hover {
     background: rgba(0, 0, 0, 0.02);
