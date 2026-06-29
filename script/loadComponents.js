@@ -32,6 +32,30 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
     
     if (footerElement) {
-        loadComponent('footer-placeholder', '/components/Footer/footer.html');
+        await loadComponent('footer-placeholder', '/components/Footer/footer.html');
     }
+
+    // Initialize scroll-reveal transition observer
+    initScrollReveal();
 });
+
+function initScrollReveal() {
+    const revealElements = document.querySelectorAll('[data-reveal]');
+    
+    const observer = new IntersectionObserver((entries, obs) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('revealed');
+                obs.unobserve(entry.target);
+            }
+        });
+    }, {
+        threshold: 0.05,
+        rootMargin: '0px 0px -40px 0px'
+    });
+    
+    revealElements.forEach(el => {
+        observer.observe(el);
+    });
+}
+

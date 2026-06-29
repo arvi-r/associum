@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+        rel="stylesheet">
+
+    <!-- CSS Dependencies -->
+    <link rel="stylesheet" href="../../styles/global.css">
+    <link rel="stylesheet" href="../../components/Header/header.css">
+    <link rel="stylesheet" href="../../components/Footer/footer.css">
+    <link rel="stylesheet" href="templates.css">
+
+    <title>Professional Templates | Associum</title>
+</head>
+
+<body>
+
+    <!-- Header placeholder (loaded dynamically) -->
+    <header id="header-placeholder"></header>
+
+    <main class="templates-main">
+        <section class="templates-hero">
+            <div class="hero-container" data-reveal="true" style="--reveal-delay: 0.1s">
+                <h1 class="hero-title">
+                    <span class="title-professional">Professional Templates </span>
+                    <span class="title-built-for">Built for Real Work</span>
+                </h1>
+                <p class="hero-subtitle">Access a growing library of AI-powered templates designed to produce
+                    professional reports, analyses, and presentations faster than ever.</p>
+            </div>
+        </section>
+
+        <section class="browse-section">
+            <div class="browse-container">
+                <div class="browse-header" data-reveal="true" style="--reveal-delay: 0.1s">
+                    <div class="header-text">
+                        <h2 class="browse-title">Browse Professional Templates</h2>
+                        <p class="browse-subtitle">Choose a category to explore templates designed for your workflow</p>
+                    </div>
+                    <div class="header-controls" style="position: relative;">
+                        <button class="control-btn btn-filters" id="btn-filters-toggle">
+                            <svg class="icon-filter" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="4" y1="21" x2="4" y2="14"></line>
+                                <line x1="4" y1="10" x2="4" y2="3"></line>
+                                <line x1="12" y1="21" x2="12" y2="12"></line>
+                                <line x1="12" y1="8" x2="12" y2="3"></line>
+                                <line x1="20" y1="21" x2="20" y2="16"></line>
+                                <line x1="20" y1="12" x2="20" y2="3"></line>
+                                <line x1="1" y1="14" x2="7" y2="14"></line>
+                                <line x1="9" y1="8" x2="15" y2="8"></line>
+                                <line x1="17" y1="16" x2="23" y2="16"></line>
+                            </svg>
+                            <span>Filters</span>
+                        </button>
+
+                        <!-- Filter Popup -->
+                        <div class="filter-popup" id="filter-popup">
+                            <div class="filter-popup-header">
+                                <h3>Filters</h3>
+                                <button class="btn-close-filter" id="btn-close-filter" aria-label="Close filters">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0F0F10"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="filter-popup-body">
+                                <div class="filter-group">
+                                    <h4>Category</h4>
+                                    <div class="filter-options">
+                                        <button class="filter-option" data-category="Finance">Finance</button>
+                                        <button class="filter-option" data-category="Consulting">Consulting</button>
+                                        <button class="filter-option" data-category="Accounting">Accounting</button>
+                                        <button class="filter-option" data-category="Compliance">Compliance</button>
+                                    </div>
+                                </div>
+                                <div class="filter-group">
+                                    <h4>Format</h4>
+                                    <div class="filter-options">
+                                        <button class="filter-option format-option" data-format="PDF">PDF</button>
+                                        <button class="filter-option format-option" data-format="PPTX">PPTX</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="filter-popup-footer">
+                                <button class="btn-filter-reset" id="btn-filter-reset">Reset</button>
+                                <button class="btn-filter-apply" id="btn-filter-apply">Apply</button>
+                            </div>
+                        </div>
+
+                        <div class="search-box">
+                            <svg class="icon-search" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="11" cy="11" r="8"></circle>
+                                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                            </svg>
+                            <input type="text" placeholder="Search templates..." class="search-input" id="search-input">
+                            <button class="btn-clear-search" id="btn-clear-search" aria-label="Clear search">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="templates-grid">
+                    <!-- Card 1 -->
+                    <div class="template-card" data-reveal="true" style="--reveal-delay: 0.1s">
+                        <div class="card-image-wrap">
+                            <img src="/assets/images/templates/templates/template-01.png" alt="Economic Research Report"
+                                class="card-img">
+                            <span class="category-badge">Finance</span>
+                        </div>
+                        <div class="card-info">
+                            <h3 class="card-title">Economic Research Report</h3>
+                            <p class="card-desc">Generate institutional-grade investment committee memos with market
+                                analysis, risks, valuation insights, and recommendations.</p>
+                        </div>
+                        <div class="card-footer">
+                            <div class="file-type">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                    <polyline points="14 2 14 8 20 8"></polyline>
+                                    <line x1="16" y1="13" x2="8" y2="13"></line>
+                                    <line x1="16" y1="17" x2="8" y2="17"></line>
+                                    <polyline points="10 9 9 9 8 9"></polyline>
+                                </svg>
+                                <span>PDF Report</span>
+                            </div>
+                            <button class="btn-preview"
+                                onclick="window.location.href='../preview-template/preview-template.html'">Preview
+                                Template</button>
+                        </div>
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div class="template-card" data-reveal="true" style="--reveal-delay: 0.2s">
+                        <div class="card-image-wrap">
+                            <img src="/assets/images/templates/templates/template-02.png" alt="Market Research Report"
+                                class="card-img">
+                            <span class="category-badge">Research</span>
+                        </div>
+                        <div class="card-info">
+                            <h3 class="card-title">Market Research Report</h3>
+                            <p class="card-desc">Analyze industries, competitors, TAM, growth drivers, and market
+                                opportunities using AI-powered research.</p>
+                        </div>
+                        <div class="card-footer">
+                            <div class="file-type">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                    <polyline points="14 2 14 8 20 8"></polyline>
+                                    <line x1="16" y1="13" x2="8" y2="13"></line>
+                                    <line x1="16" y1="17" x2="8" y2="17"></line>
+                                    <polyline points="10 9 9 9 8 9"></polyline>
+                                </svg>
+                                <span>PDF Report</span>
+                            </div>
+                            <button class="btn-preview"
+                                onclick="window.location.href='../preview-template/preview-template.html'">Preview
+                                Template</button>
+                        </div>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div class="template-card" data-reveal="true" style="--reveal-delay: 0.3s">
+                        <div class="card-image-wrap">
+                            <img src="/assets/images/templates/templates/template-03.png" alt="Due Diligence Report"
+                                class="card-img">
+                            <span class="category-badge">Operations</span>
+                        </div>
+                        <div class="card-info">
+                            <h3 class="card-title">Due Diligence Report</h3>
+                            <p class="card-desc">Review company operations, financials, risks, and commercial viability
+                                for investment or acquisition decisions.</p>
+                        </div>
+                        <div class="card-footer">
+                            <div class="file-type">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <rect x="2" y="2" width="20" height="14" rx="2" ry="2"></rect>
+                                    <line x1="12" y1="22" x2="12" y2="16"></line>
+                                    <line x1="8" y1="22" x2="16" y2="22"></line>
+                                    <line x1="12" y1="10" x2="8" y2="10"></line>
+                                    <line x1="12" y1="6" x2="16" y2="6"></line>
+                                </svg>
+                                <span>PPT Deck</span>
+                            </div>
+                            <button class="btn-preview"
+                                onclick="window.location.href='../preview-template/preview-template.html'">Preview
+                                Template</button>
+                        </div>
+                    </div>
+
+                    <!-- Card 4 -->
+                    <div class="template-card" data-reveal="true" style="--reveal-delay: 0.1s">
+                        <div class="card-image-wrap">
+                            <img src="/assets/images/templates/templates/template-04.png"
+                                alt="Equity Research Initiation Report" class="card-img">
+                            <span class="category-badge">Finance</span>
+                        </div>
+                        <div class="card-info">
+                            <h3 class="card-title">Equity Research Initiation Report</h3>
+                            <p class="card-desc">Initiate coverage with an institutional-quality report — thesis,
+                                valuation, financials, and risks.</p>
+                        </div>
+                        <div class="card-footer">
+                            <div class="file-type">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                    <polyline points="14 2 14 8 20 8"></polyline>
+                                    <line x1="16" y1="13" x2="8" y2="13"></line>
+                                    <line x1="16" y1="17" x2="8" y2="17"></line>
+                                    <polyline points="10 9 9 9 8 9"></polyline>
+                                </svg>
+                                <span>PDF Report</span>
+                            </div>
+                            <button class="btn-preview"
+                                onclick="window.location.href='../preview-template/preview-template.html'">Preview
+                                Template</button>
+                        </div>
+                    </div>
+
+                    <!-- Card 5 -->
+                    <div class="template-card" data-reveal="true" style="--reveal-delay: 0.2s">
+                        <div class="card-image-wrap">
+                            <img src="/assets/images/templates/templates/template-05.png"
+                                alt="Private Equity Buyout IC Paper" class="card-img">
+                            <span class="category-badge">Finance</span>
+                        </div>
+                        <div class="card-info">
+                            <h3 class="card-title">Private Equity Buyout IC Paper</h3>
+                            <p class="card-desc">Present a buyout to your IC with everything needed to make a decision,
+                                from thesis to returns.</p>
+                        </div>
+                        <div class="card-footer">
+                            <div class="file-type">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                    <polyline points="14 2 14 8 20 8"></polyline>
+                                    <line x1="16" y1="13" x2="8" y2="13"></line>
+                                    <line x1="16" y1="17" x2="8" y2="17"></line>
+                                    <polyline points="10 9 9 9 8 9"></polyline>
+                                </svg>
+                                <span>PDF Report</span>
+                            </div>
+                            <button class="btn-preview"
+                                onclick="window.location.href='../preview-template/preview-template.html'">Preview
+                                Template</button>
+                        </div>
+                    </div>
+
+                    <!-- Card 6 -->
+                    <div class="template-card" data-reveal="true" style="--reveal-delay: 0.3s">
+                        <div class="card-image-wrap">
+                            <img src="/assets/images/templates/templates/template-06.png"
+                                alt="Strategy Engagement Final Deck" class="card-img">
+                            <span class="category-badge">Consulting</span>
+                        </div>
+                        <div class="card-info">
+                            <h3 class="card-title">Strategy Engagement Final Deck</h3>
+                            <p class="card-desc">Turn engagement findings into a boardroom-ready strategy deck —
+                                situation, options, roadmap, and 100-day plan.</p>
+                        </div>
+                        <div class="card-footer">
+                            <div class="file-type">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <rect x="2" y="2" width="20" height="14" rx="2" ry="2"></rect>
+                                    <line x1="12" y1="22" x2="12" y2="16"></line>
+                                    <line x1="8" y1="22" x2="16" y2="22"></line>
+                                    <line x1="12" y1="10" x2="8" y2="10"></line>
+                                    <line x1="12" y1="6" x2="16" y2="6"></line>
+                                </svg>
+                                <span>PPT Deck</span>
+                            </div>
+                            <button class="btn-preview"
+                                onclick="window.location.href='../preview-template/preview-template.html'">Preview
+                                Template</button>
+                        </div>
+                    </div>
+
+                    <!-- Card 7 -->
+                    <div class="template-card" data-reveal="true" style="--reveal-delay: 0.1s">
+                        <div class="card-image-wrap">
+                            <img src="/assets/images/templates/templates/template-07.png" alt="Regulatory Change Brief"
+                                class="card-img">
+                            <span class="category-badge">Research</span>
+                        </div>
+                        <div class="card-info">
+                            <h3 class="card-title">Regulatory Change Brief</h3>
+                            <p class="card-desc">Generate macroeconomic analysis, market trends, forecasts, and policy
+                                implications.</p>
+                        </div>
+                        <div class="card-footer">
+                            <div class="file-type">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <rect x="2" y="2" width="20" height="14" rx="2" ry="2"></rect>
+                                    <line x1="12" y1="22" x2="12" y2="16"></line>
+                                    <line x1="8" y1="22" x2="16" y2="22"></line>
+                                    <line x1="12" y1="10" x2="8" y2="10"></line>
+                                    <line x1="12" y1="6" x2="16" y2="6"></line>
+                                </svg>
+                                <span>PPT Deck</span>
+                            </div>
+                            <button class="btn-preview"
+                                onclick="window.location.href='../preview-template/preview-template.html'">Preview
+                                Template</button>
+                        </div>
+                    </div>
+
+                    <!-- Card 8 -->
+                    <div class="template-card" data-reveal="true" style="--reveal-delay: 0.2s">
+                        <div class="card-image-wrap">
+                            <img src="/assets/images/templates/templates/template-08.png" alt="Compliance Assessment"
+                                class="card-img">
+                            <span class="category-badge">Compliance</span>
+                        </div>
+                        <div class="card-info">
+                            <h3 class="card-title">Compliance Assessment</h3>
+                            <p class="card-desc">Evaluate regulatory requirements, identify risks, and create compliance
+                                action plans.</p>
+                        </div>
+                        <div class="card-footer">
+                            <div class="file-type">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                    <polyline points="14 2 14 8 20 8"></polyline>
+                                    <line x1="16" y1="13" x2="8" y2="13"></line>
+                                    <line x1="16" y1="17" x2="8" y2="17"></line>
+                                    <polyline points="10 9 9 9 8 9"></polyline>
+                                </svg>
+                                <span>PDF Report</span>
+                            </div>
+                            <button class="btn-preview"
+                                onclick="window.location.href='../preview-template/preview-template.html'">Preview
+                                Template</button>
+                        </div>
+                    </div>
+
+                    <!-- Card 9 -->
+                    <div class="template-card" data-reveal="true" style="--reveal-delay: 0.3s">
+                        <div class="card-image-wrap">
+                            <img src="/assets/images/preview-template-2/preview/preview_fin_008_01.png" alt="Portfolio Company Quarterly Review"
+                                class="card-img">
+                            <span class="category-badge">Finance</span>
+                        </div>
+                        <div class="card-info">
+                            <h3 class="card-title">Portfolio Company Quarterly Review</h3>
+                            <p class="card-desc">A private equity board-pack style review of a portfolio company's operational and financial performance against plan.</p>
+                        </div>
+                        <div class="card-footer">
+                            <div class="file-type">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <rect x="2" y="2" width="20" height="14" rx="2" ry="2"></rect>
+                                    <line x1="12" y1="22" x2="12" y2="16"></line>
+                                    <line x1="8" y1="22" x2="16" y2="22"></line>
+                                    <line x1="12" y1="10" x2="8" y2="10"></line>
+                                    <line x1="12" y1="6" x2="16" y2="6"></line>
+                                </svg>
+                                <span>PPT Deck</span>
+                            </div>
+                            <button class="btn-preview"
+                                onclick="window.location.href='../preview-template-2/preview-template-2.html'">Preview
+                                Template</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pagination-wrapper" data-reveal="true" style="--reveal-delay: 0.2s">
+                    <div class="pagination">
+                        <button class="page-btn page-nav-btn" id="btn-first" aria-label="First page">
+                            <img src="/assets/images/templates/templates/arrow-left-2.svg" alt="First"
+                                class="page-arrow">
+                        </button>
+                        <button class="page-btn page-nav-btn" id="btn-prev" aria-label="Previous page">
+                            <img src="/assets/images/templates/templates/arrow-left-1.svg" alt="Previous"
+                                class="page-arrow">
+                        </button>
+                        <div class="page-numbers" id="page-numbers-container"
+                            style="display: flex; gap: 12px; align-items: center;">
+                            <!-- Page numbers will be rendered dynamically -->
+                        </div>
+                        <button class="page-btn page-nav-btn" id="btn-next" aria-label="Next page">
+                            <img src="/assets/images/templates/templates/arrow-right-1.svg" alt="Next"
+                                class="page-arrow">
+                        </button>
+                        <button class="page-btn page-nav-btn" id="btn-last" aria-label="Last page">
+                            <img src="/assets/images/templates/templates/arrow-right-2.svg" alt="Last"
+                                class="page-arrow">
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta-section">
+            <div class="cta-wrapper">
+                <div class="cta-container">
+                    <div class="cta-content">
+                        <h2 class="cta-title" data-reveal="true" style="--reveal-delay: 0.1s">Ready to deploy Associum
+                            across your firm?</h2>
+                        <p class="cta-desc" data-reveal="true" style="--reveal-delay: 0.2s">Tell us your team size,
+                            deployment requirements, and security constraints. We respond within one business day.</p>
+                    </div>
+                    <div class="cta-buttons" data-reveal="true" style="--reveal-delay: 0.3s">
+                        <button class="btn-full-security">Talk to our Enterprise Team</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer placeholder (loaded dynamically) -->
+    <footer id="footer-placeholder"></footer>
+
+    <!-- Component Loader Script -->
+    <script src="../../script/loadComponents.js"></script>
+    <script src="templates.js"></script>
+</body>
+
+</html>

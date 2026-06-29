@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+        rel="stylesheet">
+
+    <!-- CSS Dependencies -->
+    <link rel="stylesheet" href="../../../styles/global.css">
+    <link rel="stylesheet" href="../../../components/Header/header.css">
+    <link rel="stylesheet" href="../../../components/Footer/footer.css">
+    <link rel="stylesheet" href="blogs.css">
+
+    <title>Blogs | Associum</title>
+</head>
+
+<body>
+
+    <!-- Header will be injected here -->
+    <header id="header-placeholder"></header>
+
+    <main class="blogs-container">
+        <section class="blogs-hero">
+            <h1 class="hero-title" data-reveal="true" style="--reveal-delay: 0.1s">Explore<br><span
+                    class="hero-title-gradient">Trending Blogs</span></h1>
+            <p class="hero-subtitle" data-reveal="true" style="--reveal-delay: 0.2s">Stay updated with engaging blogs,
+                insights, and stories for modern readers and
+                businesses.</p>
+        </section>
+
+        <section class="blogs-content-section">
+            <div class="tabs-container" id="blogs-tabs-container" data-reveal="true" style="--reveal-delay: 0.3s">
+                <div class="tab-slider" id="tab-slider"></div>
+                <button class="tab tab-active">All</button>
+                <button class="tab">Finance</button>
+                <button class="tab">Consulting</button>
+                <button class="tab">Accounting</button>
+                <button class="tab">Compliance</button>
+            </div>
+
+            <div class="blogs-grid" id="blogs-grid">
+                <!-- Dynamically populated by blogs.js -->
+            </div>
+
+            <div class="pagination-wrapper" id="pagination-wrapper" data-reveal="true" style="--reveal-delay: 0.2s">
+                <div class="pagination">
+                    <button class="page-btn page-nav-btn" id="btn-first" aria-label="First page">
+                        <img src="/assets/images/templates/templates/arrow-left-2.svg" alt="First" class="page-arrow">
+                    </button>
+                    <button class="page-btn page-nav-btn" id="btn-prev" aria-label="Previous page">
+                        <img src="/assets/images/templates/templates/arrow-left-1.svg" alt="Previous" class="page-arrow">
+                    </button>
+                    <div class="page-numbers" id="page-numbers-container" style="display: flex; gap: 12px; align-items: center;">
+                        <!-- Page numbers will be rendered dynamically -->
+                    </div>
+                    <button class="page-btn page-nav-btn" id="btn-next" aria-label="Next page">
+                        <img src="/assets/images/templates/templates/arrow-right-1.svg" alt="Next" class="page-arrow">
+                    </button>
+                    <button class="page-btn page-nav-btn" id="btn-last" aria-label="Last page">
+                        <img src="/assets/images/templates/templates/arrow-right-2.svg" alt="Last" class="page-arrow">
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <div class="cta-container">
+                <div class="cta-content">
+                    <h2 class="cta-title" data-reveal="true" style="--reveal-delay: 0.1s">Stay Updated With Fresh
+                        Insights
+                    </h2>
+                    <p class="cta-text" data-reveal="true" style="--reveal-delay: 0.2s">Get the latest articles, expert
+                        ideas, and industry trends delivered directly to
+                        your inbox every week.</p>
+                </div>
+
+                <a href="#" class="cta-button" data-reveal="true" style="--reveal-delay: 0.3s">Subscribe Now</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer will be injected here -->
+    <footer id="footer-placeholder"></footer>
+
+    <!-- Component Loader Script -->
+    <script src="../../../script/loadComponents.js"></script>
+    <script src="blogs.js"></script>
+</body>
+
+</html>

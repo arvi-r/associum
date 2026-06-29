@@ -9,14 +9,16 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
         rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
-    
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+        rel="stylesheet">
+
     <!-- CSS Dependencies -->
     <link rel="stylesheet" href="../../styles/global.css">
     <link rel="stylesheet" href="../../components/Header/header.css">
     <link rel="stylesheet" href="../../components/Footer/footer.css">
-    <link rel="stylesheet" href="finance.css?v=3">
-    
+    <link rel="stylesheet" href="finance.css?v=8">
+
     <title>Finance | Associum</title>
 </head>
 
@@ -29,89 +31,107 @@
         <section class="finance-hero">
             <div class="hero-inner">
                 <div class="hero-left">
-                    <div class="hero-pill">
+                    <div class="hero-pill" data-reveal="true" style="--reveal-delay: 0.1s">
                         <span class="pill-dot"></span>
                         <span class="pill-text">FOR FINANCE</span>
                     </div>
-                    <h1 class="hero-title">Your AI Associate <br><span class="hero-highlight">on the Deal Team</span></h1>
-                    <p class="hero-desc">From financial models to IC memos, Associum compresses days of work into hours, without cutting corners on precision or quality.</p>
-                    <div class="hero-actions">
+                    <h1 class="hero-title" data-reveal="true" style="--reveal-delay: 0.2s">Your AI Associate <br><span
+                            class="hero-highlight">on the Deal Team</span></h1>
+                    <p class="hero-desc" data-reveal="true" style="--reveal-delay: 0.3s">From financial models to IC
+                        memos, Associum compresses days of work into hours, without cutting corners on precision or
+                        quality.</p>
+                    <div class="hero-actions" data-reveal="true" style="--reveal-delay: 0.4s">
                         <a href="#" class="button-link button-primary hero-btn">Start for Free</a>
                         <a href="#" class="button-link button-outline hero-btn">Explore Enterprise Solutions</a>
                     </div>
                 </div>
-                <div class="hero-right">
-                    <img src="/assets/images/finance/hero/finance-hero.png" alt="Dashboard Interface" class="hero-image" />
+                <div class="hero-right" data-reveal="zoom" style="--reveal-delay: 0.5s">
+                    <img src="/assets/images/finance/hero/finance-hero.png" alt="Dashboard Interface"
+                        class="hero-image" />
                 </div>
             </div>
         </section>
 
-        <section class="scenario-section">
+        <!-- <section class="scenario-section">
             <div class="scenario-container">
-                <h2 class="scenario-label">THE SCENARIO</h2>
-                <div class="scenario-quote-wrapper">
-                    <p class="scenario-quote">You're staring at 200 pages of CIM with a first-pass memo due tomorrow morning. You've got three other deals open and your model isn't done. Associum processes the CIM, extracts the key financials, and drafts the memo structure before you've finished your coffee.</p>
+                <h2 class="scenario-label" data-reveal="true" style="--reveal-delay: 0.1s">THE SCENARIO</h2>
+                <div class="scenario-quote-wrapper" data-reveal="true" style="--reveal-delay: 0.2s">
+                    <p class="scenario-quote">You're staring at 200 pages of CIM with a first-pass memo due tomorrow
+                        morning. You've got three other deals open and your model isn't done. Associum processes the
+                        CIM, extracts the key financials, and drafts the memo structure before you've finished your
+                        coffee.</p>
                 </div>
-                <p class="scenario-desc">Every output is fully cited, traced back to the exact source document, page, and section it came from. <span class="scenario-bold">No black box. No blind trust.</span></p>
+                <p class="scenario-desc" data-reveal="true" style="--reveal-delay: 0.3s">Every output is fully cited,
+                    traced back to the exact source document, page, and section it came from. <span
+                        class="scenario-bold">No black box. No blind trust.</span></p>
             </div>
-        </section>
+        </section> -->
 
         <section class="workflow-section">
             <div class="workflow-container">
                 <div class="workflow-header">
-                    <h2 class="workflow-title">An AI-powered end-to-end workflow</h2>
-                    <p class="workflow-desc">Associum's agents manage the entire workflow of research and analysis, from raw inputs to a near-final deliverable you can edit and send.</p>
+                    <h2 class="workflow-title" data-reveal="true" style="--reveal-delay: 0.1s">An AI-powered end-to-end
+                        workflow</h2>
+                    <p class="workflow-desc" data-reveal="true" style="--reveal-delay: 0.2s">Associum's agents manage
+                        the entire workflow of research and analysis, from raw inputs to a near-final deliverable you
+                        can edit and send.</p>
                 </div>
-                
+
                 <div class="workflow-track">
                     <div class="workflow-line" aria-hidden="true"></div>
-                    
+
                     <div class="workflow-cards">
                         <!-- Card 1 -->
-                        <div class="workflow-card">
+                        <div class="workflow-card" data-reveal="true" style="--reveal-delay: 0.1s">
                             <span class="card-number">01</span>
-                            <h3 class="card-title">Document ingestion</h3>
-                            <p class="card-text">Upload CIMs, SEC filings, data room PDFs, transcripts, earnings reports, or model outputs. Associum reads the full content of every file.</p>
+                            <h3 class="card-title">Data Ingestion</h3>
+                            <p class="card-text">Upload documents and datasets from any source. Associum reads,
+                                classifies, and enriches every file with third-party data and deep web research.</p>
                             <div class="card-footer">
                                 <span>Unstructured &rarr; Understanding</span>
                             </div>
                         </div>
-                        
+
                         <!-- Card 2 -->
-                        <div class="workflow-card">
+                        <div class="workflow-card" data-reveal="true" style="--reveal-delay: 0.2s">
                             <span class="card-number">02</span>
                             <h3 class="card-title">Data extraction</h3>
-                            <p class="card-text">Key financials, figures, risks, and data points are extracted and indexed, each traced to its exact source document and page.</p>
+                            <p class="card-text">Key financials, figures, risks, and data points are extracted and
+                                indexed, each traced to its exact source document and page.</p>
                             <div class="card-footer">
                                 <span>Data &rarr; Evidence</span>
                             </div>
                         </div>
-                        
+
                         <!-- Card 3 -->
-                        <div class="workflow-card">
+                        <div class="workflow-card" data-reveal="true" style="--reveal-delay: 0.3s">
                             <span class="card-number">03</span>
                             <h3 class="card-title">Research synthesis</h3>
-                            <p class="card-text">Findings are structured into coherent, investment-grade sections calibrated to your output type, role, and firm standard.</p>
+                            <p class="card-text">Findings are structured into coherent, investment-grade sections
+                                calibrated to your output type, role, and firm standard.</p>
                             <div class="card-footer">
                                 <span>Information &rarr; Insight</span>
                             </div>
                         </div>
-                        
+
                         <!-- Card 4 -->
-                        <div class="workflow-card">
+                        <div class="workflow-card" data-reveal="true" style="--reveal-delay: 0.4s">
                             <span class="card-number">04</span>
                             <h3 class="card-title">Document generation</h3>
-                            <p class="card-text">Associum produces a near-final memo, tearsheet, or report, formatted and structured, ready for your analytical review.</p>
+                            <p class="card-text">Associum produces a near-final memo, tearsheet, or report, formatted
+                                and structured, ready for your analytical review.</p>
                             <div class="card-footer">
                                 <span>Insight &rarr; Draft</span>
                             </div>
                         </div>
-                        
+
                         <!-- Card 5 -->
-                        <div class="workflow-card">
+                        <div class="workflow-card" data-reveal="true" style="--reveal-delay: 0.5s">
                             <span class="card-number">05</span>
                             <h3 class="card-title">Edit and send</h3>
-                            <p class="card-text">Refine the output in-platform. Adjust the thesis, sharpen the narrative, apply firm conventions. Every element is editable before it leaves your hands.</p>
+                            <p class="card-text">Refine the output in-platform. Adjust the thesis, sharpen the
+                                narrative, apply firm conventions. Every element is editable before it leaves your
+                                hands.</p>
                             <div class="card-footer">
                                 <span>Draft &rarr; Decision</span>
                             </div>
@@ -124,74 +144,100 @@
         <section class="roles-section">
             <div class="roles-container">
                 <div class="roles-header">
-                    <span class="roles-label">WHO IT IS FOR</span>
-                    <h2 class="roles-title">Different roles. One AI associate.</h2>
-                    <p class="roles-desc">Select your role to see how Associum fits your workflow.</p>
+                    <span class="roles-label" data-reveal="true" style="--reveal-delay: 0.1s">WHO IT IS FOR</span>
+                    <h2 class="roles-title" data-reveal="true" style="--reveal-delay: 0.2s">Built for every finance role
+                    </h2>
+                    <p class="roles-desc" data-reveal="true" style="--reveal-delay: 0.3s">Associum handles the document
+                        work across the full spectrum of finance professionals, each with distinct outputs and
+                        workflows.</p>
                 </div>
 
-                <div class="roles-tabs" id="roles-tabs">
-                    <button class="role-tab active" data-role="researchers">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
-                        Researchers
-                    </button>
-                    <button class="role-tab" data-role="public-markets">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
-                        Public Markets
-                    </button>
-                    <button class="role-tab" data-role="private-markets">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"></path><path d="M18.7 8l-5.1 5.2-2.8-2.7L7 14.3"></path></svg>
-                        Private Markets
-                    </button>
-                    <button class="role-tab" data-role="private-bankers">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
-                        Private Bankers
-                    </button>
-                    <button class="role-tab" data-role="investor-relations">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
-                        Investor Relations
-                    </button>
-                </div>
-
-                <div class="role-content">
-                    <span class="content-label" id="role-content-label">RESEARCHERS</span>
-                    <h3 class="content-title" id="role-content-title">You have the sources. Getting to a structured view takes the rest of the day.</h3>
-                    <p class="content-desc" id="role-content-desc">Research pull takes the bulk of your time, leaving analysis, synthesis, and judgment to the end.</p>
-                    
-                    <div class="content-features">
-                        <h4 class="features-label">WHAT ASSOCIUM HANDLES</h4>
-                        <ul class="features-list" id="role-features-list">
-                            <li>
-                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#37B793" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                                <span>Pulls from your key data sources autonomously</span>
-                            </li>
-                            <li>
-                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#37B793" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                                <span>Proposes a thesis and report structure</span>
-                            </li>
-                            <li>
-                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#37B793" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                                <span>Drafts the report near-final with cited sources</span>
-                            </li>
-                            <li>
-                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#37B793" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                                <span>You refine the view — your analysis, your judgment</span>
-                            </li>
-                        </ul>
+                <div class="roles-layout" data-reveal="true" style="--reveal-delay: 0.1s">
+                    <div class="roles-tabs" id="roles-tabs">
+                        <button class="role-tab active" data-role="researchers">
+                            Research
+                        </button>
+                        <button class="role-tab" data-role="public-markets">
+                            Public Markets
+                        </button>
+                        <button class="role-tab" data-role="private-markets">
+                            Private Markets
+                        </button>
+                        <button class="role-tab" data-role="private-bankers">
+                            Private Banks
+                        </button>
+                        <button class="role-tab" data-role="investor-relations">
+                            Investor Relations
+                        </button>
                     </div>
 
-                    <div class="content-divider"></div>
+                    <div class="role-content">
+                        <div class="role-content-header">
+                            <span class="content-label" id="role-content-label">RESEARCH</span>
+                            <div class="role-title-group">
+                                <h3 class="content-title" id="role-content-title">You have the sources. Getting to a
+                                    structured view takes the rest of the day.</h3>
+                                <p class="content-desc" id="role-content-desc">Research pull takes the bulk of your
+                                    time, leaving analysis, synthesis, and judgment to the end.</p>
+                            </div>
+                        </div>
 
-                    <div class="content-sample">
-                        <span class="features-label">SAMPLE OUTPUT</span>
-                        <div class="sample-card">
-                            <div class="sample-icon">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#37B793" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                        <div class="content-features">
+                            <h4 class="features-label">WHAT ASSOCIUM HANDLES</h4>
+                            <ul class="features-list" id="role-features-list">
+                                <li>
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#37B793"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <polyline points="20 6 9 17 4 12"></polyline>
+                                    </svg>
+                                    <span>Pulls from your key data sources autonomously.</span>
+                                </li>
+                                <li>
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#37B793"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <polyline points="20 6 9 17 4 12"></polyline>
+                                    </svg>
+                                    <span>Proposes a thesis and report structure.</span>
+                                </li>
+                                <li>
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#37B793"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <polyline points="20 6 9 17 4 12"></polyline>
+                                    </svg>
+                                    <span>Drafts the report near-final with cited sources.</span>
+                                </li>
+                                <li>
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#37B793"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <polyline points="20 6 9 17 4 12"></polyline>
+                                    </svg>
+                                    <span>You refine the view — your analysis, your judgment.</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="content-divider"></div>
+
+                        <div class="content-sample">
+                            <span class="features-label">SAMPLE OUTPUT</span>
+                            <div class="sample-card">
+                                <div class="sample-icon">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#37B793"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                        <polyline points="14 2 14 8 20 8"></polyline>
+                                        <line x1="16" y1="13" x2="8" y2="13"></line>
+                                        <line x1="16" y1="17" x2="8" y2="17"></line>
+                                        <polyline points="10 9 9 9 8 9"></polyline>
+                                    </svg>
+                                </div>
+                                <div class="sample-info">
+                                    <h5 id="role-sample-title">Market Research Report</h5>
+                                    <p id="role-sample-desc">Multi-source synthesis structured into a cited, near-final
+                                        research deliverable.</p>
+                                </div>
+                                <button class="sample-btn">Preview Template</button>
                             </div>
-                            <div class="sample-info">
-                                <h5 id="role-sample-title">Market Research Report</h5>
-                                <p id="role-sample-desc">Multi-source synthesis structured into a cited, near-final research deliverable.</p>
-                            </div>
-                            <button class="sample-btn">Preview Template</button>
                         </div>
                     </div>
                 </div>
@@ -201,10 +247,15 @@
         <section class="insight-section">
             <div class="insight-container">
                 <div class="insight-left">
-                    <span class="insight-label">SOURCE- TRUTH INSIGHT</span>
-                    <h2 class="insight-title">Every number traces back to its source.</h2>
-                    <p class="insight-desc">Associum does not generate figures from context or inference. Every data point in the output is extracted directly from the documents you uploaded, cited back to the exact page and section it came from.</p>
-                    <p class="insight-desc">You review the work. You verify the sources. The judgment stays with you.</p>
+                    <span class="insight-label" data-reveal="true" style="--reveal-delay: 0.1s">SOURCE- TRUTH
+                        INSIGHT</span>
+                    <h2 class="insight-title" data-reveal="true" style="--reveal-delay: 0.2s">Every number traces back
+                        to its source.</h2>
+                    <p class="insight-desc" data-reveal="true" style="--reveal-delay: 0.3s">Associum does not generate
+                        figures from context or inference. Every data point in the output is extracted directly from the
+                        documents you uploaded, cited back to the exact page and section it came from.</p>
+                    <p class="insight-desc" data-reveal="true" style="--reveal-delay: 0.4s">You review the work. You
+                        verify the sources. The judgment stays with you.</p>
                 </div>
                 <div class="insight-right">
                     <!-- Placeholder container based on design -->
@@ -215,198 +266,198 @@
         <section class="automation-section">
             <div class="automation-container">
                 <div class="automation-header">
-                    <span class="automation-label">WORKFLOW AUTOMATION</span>
-                    <h2 class="automation-title">The work Associum handles</h2>
-                    <p class="automation-desc">Associum's agents manage the entire workflow of research and analysis, helping you and your clients make high-stakes decisions with better information, faster. The model is your analytical work. The document work that follows is Associum's.</p>
+                    <span class="automation-label" data-reveal="true" style="--reveal-delay: 0.1s">WORKFLOW
+                        AUTOMATION</span>
+                    <h2 class="automation-title" data-reveal="true" style="--reveal-delay: 0.2s">The work Associum
+                        handles</h2>
+                    <p class="automation-desc" data-reveal="true" style="--reveal-delay: 0.3s">Associum's agents manage
+                        the entire workflow of research and analysis, helping you and your clients make high-stakes
+                        decisions with better information, faster. Your judgement and decision-making, Associum's
+                        support in building conviction.</p>
                 </div>
 
-                <div class="automation-compare">
-                    <!-- Left Column: Old Workflow -->
-                    <div class="compare-card">
-                        <div class="compare-pill old-pill">OLD WORKFLOW</div>
-                        <h3 class="compare-title">You do the document work.</h3>
-                        
-                        <div class="workflow-timeline">
-                            <div class="timeline-line old-line"></div>
-                            
-                            <div class="timeline-step">
-                                <div class="step-icon old-icon">
-                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
-                                </div>
-                                <div class="step-content">
-                                    <h4>Market &amp; Company Research</h4>
-                                    <p>Find, read, and extract what matters</p>
-                                </div>
-                                <div class="step-time">45-90 min</div>
-                            </div>
-                            
-                            <div class="timeline-step">
-                                <div class="step-icon old-icon">
-                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
-                                </div>
-                                <div class="step-content">
-                                    <h4>Research Synthesis</h4>
-                                    <p>Organise findings and build narratives</p>
-                                </div>
-                                <div class="step-time">60-90 min</div>
-                            </div>
-                            
-                            <div class="timeline-step">
-                                <div class="step-icon old-icon">
-                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg>
-                                </div>
-                                <div class="step-content">
-                                    <h4>Memo Drafting</h4>
-                                    <p>Write the memo or pitch content</p>
-                                </div>
-                                <div class="step-time">90-120 min</div>
-                            </div>
-                            
-                            <div class="timeline-step">
-                                <div class="step-icon old-icon">
-                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="8" y1="6" x2="21" y2="6"></line><line x1="8" y1="12" x2="21" y2="12"></line><line x1="8" y1="18" x2="21" y2="18"></line><line x1="3" y1="6" x2="3.01" y2="6"></line><line x1="3" y1="12" x2="3.01" y2="12"></line><line x1="3" y1="18" x2="3.01" y2="18"></line></svg>
-                                </div>
-                                <div class="step-content">
-                                    <h4>Formatting &amp; Citations</h4>
-                                    <p>Format, cite and finalize for review</p>
-                                </div>
-                                <div class="step-time">30-60 min</div>
-                            </div>
+                <div class="automation-layout" data-reveal="true" style="--reveal-delay: 0.1s">
+                    <!-- Left Column: Without Associum -->
+                    <div class="automation-col without-associum">
+                        <div class="col-header">
+                            <span class="col-badge">WITHOUT ASSOCIUM</span>
+                            <h3 class="col-title">You dive into the dataroom - reading, cross-referencing, confirming,
+                                and drafting.</h3>
+                        </div>
+                        <div class="pills-grid">
+                            <span class="task-pill"><span class="pill-dot"></span>Read every filing</span>
+                            <span class="task-pill"><span class="pill-dot"></span>Extract figures</span>
+                            <span class="task-pill"><span class="pill-dot"></span>Cross-reference the model</span>
+                            <span class="task-pill"><span class="pill-dot"></span>Chase missing data</span>
+                            <span class="task-pill"><span class="pill-dot"></span>Build the memo outline</span>
+                            <span class="task-pill"><span class="pill-dot"></span>Source comparable transactions</span>
+                            <span class="task-pill"><span class="pill-dot"></span>Draft section by section</span>
+                            <span class="task-pill"><span class="pill-dot"></span>Format to house style</span>
+                            <span class="task-pill"><span class="pill-dot"></span>Add citations</span>
+                            <span class="task-pill"><span class="pill-dot"></span>Tie out the numbers</span>
+                            <span class="task-pill"><span class="pill-dot"></span>Reformat after feedback</span>
                         </div>
                     </div>
 
-                    <!-- Right Column: New Workflow -->
-                    <div class="compare-card">
-                        <div class="compare-pill new-pill">NEW WORKFLOW</div>
-                        <h3 class="compare-title new-title">You focus on judgement.</h3>
-                        
-                        <div class="workflow-timeline">
-                            <div class="timeline-line new-line"></div>
-                            
-                            <!-- User Step -->
-                            <div class="timeline-step">
-                                <div class="step-icon new-icon-light">
-                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
-                                </div>
-                                <div class="step-content">
-                                    <h4>You</h4>
-                                    <p>Provide direction and context</p>
-                                </div>
-                            </div>
-                            
-                            <!-- Agent Box -->
-                            <div class="agent-box">
-                                <div class="agent-box-header">
-                                    <div class="step-icon new-icon-dark">
-                                        <img src="/assets/images/Logo.webp" alt="Associum Logo" width="24" height="24">
-                                    </div>
-                                    <div class="step-content">
-                                        <h4>Associum Agents</h4>
-                                        <p>Handles the document work</p>
-                                    </div>
-                                </div>
-                                <div class="agent-box-tags">
-                                    <span class="agent-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#37B793" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Research</span>
-                                    <span class="agent-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#37B793" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Synthesis</span>
-                                    <span class="agent-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#37B793" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Drafting</span>
-                                    <span class="agent-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#37B793" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Citations</span>
-                                    <span class="agent-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#37B793" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Formatting &amp; Quality Standards</span>
-                                </div>
-                            </div>
+                    <!-- Divider Arrow -->
+                    <div class="automation-divider-arrow">
+                        <div class="arrow-circle">
+                            <svg width="10" height="18" viewBox="0 0 10 18" fill="none" stroke="#37B793"
+                                stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="2 2 8 9 2 16"></polyline>
+                            </svg>
+                        </div>
+                    </div>
 
-                            <!-- Final Step -->
-                            <div class="timeline-step">
-                                <div class="step-icon new-icon-light">
-                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
-                                </div>
-                                <div class="step-content">
-                                    <h4>Draft Ready for Review</h4>
-                                    <p>Accurate, cited and ready for review</p>
-                                </div>
+                    <!-- Right Column: With Associum -->
+                    <div class="automation-col with-associum">
+                        <div class="col-header">
+                            <span class="col-badge badge-green">WITH ASSOCIUM</span>
+                            <h3 class="col-title title-green">You provide direction and context. Associum handles the
+                                rest.</h3>
+                        </div>
+                        <div class="pills-grid">
+                            <span class="task-pill pill-green">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#37B793"
+                                    stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="20 6 9 17 4 12"></polyline>
+                                </svg>
+                                Research
+                            </span>
+                            <span class="task-pill pill-green">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#37B793"
+                                    stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="20 6 9 17 4 12"></polyline>
+                                </svg>
+                                Synthesis
+                            </span>
+                            <span class="task-pill pill-green">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#37B793"
+                                    stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="20 6 9 17 4 12"></polyline>
+                                </svg>
+                                Drafting
+                            </span>
+                            <span class="task-pill pill-green">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#37B793"
+                                    stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="20 6 9 17 4 12"></polyline>
+                                </svg>
+                                Citations
+                            </span>
+                            <span class="task-pill pill-green">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#37B793"
+                                    stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="20 6 9 17 4 12"></polyline>
+                                </svg>
+                                Formatting
+                            </span>
+                        </div>
+
+                        <div class="col-footer-card">
+                            <div class="footer-card-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#37B793"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                    <polyline points="14 2 14 8 20 8"></polyline>
+                                    <line x1="16" y1="13" x2="8" y2="13"></line>
+                                    <line x1="16" y1="17" x2="8" y2="17"></line>
+                                    <polyline points="10 9 9 9 8 9"></polyline>
+                                </svg>
+                            </div>
+                            <div class="footer-card-info">
+                                <h4>You review the draft</h4>
+                                <p>Accurate, cited and ready for review</p>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="automation-summary">
-                    <div class="summary-left">
-                        <h3>4–6 hours</h3>
-                        <p>returned per deliverable</p>
-                    </div>
-                    <div class="summary-right">
-                        <h3>More time for what moves the needle.</h3>
-                        <p>Spend your time on analysis, thesis refinement, and client impact- not on documents.</p>
-                    </div>
+                <div class="automation-bottom-banner" data-reveal="true" style="--reveal-delay: 0.2s">
+                    <h3>More time for what really matters.</h3>
+                    <p>Spend your time on analysis, thesis refinement, and client impact.</p>
                 </div>
             </div>
         </section>
 
         <section class="faq-section">
             <div class="faq-container">
-                <h2 class="faq-title">Common Questions from Finance Professionals</h2>
-                
+                <h2 class="faq-title" data-reveal="true" style="--reveal-delay: 0.1s">Common Questions from Finance
+                    Professionals</h2>
+
                 <div class="faq-list">
-                    <div class="faq-item active">
+                    <div class="faq-item active" data-reveal="true" style="--reveal-delay: 0.1s">
                         <button class="faq-question">
                             Does Associum work with the document types that we actually use in finance?
                             <span class="faq-icon">−</span>
                         </button>
                         <div class="faq-answer" style="max-height: 200px;">
-                            <p>Yes. Associum is built to handle CIMs, data room PDFs, SEC filings, earnings transcripts, research reports, and financial model outputs. It reads the full document, not just the first few pages.</p>
+                            <p>Yes. Associum is built to handle CIMs, data room PDFs, SEC filings, earnings transcripts,
+                                research reports, and financial model outputs. It reads the full document, not just the
+                                first few pages.</p>
                         </div>
                     </div>
-                    
-                    <div class="faq-item">
+
+                    <div class="faq-item" data-reveal="true" style="--reveal-delay: 0.2s">
                         <button class="faq-question">
                             What stops it from hallucinating or making up numbers?
                             <span class="faq-icon">+</span>
                         </button>
                         <div class="faq-answer">
-                            <p>Associum enforces strict traceability. Every data point generated is cited directly back to the source document, page, and paragraph, ensuring you can verify all numbers before using them in your work.</p>
+                            <p>Every data point and claim in an Associum output is traced back to a specific source
+                                document, page, and section. If it can't find something in the documents you've
+                                uploaded, it won't invent it.</p>
                         </div>
                     </div>
 
-                    <div class="faq-item">
+                    <div class="faq-item" data-reveal="true" style="--reveal-delay: 0.3s">
                         <button class="faq-question">
                             Is our deal data secure?
                             <span class="faq-icon">+</span>
                         </button>
                         <div class="faq-answer">
-                            <p>Yes. We use enterprise-grade encryption for all data in transit and at rest. Your confidential deal documents are siloed, never used to train base models, and automatically deleted based on your firm's data retention policies.</p>
+                            <p>Associum is SOC 2 certified and ISO 27001 compliant. Your documents are never used to
+                                train any AI model. Data handling details are available on our Security page.</p>
                         </div>
                     </div>
 
-                    <div class="faq-item">
+                    <div class="faq-item" data-reveal="true" style="--reveal-delay: 0.4s">
                         <button class="faq-question">
                             How long does it take to get a usable output
                             <span class="faq-icon">+</span>
                         </button>
                         <div class="faq-answer">
-                            <p>Outputs are generated in minutes, even for complex inputs like 200-page CIMs or dense SEC filings. Our agents work in parallel to synthesize the information, returning structured documents far faster than manual processes.</p>
+                            <p>Most users have a structured first draft (memo, tearsheet, or summary) within 20–30
+                                minutes of uploading their documents, depending on document volume.</p>
                         </div>
                     </div>
 
-                    <div class="faq-item">
+                    <div class="faq-item" data-reveal="true" style="--reveal-delay: 0.5s">
                         <button class="faq-question">
-                            Do I need to set anything up or train it on our firm's style?
+                            Do I need to set anything up or train it on our firm’s style?
                             <span class="faq-icon">+</span>
                         </button>
                         <div class="faq-answer">
-                            <p>No lengthy onboarding is required. You can start using standard templates immediately, or provide a few examples of your firm's previous memos to instruct Associum on your specific formatting and tonal preferences.</p>
+                            <p>No setup required. Upload your documents and start. For teams that want outputs in a
+                                specific house format, templates can be configured, but it works out of the box from day
+                                one.</p>
                         </div>
                     </div>
                 </div>
 
-                <p class="faq-footer">Still have a question? Use the contact form above and we'll be in touch within one business day.</p>
+                <p class="faq-footer" data-reveal="true" style="--reveal-delay: 0.2s">Still have a question? Use the
+                    form on our Contact page and we'll be in touch within one business day.</p>
             </div>
         </section>
 
         <section class="cta-section">
             <div class="cta-wrapper">
                 <div class="cta-container">
-                    <h2 class="cta-title">From data to near-final draft.<br>In one environment.</h2>
-                    <p class="cta-desc">Free to start. No credit card required.</p>
-                    <div class="cta-buttons">
+                    <h2 class="cta-title" data-reveal="true" style="--reveal-delay: 0.1s">From data to near-final
+                        draft.<br>In one environment.</h2>
+                    <p class="cta-desc" data-reveal="true" style="--reveal-delay: 0.2s">Free to start. No credit card
+                        required.</p>
+                    <div class="cta-buttons" data-reveal="true" style="--reveal-delay: 0.3s">
                         <button class="cta-btn-primary">Start for Free</button>
                         <button class="cta-btn-outline">See Pricing</button>
                     </div>
