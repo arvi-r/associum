@@ -2,55 +2,55 @@ document.addEventListener('DOMContentLoaded', () => {
     const rolesData = {
         'audit-service': {
             label: 'AUDIT SERVICE',
-            title: 'Testing is done. Documenting it to standard is what eats the rest of the file.',
-            desc: 'Every working paper, sample test, and conclusion has to be written up, cross-referenced, and tied back to the risk assessment before the file is review-ready.',
+            title: 'Review more sample documents, analyze the data at scale, and document the results and key issues in one workflow.',
+            desc: 'Associum reviews documents and data at scale, providing analytical inputs and generating draft working papers and client deliverables for your input and perspective.',
             features: [
                 'Reads workpapers, trial balances, and supporting schedules.',
                 'Structures findings against the risk assessment and audit plan.',
                 'Drafts the working paper or memo, cross-referenced and cited.',
-                'You review and sign off — your judgment, not your typing.'
+                'You review and sign-off, applying your judgment, not your word processing skills.'
             ],
-            sampleTitle: 'Audit Working Paper.',
+            sampleTitle: 'Audit Working Paper',
             sampleDesc: 'Review-ready working paper from testing data to documented conclusion, fully cross-referenced.'
         },
         'internal-finance': {
             label: 'INTERNAL FINANCE AND CONTROLS',
-            title: 'Controls mapped. Documenting compliance is the overhead.',
-            desc: 'Internal finance teams map processes and test control frameworks (like SOX). Associum drafts control matrices and narrative descriptions from process descriptions.',
+            title: 'Oversee the financial planning, controls, and accounts preparation, integrating firm performance data with internal projections and policies with tracked risks.',
+            desc: 'Associum enables performance tracking and risk monitoring at scale by automating structured deliverables that, with your final input, roll-up into critical management reports.',
             features: [
-                'Reads process descriptions and system configurations.',
-                'Maps controls against risks and regulatory standards.',
-                'Drafts control testing papers and remediation plans.',
-                'You sign off on assurance — your control judgment, your remediation decisions.'
+                'Ingests internal documents, financial account information, and historical reports.',
+                'Structures FP&A process, management account preparation, and controls monitoring.',
+                'Drafts periodic reports with financial data and planning documents with clear, prioritised actions.',
+                'You spend time on aligning performance with business goals and maintaining the control environment.'
             ],
-            sampleTitle: 'Internal Controls Report.',
-            sampleDesc: 'Control mapping matrix, testing documentation, and recommended remediation plans.'
+            sampleTitle: 'Controls Remediation Plan',
+            sampleDesc: 'Prioritised remediation plan from control testing results, ready for management sign-off.'
         },
         'valuations': {
             label: 'VALUATIONS',
-            title: 'Models built. Writing the valuation report takes the hours.',
-            desc: 'Valuation specialists build DCF and comparable models. Associum reads the model outputs, market data, and company background to write the valuation report.',
+            title: 'Build the models and the reports seamlessly in a single workflow.',
+            desc: 'Associum performs any valuation task with simple prompts with outputs in the form of Excel-ready financial models and client-ready valuation reports, all well-cited with data from internal and external sources.',
             features: [
-                'Reads financial model outputs and comparable company sheets.',
-                'Synthesizes industry trends, market multiples, and company performance.',
-                'Drafts valuation report with methodology, inputs, and ranges.',
-                'You defend the value — your valuation thesis, your methodology adjustments.'
+                'Aggregates valuation assumptions from financial documents, financial datasets, and web sources.',
+                'Structures the valuation and creates a spreadsheet and report with methodology, assumptions, and conclusions.',
+                'Drafts a near-final report for clients, with detailed citations, ready for your input and sign-off.',
+                'You can focus on the judgment calls, not the mechanical valuation work.'
             ],
-            sampleTitle: 'Valuation Report.',
-            sampleDesc: 'Methodology description, comparable multiples, and valuation range explanation.'
+            sampleTitle: 'Business Valuation Report',
+            sampleDesc: 'Defensible valuation report from model output to fully sourced methodology and conclusion.'
         },
         'non-financial': {
             label: 'NON-FINANCIAL ASSURANCE',
-            title: 'Assurance extended. Writing reports for ESG and operations is the cycle.',
-            desc: 'Firms offer assurance on sustainability (ESG) and operational resilience. Associum drafts assurance reports from non-financial data rooms and metrics.',
+            title: 'Keep pace with fast-developing market expectations on ESG, sustainability, and other assurance matters.',
+            desc: 'Associum aggregates internal and external metrics on ESG and sustainability, across structured and unstructured formats, for assessing company policies and aligning to global standards.',
             features: [
-                'Reads ESG frameworks, carbon spreadsheets, and company disclosures.',
-                'Maps disclosures against standards (GRI, SASB, CSRD).',
-                'Drafts the non-financial assurance report, cited to source.',
-                'You issue the opinion — your professional skepticism, your assurance stamp.'
+                'Ingests sustainability data, disclosures, and supporting evidence from internal and external data sources.',
+                'Structures finding against relevant standards and highlights issues and risks.',
+                'Drafts the assurance report with evidence properly referenced.',
+                'Better alignment with standards, without the analytic and documentation burden.'
             ],
-            sampleTitle: 'ESG Assurance Report.',
-            sampleDesc: 'Assurance scope description, testing procedures, and non-financial assurance opinion.'
+            sampleTitle: 'ESG Assurance Report',
+            sampleDesc: 'Standards-aligned assurance report from sustainability data to evidenced conclusion.'
         }
     };
 

@@ -2,55 +2,55 @@ document.addEventListener('DOMContentLoaded', () => {
     const rolesData = {
         'strategy': {
             label: 'STRATEGY',
-            title: 'From analysis to client-ready narrative.',
-            desc: 'Strategy consultants spend most of their time turning market and competitive analysis into a story a client can act on. Associum compresses the synthesis and drafting cycle into a single workflow.',
+            title: 'Build a client-ready analysis directly from your data.',
+            desc: 'Associum compresses the information synthesis and drafting cycle into a single workflow, resulting in near-final deliverable, ready for your perspective and judgment.',
             features: [
-                'Pulls market, competitor, and financial data into one structured view.',
-                'Proposes a narrative arc and slide structure from the analysis.',
+                'Pulls market, competitor, and financial data into one structured view using preferred internal and external data sources.',
+                'Proposes a narrative arc and slide structure from the analysis based on the goals of the engagement.',
                 'Drafts the deck near-final with sourced charts and exhibits.',
                 'You refine the storyline — your judgement, your recommendation.'
             ],
-            sampleTitle: 'Strategy Engagement Deck.',
+            sampleTitle: 'Strategy Engagement Deck',
             sampleDesc: 'Situation, options, recommendation, and roadmap, structured for C-suite review.'
         },
         'operations': {
             label: 'OPERATIONS',
-            title: 'From diagnostic to implementation plan.',
-            desc: 'Operations engagements require mapping current state processes and identifying bottlenecks. Associum reads process documents, data logs, and interview transcripts to draft structured improvement roadmaps.',
+            title: 'Go from process diagnostics to a detailed recommendation and business case.',
+            desc: 'Associum provides the analysis and documentation so operations consultants can turn a current-state position into future-state recommendations and a business case their clients can approve.',
             features: [
-                'Synthesizes process maps and operational diagnostics.',
-                'Identifies bottlenecks and efficiency opportunities.',
-                'Drafts implementation plans and process manuals.',
-                'You deliver the execution — your expertise, your implementation guidance.'
+                'Ingests process documentation, interview notes, and KPI data',
+                'Structures findings into current-state versus future-state comparisons',
+                'Drafts the business case with cost-benefit analysis built in.',
+                'You focus on stakeholder buy-in and implementation design.'
             ],
-            sampleTitle: 'Operational Improvement Roadmap.',
-            sampleDesc: 'Current state assessment, efficiency opportunities, and implementation roadmap.'
+            sampleTitle: 'Cost Optimisation Business Case',
+            sampleDesc: 'Cost levers, financial model, and implementation plan, ready for client steering committee.'
         },
         'technology': {
             label: 'TECHNOLOGY',
-            title: 'From architecture review to system selection.',
-            desc: 'Technology practices evaluate system landscapes and select software vendors. Associum reads RFP responses, system requirements, and architecture specs to draft vendor evaluation matrices.',
+            title: 'Complete a detailed technical review to a comprehensive board-ready recommendation.',
+            desc: 'Associum provides the research, analysis and documentation needed for technology consultants to quickly grasp a client\'s technology architecture, evaluate vendors, and communicate recommendations a non-technical steering committee.',
             features: [
-                'Compares vendor specs and RFP responses side-by-side.',
-                'Maps system architecture options and trade-offs.',
-                'Drafts selection recommendations and roadmap plans.',
-                'You align the stakeholders — your architectural expertise, your vendor recommendations.'
+                'Reads vendor RFPs, technical specs, and architecture documents.',
+                'Structures a roadmap or comparison against client evaluation criteria.',
+                'Drafts the recommendation in plain, decision-ready language.',
+                'More evaluations covered. Less time lost in translation.'
             ],
-            sampleTitle: 'Vendor Selection Memo.',
-            sampleDesc: 'System architecture options, vendor evaluations, and final selection recommendations.'
+            sampleTitle: 'Technology & Digital Transformation Roadmap',
+            sampleDesc: 'Current state, target architecture, sequenced roadmap, and dependencies, board-ready.'
         },
         'human-capital': {
             label: 'HUMAN CAPITAL',
-            title: 'From org design to change management.',
-            desc: 'Human Capital teams structure organizations and plan talent transitions. Associum reads role definitions, competency matrices, and survey data to draft organizational change plans.',
+            title: 'Articulate the stakeholder\'s vision in the organization design of clients.',
+            desc: 'Associum compresses the research, analysis, and deliverable production cycle into a single workflow so human capital consultants can quickly produce insights for clients around leadership, HR, and frontline managers with the appropriate framing.',
             features: [
-                'Maps competency requirements and structural changes.',
-                'Synthesizes employee survey and culture diagnostics.',
-                'Drafts change communications and transition guides.',
-                'You lead the transition — your change leadership, your organizational design.'
+                'Takes org assessment data and workforce analytics as input',
+                'Produces tailored materials for leadership, HR, and managers',
+                'Drafts change communications consistent with the core narrative.',
+                'Insights, updated with your perspective and judgement, adapted for key audiences.'
             ],
-            sampleTitle: 'Organization Design Memo.',
-            sampleDesc: 'Target operating model, role mappings, and change management plan.'
+            sampleTitle: 'Org Design Change Pack',
+            sampleDesc: 'Stakeholder-specific change materials built from a single org design assessment.'
         }
     };
 

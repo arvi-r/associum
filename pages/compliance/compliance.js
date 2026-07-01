@@ -2,55 +2,55 @@ document.addEventListener('DOMContentLoaded', () => {
     const rolesData = {
         'corp-secretarial': {
             label: 'CORPORATE SECRETARIAL',
-            title: 'Drafting board resolutions, meeting minutes, and corporate filings shouldn\'t consume days.',
-            desc: 'Keep entity records up-to-date and generate compliance documentation. Associum turns board notes and filings into structured resolutions and registers.',
+            title: 'Delegate corporate documentation of meetings, resolutions, and corporate actions in consistent format across every entity, every time.',
+            desc: 'Associum prepares the board resolutions, statutory filings, and minutes with consistency and precision, across a growing list of entities and jurisdictions.',
             features: [
-                'Converts meeting notes into structured board resolutions.',
-                'Drafts statutory registers and annual return filings.',
-                'Maintains consistency of entity details across all jurisdictions.',
-                'You review and execute — your corporate secretarial signature.'
+                'Gets context from past board packs, meeting notes, and governance documentation.',
+                'Structures the documents, resolutions, or minutes against firm templates and precedents.',
+                'Drafts statutory documents in a near-final form for your review and sign-off.',
+                'You manage governance, not repetitive documentation.'
             ],
-            sampleTitle: 'Board Resolution.',
-            sampleDesc: 'Complete board resolution from meeting notes and statutory guidelines, fully structured.'
+            sampleTitle: 'Board Resolution Pack',
+            sampleDesc: 'Statutory resolutions and minutes drafted from board packs, consistent across entities and filings.'
         },
         'regulatory-compliance': {
             label: 'REGULATORY COMPLIANCE',
-            title: 'Regulations update. Aligning policies to guidelines is the cycle.',
-            desc: 'Compliance teams monitor regulations and update company policy. Associum reads regulatory updates and maps policy adjustments.',
+            title: 'Keep pace with a rapidly developing regulatory environment, identifying gaps and developing remediation plans.',
+            desc: 'Associum reads, interprets, and traces regulatory updates to the policies, procedures and disclosures they effect.',
             features: [
-                'Reads regulatory change alerts and guidelines.',
-                'Maps policies against updated regulatory standards.',
-                'Drafts compliance policy updates and guidelines.',
-                'You approve the updates — your compliance guidance, your policy decisions.'
+                'Reviews and analyses new regulations, guidance notes, and existing policy documents.',
+                'Maps regulatory changes against current policies and procedures.',
+                'Drafts the gap analysis and policy update recommendations.',
+                'You can respond more quickly and confidently to regulatory shifts and mitigate their impacts.'
             ],
-            sampleTitle: 'Compliance Policy Update.',
-            sampleDesc: 'Regulatory analysis, policy gaps, and recommended compliance policy updates.'
+            sampleTitle: 'Regulatory Gap Analysis',
+            sampleDesc: 'Policy impact assessment and update recommendations mapped directly from new regulatory guidance.'
         },
         'governance-esg': {
             label: 'GOVERNANCE & ESG',
-            title: 'Frameworks defined. Documenting governance is the task.',
-            desc: 'ESG leads map governance practices and test ESG frameworks. Associum drafts governance matrices and ESG report sections from disclosure data.',
+            title: 'Keep pace with fast-developing market expectations on ESG, sustainability, and other assurance matters.',
+            desc: 'Associum aggregates internal and external metrics on ESG and sustainability, across structured and unstructured formats, for assessing company policies and aligning to global standards.',
             features: [
-                'Reads company data and ESG disclosures.',
-                'Maps governance practices against frameworks (GRI, CSRD).',
-                'Drafts governance report sections and ESG disclosures.',
-                'You sign off on disclosure — your governance judgment, your ESG report stamp.'
+                'Ingests sustainability data, disclosures, and supporting evidence from internal and external data sources.',
+                'Structures finding against relevant standards and highlights issues and risks.',
+                'Drafts the assurance report with evidence properly referenced.',
+                'Better alignment with standards, without the analytic and documentation burden.'
             ],
-            sampleTitle: 'Governance Report Section.',
-            sampleDesc: 'ESG compliance disclosures, governance matrix, and compliance status explanation.'
+            sampleTitle: 'ESG Assurance Report',
+            sampleDesc: 'Standards-aligned assurance report from sustainability data to evidenced conclusion.'
         },
         'kyc': {
-            label: 'KYC & ONBOARDING',
-            title: 'Documents gathered. Writing KYC profiles is the bottleneck.',
-            desc: 'KYC teams review client documents to write risk profiles. Associum reads corporate structures, registry documents, and passports to write KYC profiles.',
+            label: 'KYC',
+            title: 'Simplify and scale your KYC reviews and risk assessments.',
+            desc: 'Every onboarding and periodic review generates the same structure of work — documents collected, risk factors assessed, and a file written up to a standard that holds under audit.',
             features: [
-                'Reads registry files, corporate structures, and ID documents.',
-                'Maps ownership structures and flags potential risks.',
-                'Drafts KYC onboarding profiles and risk assessments.',
-                'You clear the client — your risk judgment, your client onboarding approval.'
+                'Reads KYC documents, screening results, and risk questionnaires.',
+                'Structures findings against your risk assessment framework.',
+                'Drafts the customer due diligence file, ready for review and sign-off.',
+                'More files cleared per cycle, fewer hours spent on write-up.'
             ],
-            sampleTitle: 'KYC Risk Profile.',
-            sampleDesc: 'Corporate structure map, risk assessment, and onboarding profile.'
+            sampleTitle: 'Customer Due Diligence File',
+            sampleDesc: 'Review-ready CDD file from screening and documentation to a structured risk assessment.'
         }
     };
 

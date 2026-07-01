@@ -27,7 +27,7 @@
     width: 100%;
     max-width: 1240px;
     margin: 0 auto;
-    gap: 60px;
+    gap: 30px;
     height: 100%;
 }
 
@@ -86,6 +86,7 @@
         transform: translate(-50%, -50%) scale(1);
         opacity: 0.8;
     }
+
     100% {
         transform: translate(-50%, -50%) scale(3.5);
         opacity: 0;
@@ -111,7 +112,7 @@
     font-family: Inter, sans-serif;
     font-size: 18px;
     line-height: 28px;
-    max-width: 480px;
+    /* max-width: 480px; */
     margin: 0;
 }
 
@@ -509,7 +510,7 @@
 
 .card-footer {
     display: inline-flex;
-    padding: 6px 10px;
+    padding: 6px 8px;
     justify-content: center;
     align-items: center;
     border-radius: 6px;
@@ -661,9 +662,11 @@
 .role-tab:first-child {
     border-radius: 15px 0 0 0;
 }
+
 .role-tab:last-child {
     border-bottom: 1px solid #EAEDF2;
 }
+
 .role-tab:hover {
     background: rgba(0, 0, 0, 0.02);
 }
@@ -1119,7 +1122,7 @@
     font-weight: 400;
     line-height: 1.4;
     width: 100%;
-    max-width: 855px;
+    /* max-width: 855px; */
 }
 
 /* Automation Comparison Grid/Pills Layout */
@@ -1821,15 +1824,15 @@
     .impact-section {
         padding: 60px 40px;
     }
-    
+
     .impact-grid {
         grid-template-columns: 1fr;
     }
-    
+
     .impact-title {
         font-size: 28px;
     }
-    
+
     .impact-desc {
         font-size: 16px;
     }
@@ -1839,28 +1842,28 @@
     .impact-section {
         padding: 40px 20px;
     }
-    
+
     .impact-container {
         gap: 40px;
     }
-    
+
     .impact-card {
         padding: 20px;
     }
-    
+
     .impact-card-header h3 {
         font-size: 18px;
     }
-    
+
     .impact-badge {
         font-size: 12px;
         padding: 4px 12px;
     }
-    
+
     .impact-footer-banner {
         padding: 16px 20px;
     }
-    
+
     .impact-footer-banner p {
         font-size: 15px;
     }
