@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 'Drafts the report near-final with cited sources.',
                 'You refine the view — your analysis, your judgment.'
             ],
-            sampleTitle: 'Market Research Report',
+            sampleTitle: 'Market Research Report.',
             sampleDesc: 'Multi-source synthesis structured into a cited, near-final research deliverable.'
         },
         'public-markets': {
@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 'Drafts the initiation report or earnings note.',
                 'You focus on the model, the thesis, and the people.'
             ],
-            sampleTitle: 'Equity Research Initiation Report',
+            sampleTitle: 'Equity Research Initiation Report.',
             sampleDesc: 'Institutional-grade initiation coverage from investment thesis to valuation and risks.'
         },
         'private-markets': {
@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 'Screening note to IC memo to quarterly portfolio review.',
                 'More deal flow reviewed. More time on investment judgment.'
             ],
-            sampleTitle: 'Private Equity Buyout IC Paper',
+            sampleTitle: 'Private Equity Buyout IC Paper.',
             sampleDesc: 'Full buyout IC paper from CIM and data room to deal thesis, returns, and recommendation.'
         },
         'private-bankers': {
@@ -49,7 +49,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 'Answers client questions faster — the information is already processed.',
                 'Shorter loop between client question and RM response.'
             ],
-            sampleTitle: 'Customised Portfolio Commentary',
+            sampleTitle: 'Customised Portfolio Commentary.',
             sampleDesc: 'Client-specific investment commentary built from portfolio context and house research.'
         },
         'investor-relations': {
@@ -62,7 +62,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 'Press releases, investor updates, and Q&A prep on one platform.',
                 'Each reporting cycle runs on the same foundation, consistently.'
             ],
-            sampleTitle: 'DDQ Response',
+            sampleTitle: 'DDQ Response.',
             sampleDesc: 'Investor-ready DDQ responses drawn directly from fund data and existing documentation.'
         }
     };
