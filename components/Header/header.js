@@ -97,7 +97,7 @@ function initializeHeader() {
     });
 
     // Highlight active menu items based on pathname
-    const path = window.location.pathname;
+    const path = window.location.pathname.toLowerCase();
     
     // 1. Clear default/existing active states
     document.querySelectorAll('.nav-item').forEach(el => {
@@ -113,10 +113,10 @@ function initializeHeader() {
     });
 
     // 2. Set active states dynamically
-    if (path.includes('/finance/finance.html') || path.includes('/finance.html') ||
-        path.includes('/consulting/consulting.html') || path.includes('/consulting.html') ||
-        path.includes('/accounting/accounting.html') || path.includes('/accounting.html') ||
-        path.includes('/compliance/compliance.html') || path.includes('/compliance.html')) {
+    if (path.includes('/finance') || 
+        path.includes('/consulting') || 
+        path.includes('/accounting') || 
+        path.includes('/compliance')) {
         // Desktop Use Cases dropdown
         const useCasesBtn = Array.from(document.querySelectorAll('.nav-dropdown button')).find(btn => 
             btn.textContent.trim().includes('Use Cases')
@@ -132,10 +132,10 @@ function initializeHeader() {
         }
         
         // Find which specific subpage to highlight
-        let activeKey = 'finance.html';
-        if (path.includes('consulting')) activeKey = 'consulting.html';
-        else if (path.includes('accounting')) activeKey = 'accounting.html';
-        else if (path.includes('compliance')) activeKey = 'compliance.html';
+        let activeKey = 'finance';
+        if (path.includes('consulting')) activeKey = 'consulting';
+        else if (path.includes('accounting')) activeKey = 'accounting';
+        else if (path.includes('compliance')) activeKey = 'compliance';
         
         // Desktop sub-item
         const desktopLink = document.querySelector(`.nav-dropdown-menu a[href*="${activeKey}"]`);
@@ -145,7 +145,7 @@ function initializeHeader() {
         const mobileLink = document.querySelector(`.mobile-dropdown a[href*="${activeKey}"]`);
         if (mobileLink) mobileLink.classList.add('active');
 
-    } else if (path.includes('/enterprise/enterprise.html') || path.includes('/enterprise.html')) {
+    } else if (path.includes('/enterprise')) {
         // Desktop Company dropdown
         const companyBtn = Array.from(document.querySelectorAll('.nav-dropdown button')).find(btn => 
             btn.textContent.trim().includes('Company')
@@ -161,14 +161,14 @@ function initializeHeader() {
         }
         
         // Desktop Enterprise item
-        const enterpriseLink = document.querySelector('.nav-dropdown-menu a[href*="enterprise.html"]');
+        const enterpriseLink = document.querySelector('.nav-dropdown-menu a[href*="enterprise"]');
         if (enterpriseLink) enterpriseLink.classList.add('active');
         
         // Mobile Enterprise item
-        const mobileEnterpriseLink = document.querySelector('.mobile-dropdown a[href*="enterprise.html"]');
+        const mobileEnterpriseLink = document.querySelector('.mobile-dropdown a[href*="enterprise"]');
         if (mobileEnterpriseLink) mobileEnterpriseLink.classList.add('active');
 
-    } else if (path.includes('/Templates/') || path.includes('/templates.html')) {
+    } else if (path.includes('/templates')) {
         // Desktop Templates link
         const templatesLink = Array.from(document.querySelectorAll('.nav-primary > .nav-item')).find(el => 
             el.textContent.trim().includes('Templates')
@@ -182,7 +182,7 @@ function initializeHeader() {
                 templatesLink.appendChild(span);
             }
         }
-    } else if (path.includes('/blogsList/') || path.includes('/blogsDetails/') || path.includes('/blogs.html')) {
+    } else if (path.includes('/blogs')) {
         // Desktop Blogs link
         const blogsLink = Array.from(document.querySelectorAll('.nav-primary > .nav-item')).find(el => 
             el.textContent.trim().includes('Blogs')
