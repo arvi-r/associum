@@ -10,6 +10,11 @@ module.exports = {
       if (pkg.peerDependencies && pkg.peerDependencies.zod) {
         pkg.peerDependencies.zod = '3.23.8';
       }
+      if (pkg.name === 'astro') {
+        if (pkg.dependencies['zod-to-json-schema']) {
+          pkg.dependencies['zod-to-json-schema'] = '3.23.5';
+        }
+      }
       return pkg;
     }
   }
