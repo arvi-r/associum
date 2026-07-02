@@ -242,12 +242,13 @@
 .nav-item-active::after {
     content: "";
     position: absolute;
-    bottom: 4px;
-    left: 12px;
-    right: 12px;
+    left: 50%;
+    top: 35px;
+    width: 26px;
     height: 2px;
-    background-color: #08c186;
-    border-radius: 2px;
+    border-radius: 3px 3px 0 0;
+    transform: translate(-50%);
+    background: #08c186;
 }
 
 .nav-item-active .caret {

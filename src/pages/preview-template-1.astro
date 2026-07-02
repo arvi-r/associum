@@ -386,12 +386,10 @@ import Layout from '../layouts/Layout.astro';
     filter: blur(1px);
 }
 
+
 .blur-overlay {
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
+    top: 0; left: 0; right: 0; bottom: 0;
     background: rgba(0, 0, 0, 0.6);
     display: flex;
     align-items: center;
@@ -402,9 +400,9 @@ import Layout from '../layouts/Layout.astro';
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 6px;
+    gap: 8px;
+    padding: 10px;
     text-align: center;
-    padding: 0 4px;
 }
 
 .overlay-content p {
@@ -413,18 +411,18 @@ import Layout from '../layouts/Layout.astro';
     font-size: 8px;
     font-weight: 600;
     margin: 0;
-    line-height: 1.2;
+    line-height: 1.3;
 }
 
 .btn-signup {
-    background: linear-gradient(97deg, #05704E 4%, #09573E 103%);
-    border: 1px solid #0F8560;
-    border-radius: 2px;
+    background: #0F8560;
+    border: 1px solid #14A377;
+    border-radius: 4px;
     color: #FFFFFF;
     font-family: 'Inter', sans-serif;
-    font-size: 6px;
+    font-size: 8px;
     font-weight: 600;
-    padding: 2px 6px;
+    padding: 4px 8px;
     cursor: pointer;
 }
 
@@ -483,7 +481,7 @@ import Layout from '../layouts/Layout.astro';
 }
 
 /* Template Card (Reused styles) */
-.template-card {
+:global(.template-card) {
     background: #FDFDFD;
     border: 1px solid #EAEDF2;
     border-radius: 10px;
@@ -493,12 +491,12 @@ import Layout from '../layouts/Layout.astro';
     transition: all 0.3s ease;
 }
 
-.template-card:hover {
+:global(.template-card):hover {
     transform: translateY(-4px);
     box-shadow: 0 12px 24px rgba(10, 17, 30, 0.05);
 }
 
-.card-image-wrap {
+:global(.card-image-wrap) {
     position: relative;
     height: 240px;
     width: 100%;
@@ -506,14 +504,14 @@ import Layout from '../layouts/Layout.astro';
     background: #EAEDF2;
 }
 
-.card-img {
+:global(.card-img) {
     width: 100%;
     height: 100%;
     object-fit: cover;
     transition: transform 0.5s ease;
 }
 
-.template-card:hover .card-img {
+:global(.template-card):hover :global(.card-img) {
     transform: scale(1.03);
 }
 
@@ -532,7 +530,7 @@ import Layout from '../layouts/Layout.astro';
     text-transform: uppercase;
 }
 
-.card-info {
+:global(.card-info) {
     padding: 20px;
     display: flex;
     flex-direction: column;
@@ -540,7 +538,7 @@ import Layout from '../layouts/Layout.astro';
     flex-grow: 1;
 }
 
-.card-title {
+:global(.card-title) {
     color: #0F0F10;
     font-family: 'Inter', sans-serif;
     font-size: 22px;
@@ -549,7 +547,7 @@ import Layout from '../layouts/Layout.astro';
     letter-spacing: -0.44px;
 }
 
-.card-desc {
+:global(.card-desc) {
     color: #0F0F10;
     opacity: 0.6;
     font-family: 'Inter', sans-serif;
@@ -558,7 +556,7 @@ import Layout from '../layouts/Layout.astro';
     margin: 0;
 }
 
-.card-footer {
+:global(.card-footer) {
     padding: 12px 20px 20px 20px;
     display: flex;
     justify-content: space-between;
@@ -576,7 +574,7 @@ import Layout from '../layouts/Layout.astro';
     font-weight: 500;
 }
 
-.btn-preview {
+:global(.btn-preview) {
     position: relative;
     border: 1px solid #37B793;
     background: transparent;
@@ -592,7 +590,7 @@ import Layout from '../layouts/Layout.astro';
     transition: color 0.3s ease, border-color 0.3s ease;
 }
 
-.btn-preview::before {
+:global(.btn-preview)::before {
     content: '';
     position: absolute;
     top: 0;
@@ -605,12 +603,12 @@ import Layout from '../layouts/Layout.astro';
     transition: opacity 0.3s ease;
 }
 
-.btn-preview:hover {
+:global(.btn-preview):hover {
     color: #FFFFFF;
     border-color: transparent;
 }
 
-.btn-preview:hover::before {
+:global(.btn-preview):hover::before {
     opacity: 1;
 }
 
@@ -707,13 +705,23 @@ function setupThumbnails() {
                 if (!document.getElementById('main-blur-overlay')) {
                     const overlay = document.createElement('div');
                     overlay.id = 'main-blur-overlay';
-                    overlay.className = 'blur-overlay';
-                    overlay.style.borderRadius = '10px';
+                    overlay.style.position = 'absolute';
+                    overlay.style.top = '0';
+                    overlay.style.left = '0';
+                    overlay.style.right = '0';
+                    overlay.style.bottom = '0';
+                    overlay.style.background = 'rgba(0, 0, 0, 0.6)';
+                    overlay.style.display = 'flex';
+                    overlay.style.flexDirection = 'column';
+                    overlay.style.alignItems = 'center';
+                    overlay.style.justifyContent = 'center';
+                    overlay.style.gap = '16px';
+                    overlay.style.textAlign = 'center';
+                    overlay.style.padding = '20px';
+                    overlay.style.borderRadius = '12px';
                     overlay.innerHTML = `
-                        <div class="overlay-content" style="padding: 20px; max-width: 300px;">
-                            <p style="font-size: 14px; margin-bottom: 12px;">Create a free Associum account to access the complete document and additional templates.</p>
-                            <button class="btn-signup" style="padding: 10px 20px; font-size: 14px; border: none; border-radius: 6px; background: #0F8560; color: #FFF; cursor: pointer;">www.associum.ai</button>
-                        </div>
+                        <p style="color: white; font-family: 'Inter', sans-serif; font-size: 16px; font-weight: 600; line-height: 1.4; margin: 0; max-width: 320px;">Create a free Associum account to access the complete document and additional templates.</p>
+                        <button style="background: #0F8560; border: 1px solid #14A377; border-radius: 6px; color: white; font-family: 'Inter', sans-serif; font-size: 14px; font-weight: 600; padding: 10px 20px; cursor: pointer;">www.associum.ai</button>
                     `;
                     mainCover.appendChild(overlay);
                 }
