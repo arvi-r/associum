@@ -212,7 +212,7 @@ body {
     /* equal height rows */
 }
 
-.blog-card {
+:global(.blog-card) {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -224,12 +224,12 @@ body {
     /* ensure full height within grid row */
 }
 
-.blog-card:hover {
+:global(.blog-card:hover) {
     transform: translateY(-5px);
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
 }
 
-.blog-card-image {
+:global(.blog-card-image) {
     height: 200px;
     /* consistent responsive height */
     width: 100%;
@@ -240,7 +240,7 @@ body {
     border-bottom: 1px solid var(--Neutral-200, #EAEDF2);
 }
 
-.blog-card-content {
+:global(.blog-card-content) {
     display: flex;
     flex-direction: column;
     flex: 1;
@@ -255,7 +255,7 @@ body {
     align-self: stretch;
 }
 
-.blog-card-title {
+:global(.blog-card-title) {
     color: var(--Neutral-800, #0E1218);
     font-family: 'Inter', sans-serif;
     font-size: 20px;
@@ -265,7 +265,7 @@ body {
     margin: 0;
 }
 
-.blog-card-text {
+:global(.blog-card-text) {
     overflow: hidden;
     color: #0F0F10;
     text-overflow: ellipsis;
@@ -283,7 +283,7 @@ body {
     margin: 0;
 }
 
-.blog-card-footer {
+:global(.blog-card-footer) {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -291,7 +291,7 @@ body {
     margin-top: auto;
 }
 
-.blog-card-date {
+:global(.blog-card-date) {
     color: var(--Text-Teritiary, #888E9E);
     font-family: 'Inter', sans-serif;
     font-size: 14px;
@@ -300,7 +300,7 @@ body {
     line-height: normal;
 }
 
-.blog-card-readtime {
+:global(.blog-card-readtime) {
     display: flex;
     align-items: center;
     gap: 6px;
@@ -327,7 +327,7 @@ body {
     gap: 12px;
 }
 
-.page-btn {
+:global(.page-btn) {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -345,25 +345,25 @@ body {
     padding: 0 6px;
 }
 
-.page-btn:hover {
+:global(.page-btn:hover) {
     background: #EAEDF2;
     border-color: #CCD2DD;
     color: #0F0F10;
 }
 
-.page-btn.active {
+:global(.page-btn.active) {
     background: linear-gradient(91.6deg, #05704E 4%, #09573E 103%);
     border-color: #0F8560;
     color: #FFFFFF;
     font-weight: 600;
 }
 
-.page-btn.active:hover {
+:global(.page-btn.active:hover) {
     background: linear-gradient(91.6deg, #05704E 4%, #09573E 103%);
     color: #FFFFFF;
 }
 
-.page-btn.disabled {
+:global(.page-btn.disabled) {
     opacity: 0.4;
     pointer-events: none;
     cursor: not-allowed;
@@ -384,7 +384,7 @@ body {
     opacity: 0.8;
 }
 
-.page-btn:hover .page-arrow {
+:global(.page-btn:hover .page-arrow) {
     filter: brightness(0.4) contrast(1.5);
     opacity: 1;
 }
@@ -639,7 +639,7 @@ body {
 }
 
 @media (max-width: 480px) {
-    .page-btn {
+    :global(.page-btn) {
         min-width: 34px;
         height: 34px;
         font-size: 14px;
@@ -655,7 +655,7 @@ body {
 }
 </style>
 
-<script is:inline>
+<script>
 // Note: Dynamic header setup has been removed as the 'Blogs' link is now natively handled in header.html and header.js
 
 
@@ -957,7 +957,7 @@ function renderPagination() {
     }
 }
 
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('astro:page-load', () => {
     setupTabs();
     renderBlogs();
 });

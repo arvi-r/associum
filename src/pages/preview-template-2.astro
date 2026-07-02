@@ -9,7 +9,7 @@ import Layout from '../layouts/Layout.astro';
     <main class="preview-main">
         <section class="preview-hero">
             <div class="preview-container">
-                <a href="../Templates/templates.html" class="back-link">
+                <a href="/templates" class="back-link">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                         stroke-linecap="round" stroke-linejoin="round">
                         <line x1="19" y1="12" x2="5" y2="12"></line>
@@ -697,7 +697,7 @@ import Layout from '../layouts/Layout.astro';
 <script is:inline>
 // Preview Template 2 Page JS
 
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('astro:page-load', () => {
     renderRelatedTemplates();
     setupThumbnails();
 });

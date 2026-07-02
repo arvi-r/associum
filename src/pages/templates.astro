@@ -1863,7 +1863,7 @@ let allCards = [];
 let filteredCards = [];
 
 // Initialize Page
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('astro:page-load', () => {
     gridContainer = document.querySelector('.templates-grid');
     pageNumbersContainer = document.getElementById('page-numbers-container');
     btnFirst = document.getElementById('btn-first');

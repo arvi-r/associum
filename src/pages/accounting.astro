@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import { ButtonLink } from '../components/ButtonLink.jsx';
 ---
 
 <Layout title="Accounting | Associum">
@@ -23,8 +24,8 @@ import Layout from '../layouts/Layout.astro';
                         hours, without cutting corners on accuracy or professional standards.
                     </p>
                     <div class="hero-actions" data-reveal="true" style="--reveal-delay: 0.4s">
-                        <a href="#" class="button-link button-primary hero-btn">Start for Free</a>
-                        <a href="#" class="button-link button-outline hero-btn">Explore Enterprise Solutions</a>
+                        <ButtonLink href="#" variant="primary" size="heroPrimary">Start for Free</ButtonLink>
+                        <ButtonLink href="#" variant="outline" size="heroSecondary">Explore Enterprise Solutions</ButtonLink>
                     </div>
                 </div>
                 <div class="hero-right" data-reveal="zoom" style="--reveal-delay: 0.5s">
@@ -2385,7 +2386,7 @@ import Layout from '../layouts/Layout.astro';
 </style>
 
 <script is:inline>
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('astro:page-load', () => {
     const rolesData = {
         'audit-service': {
             label: 'AUDIT SERVICE',

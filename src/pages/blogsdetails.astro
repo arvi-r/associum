@@ -589,6 +589,6 @@ import Layout from '../layouts/Layout.astro';
 </style>
 
 <script is:inline>
-document.addEventListener('DOMContentLoaded', () => { if (typeof window.initScrollReveal === 'function') { window.initScrollReveal(); } });
+document.addEventListener('astro:page-load', () => { if (typeof window.initScrollReveal === 'function') { window.initScrollReveal(); } });
 
 </script>
