@@ -1,0 +1,153 @@
+@use '../../styles/variables' as *;
+
+.hero {
+  position: relative;
+  overflow: hidden;
+  padding: 200px 0 150px;
+  background: #0a111e;
+}
+
+.backdrop {
+  position: absolute;
+  inset: 0;
+}
+
+.backdrop img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.heroInner {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 520px;
+  gap: 60px;
+  align-items: center;
+}
+
+.copy {
+  display: grid;
+  gap: 35px;
+  max-width: 640px;
+}
+
+.copy h1 {
+  margin: 0;
+  color: #fff;
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: -0.2px;
+  max-width: none;
+}
+
+.description {
+  margin: 0;
+  color: #b7c3d2;
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 28px;
+}
+
+.actions {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.previewShell {
+  position: relative;
+  width: 520px;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.heroImage {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  border-radius: 12px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+
+
+@media (max-width: 1000px) {
+  .hero {
+    padding: 140px 0 0;
+  }
+
+  .heroInner {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 60px;
+  }
+
+  .copy {
+    gap: 28px;
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .copy h1 {
+    font-size: 40px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .description {
+    max-width: 850px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .actions {
+    justify-content: center;
+  }
+
+  .previewShell {
+    width: 100%;
+    max-width: 800px;
+    height: auto;
+    justify-self: center;
+  }
+}
+
+@media (max-width: 575px) {
+  .hero {
+    padding: 160px 0 0;
+  }
+
+  .copy {
+    gap: 24px;
+  }
+
+  .copy h1 {
+    font-size: 34px;
+  }
+
+  .description {
+    font-size: 16px;
+    line-height: 26px;
+  }
+
+  .actions {
+    gap: 22px;
+    flex-wrap: wrap;
+  }
+
+  .actions :global(a) {
+    width: 100%;
+  }
+
+  .previewShell {
+    max-width: 100%;
+  }
+}

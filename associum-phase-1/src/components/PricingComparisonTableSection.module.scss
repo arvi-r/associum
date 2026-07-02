@@ -1,0 +1,464 @@
+@use '../styles/variables' as *;
+
+.section {
+  padding: 65px 0 80px;
+  background: #fff;
+}
+
+.inner {
+  display: grid;
+  gap: 48px;
+}
+
+.inner h2 {
+  margin: 0;
+  color: #0f0f10;
+  text-align: center;
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 43px;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.2px;
+}
+
+.horizontalScrollContainer {
+  overflow-x: auto;
+  overflow-y: visible; // Key for allowing badges to overflow
+  -webkit-overflow-scrolling: touch;
+  padding-top: 20px; // Expand scrollport to include badges
+}
+
+.tableWrap {
+  border: 1px solid #e5e9f0;
+  border-radius: 16px;
+  background: #fff;
+  position: relative;
+  overflow: visible !important;
+  display: inline-block;
+  min-width: 100%;
+}
+
+.headerRow,
+.groupRow,
+.dataRow {
+  display: grid;
+  grid-template-columns: 260px repeat(4, minmax(0, 1fr));
+  min-width: 1000px; // Trigger horizontal scroll if viewport is narrow
+}
+
+.planHeader,
+.emptyGroupCell,
+.valueCell {
+  border-left: 1px solid #edf1f6;
+}
+
+.headerRow {
+  background: #fff;
+  align-items: stretch;
+  border-bottom: 1px solid #edf1f6;
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+}
+
+.fixedHeaderContainer {
+  position: fixed;
+  top: 106px; // Desktop (120px - 14px padding)
+  left: 0;
+  right: 0;
+  z-index: 19;
+  background: #fff; // White stripe to mask scrolling content
+  padding-top: 14px; // Give space for badges to pop out
+  pointer-events: none; // Allow clicks to pass through padding
+  display: flex;
+  justify-content: center;
+
+  @media (max-width: 1279px) {
+    top: 94px; // Mobile (108px - 14px padding)
+  }
+}
+
+.fixedHeaderScroll {
+  width: min(calc(100% - 32px), 1240px);
+  overflow: visible; // Allow badges to show
+  pointer-events: auto;
+
+  @media (max-width: $bp-md) {
+    width: min(calc(100% - 40px), 1240px);
+  }
+}
+
+.fixedHeaderRow {
+  display: grid;
+  grid-template-columns: 260px repeat(4, minmax(0, 1fr));
+  min-width: 1000px;
+  background: #fff;
+  border-bottom: 1px solid #edf1f6;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05); // Move shadow to the row
+  border-radius: 16px 16px 0 0; // Match table corners if possible
+  overflow: visible; // Allow badges to show above the row
+
+  @media (max-width: 1279px) {
+    min-width: 980px;
+    grid-template-columns: 220px repeat(4, minmax(0, 1fr));
+  }
+
+  @media (max-width: 767px) {
+    min-width: 780px;
+    grid-template-columns: 140px repeat(4, minmax(0, 160px));
+  }
+}
+
+.stubCell {
+  background: #fff;
+  min-height: 162px;
+  display: flex;
+  align-items: flex-end;
+  padding: 0 14px 20px;
+  border-top-left-radius: 16px;
+}
+
+.stubLabel {
+  color: #7f8aa0;
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+}
+
+.planHeader {
+  position: relative;
+  min-height: 162px;
+  background: #fff;
+  z-index: 16;
+
+  &:last-child {
+    border-top-right-radius: 16px;
+  }
+}
+
+.featuredColumn {
+  background: #eafbf6;
+}
+
+.planHeaderInner {
+  display: grid;
+  justify-items: center;
+  gap: 6px;
+  padding: 18px 20px 18px;
+}
+
+.planHeaderInner h3 {
+  margin: 0;
+  color: #323741;
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 24px;
+  letter-spacing: -0.1px;
+}
+
+.planPrice {
+  margin: 0;
+  color: #323741;
+  text-align: center;
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 24px;
+  letter-spacing: -0.1px;
+  white-space: nowrap; // Keep price and cadence on one line
+}
+
+.planCadence {
+  color: #758097;
+  font-size: 14px; // Slightly smaller cadence
+  font-weight: 400;
+  margin-left: 4px;
+}
+
+.cadenceSpacer {
+  height: 20px;
+}
+
+.headerButton {
+  width: 100%;
+  max-width: 195px;
+  margin-top: 10px;
+}
+
+.badge {
+  position: absolute;
+  top: -14px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 28px;
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: linear-gradient(97.76deg, #059466 4.0412%, #09523b 103.36%);
+  color: #fff;
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.groupRow {
+  min-height: 32px;
+  transition: background 0.3s ease;
+
+  &:hover {
+    background: rgba(245, 247, 251, 0.5);
+  }
+}
+
+.groupCell,
+.emptyGroupCell {
+  display: flex;
+  align-items: center;
+  min-height: 32px;
+  border-top: 1px solid #edf1f6;
+  background: #f5f7fb;
+}
+
+.groupCell {
+  padding: 0 14px;
+  color: #7f8aa0;
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.6px;
+}
+
+.dataRow {
+  min-height: 60px;
+  transition: background 0.3s ease;
+
+  &:hover {
+    background: #f9fafb;
+  }
+
+  &:last-child {
+    .labelCell {
+      border-bottom-left-radius: 16px;
+    }
+    .valueCell:last-child {
+      border-bottom-right-radius: 16px;
+    }
+  }
+}
+
+.labelCell,
+.valueCell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 60px;
+  padding: 12px 14px;
+  border-top: 1px solid #edf1f6;
+}
+
+.labelCell {
+  justify-content: flex-start;
+  gap: 0;
+  color: #323741;
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.valueCell {
+  color: #7f8aa0;
+  text-align: center;
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 18px;
+}
+
+.textValue {
+  display: inline-block;
+  text-align: center;
+  max-width: 180px;
+}
+
+.tickIcon {
+  width: 20px;
+  height: 20px;
+  display: block;
+}
+
+.checkWrap {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.checkWrap svg {
+  width: 20px;
+  height: 20px;
+}
+
+.dash {
+  color: #a0a9bb;
+}
+
+.inlineInfo {
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 4px;
+  color: #8c97aa;
+  line-height: 0;
+}
+
+.inlineInfo svg {
+  width: 14px;
+  height: 14px;
+  display: block;
+}
+
+.infoWrapper {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  height: 14px;
+  cursor: help;
+  margin-left: 0;
+  
+  &:hover .tooltip {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(-50%, -4px);
+  }
+}
+
+.tooltip {
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translate(-50%, 0);
+  background: #0f0f10;
+  color: #fff;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 18px;
+  white-space: normal;
+  width: 200px;
+  max-width: calc(100vw - 40px);
+  text-align: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 100;
+  pointer-events: none;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+.tooltipArrow {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-top: 8px solid #0f0f10;
+}
+
+@media (max-width: 1279px) {
+
+  .headerRow,
+  .groupRow,
+  .dataRow {
+    min-width: 980px;
+    grid-template-columns: 220px repeat(4, minmax(0, 1fr));
+  }
+
+  .headerRow {
+    // Standard row behavior
+  }
+
+  .stubCell,
+  .groupCell,
+  .labelCell {
+    min-width: 220px;
+    position: sticky;
+    left: 0;
+    z-index: 18;
+    background: #fff;
+    border-right: 1px solid #e5e9f0;
+    box-shadow: 4px 0 8px rgba(0, 0, 0, 0.03);
+  }
+
+  .groupCell {
+    background: #f5f7fb;
+  }
+}
+
+@media (max-width: 767px) {
+  .section {
+    padding: 37px 0 52px;
+  }
+
+  .inner {
+    gap: 32px;
+  }
+
+  .inner h2 {
+    font-size: 34px;
+  }
+
+  .headerRow,
+  .groupRow,
+  .dataRow {
+    min-width: 860px;
+    grid-template-columns: 140px repeat(4, 180px);
+  }
+
+  .headerRow {
+    top: 86px; // Small mobile navbar height
+  }
+
+  .stubCell,
+  .groupCell,
+  .labelCell {
+    min-width: 140px;
+    position: sticky;
+    left: 0;
+    z-index: 18;
+    background: #fff;
+    border-right: 1px solid #edf1f6;
+    box-shadow: 2px 0 6px rgba(0, 0, 0, 0.04);
+  }
+
+  .groupCell {
+    background: #f5f7fb;
+  }
+
+  .planHeaderInner {
+    padding-top: 46px;
+    padding-inline: 16px;
+  }
+
+  .stubCell,
+  .planHeader {
+    min-height: 150px;
+  }
+
+  .labelCell,
+  .valueCell {
+    padding-inline: 16px;
+  }
+}

@@ -1,0 +1,578 @@
+@use '../styles/variables' as *;
+
+.section {
+  padding: 80px 0;
+  background: linear-gradient(142.96deg, #f3f5f7 1.77%, #ffffff 101.65%);
+}
+
+.inner {
+  display: grid;
+  gap: 45px;
+}
+
+.header {
+  display: grid;
+  gap: 30px;
+  justify-items: center;
+}
+
+.header h2 {
+  margin: 0;
+  color: var(--Text-Primary, #0F0F10);
+  text-align: center;
+  font-family: 'Lato', sans-serif;
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: -0.2px;
+}
+
+.header p {
+  margin: 0;
+  max-width: 796px;
+  color: #888e9e;
+  text-align: center;
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 20px;
+  line-height: 32px;
+}
+
+.toggle {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: center;
+  gap: 4px;
+  height: 44px;
+  width: 404px;
+  padding: 4px;
+  border: 1px solid #ccd2dd;
+  border-radius: 8px;
+  background: #fff;
+  box-shadow: 0 1px 2px rgba(15, 15, 16, 0.04);
+}
+
+.toggle button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-width: 0;
+  height: 36px;
+  padding: 8px 20px;
+  border: 0;
+  border-radius: 8px;
+  background: transparent;
+  color: #323741;
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  cursor: pointer;
+  white-space: nowrap;
+  appearance: none;
+  transition: background 180ms ease, color 180ms ease, box-shadow 180ms ease;
+}
+
+.activeTab {
+  background:
+    linear-gradient(0deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.17) 100%),
+    linear-gradient(97.22deg, #059466 4.0412%, #09523b 103.36%);
+  color: #fff !important;
+  border: 1px solid #0f8560;
+  font-weight: 600;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.22);
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 24px;
+  align-items: stretch;
+}
+
+.card {
+  position: relative;
+  display: grid;
+  grid-template-rows: auto 1fr;
+  height: 100%;
+  border: 1px solid #d8e3f3;
+  border-radius: 20px;
+  background: #f2f3f5;
+  overflow: visible;
+}
+
+.featuredCard {
+  border-color: #05704e;
+  background: #d9f6ed;
+  box-shadow: 0 0 0 1px rgba(5, 112, 78, 0.2);
+}
+
+.badge {
+  position: absolute;
+  top: -18px;
+  left: 50%;
+  z-index: 3;
+  transform: translateX(-50%);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 36px;
+  padding: 8px 18px;
+  border: 1px solid #fff;
+  border-radius: 18px;
+  background:
+    linear-gradient(0deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.17) 100%),
+    linear-gradient(97.76deg, #059466 4.0412%, #09523b 103.36%);
+  color: #fff;
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.cardTop {
+  display: flex;
+  flex-direction: column;
+  padding: 23px;
+  border-radius: 20px;
+  background: #fff;
+  min-height: 325px;
+  box-shadow: 0 1px 1px rgba(53, 57, 61, 0.2), 0 3px 8px rgba(172, 176, 179, 0.05);
+}
+
+.featuredCard .cardTop {
+  background: transparent;
+}
+
+.planIntro {
+  display: grid;
+  gap: 0;
+  min-height: auto;
+}
+
+.planIntro h3 {
+  margin: 0;
+  color: #0f0f10;
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.planIntro p {
+  margin: 6px 0 0;
+  color: #323741;
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+}
+
+.maxIntro p {
+  margin: 0;
+}
+
+.annual .max .planIntro p {
+  margin-top: 9px;
+}
+
+.priceBlock {
+  display: grid;
+  gap: 4px;
+  margin-top: 4px;
+}
+
+.priceLine {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin-top: 15px;
+}
+
+.free .priceLine {
+  margin-top: 35px;
+}
+
+.monthly .max .priceLine {
+  margin-top: 5px;
+}
+
+.price {
+  color: #0f0f10;
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 50px;
+  font-weight: 600;
+  line-height: 62px;
+}
+
+.oldPrice {
+  color: #888e9e;
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: normal;
+  text-decoration: line-through;
+}
+
+.cadence {
+  color: #888e9e;
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.creditBlock {
+  display: grid;
+  gap: 8px;
+  min-height: auto;
+  align-content: start;
+  margin-top: 17px;
+}
+
+.free .creditBlock {
+  margin-top: 32px;
+}
+
+.creditBlock p {
+  margin: 0;
+  color: #3a3c3d;
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 20px;
+}
+
+.creditLineWithInfo {
+  display: inline;
+}
+
+.subtleLine {
+  color: #323741 !important;
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500 !important;
+  line-height: 22px;
+}
+
+.planButton {
+  width: 100%;
+  margin-top: auto;
+
+  @media (min-width: 1280px) {
+    margin-top: 10px;
+  }
+}
+
+.cardBottom {
+  display: grid;
+  gap: 12px;
+  padding: 20px;
+  align-content: start;
+}
+
+.featuresLabel {
+  margin: 0;
+  color: #323741;
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 20px;
+}
+
+.featureDivider {
+  height: 1px;
+  width: 100%;
+  background: #dbe1eb;
+}
+
+.featureList {
+  display: grid;
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.featureList li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  color: #3a3c3d;
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+}
+
+.checkIcon {
+  color: #056f4d;
+  flex: 0 0 20px;
+}
+
+.checkIcon svg {
+  display: block;
+  width: 20px;
+  height: 20px;
+}
+
+.infoIcon {
+  color: #888e9e;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 4px;
+  vertical-align: middle;
+  transform: translateY(2px);
+}
+
+.infoIcon svg {
+  display: block;
+  width: 14px;
+  height: 14px;
+}
+
+.infoWrapper {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  height: 14px;
+  cursor: help;
+
+  &:hover .tooltip {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(-50%, -4px);
+  }
+
+  @media (max-width: 800px) {
+    &:hover .tooltip {
+      transform: translateY(-4px);
+    }
+  }
+}
+
+.tooltip {
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translate(-50%, 0);
+  background: #0f0f10;
+  color: #fff;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 18px;
+  white-space: normal;
+  width: 200px;
+  max-width: calc(100vw - 40px);
+  text-align: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 100;
+  pointer-events: none;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+
+  @media (max-width: 800px) {
+    left: auto;
+    right: -10px;
+    transform: translateY(0);
+  }
+
+  @media (max-width: 767px) {
+    width: 160px;
+  }
+}
+
+.tooltipArrow {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-top: 8px solid #0f0f10;
+
+  @media (max-width: 800px) {
+    left: auto;
+    right: 12px;
+    transform: none;
+  }
+}
+
+.bannersWrapper {
+  display: grid;
+  gap: 35px;
+}
+
+.banner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 100px;
+  border-radius: 8px;
+  margin-top: -10px;
+  background: linear-gradient(180deg, #091222 0%, #05704e 100%),
+    url('../assets/pricing/pricing-hero-texture.webp') center / cover no-repeat;
+}
+
+.banner h2 {
+  margin: 0;
+  color: #FFF;
+  text-align: center;
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.button {
+  min-width: 130px;
+  padding-inline: 32px;
+  flex-shrink: 0;
+}
+
+.enterpriseBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 30px;
+  border: 1px solid #ccd2dd;
+  border-radius: 10px;
+  background: #fff;
+}
+
+.enterpriseBar p {
+  margin: 0;
+  color: #323741;
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.enterpriseBar p strong {
+  font-weight: 700;
+}
+
+
+@media (max-width: 1279px) {
+  .cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .free .priceLine {
+    margin-top: 15px;
+  }
+
+  .free .creditBlock {
+    margin-top: 17px;
+  }
+}
+
+@media (max-width: 991px) {
+  .banner {
+    padding: 32px 36px;
+  }
+
+  .banner h2 {
+    font-size: 26px;
+  }
+}
+
+@media (max-width: 767px) {
+  .section {
+    padding: 52px 0;
+  }
+
+  .inner {
+    gap: 32px;
+  }
+
+  .header h2 {
+    font-size: 30px;
+  }
+
+  .header p {
+    font-size: 18px;
+    line-height: 28px;
+  }
+
+  .toggle {
+    width: 100%;
+    max-width: 360px;
+    height: auto;
+  }
+
+  .toggle button {
+    padding-inline: 12px;
+    font-size: 12px;
+  }
+
+  .cards {
+    grid-template-columns: 1fr;
+  }
+
+  .banner {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 28px 24px;
+  }
+
+  .banner h2 {
+    font-size: 24px;
+  }
+
+  .enterpriseBar {
+    flex-direction: column;
+    align-items: center;
+    padding: 24px 20px;
+    gap: 20px;
+  }
+
+  .enterpriseBar p {
+    font-size: 18px;
+    text-align: center;
+    line-height: 1.5;
+  }
+}
+
+@media (max-width: 575px) {
+  .cardTop {
+    padding: 20px 16px;
+  }
+
+  .creditBlock p {
+    font-size: 13px;
+    letter-spacing: -0.01em;
+  }
+
+  .banner {
+    gap: 20px;
+    padding: 24px 20px;
+  }
+
+  .banner h2 {
+    font-size: 22px;
+  }
+
+  .button {
+    width: 100%;
+  }
+}

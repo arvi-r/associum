@@ -1,0 +1,7 @@
+@use './variables' as *;
+
+@mixin up($width) {
+  @media (min-width: $width) {
+    @content;
+  }
+}

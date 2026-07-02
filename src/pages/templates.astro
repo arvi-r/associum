@@ -1,0 +1,2114 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Professional Templates | Associum">
+
+
+    <!-- Header placeholder (loaded dynamically) -->
+    
+
+    <main class="templates-main">
+        <section class="templates-hero">
+            <div class="hero-container" data-reveal="true" style="--reveal-delay: 0.1s">
+                <h1 class="hero-title">
+                    <span class="title-professional">Professional Templates </span>
+                    <span class="title-built-for">Built for Real Work</span>
+                </h1>
+                <p class="hero-subtitle">Access a growing library of AI-powered templates designed to produce
+                    professional reports, analyses, and presentations faster than ever.</p>
+            </div>
+        </section>
+
+        <section class="browse-section">
+            <div class="browse-container">
+                <div class="browse-header" data-reveal="true" style="--reveal-delay: 0.1s">
+                    <div class="header-text">
+                        <h2 class="browse-title">Browse Professional Templates</h2>
+                        <p class="browse-subtitle">Choose a category to explore templates designed for your workflow</p>
+                    </div>
+                    <div class="header-controls" style="position: relative;">
+                        <button class="control-btn btn-filters" id="btn-filters-toggle">
+                            <svg class="icon-filter" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="4" y1="21" x2="4" y2="14"></line>
+                                <line x1="4" y1="10" x2="4" y2="3"></line>
+                                <line x1="12" y1="21" x2="12" y2="12"></line>
+                                <line x1="12" y1="8" x2="12" y2="3"></line>
+                                <line x1="20" y1="21" x2="20" y2="16"></line>
+                                <line x1="20" y1="12" x2="20" y2="3"></line>
+                                <line x1="1" y1="14" x2="7" y2="14"></line>
+                                <line x1="9" y1="8" x2="15" y2="8"></line>
+                                <line x1="17" y1="16" x2="23" y2="16"></line>
+                            </svg>
+                            <span>Filters</span>
+                        </button>
+
+                        <!-- Filter Popup -->
+                        <div class="filter-popup" id="filter-popup">
+                            <div class="filter-popup-header">
+                                <h3>Filters</h3>
+                                <button class="btn-close-filter" id="btn-close-filter" aria-label="Close filters">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0F0F10"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="filter-popup-body">
+                                <div class="filter-group">
+                                    <h4>Category</h4>
+                                    <div class="filter-options">
+                                        <button class="filter-option" data-category="Finance">Finance</button>
+                                        <button class="filter-option" data-category="Consulting">Consulting</button>
+                                        <button class="filter-option" data-category="Accounting">Accounting</button>
+                                        <button class="filter-option" data-category="Compliance">Compliance</button>
+                                    </div>
+                                </div>
+                                <div class="filter-group">
+                                    <h4>Format</h4>
+                                    <div class="filter-options">
+                                        <button class="filter-option format-option" data-format="PDF">PDF</button>
+                                        <button class="filter-option format-option" data-format="PPTX">PPTX</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="filter-popup-footer">
+                                <button class="btn-filter-reset" id="btn-filter-reset">Reset</button>
+                                <button class="btn-filter-apply" id="btn-filter-apply">Apply</button>
+                            </div>
+                        </div>
+
+                        <div class="search-box">
+                            <svg class="icon-search" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="11" cy="11" r="8"></circle>
+                                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                            </svg>
+                            <input type="text" placeholder="Search templates..." class="search-input" id="search-input">
+                            <button class="btn-clear-search" id="btn-clear-search" aria-label="Clear search">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="templates-grid">
+                    <div class="template-card" data-category="Finance" data-format="PDF Report" data-reveal="true"
+                        style="--reveal-delay: 0.1s">
+                        <div class="card-image-wrap">
+                            <img src="/assets/images/templates/templates/template-01.png" alt="Economic Research Report"
+                                class="card-img">
+                            <span class="category-badge">Finance</span>
+                        </div>
+                        <div class="card-info">
+                            <h3 class="card-title">Economic Research Report</h3>
+                            <p class="card-desc">Generate institutional-grade investment committee memos with market
+                                analysis, risks, valuation insights, and recommendations.</p>
+                        </div>
+                        <div class="card-footer">
+                            <div class="file-type">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                    <polyline points="14 2 14 8 20 8"></polyline>
+                                    <line x1="16" y1="13" x2="8" y2="13"></line>
+                                    <line x1="16" y1="17" x2="8" y2="17"></line>
+                                    <polyline points="10 9 9 9 8 9"></polyline>
+                                </svg>
+                                <span>PDF Report</span>
+                            </div>
+                            <button class="btn-preview"
+                                onclick="window.location.href='../preview-template-1/preview-template-1.html'">Preview
+                                Template</button>
+                        </div>
+                    </div>
+
+                    <div class="template-card" data-category="Research" data-format="PDF Report" data-reveal="true"
+                        style="--reveal-delay: 0.2s">
+                        <div class="card-image-wrap">
+                            <img src="/assets/images/templates/templates/template-02.png" alt="Market Research Report"
+                                class="card-img">
+                            <span class="category-badge">Research</span>
+                        </div>
+                        <div class="card-info">
+                            <h3 class="card-title">Market Research Report</h3>
+                            <p class="card-desc">Analyze industries, competitors, TAM, growth drivers, and market
+                                opportunities using AI-powered research.</p>
+                        </div>
+                        <div class="card-footer">
+                            <div class="file-type">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                    <polyline points="14 2 14 8 20 8"></polyline>
+                                    <line x1="16" y1="13" x2="8" y2="13"></line>
+                                    <line x1="16" y1="17" x2="8" y2="17"></line>
+                                    <polyline points="10 9 9 9 8 9"></polyline>
+                                </svg>
+                                <span>PDF Report</span>
+                            </div>
+                            <button class="btn-preview"
+                                onclick="window.location.href='../preview-template-2/preview-template-2.html'">Preview
+                                Template</button>
+                        </div>
+                    </div>
+
+                    <div class="template-card" data-category="Operations" data-format="PPT Deck" data-reveal="true"
+                        style="--reveal-delay: 0.3s">
+                        <div class="card-image-wrap">
+                            <img src="/assets/images/templates/templates/template-03.png" alt="Due Diligence Report"
+                                class="card-img">
+                            <span class="category-badge">Operations</span>
+                        </div>
+                        <div class="card-info">
+                            <h3 class="card-title">Due Diligence Report</h3>
+                            <p class="card-desc">Review company operations, financials, risks, and commercial viability
+                                for investment or acquisition decisions.</p>
+                        </div>
+                        <div class="card-footer">
+                            <div class="file-type">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <rect x="2" y="2" width="20" height="14" rx="2" ry="2"></rect>
+                                    <line x1="12" y1="22" x2="12" y2="16"></line>
+                                    <line x1="8" y1="22" x2="16" y2="22"></line>
+                                    <line x1="12" y1="10" x2="8" y2="10"></line>
+                                    <line x1="12" y1="6" x2="16" y2="6"></line>
+                                </svg>
+                                <span>PPT Deck</span>
+                            </div>
+                            <button class="btn-preview"
+                                onclick="window.location.href='../preview-template-1/preview-template-1.html'">Preview
+                                Template</button>
+                        </div>
+                    </div>
+
+                    <div class="template-card" data-category="Finance" data-format="PDF Report" data-reveal="true"
+                        style="--reveal-delay: 0.1s">
+                        <div class="card-image-wrap">
+                            <img src="/assets/images/templates/templates/template-04.png"
+                                alt="Equity Research Initiation Report" class="card-img">
+                            <span class="category-badge">Finance</span>
+                        </div>
+                        <div class="card-info">
+                            <h3 class="card-title">Equity Research Initiation Report</h3>
+                            <p class="card-desc">Initiate coverage with an institutional-quality report — thesis,
+                                valuation, financials, and risks.</p>
+                        </div>
+                        <div class="card-footer">
+                            <div class="file-type">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                    <polyline points="14 2 14 8 20 8"></polyline>
+                                    <line x1="16" y1="13" x2="8" y2="13"></line>
+                                    <line x1="16" y1="17" x2="8" y2="17"></line>
+                                    <polyline points="10 9 9 9 8 9"></polyline>
+                                </svg>
+                                <span>PDF Report</span>
+                            </div>
+                            <button class="btn-preview"
+                                onclick="window.location.href='../preview-template-2/preview-template-2.html'">Preview
+                                Template</button>
+                        </div>
+                    </div>
+
+                    <div class="template-card" data-category="Finance" data-format="PDF Report" data-reveal="true"
+                        style="--reveal-delay: 0.2s">
+                        <div class="card-image-wrap">
+                            <img src="/assets/images/templates/templates/template-05.png"
+                                alt="Private Equity Buyout IC Paper" class="card-img">
+                            <span class="category-badge">Finance</span>
+                        </div>
+                        <div class="card-info">
+                            <h3 class="card-title">Private Equity Buyout IC Paper</h3>
+                            <p class="card-desc">Present a buyout to your IC with everything needed to make a decision,
+                                from thesis to returns.</p>
+                        </div>
+                        <div class="card-footer">
+                            <div class="file-type">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                    <polyline points="14 2 14 8 20 8"></polyline>
+                                    <line x1="16" y1="13" x2="8" y2="13"></line>
+                                    <line x1="16" y1="17" x2="8" y2="17"></line>
+                                    <polyline points="10 9 9 9 8 9"></polyline>
+                                </svg>
+                                <span>PDF Report</span>
+                            </div>
+                            <button class="btn-preview"
+                                onclick="window.location.href='../preview-template-1/preview-template-1.html'">Preview
+                                Template</button>
+                        </div>
+                    </div>
+
+                    <div class="template-card" data-category="Consulting" data-format="PPT Deck" data-reveal="true"
+                        style="--reveal-delay: 0.3s">
+                        <div class="card-image-wrap">
+                            <img src="/assets/images/templates/templates/template-06.png"
+                                alt="Strategy Engagement Final Deck" class="card-img">
+                            <span class="category-badge">Consulting</span>
+                        </div>
+                        <div class="card-info">
+                            <h3 class="card-title">Strategy Engagement Final Deck</h3>
+                            <p class="card-desc">Turn engagement findings into a boardroom-ready strategy deck —
+                                situation, options, roadmap, and 100-day plan.</p>
+                        </div>
+                        <div class="card-footer">
+                            <div class="file-type">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <rect x="2" y="2" width="20" height="14" rx="2" ry="2"></rect>
+                                    <line x1="12" y1="22" x2="12" y2="16"></line>
+                                    <line x1="8" y1="22" x2="16" y2="22"></line>
+                                    <line x1="12" y1="10" x2="8" y2="10"></line>
+                                    <line x1="12" y1="6" x2="16" y2="6"></line>
+                                </svg>
+                                <span>PPT Deck</span>
+                            </div>
+                            <button class="btn-preview"
+                                onclick="window.location.href='../preview-template-1/preview-template-1.html'">Preview
+                                Template</button>
+                        </div>
+                    </div>
+
+                    <div class="template-card" data-category="Research" data-format="PPT Deck" data-reveal="true"
+                        style="--reveal-delay: 0.1s">
+                        <div class="card-image-wrap">
+                            <img src="/assets/images/templates/templates/template-07.png" alt="Regulatory Change Brief"
+                                class="card-img">
+                            <span class="category-badge">Research</span>
+                        </div>
+                        <div class="card-info">
+                            <h3 class="card-title">Regulatory Change Brief</h3>
+                            <p class="card-desc">Generate macroeconomic analysis, market trends, forecasts, and policy
+                                implications.</p>
+                        </div>
+                        <div class="card-footer">
+                            <div class="file-type">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <rect x="2" y="2" width="20" height="14" rx="2" ry="2"></rect>
+                                    <line x1="12" y1="22" x2="12" y2="16"></line>
+                                    <line x1="8" y1="22" x2="16" y2="22"></line>
+                                    <line x1="12" y1="10" x2="8" y2="10"></line>
+                                    <line x1="12" y1="6" x2="16" y2="6"></line>
+                                </svg>
+                                <span>PPT Deck</span>
+                            </div>
+                            <button class="btn-preview"
+                                onclick="window.location.href='../preview-template-1/preview-template-1.html'">Preview
+                                Template</button>
+                        </div>
+                    </div>
+
+                    <div class="template-card" data-category="Compliance" data-format="PDF Report" data-reveal="true"
+                        style="--reveal-delay: 0.2s">
+                        <div class="card-image-wrap">
+                            <img src="/assets/images/templates/templates/template-08.png" alt="Compliance Assessment"
+                                class="card-img">
+                            <span class="category-badge">Compliance</span>
+                        </div>
+                        <div class="card-info">
+                            <h3 class="card-title">Compliance Assessment</h3>
+                            <p class="card-desc">Evaluate regulatory requirements, identify risks, and create compliance
+                                action plans.</p>
+                        </div>
+                        <div class="card-footer">
+                            <div class="file-type">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                    <polyline points="14 2 14 8 20 8"></polyline>
+                                    <line x1="16" y1="13" x2="8" y2="13"></line>
+                                    <line x1="16" y1="17" x2="8" y2="17"></line>
+                                    <polyline points="10 9 9 9 8 9"></polyline>
+                                </svg>
+                                <span>PDF Report</span>
+                            </div>
+                            <button class="btn-preview"
+                                onclick="window.location.href='../preview-template-1/preview-template-1.html'">Preview
+                                Template</button>
+                        </div>
+                    </div>
+
+                    <div class="template-card" data-category="Finance" data-format="PPT Deck" data-reveal="true"
+                        style="--reveal-delay: 0.3s">
+                        <div class="card-image-wrap">
+                            <img src="/assets/images/preview-template-2/preview/preview_fin_008_01.png"
+                                alt="Portfolio Company Quarterly Review" class="card-img">
+                            <span class="category-badge">Finance</span>
+                        </div>
+                        <div class="card-info">
+                            <h3 class="card-title">Portfolio Company Quarterly Review</h3>
+                            <p class="card-desc">A private equity board-pack style review of a portfolio company's
+                                operational and financial performance against plan.</p>
+                        </div>
+                        <div class="card-footer">
+                            <div class="file-type">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <rect x="2" y="2" width="20" height="14" rx="2" ry="2"></rect>
+                                    <line x1="12" y1="22" x2="12" y2="16"></line>
+                                    <line x1="8" y1="22" x2="16" y2="22"></line>
+                                    <line x1="12" y1="10" x2="8" y2="10"></line>
+                                    <line x1="12" y1="6" x2="16" y2="6"></line>
+                                </svg>
+                                <span>PPT Deck</span>
+                            </div>
+                            <button class="btn-preview"
+                                onclick="window.location.href='../preview-template-2/preview-template-2.html'">Preview
+                                Template</button>
+                        </div>
+                    </div>
+
+                    <div class="template-card" data-category="Finance" data-format="PDF Report" data-reveal="true"
+                        style="--reveal-delay: 0.1s">
+                        <div class="card-image-wrap">
+                            <img src="/assets/images/templates/templates/template-02.png" alt="LBO Valuation Model Memo"
+                                class="card-img">
+                            <span class="category-badge">Finance</span>
+                        </div>
+                        <div class="card-info">
+                            <h3 class="card-title">LBO Valuation Model Memo</h3>
+                            <p class="card-desc">Perform dynamic leveraged buyout modeling including capital structures,
+                                debt schedules, returns, and sensitivity analysis.</p>
+                        </div>
+                        <div class="card-footer">
+                            <div class="file-type">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                    <polyline points="14 2 14 8 20 8"></polyline>
+                                    <line x1="16" y1="13" x2="8" y2="13"></line>
+                                    <line x1="16" y1="17" x2="8" y2="17"></line>
+                                    <polyline points="10 9 9 9 8 9"></polyline>
+                                </svg>
+                                <span>PDF Report</span>
+                            </div>
+                            <button class="btn-preview"
+                                onclick="window.location.href='../preview-template-1/preview-template-1.html'">Preview
+                                Template</button>
+                        </div>
+                    </div>
+
+                    <div class="template-card" data-category="Research" data-format="PDF Report" data-reveal="true"
+                        style="--reveal-delay: 0.2s">
+                        <div class="card-image-wrap">
+                            <img src="/assets/images/templates/templates/template-04.png"
+                                alt="Competitive Landscape Brief" class="card-img">
+                            <span class="category-badge">Research</span>
+                        </div>
+                        <div class="card-info">
+                            <h3 class="card-title">Competitive Landscape Brief</h3>
+                            <p class="card-desc">Deep-dive competitor product positioning, feature matrices, pricing
+                                models, market share, and strategic gaps.</p>
+                        </div>
+                        <div class="card-footer">
+                            <div class="file-type">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                    <polyline points="14 2 14 8 20 8"></polyline>
+                                    <line x1="16" y1="13" x2="8" y2="13"></line>
+                                    <line x1="16" y1="17" x2="8" y2="17"></line>
+                                    <polyline points="10 9 9 9 8 9"></polyline>
+                                </svg>
+                                <span>PDF Report</span>
+                            </div>
+                            <button class="btn-preview"
+                                onclick="window.location.href='../preview-template-1/preview-template-1.html'">Preview
+                                Template</button>
+                        </div>
+                    </div>
+
+                    <div class="template-card" data-category="Operations" data-format="PPT Deck" data-reveal="true"
+                        style="--reveal-delay: 0.3s">
+                        <div class="card-image-wrap">
+                            <img src="/assets/images/templates/templates/template-06.png"
+                                alt="Operational Efficiency Review" class="card-img">
+                            <span class="category-badge">Operations</span>
+                        </div>
+                        <div class="card-info">
+                            <h3 class="card-title">Operational Efficiency Review</h3>
+                            <p class="card-desc">Audit internal business unit performance, identify cost reductions, and
+                                design process automation opportunities.</p>
+                        </div>
+                        <div class="card-footer">
+                            <div class="file-type">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <rect x="2" y="2" width="20" height="14" rx="2" ry="2"></rect>
+                                    <line x1="12" y1="22" x2="12" y2="16"></line>
+                                    <line x1="8" y1="22" x2="16" y2="22"></line>
+                                    <line x1="12" y1="10" x2="8" y2="10"></line>
+                                    <line x1="12" y1="6" x2="16" y2="6"></line>
+                                </svg>
+                                <span>PPT Deck</span>
+                            </div>
+                            <button class="btn-preview"
+                                onclick="window.location.href='../preview-template-1/preview-template-1.html'">Preview
+                                Template</button>
+                        </div>
+                    </div>
+
+                    <div class="template-card" data-category="Finance" data-format="PDF Report" data-reveal="true"
+                        style="--reveal-delay: 0.1s">
+                        <div class="card-image-wrap">
+                            <img src="/assets/images/templates/templates/template-08.png"
+                                alt="Corporate Valuation Summary" class="card-img">
+                            <span class="category-badge">Finance</span>
+                        </div>
+                        <div class="card-info">
+                            <h3 class="card-title">Corporate Valuation Summary</h3>
+                            <p class="card-desc">Produce discounted cash flow (DCF), trading comparables, and precedent
+                                transaction valuation summaries.</p>
+                        </div>
+                        <div class="card-footer">
+                            <div class="file-type">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                    <polyline points="14 2 14 8 20 8"></polyline>
+                                    <line x1="16" y1="13" x2="8" y2="13"></line>
+                                    <line x1="16" y1="17" x2="8" y2="17"></line>
+                                    <polyline points="10 9 9 9 8 9"></polyline>
+                                </svg>
+                                <span>PDF Report</span>
+                            </div>
+                            <button class="btn-preview"
+                                onclick="window.location.href='../preview-template-1/preview-template-1.html'">Preview
+                                Template</button>
+                        </div>
+                    </div>
+
+                    <div class="template-card" data-category="Finance" data-format="PDF Report" data-reveal="true"
+                        style="--reveal-delay: 0.2s">
+                        <div class="card-image-wrap">
+                            <img src="/assets/images/templates/templates/template-01.png"
+                                alt="Credit Analysis Memorandum" class="card-img">
+                            <span class="category-badge">Finance</span>
+                        </div>
+                        <div class="card-info">
+                            <h3 class="card-title">Credit Analysis Memorandum</h3>
+                            <p class="card-desc">Evaluate institutional creditworthiness, debt service coverage ratios
+                                (DSCR), leverage metrics, and covenant packages.</p>
+                        </div>
+                        <div class="card-footer">
+                            <div class="file-type">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                    <polyline points="14 2 14 8 20 8"></polyline>
+                                    <line x1="16" y1="13" x2="8" y2="13"></line>
+                                    <line x1="16" y1="17" x2="8" y2="17"></line>
+                                    <polyline points="10 9 9 9 8 9"></polyline>
+                                </svg>
+                                <span>PDF Report</span>
+                            </div>
+                            <button class="btn-preview"
+                                onclick="window.location.href='../preview-template-1/preview-template-1.html'">Preview
+                                Template</button>
+                        </div>
+                    </div>
+
+                    <div class="template-card" data-category="Consulting" data-format="PPT Deck" data-reveal="true"
+                        style="--reveal-delay: 0.3s">
+                        <div class="card-image-wrap">
+                            <img src="/assets/images/templates/templates/template-03.png" alt="IT Strategy & Roadmap"
+                                class="card-img">
+                            <span class="category-badge">Consulting</span>
+                        </div>
+                        <div class="card-info">
+                            <h3 class="card-title">IT Strategy & Roadmap</h3>
+                            <p class="card-desc">Map modern enterprise IT architecture, cloud migration paths, legacy
+                                system integrations, and digital transformation goals.</p>
+                        </div>
+                        <div class="card-footer">
+                            <div class="file-type">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <rect x="2" y="2" width="20" height="14" rx="2" ry="2"></rect>
+                                    <line x1="12" y1="22" x2="12" y2="16"></line>
+                                    <line x1="8" y1="22" x2="16" y2="22"></line>
+                                    <line x1="12" y1="10" x2="8" y2="10"></line>
+                                    <line x1="12" y1="6" x2="16" y2="6"></line>
+                                </svg>
+                                <span>PPT Deck</span>
+                            </div>
+                            <button class="btn-preview"
+                                onclick="window.location.href='../preview-template-1/preview-template-1.html'">Preview
+                                Template</button>
+                        </div>
+                    </div>
+
+                    <div class="template-card" data-category="Research" data-format="PPT Deck" data-reveal="true"
+                        style="--reveal-delay: 0.1s">
+                        <div class="card-image-wrap">
+                            <img src="/assets/images/templates/templates/template-05.png"
+                                alt="Macroeconomic Outlook 2026" class="card-img">
+                            <span class="category-badge">Research</span>
+                        </div>
+                        <div class="card-info">
+                            <h3 class="card-title">Macroeconomic Outlook 2026</h3>
+                            <p class="card-desc">Forecast inflation trends, interest rate paths, GDP growth corridors,
+                                currency movements, and central bank policies.</p>
+                        </div>
+                        <div class="card-footer">
+                            <div class="file-type">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <rect x="2" y="2" width="20" height="14" rx="2" ry="2"></rect>
+                                    <line x1="12" y1="22" x2="12" y2="16"></line>
+                                    <line x1="8" y1="22" x2="16" y2="22"></line>
+                                    <line x1="12" y1="10" x2="8" y2="10"></line>
+                                    <line x1="12" y1="6" x2="16" y2="6"></line>
+                                </svg>
+                                <span>PPT Deck</span>
+                            </div>
+                            <button class="btn-preview"
+                                onclick="window.location.href='../preview-template-1/preview-template-1.html'">Preview
+                                Template</button>
+                        </div>
+                    </div>
+
+                    <div class="template-card" data-category="Compliance" data-format="PDF Report" data-reveal="true"
+                        style="--reveal-delay: 0.2s">
+                        <div class="card-image-wrap">
+                            <img src="/assets/images/templates/templates/template-07.png" alt="ESG Performance Audit"
+                                class="card-img">
+                            <span class="category-badge">Compliance</span>
+                        </div>
+                        <div class="card-info">
+                            <h3 class="card-title">ESG Performance Audit</h3>
+                            <p class="card-desc">Measure sustainability impact, carbon accounting metrics, board
+                                diversity governance, and compliance reporting alignments.</p>
+                        </div>
+                        <div class="card-footer">
+                            <div class="file-type">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                    <polyline points="14 2 14 8 20 8"></polyline>
+                                    <line x1="16" y1="13" x2="8" y2="13"></line>
+                                    <line x1="16" y1="17" x2="8" y2="17"></line>
+                                    <polyline points="10 9 9 9 8 9"></polyline>
+                                </svg>
+                                <span>PDF Report</span>
+                            </div>
+                            <button class="btn-preview"
+                                onclick="window.location.href='../preview-template-1/preview-template-1.html'">Preview
+                                Template</button>
+                        </div>
+                    </div>
+
+                    <div class="template-card" data-category="Operations" data-format="PDF Report" data-reveal="true"
+                        style="--reveal-delay: 0.3s">
+                        <div class="card-image-wrap">
+                            <img src="/assets/images/templates/templates/template-09.png"
+                                alt="Quarterly Business Review (QBR)" class="card-img">
+                            <span class="category-badge">Operations</span>
+                        </div>
+                        <div class="card-info">
+                            <h3 class="card-title">Quarterly Business Review (QBR)</h3>
+                            <p class="card-desc">Review sales performance, customer success metrics, churn analysis,
+                                operational milestones, and upcoming targets.</p>
+                        </div>
+                        <div class="card-footer">
+                            <div class="file-type">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                    <polyline points="14 2 14 8 20 8"></polyline>
+                                    <line x1="16" y1="13" x2="8" y2="13"></line>
+                                    <line x1="16" y1="17" x2="8" y2="17"></line>
+                                    <polyline points="10 9 9 9 8 9"></polyline>
+                                </svg>
+                                <span>PDF Report</span>
+                            </div>
+                            <button class="btn-preview"
+                                onclick="window.location.href='../preview-template-1/preview-template-1.html'">Preview
+                                Template</button>
+                        </div>
+                    </div>
+
+                    <div class="template-card" data-category="Finance" data-format="PPT Deck" data-reveal="true"
+                        style="--reveal-delay: 0.1s">
+                        <div class="card-image-wrap">
+                            <img src="/assets/images/templates/templates/template-03.png" alt="M&A Investment Pitchbook"
+                                class="card-img">
+                            <span class="category-badge">Finance</span>
+                        </div>
+                        <div class="card-info">
+                            <h3 class="card-title">M&A Investment Pitchbook</h3>
+                            <p class="card-desc">Outline strategic rationale, transaction structures, synergy estimates,
+                                valuation, and post-merger integration paths.</p>
+                        </div>
+                        <div class="card-footer">
+                            <div class="file-type">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <rect x="2" y="2" width="20" height="14" rx="2" ry="2"></rect>
+                                    <line x1="12" y1="22" x2="12" y2="16"></line>
+                                    <line x1="8" y1="22" x2="16" y2="22"></line>
+                                    <line x1="12" y1="10" x2="8" y2="10"></line>
+                                    <line x1="12" y1="6" x2="16" y2="6"></line>
+                                </svg>
+                                <span>PPT Deck</span>
+                            </div>
+                            <button class="btn-preview"
+                                onclick="window.location.href='../preview-template-1/preview-template-1.html'">Preview
+                                Template</button>
+                        </div>
+                    </div>
+
+                    <div class="template-card" data-category="Research" data-format="PDF Report" data-reveal="true"
+                        style="--reveal-delay: 0.2s">
+                        <div class="card-image-wrap">
+                            <img src="/assets/images/templates/templates/template-05.png" alt="Consumer Survey Insights"
+                                class="card-img">
+                            <span class="category-badge">Research</span>
+                        </div>
+                        <div class="card-info">
+                            <h3 class="card-title">Consumer Survey Insights</h3>
+                            <p class="card-desc">Summarize focus group data, brand health index rankings, NPS tracking,
+                                demographic trends, and buyer persona updates.</p>
+                        </div>
+                        <div class="card-footer">
+                            <div class="file-type">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                    <polyline points="14 2 14 8 20 8"></polyline>
+                                    <line x1="16" y1="13" x2="8" y2="13"></line>
+                                    <line x1="16" y1="17" x2="8" y2="17"></line>
+                                    <polyline points="10 9 9 9 8 9"></polyline>
+                                </svg>
+                                <span>PDF Report</span>
+                            </div>
+                            <button class="btn-preview"
+                                onclick="window.location.href='../preview-template-1/preview-template-1.html'">Preview
+                                Template</button>
+                        </div>
+                    </div>
+
+                    <div class="template-card" data-category="Operations" data-format="PPT Deck" data-reveal="true"
+                        style="--reveal-delay: 0.3s">
+                        <div class="card-image-wrap">
+                            <img src="/assets/images/templates/templates/template-07.png"
+                                alt="Supply Chain Risk Assessment" class="card-img">
+                            <span class="category-badge">Operations</span>
+                        </div>
+                        <div class="card-info">
+                            <h3 class="card-title">Supply Chain Risk Assessment</h3>
+                            <p class="card-desc">Analyze vendor concentration risks, logistics bottlenecks, tariff
+                                impacts, safety stock inventories, and resilience strategies.</p>
+                        </div>
+                        <div class="card-footer">
+                            <div class="file-type">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <rect x="2" y="2" width="20" height="14" rx="2" ry="2"></rect>
+                                    <line x1="12" y1="22" x2="12" y2="16"></line>
+                                    <line x1="8" y1="22" x2="16" y2="22"></line>
+                                    <line x1="12" y1="10" x2="8" y2="10"></line>
+                                    <line x1="12" y1="6" x2="16" y2="6"></line>
+                                </svg>
+                                <span>PPT Deck</span>
+                            </div>
+                            <button class="btn-preview"
+                                onclick="window.location.href='../preview-template-1/preview-template-1.html'">Preview
+                                Template</button>
+                        </div>
+                    </div>
+
+                    <div class="template-card" data-category="Finance" data-format="PDF Report" data-reveal="true"
+                        style="--reveal-delay: 0.1s">
+                        <div class="card-image-wrap">
+                            <img src="/assets/images/templates/templates/template-09.png"
+                                alt="Project Finance Model Memo" class="card-img">
+                            <span class="category-badge">Finance</span>
+                        </div>
+                        <div class="card-info">
+                            <h3 class="card-title">Project Finance Model Memo</h3>
+                            <p class="card-desc">Detail infrastructure and project finance cash flows, concessions
+                                agreements, project IRR, and debt sizing summaries.</p>
+                        </div>
+                        <div class="card-footer">
+                            <div class="file-type">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                    <polyline points="14 2 14 8 20 8"></polyline>
+                                    <line x1="16" y1="13" x2="8" y2="13"></line>
+                                    <line x1="16" y1="17" x2="8" y2="17"></line>
+                                    <polyline points="10 9 9 9 8 9"></polyline>
+                                </svg>
+                                <span>PDF Report</span>
+                            </div>
+                            <button class="btn-preview"
+                                onclick="window.location.href='../preview-template-1/preview-template-1.html'">Preview
+                                Template</button>
+                        </div>
+                    </div>
+
+                    <div class="template-card" data-category="Finance" data-format="PDF Report" data-reveal="true"
+                        style="--reveal-delay: 0.2s">
+                        <div class="card-image-wrap">
+                            <img src="/assets/images/templates/templates/template-02.png"
+                                alt="Venture Capital Investment Memo" class="card-img">
+                            <span class="category-badge">Finance</span>
+                        </div>
+                        <div class="card-info">
+                            <h3 class="card-title">Venture Capital Investment Memo</h3>
+                            <p class="card-desc">Recommend early-stage investments with cap table metrics, founder
+                                backgrounds, product moat reviews, and exit modeling.</p>
+                        </div>
+                        <div class="card-footer">
+                            <div class="file-type">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                    <polyline points="14 2 14 8 20 8"></polyline>
+                                    <line x1="16" y1="13" x2="8" y2="13"></line>
+                                    <line x1="16" y1="17" x2="8" y2="17"></line>
+                                    <polyline points="10 9 9 9 8 9"></polyline>
+                                </svg>
+                                <span>PDF Report</span>
+                            </div>
+                            <button class="btn-preview"
+                                onclick="window.location.href='../preview-template-1/preview-template-1.html'">Preview
+                                Template</button>
+                        </div>
+                    </div>
+
+                    <div class="template-card" data-category="Consulting" data-format="PPT Deck" data-reveal="true"
+                        style="--reveal-delay: 0.3s">
+                        <div class="card-image-wrap">
+                            <img src="/assets/images/templates/templates/template-04.png"
+                                alt="Change Management Framework" class="card-img">
+                            <span class="category-badge">Consulting</span>
+                        </div>
+                        <div class="card-info">
+                            <h3 class="card-title">Change Management Framework</h3>
+                            <p class="card-desc">Design organizational realignment playbooks covering stakeholder maps,
+                                communication matrixes, and training models.</p>
+                        </div>
+                        <div class="card-footer">
+                            <div class="file-type">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <rect x="2" y="2" width="20" height="14" rx="2" ry="2"></rect>
+                                    <line x1="12" y1="22" x2="12" y2="16"></line>
+                                    <line x1="8" y1="22" x2="16" y2="22"></line>
+                                    <line x1="12" y1="10" x2="8" y2="10"></line>
+                                    <line x1="12" y1="6" x2="16" y2="6"></line>
+                                </svg>
+                                <span>PPT Deck</span>
+                            </div>
+                            <button class="btn-preview"
+                                onclick="window.location.href='../preview-template-1/preview-template-1.html'">Preview
+                                Template</button>
+                        </div>
+                    </div>
+
+                    <div class="template-card" data-category="Research" data-format="PDF Report" data-reveal="true"
+                        style="--reveal-delay: 0.1s">
+                        <div class="card-image-wrap">
+                            <img src="/assets/images/templates/templates/template-06.png"
+                                alt="Industry Deep-Dive Report" class="card-img">
+                            <span class="category-badge">Research</span>
+                        </div>
+                        <div class="card-info">
+                            <h3 class="card-title">Industry Deep-Dive Report</h3>
+                            <p class="card-desc">Synthesize supply-demand imbalances, key technological disruptions,
+                                unit economics profiles, and regulatory outlooks.</p>
+                        </div>
+                        <div class="card-footer">
+                            <div class="file-type">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                    <polyline points="14 2 14 8 20 8"></polyline>
+                                    <line x1="16" y1="13" x2="8" y2="13"></line>
+                                    <line x1="16" y1="17" x2="8" y2="17"></line>
+                                    <polyline points="10 9 9 9 8 9"></polyline>
+                                </svg>
+                                <span>PDF Report</span>
+                            </div>
+                            <button class="btn-preview"
+                                onclick="window.location.href='../preview-template-1/preview-template-1.html'">Preview
+                                Template</button>
+                        </div>
+                    </div>
+
+                    <div class="template-card" data-category="Compliance" data-format="PDF Report" data-reveal="true"
+                        style="--reveal-delay: 0.2s">
+                        <div class="card-image-wrap">
+                            <img src="/assets/images/templates/templates/template-08.png"
+                                alt="Anti-Money Laundering Policy" class="card-img">
+                            <span class="category-badge">Compliance</span>
+                        </div>
+                        <div class="card-info">
+                            <h3 class="card-title">Anti-Money Laundering Policy</h3>
+                            <p class="card-desc">Establish firm-wide KYC/AML programs, transaction monitoring protocols,
+                                sanction screening, and reporting pipelines.</p>
+                        </div>
+                        <div class="card-footer">
+                            <div class="file-type">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                    <polyline points="14 2 14 8 20 8"></polyline>
+                                    <line x1="16" y1="13" x2="8" y2="13"></line>
+                                    <line x1="16" y1="17" x2="8" y2="17"></line>
+                                    <polyline points="10 9 9 9 8 9"></polyline>
+                                </svg>
+                                <span>PDF Report</span>
+                            </div>
+                            <button class="btn-preview"
+                                onclick="window.location.href='../preview-template-1/preview-template-1.html'">Preview
+                                Template</button>
+                        </div>
+                    </div>
+
+                    <div class="template-card" data-category="Operations" data-format="PPT Deck" data-reveal="true"
+                        style="--reveal-delay: 0.3s">
+                        <div class="card-image-wrap">
+                            <img src="/assets/images/templates/templates/template-01.png"
+                                alt="Post-Merger Integration Plan" class="card-img">
+                            <span class="category-badge">Operations</span>
+                        </div>
+                        <div class="card-info">
+                            <h3 class="card-title">Post-Merger Integration Plan</h3>
+                            <p class="card-desc">Create standard templates for merging systems, organizational
+                                structures, employee benefits, and billing processes.</p>
+                        </div>
+                        <div class="card-footer">
+                            <div class="file-type">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <rect x="2" y="2" width="20" height="14" rx="2" ry="2"></rect>
+                                    <line x1="12" y1="22" x2="12" y2="16"></line>
+                                    <line x1="8" y1="22" x2="16" y2="22"></line>
+                                    <line x1="12" y1="10" x2="8" y2="10"></line>
+                                    <line x1="12" y1="6" x2="16" y2="6"></line>
+                                </svg>
+                                <span>PPT Deck</span>
+                            </div>
+                            <button class="btn-preview"
+                                onclick="window.location.href='../preview-template-1/preview-template-1.html'">Preview
+                                Template</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pagination-wrapper" data-reveal="true" style="--reveal-delay: 0.2s">
+                    <div class="pagination">
+                        <button class="page-btn page-nav-btn" id="btn-first" aria-label="First page">
+                            <img src="/assets/images/templates/templates/arrow-left-2.svg" alt="First"
+                                class="page-arrow">
+                        </button>
+                        <button class="page-btn page-nav-btn" id="btn-prev" aria-label="Previous page">
+                            <img src="/assets/images/templates/templates/arrow-left-1.svg" alt="Previous"
+                                class="page-arrow">
+                        </button>
+                        <div class="page-numbers" id="page-numbers-container"
+                            style="display: flex; gap: 12px; align-items: center;">
+                            <!-- Page numbers will be rendered dynamically -->
+                        </div>
+                        <button class="page-btn page-nav-btn" id="btn-next" aria-label="Next page">
+                            <img src="/assets/images/templates/templates/arrow-right-1.svg" alt="Next"
+                                class="page-arrow">
+                        </button>
+                        <button class="page-btn page-nav-btn" id="btn-last" aria-label="Last page">
+                            <img src="/assets/images/templates/templates/arrow-right-2.svg" alt="Last"
+                                class="page-arrow">
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta-section">
+            <div class="cta-wrapper">
+                <div class="cta-container">
+                    <div class="cta-content">
+                        <h2 class="cta-title" data-reveal="true" style="--reveal-delay: 0.1s">Ready to deploy Associum
+                            across your firm?</h2>
+                        <p class="cta-desc" data-reveal="true" style="--reveal-delay: 0.2s">Tell us your team size,
+                            deployment requirements, and security constraints. We respond within one business day.</p>
+                    </div>
+                    <div class="cta-buttons" data-reveal="true" style="--reveal-delay: 0.3s">
+                        <button class="btn-full-security">Talk to our Enterprise Team</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer placeholder (loaded dynamically) -->
+    <footer id="footer-placeholder"></footer>
+
+    <!-- Component Loader Script -->
+    
+    
+
+</Layout>
+
+<style>
+/* Templates Page CSS */
+
+.templates-main {
+    background-color: #0A111E;
+    width: 100%;
+    overflow: hidden;
+}
+
+/* Hero Section */
+.templates-hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-self: stretch;
+    min-height: 600px;
+    position: relative;
+    padding: 170px 24px 80px 24px;
+    background: url('/assets/images/templates/hero/hero.png') no-repeat center center / cover;
+    z-index: 1;
+}
+
+.hero-container {
+    max-width: 800px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 24px;
+}
+
+.hero-title {
+    margin: 0;
+    line-height: 119%;
+    text-align: center;
+}
+
+.title-professional {
+    color: #F9FAFB;
+    font-family: 'Lato', sans-serif;
+    font-size: 60px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 119%;
+    display: block;
+    /* Stack or wrap beautifully */
+}
+
+@media (min-width: 769px) {
+    .title-professional {
+        display: inline;
+    }
+}
+
+.title-built-for {
+    color: #08C186;
+    font-family: 'Lato', sans-serif;
+    font-size: 60px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 119%;
+}
+
+.hero-subtitle {
+    color: #B7C3D2;
+    text-align: center;
+    font-family: 'Inter', sans-serif;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 28px;
+    max-width: 672px;
+    margin: 0;
+}
+
+/* Browse Templates Section */
+.browse-section {
+    background: linear-gradient(129deg, #F9FAFB 2%, #FFFFFF 100%);
+    padding: 80px 100px 100px 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    box-sizing: border-box;
+    z-index: 2;
+    position: relative;
+}
+
+.browse-container {
+    max-width: 1240px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.browse-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    flex-wrap: wrap;
+    gap: 24px;
+    position: relative;
+    z-index: 100;
+}
+
+.header-text {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.browse-title {
+    color: #0F0F10;
+    font-family: 'Inter', sans-serif;
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 140%;
+    margin: 0;
+}
+
+.browse-subtitle {
+    color: #888E9E;
+    font-family: 'Inter', sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 140%;
+    margin: 0;
+}
+
+.header-controls {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    position: relative;
+    z-index: 100;
+}
+
+.control-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border: 1px solid #CCD2DD;
+    background: #FFFFFF;
+    padding: 10px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    color: #555F75;
+    font-family: 'Inter', sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    transition: all 0.2s ease;
+}
+
+.control-btn:hover {
+    background: #F8FAF9;
+    border-color: #0F8560;
+    color: #0F8560;
+}
+
+.search-box {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border: 1px solid #CCD2DD;
+    background: #FFFFFF;
+    padding: 10px 16px;
+    border-radius: 10px;
+    width: 244px;
+    color: #555F75;
+    box-sizing: border-box;
+    transition: all 0.2s ease;
+}
+
+.search-box:focus-within {
+    border-color: #0F8560;
+    box-shadow: 0 0 0 2px rgba(15, 133, 96, 0.1);
+}
+
+.search-input {
+    border: none;
+    outline: none;
+    width: 100%;
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    color: #0F0F10;
+}
+
+.search-input::placeholder {
+    color: #888E9E;
+}
+
+.btn-clear-search {
+    background: none;
+    border: none;
+    padding: 2px;
+    cursor: pointer;
+    color: #888E9E;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.btn-clear-search:hover {
+    background-color: #EAEDF2;
+    color: #555F75;
+}
+
+.btn-clear-search.show {
+    display: flex;
+}
+
+/* Templates Grid */
+.templates-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    width: 100%;
+}
+
+.template-card {
+    background: #FDFDFD;
+    border: 1px solid #EAEDF2;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.template-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px rgba(10, 17, 30, 0.05);
+    border-color: #CCD2DD;
+}
+
+.card-image-wrap {
+    position: relative;
+    height: 240px;
+    width: 100%;
+    overflow: hidden;
+    background: #EAEDF2;
+}
+
+.card-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.template-card:hover .card-img {
+    transform: scale(1.03);
+}
+
+.category-badge {
+    position: absolute;
+    left: 20px;
+    bottom: 20px;
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(4px);
+    color: #FFFFFF;
+    font-family: 'Lato', sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    padding: 6px 12px;
+    border-radius: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.card-info {
+    padding: 20px 20px 12px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    flex-grow: 1;
+}
+
+.card-title {
+    color: #0F0F10;
+    font-family: 'Inter', sans-serif;
+    font-size: 22px;
+    font-weight: 600;
+    line-height: normal;
+    margin: 0;
+    letter-spacing: -0.44px;
+}
+
+.card-desc {
+    color: #0F0F10;
+    opacity: 0.6;
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    margin: 0;
+}
+
+.card-footer {
+    padding: 12px 20px 20px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #EAEDF2;
+    gap: 12px;
+}
+
+.file-type {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #555F75;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.btn-preview {
+    position: relative;
+    border: 1px solid #37B793;
+    background: transparent;
+    color: #37B793;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 8px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    z-index: 1;
+    overflow: hidden;
+    transition: color 0.3s ease, border-color 0.3s ease;
+}
+
+.btn-preview::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(137.26deg, #059466 4.0412%, #09523b 103.36%);
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.btn-preview:hover {
+    color: #FFFFFF;
+    border-color: transparent;
+}
+
+.btn-preview:hover::before {
+    opacity: 1;
+}
+
+/* Pagination */
+.pagination-wrapper {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.pagination {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.page-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #FBFBFB;
+    border: 1px solid #EAEDF2;
+    color: #555F75;
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    min-width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    padding: 0 6px;
+}
+
+.page-btn:hover {
+    background: #EAEDF2;
+    border-color: #CCD2DD;
+    color: #0F0F10;
+}
+
+.page-btn.active {
+    background: linear-gradient(91.6deg, #05704E 4%, #09573E 103%);
+    border-color: #0F8560;
+    color: #FFFFFF;
+    font-weight: 600;
+}
+
+.page-btn.active:hover {
+    background: linear-gradient(91.6deg, #05704E 4%, #09573E 103%);
+    color: #FFFFFF;
+}
+
+.page-btn.disabled {
+    opacity: 0.4;
+    pointer-events: none;
+    cursor: not-allowed;
+}
+
+.page-dots {
+    color: #888E9E;
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    padding: 0 4px;
+}
+
+.page-arrow {
+    width: auto;
+    height: 18px;
+    display: block;
+    transition: filter 0.2s ease, opacity 0.2s ease;
+    opacity: 0.8;
+}
+
+.page-btn:hover .page-arrow {
+    filter: brightness(0.4) contrast(1.5);
+    opacity: 1;
+}
+
+/* CTA Section */
+.cta-section {
+    display: flex;
+    justify-content: center;
+    background: #FFF;
+}
+
+.cta-wrapper {
+    display: flex;
+    width: 100%;
+    max-width: 1440px;
+    padding: 50px 100px;
+    flex-direction: column;
+    box-sizing: border-box;
+}
+
+.cta-container {
+    display: flex;
+    padding: 50px 24px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+    align-self: stretch;
+    border-radius: 12px;
+    background: linear-gradient(163.88deg, #2D323A 3.69%, #0A111E 72.96%);
+    box-sizing: border-box;
+}
+
+.cta-content {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    max-width: 872px;
+    align-items: center;
+}
+
+.cta-title {
+    margin: 0;
+    color: #FFF;
+    text-align: center;
+    font-family: 'Lato', sans-serif;
+    font-size: 48px;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: -0.2px;
+}
+
+.cta-desc {
+    margin: 0;
+    color: #CCD2DD;
+    text-align: center;
+    font-family: 'Inter', sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 28px;
+    opacity: 0.8;
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 16px;
+    margin-top: 26px;
+}
+
+.btn-full-security {
+    display: inline-flex;
+    height: 48px;
+    padding: 0 32px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    border: 1px solid #0F8560;
+    background: linear-gradient(99.08deg, #05704E 4.04%, #09573E 103.36%);
+    color: #FFF;
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: opacity 0.2s;
+    box-sizing: border-box;
+}
+
+.btn-full-security:hover {
+    opacity: 0.9;
+}
+
+/* Filter Popup */
+.filter-popup {
+    display: none;
+    position: absolute;
+    top: calc(100% + 8px);
+    left: 0;
+    width: 320px;
+    background: #FFFFFF;
+    border: 1px solid #EAEDF2;
+    border-radius: 10px;
+    box-shadow: 0px 8px 30px rgba(10, 17, 30, 0.1);
+    flex-direction: column;
+    z-index: 100;
+}
+
+.filter-popup.show {
+    display: flex;
+}
+
+.filter-popup-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    border-bottom: 1px solid #EAEDF2;
+}
+
+.filter-popup-header h3 {
+    color: #0F0F10;
+    font-family: 'Inter', sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    margin: 0;
+}
+
+.btn-close-filter {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.2s ease;
+}
+
+.btn-close-filter:hover {
+    opacity: 0.6;
+}
+
+.filter-popup-body {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    gap: 24px;
+}
+
+.filter-group {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.filter-group h4 {
+    color: #0F0F10;
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    margin: 0;
+}
+
+.filter-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.filter-option {
+    display: flex;
+    height: 34px;
+    padding: 0 10px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    border: 1px solid #CCD2DD;
+    background: #FFFFFF;
+    color: #323741;
+    font-family: 'Lato', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.filter-option:hover {
+    background: #F8FAF9;
+    border-color: #0F8560;
+}
+
+.filter-option.active {
+    background: #E6F3EF;
+    border-color: #0F8560;
+    color: #0F8560;
+    font-weight: 600;
+}
+
+.filter-popup-footer {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 20px;
+    gap: 20px;
+    border-top: 1px solid #EAEDF2;
+    background: #FFFFFF;
+    border-radius: 0 0 10px 10px;
+}
+
+.btn-filter-reset {
+    background: transparent;
+    border: 1px solid #056F4D;
+    color: #056F4D;
+    padding: 6px 17px;
+    border-radius: 8px;
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn-filter-reset:hover {
+    background: #E6F3EF;
+}
+
+.btn-filter-apply {
+    display: flex;
+    height: 36px;
+    padding: 0 30px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    border: 1px solid #0F8560;
+    background: linear-gradient(94.64deg, #05704E 4.04%, #09573E 103.36%);
+    color: #FFF;
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+}
+
+.btn-filter-apply:hover {
+    opacity: 0.9;
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+    .templates-hero {
+        padding-top: 150px;
+        min-height: 550px;
+    }
+
+    .browse-section {
+        padding: 60px 40px 80px 40px;
+    }
+
+    .templates-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .browse-title {
+        font-size: 32px;
+    }
+
+    .cta-wrapper {
+        padding: 40px 40px;
+    }
+
+    .cta-title {
+        font-size: 36px;
+    }
+}
+
+@media (max-width: 768px) {
+    .templates-hero {
+        padding-top: 130px;
+        min-height: 500px;
+        padding-bottom: 60px;
+    }
+
+    .title-professional,
+    .title-built-for {
+        font-size: 40px;
+    }
+
+    .hero-subtitle {
+        font-size: 16px;
+        line-height: 24px;
+    }
+
+    .browse-section {
+        padding: 50px 24px 60px 24px;
+    }
+
+    .browse-title {
+        font-size: 28px;
+    }
+
+    .browse-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .header-controls {
+        width: 100%;
+        /* justify-content: space-between; */
+    }
+
+    .search-box {
+        /* flex-grow: 1; */
+        width: auto;
+    }
+
+    .cta-wrapper {
+        padding: 30px 24px;
+    }
+
+    .cta-title {
+        font-size: 34px;
+        max-width: 100%;
+    }
+
+    .cta-desc {
+        font-size: 18px;
+        line-height: 24px;
+        max-width: 100%;
+    }
+
+    .cta-buttons {
+        width: 100%;
+        max-width: 300px;
+        flex-direction: column;
+        margin-top: 16px;
+    }
+
+    .btn-full-security {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .templates-hero {
+        padding-top: 110px;
+        min-height: 450px;
+        padding-bottom: 50px;
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    .title-professional,
+    .title-built-for {
+        font-size: 32px;
+    }
+
+    .hero-subtitle {
+        font-size: 15px;
+        line-height: 22px;
+    }
+
+    .browse-section {
+        padding: 40px 16px 50px 16px;
+    }
+
+    .browse-title {
+        font-size: 24px;
+    }
+
+    .templates-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .header-controls {
+        flex-direction: row;
+        align-items: stretch;
+        width: 100%;
+    }
+
+    .control-btn {
+        justify-content: center;
+    }
+
+    .search-box {
+        width: 100%;
+    }
+
+    .page-btn {
+        min-width: 34px;
+        height: 34px;
+        font-size: 14px;
+    }
+
+    .pagination {
+        gap: 6px;
+    }
+
+    .page-arrow {
+        width: auto;
+        height: 16px;
+    }
+
+    .cta-wrapper {
+        padding: 20px 16px;
+    }
+
+    .cta-container {
+        padding: 40px 16px;
+    }
+
+    .cta-title {
+        font-size: 28px;
+    }
+
+    .filter-popup {
+        width: 100%;
+        left: 0;
+    }
+
+    .filter-popup-footer {
+        justify-content: space-between;
+    }
+
+    .btn-filter-reset,
+    .btn-filter-apply {
+        flex: 1;
+        text-align: center;
+    }
+}
+</style>
+
+<script is:inline>
+// Templates page logic (Static DOM based)
+
+// Pagination State
+let currentPage = 1;
+const itemsPerPage = 9;
+
+// DOM Elements
+let gridContainer;
+let pageNumbersContainer;
+let btnFirst;
+let btnPrev;
+let btnNext;
+let btnLast;
+let searchInput;
+let btnClearSearch;
+
+// Filter Popup Elements
+let btnFiltersToggle;
+let filterPopup;
+let btnCloseFilter;
+let filterOptions;
+let btnFilterReset;
+let btnFilterApply;
+
+// Filter State
+let activeCategories = [];
+let activeFormats = [];
+
+// Static cards from the DOM
+let allCards = [];
+let filteredCards = [];
+
+// Initialize Page
+document.addEventListener('DOMContentLoaded', () => {
+    gridContainer = document.querySelector('.templates-grid');
+    pageNumbersContainer = document.getElementById('page-numbers-container');
+    btnFirst = document.getElementById('btn-first');
+    btnPrev = document.getElementById('btn-prev');
+    btnNext = document.getElementById('btn-next');
+    btnLast = document.getElementById('btn-last');
+    searchInput = document.querySelector('.search-input');
+    btnClearSearch = document.getElementById('btn-clear-search');
+
+    btnFiltersToggle = document.getElementById('btn-filters-toggle');
+    filterPopup = document.getElementById('filter-popup');
+    btnCloseFilter = document.getElementById('btn-close-filter');
+    filterOptions = document.querySelectorAll('.filter-option');
+    btnFilterReset = document.getElementById('btn-filter-reset');
+    btnFilterApply = document.getElementById('btn-filter-apply');
+
+    // Load static cards from HTML DOM
+    allCards = Array.from(document.querySelectorAll('.template-card'));
+
+    // Register event listeners
+    if (btnFirst) btnFirst.addEventListener('click', () => changePage(1));
+    if (btnPrev) btnPrev.addEventListener('click', () => changePage(currentPage - 1));
+    if (btnNext) btnNext.addEventListener('click', () => changePage(currentPage + 1));
+    if (btnLast) btnLast.addEventListener('click', () => changePage(getTotalPages()));
+
+    if (searchInput) {
+        searchInput.addEventListener('input', (e) => {
+            if (btnClearSearch) {
+                if (e.target.value.trim().length > 0) {
+                    btnClearSearch.classList.add('show');
+                } else {
+                    btnClearSearch.classList.remove('show');
+                }
+            }
+            applyFilters();
+        });
+    }
+
+    if (btnClearSearch) {
+        btnClearSearch.addEventListener('click', () => {
+            if (searchInput) {
+                searchInput.value = '';
+                btnClearSearch.classList.remove('show');
+                applyFilters();
+                searchInput.focus();
+            }
+        });
+    }
+
+    // Filter Popup Toggle
+    if (btnFiltersToggle && filterPopup) {
+        btnFiltersToggle.addEventListener('click', (e) => {
+            e.stopPropagation();
+            filterPopup.classList.toggle('show');
+        });
+    }
+
+    // Close Filter Popup
+    if (btnCloseFilter) {
+        btnCloseFilter.addEventListener('click', () => {
+            filterPopup.classList.remove('show');
+        });
+    }
+
+    // Close when clicking outside
+    document.addEventListener('click', (e) => {
+        if (filterPopup && filterPopup.classList.contains('show') && !filterPopup.contains(e.target) && !btnFiltersToggle.contains(e.target)) {
+            filterPopup.classList.remove('show');
+        }
+    });
+
+    // Toggle filter options
+    if (filterOptions) {
+        filterOptions.forEach(option => {
+            option.addEventListener('click', () => {
+                option.classList.toggle('active');
+            });
+        });
+    }
+
+    // Reset Filters
+    if (btnFilterReset) {
+        btnFilterReset.addEventListener('click', () => {
+            filterOptions.forEach(opt => opt.classList.remove('active'));
+            if (searchInput) searchInput.value = '';
+            activeCategories = [];
+            activeFormats = [];
+            applyFilters();
+        });
+    }
+
+    // Apply Filters
+    if (btnFilterApply) {
+        btnFilterApply.addEventListener('click', () => {
+            activeCategories = Array.from(document.querySelectorAll('.filter-option[data-category].active')).map(el => el.dataset.category);
+            activeFormats = Array.from(document.querySelectorAll('.filter-option[data-format].active')).map(el => el.dataset.format);
+            applyFilters();
+            filterPopup.classList.remove('show');
+        });
+    }
+
+    // Initial render
+    applyFilters();
+});
+
+// Calculate total pages
+function getTotalPages() {
+    const pages = Math.ceil(filteredCards.length / itemsPerPage);
+    return pages > 0 ? pages : 1;
+}
+
+// Change Page function
+function changePage(page) {
+    const totalPages = getTotalPages();
+    if (page < 1 || page > totalPages) return;
+    currentPage = page;
+    render();
+    
+    // Smooth scroll back to browse title when changing page
+    const browseSection = document.querySelector('.browse-section');
+    if (browseSection) {
+        browseSection.scrollIntoView({ behavior: 'smooth' });
+    }
+}
+
+// Filter Templates by search input and active filters
+function applyFilters() {
+    const query = searchInput ? searchInput.value.toLowerCase().trim() : '';
+    
+    filteredCards = allCards.filter(card => {
+        const title = card.querySelector('.card-title').textContent.toLowerCase();
+        const desc = card.querySelector('.card-desc').textContent.toLowerCase();
+        const category = card.dataset.category || '';
+        const format = card.dataset.format || '';
+
+        // Search query match
+        const matchesQuery = !query || 
+            title.includes(query) || 
+            desc.includes(query) || 
+            category.toLowerCase().includes(query);
+            
+        // Category match
+        const matchesCategory = activeCategories.length === 0 || activeCategories.includes(category);
+        
+        // Format match
+        let matchesFormat = activeFormats.length === 0;
+        if (activeFormats.length > 0) {
+            if (activeFormats.includes('PDF') && format.includes('PDF')) matchesFormat = true;
+            if (activeFormats.includes('PPTX') && format.includes('PPT')) matchesFormat = true;
+        }
+        
+        return matchesQuery && matchesCategory && matchesFormat;
+    });
+    
+    currentPage = 1; // Reset to page 1 on filter/search
+    render();
+}
+
+// Render visible cards based on filter and pagination
+function render() {
+    // Hide all cards first
+    allCards.forEach(card => {
+        card.style.display = 'none';
+        card.classList.remove('revealed');
+    });
+
+    // Handle "No Results" message
+    let noResultsEl = document.getElementById('no-templates-found');
+    if (filteredCards.length === 0) {
+        if (!noResultsEl) {
+            noResultsEl = document.createElement('div');
+            noResultsEl.id = 'no-templates-found';
+            noResultsEl.className = 'no-results';
+            noResultsEl.style.gridColumn = '1 / -1';
+            noResultsEl.style.textAlign = 'center';
+            noResultsEl.style.padding = '60px 20px';
+            noResultsEl.style.color = '#888E9E';
+            noResultsEl.style.fontFamily = "'Inter', sans-serif";
+            noResultsEl.innerHTML = `
+                <p style="font-size: 20px; margin: 0 0 10px 0;">No templates found</p>
+                <p style="font-size: 16px; margin: 0;">Try adjusting your keywords or filters.</p>
+            `;
+            gridContainer.appendChild(noResultsEl);
+        } else {
+            noResultsEl.style.display = 'block';
+        }
+    } else {
+        if (noResultsEl) {
+            noResultsEl.style.display = 'none';
+        }
+    }
+
+    // Show cards for the current page
+    const startIndex = (currentPage - 1) * itemsPerPage;
+    const endIndex = startIndex + itemsPerPage;
+    const pageCards = filteredCards.slice(startIndex, endIndex);
+
+    pageCards.forEach((card, index) => {
+        card.style.display = 'flex';
+        // Add staggered delay for smooth standard reveal
+        card.style.setProperty('--reveal-delay', `${0.1 + (index % 3) * 0.1}s`);
+    });
+
+    renderPagination();
+
+    // Re-initialize scroll reveal so it smoothly animates newly visible items
+    setTimeout(() => {
+        if (typeof window.initScrollReveal === 'function') {
+            window.initScrollReveal();
+        }
+    }, 50);
+}
+
+// Render and bind pagination controls
+function renderPagination() {
+    if (!pageNumbersContainer) return;
+
+    pageNumbersContainer.innerHTML = '';
+    const totalPages = getTotalPages();
+
+    // Generate numeric buttons
+    for (let i = 1; i <= totalPages; i++) {
+        const pageBtn = document.createElement('button');
+        pageBtn.className = `page-btn${i === currentPage ? ' active' : ''}`;
+        pageBtn.textContent = i.toString().padStart(2, '0');
+        pageBtn.addEventListener('click', () => changePage(i));
+        pageNumbersContainer.appendChild(pageBtn);
+    }
+
+    // Toggle navigation button classes based on current page
+    if (currentPage === 1) {
+        if (btnFirst) btnFirst.classList.add('disabled');
+        if (btnPrev) btnPrev.classList.add('disabled');
+    } else {
+        if (btnFirst) btnFirst.classList.remove('disabled');
+        if (btnPrev) btnPrev.classList.remove('disabled');
+    }
+
+    if (currentPage === totalPages) {
+        if (btnNext) btnNext.classList.add('disabled');
+        if (btnLast) btnLast.classList.add('disabled');
+    } else {
+        if (btnNext) btnNext.classList.remove('disabled');
+        if (btnLast) btnLast.classList.remove('disabled');
+    }
+}
+
+</script>

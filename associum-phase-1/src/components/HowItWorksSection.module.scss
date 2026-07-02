@@ -1,0 +1,377 @@
+@use '../styles/variables' as *;
+@use '../styles/mixins' as *;
+
+.section {
+  padding: 80px 0;
+  background: #ffffff;
+}
+
+.cardContainer {
+  margin: 0 auto;
+  padding: 60px 45px;
+  background: #FAFAFA;
+  border: 1px solid #EAEDF2;
+  border-radius: 12px;
+  width: min(100% - 24px, 1292px);
+}
+
+.layout {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 30px;
+}
+
+.copy {
+  flex: 1;
+  min-width: 320px;
+  max-width: 600px;
+  display: grid;
+  gap: 24px;
+  color: #151515;
+}
+
+.copyHeading {
+  display: grid;
+  gap: 14px;
+}
+
+.eyebrowRow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  align-self: start;
+}
+
+.eyebrowLine {
+  width: 24px;
+  height: 1px;
+  background: #08c186;
+  flex: 0 0 24px;
+}
+
+.eyebrow {
+  margin: 0;
+  color: #08C186;
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 22px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  opacity: 1;
+}
+
+.copy h2 {
+  margin: 0;
+  color: #151515;
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.2px;
+}
+
+.description {
+  margin: 0;
+  width: 100%;
+  max-width: 528px;
+  color: #888E9E;
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.4;
+}
+
+.steps {
+  position: relative;
+  flex: 1;
+  min-width: 320px;
+  max-width: 590px;
+  display: grid;
+  grid-template-columns: 56px minmax(0, 1fr);
+  gap: 30px;
+  align-items: start;
+}
+
+.rail {
+  position: relative;
+  overflow: hidden;
+  width: 56px;
+  height: 100%;
+  padding: 0;
+  border-radius: 40px;
+  background: #f0f2f5;
+}
+
+.railActiveTrack {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(180deg, #15966a 0%, #127f5b 100%);
+  border-radius: 40px;
+  box-shadow: 0 0 28px rgba(8, 193, 134, 0.12);
+  transition: height 600ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.railDot {
+  position: absolute;
+  left: 50%;
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  transform: translateX(-50%);
+  border-radius: 42px;
+  transition: opacity 220ms ease, transform 220ms ease;
+  z-index: 10;
+}
+
+/* Removed hardcoded railDot classes since they are now dynamic inline */
+
+.railDot::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: #fff;
+  border: 1px solid #EAEDF2;
+}
+
+.railDotActive::before {
+  background: #fff;
+  border: 2px solid #08c186;
+  box-shadow: 0 4px 12px rgba(8, 193, 134, 0.15);
+}
+
+.railDotMuted {
+  opacity: 0.4;
+}
+
+.railDotActive {
+  opacity: 1;
+}
+
+.railDot span {
+  position: relative;
+  z-index: 1;
+  display: block;
+  color: #0f0f10;
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: -0.44px;
+}
+
+.stepList {
+  position: relative;
+  display: grid;
+  gap: 60px;
+}
+
+.stepItem {
+  display: grid;
+  gap: 16px;
+  color: #151515;
+}
+
+.stepLabel {
+  margin: 0;
+  color: #0f8560;
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: -0.32px;
+  text-transform: capitalize;
+}
+
+.stepItem h3 {
+  margin: 0;
+  color: #151515;
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: -0.44px;
+}
+
+.stepDescription {
+  margin: 0;
+  color: #CCD2DD;
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  transition: color 400ms ease;
+}
+
+.stepItem h3 {
+  color: #CCD2DD;
+  transition: color 400ms ease;
+}
+
+.stepLabel {
+  color: #CCD2DD !important;
+  transition: color 400ms ease;
+}
+
+.active .stepDescription {
+  color: #323741;
+  opacity: 0.6;
+}
+
+.active h3 {
+  color: #151515 !important;
+}
+
+.active .stepLabel {
+  color: #0f8560 !important;
+}
+
+.stepItem:not(.active) {
+  /* Opacity removed to rely on direct colors */
+}
+
+@include up($bp-xl) {
+  .layout {
+    gap: 30px;
+  }
+}
+
+@media (max-width: 1100px) {
+  .section {
+    padding: 72px 0 92px;
+  }
+
+  .cardContainer {
+    padding: 60px 24px;
+    margin: 0 12px;
+    width: auto;
+  }
+
+  .layout {
+    flex-direction: column;
+  }
+
+  .copy,
+  .steps {
+    flex: 1 1 auto;
+    width: 100%;
+    max-width: none;
+  }
+
+  .description {
+    max-width: none;
+    width: 100%;
+    margin-bottom: 15px;
+  }
+
+  .stepList {
+    gap: 50px;
+  }
+
+  .steps {
+    grid-template-columns: 40px minmax(0, 1fr);
+    gap: 32px;
+  }
+
+  .rail {
+    width: 40px;
+    min-height: 400px;
+  }
+}
+
+@media (max-width: 800px) {
+  .layout {
+    flex-direction: column;
+  }
+
+  .copy,
+  .steps {
+    width: 100%;
+    flex: 1 1 auto;
+  }
+
+  .steps {
+    grid-template-columns: 56px minmax(0, 1fr);
+    gap: 24px;
+  }
+
+  .rail {
+    width: 56px;
+    height: 100%;
+  }
+
+  .railActiveTrack {
+    height: 88px;
+  }
+
+  .railActiveTrackTop {
+    border-radius: 40px 40px 14px 14px;
+  }
+
+  .railActiveTrackMiddle {
+    border-radius: 0;
+  }
+
+  .railActiveTrackBottom {
+    border-radius: 14px 14px 40px 40px;
+  }
+
+  .stepList {
+    gap: 50px;
+  }
+
+  /* Removed hardcoded mobile railDot classes */
+}
+
+@media (max-width: 575px) {
+  .section {
+    padding: 56px 0;
+  }
+
+  .cardContainer {
+    padding: 47px 16px;
+    margin: 0 8px;
+  }
+
+  .layout {
+    gap: 40px;
+  }
+
+  .copy {
+    gap: 18px;
+  }
+
+  .copy h2 {
+    font-size: 30px;
+    line-height: 1.2;
+  }
+
+  .description {
+    font-size: 16px;
+  }
+
+  .steps {
+    gap: 30px;
+  }
+
+  .rail {
+    min-height: 220px;
+  }
+
+  .stepDescription {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+}

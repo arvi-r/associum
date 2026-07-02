@@ -1,0 +1,33 @@
+@use '../styles/variables' as *;
+@use '../styles/mixins' as *;
+
+.card {
+  border: 1px solid $border;
+  border-radius: $radius-md;
+  background: $bg-surface;
+  padding: 22px;
+  box-shadow: 0 8px 24px rgba(21, 21, 21, 0.04);
+  display: grid;
+  gap: 12px;
+}
+
+.badge {
+  justify-self: start;
+  border-radius: 999px;
+  padding: 6px 10px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  background: $accent-soft;
+  color: $accent-dark;
+}
+
+.card h3 {
+  margin: 0;
+  font-size: 1.15rem;
+}
+
+.card p {
+  margin: 0;
+  color: $text-secondary;
+  line-height: 1.65;
+}

@@ -1,0 +1,333 @@
+@use '../styles/variables' as *;
+@use '../styles/mixins' as *;
+
+.section {
+  padding: 100px 0;
+  background: linear-gradient(145.77deg, #f9fafb 1.772%, #ffffff 101.65%);
+}
+
+.header {
+  display: grid;
+  gap: 14px;
+  margin-bottom: 45px;
+  justify-items: center;
+  text-align: center;
+}
+
+.eyebrowRow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  align-self: center;
+}
+
+.eyebrow {
+  margin: 0;
+  color: #0f8560;
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 22px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  opacity: 0.8;
+}
+
+.titleBlock h2 {
+  margin: 0;
+  color: var(--Text-Primary, #0f0f10);
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: clamp(1.75rem, 5vw, 2.25rem);
+  font-style: normal;
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -0.2px;
+  margin-bottom: 0;
+  text-align: center;
+}
+
+.titleBlock h2 span {
+  display: block;
+}
+
+.titleBlock h2 span:first-child {
+  white-space: normal;
+
+  @include up($bp-lg) {
+    white-space: normal;
+  }
+}
+
+.titleBlock h2 span:last-child {
+  white-space: normal;
+
+  @include up($bp-lg) {
+    white-space: normal;
+  }
+}
+
+.description {
+  margin: 0;
+  width: auto;
+  max-width: 1100px;
+  justify-self: center;
+  color: #616161;
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: clamp(0.95rem, 2vw, 1.15rem);
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.5;
+  text-align: center;
+
+  @include up($bp-xl) {
+    white-space: normal;
+  }
+}
+
+.grid {
+  display: grid;
+  gap: 25px;
+}
+
+.card {
+  position: relative;
+  min-height: 400px;
+  overflow: hidden;
+  border: 1px solid #d8e3f3;
+  border-radius: 10px;
+  padding: 25px;
+  box-sizing: border-box;
+}
+
+.cardContent {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  gap: 15px;
+  max-width: 100%;
+}
+
+.cardContent h3 {
+  margin: 0;
+  color: #000;
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 1.15;
+  letter-spacing: -0.44px;
+  white-space: normal;
+
+  @include up($bp-lg) {
+    white-space: normal;
+  }
+}
+
+.cardContent p {
+  margin: 0;
+  color: #323741;
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 22px;
+  opacity: 0.7;
+}
+
+.cardVisual {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: min(500px, calc(100% - 40px));
+  height: 280px;
+  transform: translateX(-50%) !important;
+  pointer-events: none;
+  transition: none !important;
+}
+
+.cardVisual img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: bottom;
+}
+
+@media (max-width: 575px) {
+  .card {
+    display: flex;
+    flex-direction: column;
+    height: auto !important;
+    min-height: unset !important;
+  }
+
+  .cardVisual {
+    position: relative !important;
+    left: auto !important;
+    transform: none !important;
+    width: calc(100% + 36px) !important; /* compensate for 18px mobile padding */
+    margin-left: -18px !important;
+    margin-top: 25px;
+    height: auto !important;
+    bottom: auto !important;
+  }
+
+  .cardVisual img {
+    width: 100% !important;
+    height: auto !important;
+    object-fit: contain;
+  }
+}
+
+.reportAutomationImage,
+.quantitativeAnalysisImage,
+.deepResearchImage,
+.knowledgeBaseImage {
+  /* Centering handled by .cardVisual */
+}
+
+
+@media (hover: none) {
+
+  .card:hover,
+  .card:focus-within,
+  .card:hover::after,
+  .card:focus-within::after,
+  .card:hover .cardVisual,
+  .card:focus-within .cardVisual,
+  .card:hover .reportAutomationImage,
+  .card:focus-within .reportAutomationImage,
+  .card:hover .quantitativeAnalysisImage,
+  .card:focus-within .quantitativeAnalysisImage,
+  .card:hover .deepResearchImage,
+  .card:focus-within .deepResearchImage,
+  .card:hover .knowledgeBaseImage,
+  .card:focus-within .knowledgeBaseImage {
+    transform: none;
+    filter: none;
+    box-shadow: none;
+  }
+}
+
+@include up($bp-xl) {
+  .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 991px) {
+  .section {
+    padding: 72px 0;
+  }
+
+  .card {
+    min-height: 390px;
+  }
+
+  .cardContent h3 {
+    white-space: normal;
+  }
+}
+
+@media (max-width: 800px) {
+
+  .card,
+  .card::after,
+  .cardVisual,
+  .reportAutomationImage,
+  .quantitativeAnalysisImage,
+  .deepResearchImage,
+  .knowledgeBaseImage {
+    transition: none;
+  }
+
+  .card:hover,
+  .card:focus-within,
+  .card:hover::after,
+  .card:focus-within::after,
+  .card:hover .cardVisual,
+  .card:focus-within .cardVisual,
+  .card:hover .reportAutomationImage,
+  .card:focus-within .reportAutomationImage,
+  .card:hover .quantitativeAnalysisImage,
+  .card:focus-within .quantitativeAnalysisImage,
+  .card:hover .deepResearchImage,
+  .card:focus-within .deepResearchImage,
+  .card:hover .knowledgeBaseImage,
+  .card:focus-within .knowledgeBaseImage {
+    transform: none;
+    filter: none;
+    box-shadow: none;
+    border-color: #d8e3f3;
+  }
+
+  .reportAutomationImage,
+  .quantitativeAnalysisImage,
+  .deepResearchImage,
+  .knowledgeBaseImage {
+    transform: translateX(-50%);
+  }
+
+  .card:hover .reportAutomationImage,
+  .card:focus-within .reportAutomationImage,
+  .card:hover .quantitativeAnalysisImage,
+  .card:focus-within .quantitativeAnalysisImage,
+  .card:hover .deepResearchImage,
+  .card:focus-within .deepResearchImage,
+  .card:hover .knowledgeBaseImage,
+  .card:focus-within .knowledgeBaseImage {
+    transform: translateX(-50%);
+  }
+}
+
+@media (max-width: 575px) {
+  .section {
+    padding: 56px 0;
+  }
+
+  .header {
+    margin-bottom: 24px;
+  }
+
+  .titleBlock h2 span:first-child {
+    white-space: normal;
+  }
+
+  .titleBlock h2 span:last-child {
+    white-space: normal;
+  }
+
+  .description {
+    width: 100%;
+    max-width: 100%;
+    white-space: normal;
+  }
+
+  .grid {
+    gap: 16px;
+  }
+
+  .card {
+    min-height: unset !important;
+    padding: 18px 18px 0;
+  }
+
+  .reportAutomationImage,
+  .quantitativeAnalysisImage,
+  .deepResearchImage,
+  .knowledgeBaseImage {
+    left: 50%;
+    top: auto;
+    bottom: 0;
+    width: min(86%, 320px);
+    height: 220px;
+    transform: translateX(-50%);
+  }
+}
+
+@media (max-width: 550px) {
+  .card {
+    min-height: 370px;
+  }
+}

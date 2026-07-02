@@ -1,0 +1,56 @@
+@use '../styles/variables' as *;
+@use '../styles/mixins' as *;
+
+.card {
+  border: 1px solid $border;
+  border-radius: $radius-lg;
+  background: $bg-surface;
+  padding: 24px;
+  display: grid;
+  gap: 16px;
+}
+
+.featured {
+  border-color: rgba(31, 94, 255, 0.45);
+  box-shadow: 0 18px 48px rgba(31, 94, 255, 0.12);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 16px;
+}
+
+.header h3,
+.header strong {
+  margin: 0;
+}
+
+.header strong {
+  font-size: 1.5rem;
+}
+
+.summary {
+  margin: 0;
+  color: $text-secondary;
+  line-height: 1.65;
+}
+
+.list {
+  margin: 0;
+  padding-left: 18px;
+  display: grid;
+  gap: 8px;
+  color: $text-primary;
+}
+
+.cta {
+  margin-top: 6px;
+  justify-self: start;
+  border-radius: 999px;
+  padding: 12px 16px;
+  background: $accent;
+  color: white;
+  font-weight: 700;
+}

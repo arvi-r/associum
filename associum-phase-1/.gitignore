@@ -1,0 +1,14 @@
+node_modules
+.DS_Store
+dist
+build
+.env
+.next
+.gemini
+*.log
+
+# Astro
+.astro/
+
+# Local preview tooling config (machine-specific paths)
+.claude/launch.json

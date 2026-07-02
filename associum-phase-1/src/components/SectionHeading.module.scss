@@ -1,0 +1,31 @@
+@use '../styles/variables' as *;
+@use '../styles/mixins' as *;
+
+.heading {
+  display: grid;
+  gap: 10px;
+  margin-bottom: 24px;
+}
+
+.eyebrow {
+  margin: 0;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: $accent;
+}
+
+.heading h2 {
+  margin: 0;
+  font-family: $font-display;
+  font-size: clamp(1.7rem, 5vw, 3rem);
+  line-height: 1;
+}
+
+.description {
+  margin: 0;
+  max-width: 64ch;
+  color: $text-secondary;
+  line-height: 1.7;
+}

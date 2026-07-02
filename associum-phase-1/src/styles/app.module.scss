@@ -1,0 +1,148 @@
+@use './variables' as *;
+@use './mixins' as *;
+
+.appShell {
+  min-height: 100vh;
+}
+
+.hero {
+  padding: 32px 0 24px;
+  background:
+    radial-gradient(circle at top right, rgba(31, 94, 255, 0.12), transparent 34%),
+    linear-gradient(180deg, #faf7f2 0%, #f7f4ef 100%);
+}
+
+.heroGrid {
+  display: grid;
+  gap: 24px;
+}
+
+.heroCopy {
+  display: grid;
+  gap: 16px;
+  align-content: start;
+}
+
+.kicker {
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: $accent;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.heroCopy h1 {
+  margin: 0;
+  font-family: $font-display;
+  font-size: clamp(2.2rem, 8vw, 4.6rem);
+  line-height: 0.96;
+  max-width: 11ch;
+}
+
+.heroText {
+  margin: 0;
+  max-width: 58ch;
+  color: $text-secondary;
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+.heroActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.primaryAction,
+.secondaryAction {
+  border-radius: 999px;
+  padding: 14px 20px;
+  font-weight: 700;
+  transition: transform 160ms ease, background-color 160ms ease, color 160ms ease;
+}
+
+.primaryAction {
+  background: $accent;
+  color: white;
+}
+
+.secondaryAction {
+  background: $accent-soft;
+  color: $accent-dark;
+}
+
+.heroPanel {
+  border-radius: $radius-lg;
+  background: $bg-surface;
+  border: 1px solid $border;
+  box-shadow: $shadow-soft;
+  padding: 18px;
+  display: grid;
+  gap: 16px;
+}
+
+.heroPanelTop {
+  display: grid;
+  gap: 4px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid $border;
+}
+
+.heroPanelTop span,
+.heroPanelBody span {
+  color: $text-muted;
+  font-size: 0.85rem;
+}
+
+.heroPanelTop strong,
+.heroPanelBody strong {
+  font-size: 1rem;
+}
+
+.heroPanelBody {
+  display: grid;
+  gap: 14px;
+}
+
+.heroPanelBody div {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.section {
+  padding: 56px 0;
+}
+
+.cardGrid,
+.pricingGrid {
+  display: grid;
+  gap: 16px;
+}
+
+@include up($bp-md) {
+  .hero {
+    padding: 48px 0 32px;
+  }
+
+  .heroPanel {
+    padding: 24px;
+  }
+}
+
+@include up($bp-lg) {
+  .heroGrid {
+    grid-template-columns: minmax(0, 1.15fr) minmax(320px, 0.85fr);
+    align-items: center;
+    gap: 32px;
+  }
+
+  .cardGrid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .pricingGrid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}

@@ -1,0 +1,982 @@
+.hero {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  min-height: 600px;
+  background: #0e2a28;
+}
+
+.backdrop {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.backdrop::after {
+  position: absolute;
+  inset: 0;
+  content: '';
+  background: linear-gradient(90deg, rgba(11, 29, 30, 0.46) 0%, rgba(11, 29, 30, 0.08) 100%);
+}
+
+.backgroundImage,
+.overlayImage {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.overlayImage {
+  opacity: 0.86;
+}
+
+.heroInner {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(360px, 520px);
+  gap: 60px;
+  align-items: center;
+  min-height: 600px;
+  padding: 104px 0 10px;
+}
+
+.copy {
+  display: grid;
+  gap: 35px;
+  align-content: center;
+  min-width: 0;
+}
+
+.copy h1 {
+  margin: 0;
+  max-width: 800px;
+  color: #f9fafb;
+  font-family: Lato, Inter, system-ui, sans-serif;
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 1.15;
+  white-space: nowrap;
+}
+
+@media (max-width: 767px) {
+  .copy h1 {
+    white-space: normal;
+  }
+}
+
+.description {
+  margin: -19px 0 0;
+  max-width: 672px;
+  color: #b7c3d2;
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 28px;
+}
+
+.meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  margin: 0;
+  color: #e6eaef;
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 28px;
+}
+
+.meta span {
+  opacity: 0.8;
+}
+
+.badgePanel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 44px;
+  width: 100%;
+  min-height: 328px;
+  padding: 48px 52px;
+  border-radius: 8px;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.isoBadge,
+.socBadge {
+  width: 152px;
+  height: 152px;
+  object-fit: contain;
+}
+
+.protection {
+  overflow: hidden;
+  padding: 80px 0 100px;
+  background: linear-gradient(141.49deg, #f9fafb 1.77%, #ffffff 101.65%);
+}
+
+.protectionInner {
+  display: grid;
+  gap: 60px;
+}
+
+.sectionHeader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 22px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.sectionEyebrow {
+  margin: 0;
+  color: #0f8560;
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 20px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  opacity: 0.8;
+}
+
+.sectionHeader h2 {
+  margin: 0;
+  color: #000000;
+  font-family: Lato, Inter, system-ui, sans-serif;
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 44px;
+  white-space: nowrap;
+  width: max-content;
+}
+
+.sectionHeader>p:last-child {
+  margin: -7px 0 0;
+  color: #888e9e;
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 28px;
+  white-space: nowrap;
+  width: max-content;
+}
+
+.highlightGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+
+
+.highlightCard {
+  display: grid;
+  align-content: start;
+  gap: 20px;
+  min-height: 178px;
+  height: 100%;
+  padding: 16px;
+  border: 1px solid #eaedf2;
+  border-radius: 10px;
+  background: #ffffff;
+  box-shadow: 0 18px 50px rgba(20, 31, 48, 0.03);
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  justify-self: start;
+  gap: 8px;
+  min-height: 28px;
+  padding: 6px 12px;
+  border: 1px solid #08c186;
+  border-radius: 22px;
+  color: #08c186;
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 9px;
+  font-weight: 700;
+  line-height: 12px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.chipIcon,
+.checkIcon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+}
+
+.chipIcon {
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.chipIcon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.checkIcon {
+  width: 36px;
+  height: 36px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.checkIcon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.checkIcon svg {
+  width: 100%;
+  height: 100%;
+  color: #0f8560;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.4;
+}
+
+.checkIcon svg path:first-child {
+  fill: #0f8560;
+  stroke: none;
+}
+
+.checkIcon svg path:last-child {
+  color: #ffffff;
+  stroke-width: 1.6;
+}
+
+.highlightCopy {
+  display: grid;
+  gap: 6px;
+}
+
+.highlightCopy h3 {
+  margin: 0;
+  color: #111111;
+  font-family: Lato, Inter, system-ui, sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 30px;
+}
+
+.highlightCopy p {
+  margin: 0;
+  color: #888e9e;
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 26px;
+}
+
+.divider {
+  display: grid;
+  grid-template-columns: minmax(24px, 1fr) auto minmax(24px, 1fr);
+  align-items: center;
+  gap: 16px;
+  margin: -12px 0;
+}
+
+.divider span {
+  height: 1px;
+  background: #e4e8ee;
+}
+
+.divider p {
+  margin: 0;
+  color: #888e9e;
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 26px;
+  white-space: nowrap;
+}
+
+.checklistGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+
+
+.checklistItem {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 81px;
+  height: 100%;
+  padding: 16px;
+  border: 1px solid #eaedf2;
+  border-radius: 11px;
+  background: #ffffff;
+  box-shadow: 0 14px 44px rgba(20, 31, 48, 0.025);
+}
+
+
+
+.checklistCopy {
+  display: grid;
+  gap: 6px;
+  min-width: 0;
+}
+
+.checklistCopy h3 {
+  margin: 0;
+  color: #323741;
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.checklistCopy p {
+  margin: 0;
+  color: #888e9e;
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.trustCenter {
+  padding: 100px 0;
+  background: #ffffff;
+}
+
+.trustCenterInner {
+  display: grid;
+  grid-template-columns: minmax(0, 580px) minmax(360px, 1fr);
+  gap: 80px;
+  align-items: center;
+}
+
+.trustCenterCopy {
+  display: grid;
+  gap: 30px;
+  min-width: 0;
+}
+
+.trustCenterHeader {
+  display: grid;
+  gap: 14px;
+}
+
+.trustCenterHeader h2 {
+  margin: 0;
+  color: #0f0f10;
+  font-family: Lato, Inter, system-ui, sans-serif;
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 1.18;
+}
+
+.trustCenterCopy>p {
+  margin: 0;
+  color: #888e9e;
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 26px;
+}
+
+.trustCenterActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  align-items: center;
+}
+
+.primaryButton,
+.secondaryButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 11px 32px;
+  border: 1px solid #0f8560;
+  border-radius: 8px;
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+  text-align: center;
+  text-decoration: none;
+  transition:
+    transform 180ms ease,
+    box-shadow 180ms ease,
+    background 180ms ease,
+    color 180ms ease;
+}
+
+.primaryButton {
+  color: #ffffff;
+  background: linear-gradient(96.77deg, #05704e 4.04%, #09573e 103.36%);
+}
+
+.secondaryButton {
+  color: #056f4d;
+  background: #ffffff;
+}
+
+.primaryButton:hover,
+.secondaryButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 32px rgba(5, 112, 78, 0.16);
+}
+
+.secondaryButton:hover {
+  color: #ffffff;
+  background: #056f4d;
+}
+
+.trustCenterVisual {
+  display: flex;
+  justify-content: center;
+  min-width: 0;
+}
+
+.trustCenterVisual img {
+  display: block;
+  width: min(100%, 604px);
+  max-width: none;
+  height: auto;
+  object-fit: contain;
+}
+
+.metrics {
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  overflow: hidden;
+  padding: 60px 0;
+  background: linear-gradient(180deg, #0A222A 0%, #0C4E3E 100%);
+}
+
+.metricsBackdrop {
+  display: none;
+}
+
+.metricsBackdrop img {
+  position: absolute;
+  top: -1094.941px;
+  left: 0;
+  width: 100%;
+  height: 520.148%;
+  max-width: none;
+  object-fit: cover;
+  animation: metricsBgBreathing 40s ease-in-out infinite alternate;
+}
+
+@keyframes metricsBgBreathing {
+  0% {
+    transform: scale(1) translate(0, 0);
+  }
+
+  100% {
+    transform: scale(1.1) translate(-1%, -1%);
+  }
+}
+
+.metricsGrid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 20px;
+  align-items: stretch;
+}
+
+.metricTile {
+  display: grid;
+  justify-items: center;
+  align-content: center;
+  gap: 12px;
+  min-width: 0;
+  padding: 32px;
+  overflow: hidden;
+  color: #ffffff;
+  text-align: center;
+}
+
+.metricTile strong {
+  display: block;
+  width: 100%;
+  color: #ffffff;
+  font-family: Lato, Inter, system-ui, sans-serif;
+  font-size: 34px;
+  font-weight: 700;
+  line-height: 1.18;
+}
+
+.metricTile p {
+  width: 100%;
+  max-width: 220px;
+  margin: 0;
+  color: rgba(255, 255, 255, 0.7);
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.22;
+}
+
+
+
+@media (max-width: 1199px) {
+  .heroInner {
+    grid-template-columns: minmax(0, 1fr) minmax(320px, 440px);
+    gap: 42px;
+  }
+
+  .copy h1 {
+    font-size: 40px;
+    white-space: normal;
+  }
+
+  .badgePanel {
+    min-height: 292px;
+    gap: 30px;
+    padding: 40px 34px;
+  }
+
+  .isoBadge,
+  .socBadge {
+    width: 128px;
+    height: 128px;
+  }
+
+  .protection {
+    padding: 88px 0;
+  }
+
+  .trustCenter {
+    padding: 88px 0;
+  }
+
+  .trustCenterInner {
+    grid-template-columns: minmax(0, 520px) minmax(340px, 1fr);
+    gap: 48px;
+  }
+
+  .trustCenterActions {
+    gap: 16px;
+  }
+
+  .primaryButton,
+  .secondaryButton {
+    padding-right: 24px;
+    padding-left: 24px;
+  }
+
+  .metricTile {
+    padding-right: 22px;
+    padding-left: 22px;
+  }
+}
+
+@media (max-width: 1100px) {
+
+  .sectionHeader h2,
+  .sectionHeader>p:last-child {
+    white-space: normal;
+    width: auto;
+    max-width: 90%;
+  }
+}
+
+@media (max-width: 991px) {
+  .hero {
+    min-height: 0;
+  }
+
+  .heroInner {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 42px;
+    min-height: 0;
+    padding: 150px 0 74px;
+  }
+
+  .copy {
+    justify-items: center;
+    gap: 28px;
+    text-align: center;
+  }
+
+  .copy h1 {
+    max-width: 680px;
+    font-size: 42px;
+  }
+
+  .description {
+    margin-top: -10px;
+    max-width: 680px;
+  }
+
+  .meta {
+    justify-content: center;
+  }
+
+  .badgePanel {
+    max-width: 520px;
+    min-height: 292px;
+    margin: 0 auto;
+  }
+
+  .protection {
+    padding: 72px 0;
+  }
+
+  .protectionInner {
+    gap: 48px;
+  }
+
+  .sectionHeader h2 {
+    font-size: 32px;
+    line-height: 40px;
+  }
+
+  .highlightGrid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .highlightCard {
+    min-height: 0;
+  }
+
+  .divider {
+    margin: -4px 0;
+  }
+
+  .trustCenter {
+    padding: 72px 0;
+  }
+
+  .trustCenterInner {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 42px;
+  }
+
+  .trustCenterCopy {
+    justify-items: center;
+    max-width: 720px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .trustCenterHeader {
+    justify-items: center;
+  }
+
+  .trustCenterHeader h2 {
+    font-size: 32px;
+    line-height: 40px;
+  }
+
+  .trustCenterActions {
+    justify-content: center;
+  }
+
+  .trustCenterVisual img {
+    width: min(100%, 560px);
+  }
+
+  .metrics {
+    padding: 54px 0;
+  }
+
+  .metricsBackdrop img {
+    top: -230%;
+    height: 360%;
+  }
+
+  .metricsGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    row-gap: 12px;
+  }
+}
+
+@media (max-width: 767px) {
+  .heroInner {
+    gap: 34px;
+    padding: 136px 0 64px;
+  }
+
+  .copy h1 {
+    font-size: 36px;
+  }
+
+  .description {
+    font-size: 17px;
+    line-height: 27px;
+  }
+
+  .badgePanel {
+    min-height: 240px;
+    gap: 24px;
+    padding: 34px 24px;
+  }
+
+  .isoBadge,
+  .socBadge {
+    width: 112px;
+    height: 112px;
+  }
+
+  .protection {
+    padding: 64px 0;
+  }
+
+  .checklistGrid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .sectionHeader {
+    gap: 18px;
+  }
+
+  .sectionHeader h2 {
+    font-size: 30px;
+    line-height: 38px;
+  }
+
+  .sectionHeader>p:last-child {
+    margin-top: -4px;
+    font-size: 16px;
+    line-height: 26px;
+  }
+
+  .highlightCopy h3 {
+    font-size: 21px;
+    line-height: 29px;
+  }
+
+  .divider {
+    gap: 12px;
+  }
+
+  .divider p {
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  .trustCenter {
+    padding: 64px 0;
+  }
+
+  .trustCenterCopy {
+    gap: 24px;
+  }
+
+  .trustCenterHeader h2 {
+    font-size: 30px;
+    line-height: 38px;
+  }
+
+  .trustCenterCopy>p {
+    font-size: 16px;
+    line-height: 26px;
+  }
+
+  .trustCenterActions {
+    width: 100%;
+  }
+
+  .primaryButton,
+  .secondaryButton {
+    flex: 1 1 240px;
+  }
+
+  .metrics {
+    padding: 48px 0;
+  }
+
+  .metricsGrid {
+    gap: 10px;
+  }
+
+  .metricTile {
+    padding: 26px 18px;
+  }
+
+  .metricTile strong {
+    font-size: 31px;
+  }
+
+  .metricTile p {
+    font-size: 15px;
+    line-height: 1.3;
+  }
+}
+
+@media (max-width: 575px) {
+  .heroInner {
+    padding: 160px 0 56px;
+  }
+
+  .copy h1 {
+    font-size: 32px;
+  }
+
+  .description {
+    font-size: 16px;
+    line-height: 25px;
+  }
+
+  .meta {
+    font-size: 15px;
+    line-height: 24px;
+  }
+
+  .badgePanel {
+    flex-direction: row;
+    max-width: 100%;
+    min-height: 0;
+    gap: 20px;
+    padding: 24px;
+  }
+
+  .isoBadge,
+  .socBadge {
+    width: 100px;
+    height: 100px;
+  }
+
+  .protection {
+    padding: 56px 0;
+  }
+
+  .protectionInner {
+    gap: 38px;
+  }
+
+  .sectionEyebrow {
+    font-size: 13px;
+    line-height: 18px;
+  }
+
+  .sectionHeader h2 {
+    font-size: 28px;
+    line-height: 36px;
+  }
+
+  .highlightCard {
+    gap: 18px;
+    padding: 15px;
+  }
+
+  .chip {
+    max-width: 100%;
+    white-space: normal;
+  }
+
+  .highlightCopy h3 {
+    font-size: 20px;
+    line-height: 28px;
+  }
+
+  .highlightCopy p {
+    font-size: 15px;
+    line-height: 25px;
+  }
+
+  .divider {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    margin: 0;
+  }
+
+  .divider span {
+    width: 100%;
+  }
+
+  .checklistItem {
+    padding: 15px;
+  }
+
+  .checkIcon {
+    width: 30px;
+    height: 30px;
+  }
+
+  .trustCenter {
+    padding: 32px 0 56px;
+  }
+
+  .trustCenterInner {
+    gap: 34px;
+  }
+
+  .trustCenterHeader h2 {
+    font-size: 28px;
+    line-height: 36px;
+  }
+
+  .trustCenterActions {
+    gap: 14px;
+  }
+
+  .primaryButton,
+  .secondaryButton {
+    width: 100%;
+    padding-right: 18px;
+    padding-left: 18px;
+  }
+
+  .trustCenterVisual {
+    margin-right: -10px;
+    margin-left: -10px;
+  }
+
+  .metrics {
+    padding: 40px 0;
+  }
+
+  .metricsBackdrop img {
+    top: -120%;
+    height: 260%;
+  }
+
+  .metricsGrid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .metricTile {
+    padding: 22px 18px;
+  }
+
+  .metricTile strong {
+    font-size: 30px;
+  }
+
+  .metricTile p {
+    max-width: 260px;
+  }
+}
+
+.desktopOnly {
+  display: none;
+
+  @media (min-width: 992px) {
+    display: block;
+  }
+}

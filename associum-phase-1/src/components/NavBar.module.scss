@@ -1,0 +1,443 @@
+@use '../styles/variables' as *;
+@use '../styles/mixins' as *;
+
+.header {
+  position: fixed;
+  inset: 0 0 auto 0;
+  z-index: 20;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.headerVisible .navBar {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.headerHidden .navBar {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.bannerWrapper {
+  overflow: visible;
+  position: relative;
+  z-index: 110;
+}
+
+.banner {
+  display: grid;
+  place-items: center;
+  padding: 8px 16px;
+  background: linear-gradient(137.26deg, #059466 4.0412%, #09523b 103.36%);
+  color: white;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.banner p {
+  margin: 0;
+  text-align: center;
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 20px;
+  letter-spacing: -0.28px;
+  text-transform: capitalize;
+}
+
+.banner strong {
+  font-weight: 700;
+}
+
+.bannerLink {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.bannerLink:hover,
+.bannerLink:focus-visible {
+  opacity: 0.9;
+  outline: none;
+}
+
+.navBar {
+  backdrop-filter: blur(22px);
+  -webkit-backdrop-filter: blur(22px);
+  background: rgba(10, 17, 30, 0.6);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  position: relative;
+  z-index: 100;
+}
+
+.navRow {
+  display: grid;
+  gap: 14px;
+  padding: 10px 30px;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: #f9fafb;
+  font-family: $font-display;
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.brandIcon {
+  width: 32px;
+  height: 32px;
+  flex: 0 0 32px;
+}
+
+.caret {
+  width: 8px;
+  height: 4px;
+}
+
+.nav,
+.actions,
+.mobileToggle,
+.mobilePanel {
+  display: none;
+}
+
+.companyNav {
+  position: relative;
+}
+
+.companyNav::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 100%;
+  height: 16px;
+  pointer-events: auto;
+}
+
+.navItem {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px;
+  border: 0;
+  border-radius: 60px;
+  background: transparent;
+  color: #fff;
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 20px;
+  letter-spacing: -0.28px;
+  text-transform: capitalize;
+  text-align: right;
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+  transition: color 0.2s ease;
+}
+
+.navItemActive {
+  color: #08c186 !important;
+
+  .caret {
+    filter: brightness(0) saturate(100%) invert(53%) sepia(87%) saturate(1814%) hue-rotate(124deg) brightness(96%) contrast(101%);
+  }
+}
+
+.navItem:hover,
+.navItem:focus-visible {
+  background: rgba(255, 255, 255, 0.04);
+  outline: none;
+}
+
+.companyMenu {
+  position: absolute;
+  top: calc(100% + 14px);
+  left: 50%;
+  width: 111px;
+  padding: 4px;
+  border: 1px solid #333946;
+  border-radius: 6px;
+  background: #0b141e;
+  backdrop-filter: blur(22px);
+  -webkit-backdrop-filter: blur(22px);
+  opacity: 0;
+  transform: translate(-50%, -6px);
+  pointer-events: none;
+  transition:
+    opacity 160ms ease,
+    transform 160ms ease;
+  z-index: 30;
+}
+
+.companyMenuOpen {
+  opacity: 1;
+  transform: translate(-50%, 0);
+  pointer-events: auto;
+}
+
+.companyMenuItem {
+  display: flex;
+  align-items: center;
+  width: 103px;
+  min-height: 40px;
+  padding: 10px 12px;
+  border-radius: 2px;
+  color: #fff;
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 20px;
+  letter-spacing: -0.28px;
+  text-transform: capitalize;
+}
+
+.companyMenuItem:hover,
+.companyMenuItem:focus-visible {
+  background: rgba(255, 255, 255, 0.04);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.06);
+  outline: none;
+}
+
+.mobileToggle {
+  justify-self: end;
+  width: 46px;
+  height: 46px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 10px;
+  padding: 0;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.mobileToggleBar {
+  width: 18px;
+  height: 2px;
+  border-radius: 999px;
+  background: #fff;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+
+  .headerOpen & {
+    &:nth-child(1) {
+      transform: translateY(7px) rotate(45deg);
+    }
+    &:nth-child(2) {
+      opacity: 0;
+    }
+    &:nth-child(3) {
+      transform: translateY(-7px) rotate(-45deg);
+    }
+  }
+}
+
+.mobilePanel {
+  padding: 25px 20px 40px;
+  background: rgba(10, 17, 30, 0.98);
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  z-index: 50;
+}
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+  z-index: 10;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.overlayVisible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.mobileNav,
+.mobileActions {
+  display: grid;
+  gap: 10px;
+}
+
+.mobileNav a,
+.mobileActions a {
+  color: #f9fafb;
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 20px;
+  letter-spacing: -0.28px;
+  text-transform: capitalize;
+}
+
+.mobileNav a {
+  padding: 8px 0;
+}
+
+.mobileGroup {
+  display: grid;
+  gap: 8px;
+}
+
+.mobileNavButton {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 10px;
+  width: 100%;
+  padding: 8px 0;
+  border: 0;
+  background: transparent;
+  color: #f9fafb;
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 20px;
+  letter-spacing: -0.28px;
+  text-transform: capitalize;
+  cursor: pointer;
+}
+
+.mobileCaret {
+  width: 8px;
+  height: 4px;
+  flex: 0 0 8px;
+  transform: translateY(2px);
+}
+
+.mobileDropdown {
+  display: grid;
+  gap: 6px;
+  padding-left: 12px;
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition:
+    max-height 180ms ease,
+    opacity 180ms ease;
+}
+
+.mobileDropdownOpen {
+  max-height: 240px;
+  opacity: 1;
+}
+
+.mobileDropdownItem {
+  display: flex;
+  align-items: center;
+  min-height: 36px;
+  padding: 8px 10px;
+  border-radius: 6px;
+  color: #f9fafb;
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 20px;
+  letter-spacing: -0.28px;
+  text-transform: capitalize;
+  background: transparent;
+}
+
+.mobileDropdownItem:hover,
+.mobileDropdownItem:focus-visible {
+  background: rgba(255, 255, 255, 0.08);
+  outline: none;
+}
+
+.mobileActions {
+  margin-top: 32px;
+  grid-template-columns: repeat(2, minmax(0, auto));
+  justify-content: start;
+  gap: 12px;
+}
+
+.mobilePanelOpen {
+  display: grid;
+}
+
+@media (min-width: 1121px) {
+  .banner p {
+    font-size: 14px;
+  }
+
+  .navRow {
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    gap: 18px;
+  }
+
+  .nav {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    color: #f9fafb;
+    font-size: 0.95rem;
+  }
+
+  .actions {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .mobileToggle,
+  .mobilePanel {
+    display: none;
+  }
+
+  .activeUnderline {
+    position: absolute;
+    left: 50%;
+    top: 35px;
+    width: 26px;
+    height: 2px;
+    border-radius: 3px 3px 0 0;
+    transform: translateX(-50%);
+    background: #08c186;
+  }
+}
+
+@media (max-width: 1120px) {
+  .navRow {
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    gap: 16px;
+    padding: 10px 20px;
+  }
+
+  .nav,
+  .actions {
+    display: none;
+  }
+
+  .mobileToggle {
+    display: inline-flex;
+  }
+}
+
+@media (max-width: 767px) {
+  .navRow {
+    padding: 10px 20px;
+  }
+
+  .brand {
+    font-size: 1.1rem;
+  }
+}

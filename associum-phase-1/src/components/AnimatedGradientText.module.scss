@@ -1,0 +1,46 @@
+.wrapper {
+  position: relative;
+  display: inline-block;
+  color: inherit;
+  
+  &::after {
+    content: attr(data-text);
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    
+    /* The Requested Gradient - wider beam with more glow */
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      transparent 44%,
+      #16f691 46%,
+      #13c4d1 52%,
+      transparent 54%,
+      transparent 100%
+    );
+    background-size: 200% 100%;
+    background-repeat: no-repeat;
+
+    /* Masking to Text */
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+
+    /* The Requested Effects */
+    /* Blur removed as requested */
+
+    /* Animation */
+    animation: flowGradient 4s infinite linear;
+    pointer-events: none;
+  }
+}
+
+@keyframes flowGradient {
+  0% {
+    background-position: 150% 0;
+  }
+  100% {
+    background-position: -50% 0;
+  }
+}

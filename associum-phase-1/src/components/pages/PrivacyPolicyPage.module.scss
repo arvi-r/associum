@@ -1,0 +1,443 @@
+@use '../../styles/variables' as *;
+
+.hero {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  padding: 180px 0 120px;
+}
+
+.backdrop {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.baseGradient {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, #0a111e 0%, #0f1b33 100%),
+    linear-gradient(90deg, #fff 0%, #fff 100%);
+}
+
+.textureWrap {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+
+.textureWrap img {
+  position: absolute;
+  top: -24.67%;
+  left: 0;
+  width: 100%;
+  height: 124.62%;
+  max-width: none;
+}
+
+.glow {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.heroInner {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  justify-items: center;
+  gap: 18px;
+  max-width: 980px;
+  margin: 0 auto;
+  padding-top: 70px;
+  text-align: center;
+  transform: translateY(-35px);
+}
+
+.heroInner h1 {
+  margin: 0;
+  width: 100%;
+  color: #f9fafb;
+  font-family: Lato, Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+.heroDate {
+  margin: 0;
+  width: 100%;
+  color: #b7c3d2;
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 28px;
+}
+
+.heroSummary {
+  display: grid;
+  gap: 12px;
+  width: 100%;
+}
+
+.heroSummary p {
+  max-width: 960px;
+  margin: 0;
+  color: #b7c3d2;
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 28px;
+}
+
+.policySection {
+  padding: 100px 0;
+  background: linear-gradient(102.98deg, #f9fafb 1.77%, #ffffff 101.65%);
+}
+
+.policyCard {
+  display: grid;
+  gap: 16px;
+  padding: 32px;
+  border: 1px solid #eaedf2;
+  border-radius: 20px;
+  background: #ffffff;
+}
+
+.policyTitle {
+  margin: 0;
+  color: #0f0f10;
+  font-family: Lato, Inter, system-ui, sans-serif;
+  font-size: 32px;
+  font-weight: 900;
+  line-height: 42px;
+}
+
+.policyBlock {
+  display: grid;
+  gap: 20px;
+}
+
+.policyBlock h3,
+.policyBlock h4,
+.policyBlock h5,
+.listHeading {
+  margin: 0;
+  color: #0f0f10;
+}
+
+.policyBlock h3 {
+  font-family: Lato, Inter, system-ui, sans-serif;
+  font-size: 28px;
+  font-weight: 900;
+  line-height: 42px;
+}
+
+.policyBlock h4 {
+  font-family: Lato, Inter, system-ui, sans-serif;
+  font-size: 26px;
+  font-weight: 700;
+  line-height: 39px;
+}
+
+.policyBlock h5 {
+  font-family: Lato, Inter, system-ui, sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 30px;
+}
+
+.listHeading {
+  position: relative;
+  font-family: Lato, Inter, system-ui, sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 30px;
+  padding-left: 62px;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 10px;
+    left: 40px;
+    width: 10px;
+    height: 10px;
+    border-radius: 999px;
+    background: #ccd2dd;
+  }
+}
+
+.policyBlock p,
+.detailGroup p,
+.bulletList li {
+  margin: 0;
+  color: #323741;
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 30px;
+}
+
+.subBlock,
+.paragraphGroup,
+.cookieGroups,
+.cookieGroup,
+.detailGroup {
+  display: grid;
+}
+
+.subBlock {
+  gap: 8px;
+}
+
+.paragraphGroup {
+  gap: 8px;
+}
+
+.cookieGroups {
+  gap: 8px;
+}
+
+.cookieGroup {
+  gap: 8px;
+}
+
+.detailGroup {
+  gap: 8px;
+  padding-left: 62px;
+}
+
+.bulletList {
+  display: grid;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.bulletList li {
+  position: relative;
+  padding-left: 62px;
+}
+
+.bulletList li::before {
+  content: '';
+  position: absolute;
+  top: 10px;
+  left: 40px;
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  background: #ccd2dd;
+}
+
+.inlineLink {
+  color: #0f8560;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
+@media (max-width: 991px) {
+  .hero {
+    padding: 164px 0 96px;
+  }
+
+  .heroInner {
+    padding-top: 52px;
+    transform: translateY(0);
+  }
+
+  .heroInner h1 {
+    font-size: 40px;
+  }
+
+  .heroDate,
+  .heroSummary p {
+    font-size: 18px;
+  }
+
+  .policySection {
+    padding: 72px 0;
+  }
+
+  .policyCard {
+    padding: 28px;
+  }
+
+  .policyTitle {
+    font-size: 30px;
+    line-height: 40px;
+  }
+
+  .policyBlock h3 {
+    font-size: 26px;
+    line-height: 38px;
+  }
+
+  .policyBlock h4 {
+    font-size: 24px;
+    line-height: 36px;
+  }
+
+  .policyBlock h5 {
+    font-size: 18px;
+    line-height: 28px;
+  }
+
+  .policyBlock p,
+  .detailGroup p,
+  .bulletList li {
+    font-size: 18px;
+    line-height: 28px;
+  }
+
+  .listHeading {
+    font-size: 18px;
+    line-height: 28px;
+    padding-left: 62px;
+    &::before {
+      left: 40px;
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .hero {
+    padding: 148px 0 72px;
+  }
+
+  .heroInner {
+    gap: 14px;
+    padding-top: 40px;
+  }
+
+  .heroInner h1 {
+    font-size: 34px;
+  }
+
+  .heroDate,
+  .heroSummary p {
+    font-size: 17px;
+    line-height: 26px;
+  }
+
+  .policySection {
+    padding: 64px 0;
+  }
+
+  .policyCard {
+    gap: 14px;
+    padding: 24px 20px;
+    border-radius: 16px;
+  }
+
+  .policyTitle {
+    font-size: 28px;
+    line-height: 38px;
+  }
+
+  .policyBlock {
+    gap: 16px;
+  }
+
+  .policyBlock h3 {
+    font-size: 24px;
+    line-height: 34px;
+  }
+
+  .policyBlock h4 {
+    font-size: 22px;
+    line-height: 32px;
+  }
+
+  .policyBlock h5 {
+    font-size: 20px;
+    line-height: 30px;
+  }
+
+  .listHeading {
+    font-size: 20px;
+    line-height: 30px;
+    padding-left: 38px;
+    &::before {
+      left: 20px;
+    }
+  }
+
+  .policyBlock p,
+  .detailGroup p,
+  .bulletList li {
+    font-size: 16px;
+    line-height: 26px;
+  }
+
+  .detailGroup {
+    padding-left: 38px;
+  }
+
+  .bulletList li {
+    padding-left: 38px;
+  }
+
+  .bulletList li::before {
+    top: 9px;
+    left: 20px;
+  }
+}
+
+@media (max-width: 575px) {
+  .hero {
+    padding: 136px 0 64px;
+  }
+
+  .heroInner {
+    padding-top: 56px;
+  }
+
+  .heroInner h1 {
+    font-size: 30px;
+  }
+
+  .heroDate,
+  .heroSummary p {
+    font-size: 16px;
+    line-height: 25px;
+  }
+
+  .policySection {
+    padding: 56px 0;
+  }
+
+  .policyCard {
+    padding: 20px 16px;
+  }
+
+  .policyTitle {
+    font-size: 26px;
+    line-height: 34px;
+  }
+
+  .policyBlock h3 {
+    font-size: 22px;
+    line-height: 32px;
+  }
+
+  .policyBlock h4 {
+    font-size: 20px;
+    line-height: 30px;
+  }
+
+  .policyBlock h5,
+  .listHeading {
+    font-size: 18px;
+    line-height: 28px;
+  }
+
+  .detailGroup {
+    padding-left: 0;
+  }
+}

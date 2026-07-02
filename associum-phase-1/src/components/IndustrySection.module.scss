@@ -1,0 +1,307 @@
+@use '../styles/variables' as *;
+@use '../styles/mixins' as *;
+
+.section {
+  padding: 100px 0 50px;
+  background: linear-gradient(148.56deg, #f9fafb 1.772%, #ffffff 101.65%);
+  overflow-anchor: none;
+}
+
+.header {
+  display: grid;
+  justify-items: center;
+  gap: 20px;
+  margin-bottom: 70px;
+  text-align: center;
+}
+
+.header h2 {
+  margin: 0;
+  color: #0f0f10;
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: -0.2px;
+}
+
+.header p {
+  margin: 0;
+  color: #616161;
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 28px;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(280px, 580px);
+  gap: 40px;
+  align-items: start;
+}
+
+.accordionColumn {
+  display: grid;
+  align-content: start;
+  gap: 0;
+  min-height: 600px;
+}
+
+.accordionItem {
+  position: relative;
+}
+
+.progressContainer {
+  width: 100%;
+  height: 2px;
+  background: rgba(15, 15, 16, 0.08);
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+}
+
+.progressBar {
+  height: 100%;
+  background: #08C186;
+  width: 0;
+  transition: width 16ms linear;
+}
+
+.accordionTrigger {
+  width: 100%;
+  padding: 22px 0 18px;
+  border: 0;
+  background: transparent;
+  display: block;
+  justify-items: start;
+  text-align: left;
+  cursor: pointer;
+}
+
+.triggerLabel {
+  display: block;
+  color: #888e9e;
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: -0.48px;
+  transition: color 180ms ease;
+}
+
+.accordionTriggerOpen .triggerLabel {
+  color: #0f0f10;
+}
+
+.accordionPanelWrapper {
+  overflow: hidden;
+}
+
+.accordionPanel {
+  padding: 0 0 22px;
+  display: grid;
+  gap: 16px;
+}
+
+.panelSubtitle {
+  margin: 0;
+  color: #323741;
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: -0.4px;
+}
+
+.panelList {
+  margin: 0;
+  padding-left: 20px;
+  display: grid;
+  gap: 6px;
+  color: #555f75;
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 26px;
+}
+
+.previewCard {
+  position: sticky;
+  padding: 24px 24px 42px;
+  border-radius: 18px;
+  background: #f6f6f8;
+  display: grid;
+  align-content: start;
+  justify-items: center;
+  top: 100px;
+}
+
+
+
+.previewLabel {
+  margin: 0;
+  color: rgba(0, 0, 0, 0.14);
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.previewMedia {
+  position: relative;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 10;
+  margin-top: 0;
+}
+
+.previewVideo {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0 8px 12px rgba(17, 17, 26, 0.1)) drop-shadow(0 16px 28px rgba(17, 17, 26, 0.1));
+}
+
+.previewTag {
+  position: absolute;
+  left: 50%;
+  bottom: 28px;
+  transform: translateX(-50%);
+  color: #d4d8e4;
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+/* Removed previewActions and previewButton styles */
+
+
+@keyframes industryFloatFront {
+
+  0%,
+  100% {
+    transform: translateY(0) scale(1);
+  }
+
+  50% {
+    transform: translateY(-6px) scale(1.015);
+  }
+}
+
+@include up($bp-xl) {
+  .layout {
+    grid-template-columns: minmax(0, 1fr) 580px;
+    gap: 80px;
+    align-items: start;
+  }
+}
+
+@media (max-width: 991px) {
+  .section {
+    padding: 72px 0;
+  }
+
+  .header {
+    margin-bottom: 48px;
+  }
+
+  .layout {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 28px;
+  }
+
+  .previewCard {
+    position: relative;
+    top: 0;
+    padding: 28px 16px 28px;
+  }
+
+  .desktopPreviewWrapper {
+    display: block;
+    margin-top: 20px;
+  }
+
+
+
+  .previewMedia {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 10;
+    margin-top: 20px;
+  }
+
+  .accordionColumn {
+    min-height: 0;
+  }
+
+  /* Removed mobile previewActions and previewButton styles */
+
+}
+
+@media (max-width: 575px) {
+  .section {
+    padding: 56px 0 71px;
+  }
+
+  .header {
+    gap: 12px;
+    margin-bottom: 36px;
+  }
+
+  .header h2 {
+    font-size: 30px;
+  }
+
+  .header p {
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  .layout {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 20px;
+  }
+
+  .triggerLabel {
+    font-size: 20px;
+  }
+
+  .panelSubtitle {
+    font-size: 18px;
+  }
+
+  .panelList {
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  .previewCard {
+    padding: 22px 12px 22px;
+  }
+
+  .previewMedia {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 10;
+    margin-top: 16px;
+  }
+
+  .accordionColumn {
+    min-height: 0;
+  }
+
+  /* Removed small mobile previewActions and previewButton styles */
+
+}

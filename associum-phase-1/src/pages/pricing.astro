@@ -1,0 +1,25 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { PricingPage } from '../components/pages/PricingPage.jsx';
+import { PricingCreditsSection } from '../components/PricingCreditsSection.jsx';
+import { PricingPlansSection } from '../components/PricingPlansSection.jsx';
+import { PricingComparisonTableSection } from '../components/PricingComparisonTableSection.jsx';
+import { PricingTopUpSection } from '../components/PricingTopUpSection.jsx';
+import { PricingFaqSection } from '../components/PricingFaqSection.jsx';
+---
+<Layout
+  title="Pricing — Associum"
+  description="Simple, output-based pricing with no seat limits. Pay only for the actual research, reports, and analytical work you run."
+  ogTitle="Pricing — Associum"
+  ogDescription="Simple, output-based pricing with no seat limits. Pay only for the actual research, reports, and analytical work you run."
+  canonical="/pricing"
+>
+  <main>
+    <PricingPage />
+    <PricingCreditsSection />
+    <PricingPlansSection client:visible />
+    <PricingComparisonTableSection client:visible />
+    <PricingTopUpSection variant="light" />
+    <PricingFaqSection client:visible />
+  </main>
+</Layout>

@@ -1,0 +1,134 @@
+@use '../../styles/variables' as *;
+
+.hero {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  padding: 180px 0 150px;
+}
+
+.backdrop {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.baseGradient {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, #0a111e 0%, #0f1b33 100%),
+    linear-gradient(90deg, #fff 0%, #fff 100%);
+}
+
+.textureWrap {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+
+.textureWrap img {
+  position: absolute;
+  top: -24.67%;
+  left: 0;
+  width: 100%;
+  height: 124.62%;
+  max-width: none;
+}
+
+.glow {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.heroInner {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  justify-items: center;
+  gap: 16px;
+  padding-top: 70px;
+  max-width: 100%;
+}
+
+.heroInner h1 {
+  width: 100%;
+  margin: 0;
+  color: #f9fafb;
+  text-align: center;
+  font-family: Lato, Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.heroInner p {
+  width: 100%;
+  max-width: 672px;
+  margin: 0;
+  color: #b7c3d2;
+  text-align: center;
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 28px;
+}
+
+@media (max-width: 991px) {
+  .hero {
+    padding: 164px 0 92px;
+  }
+
+  .heroInner {
+    padding-top: 52px;
+  }
+
+  .heroInner h1 {
+    font-size: 40px;
+  }
+}
+
+@media (max-width: 767px) {
+  .hero {
+    padding: 148px 0 72px;
+  }
+
+  .heroInner {
+    gap: 14px;
+    padding-top: 40px;
+  }
+
+  .heroInner h1 {
+    font-size: 34px;
+  }
+
+  .heroInner p {
+    max-width: 560px;
+    font-size: 17px;
+    line-height: 26px;
+  }
+}
+
+@media (max-width: 575px) {
+  .hero {
+    padding: 136px 0 64px;
+  }
+
+  .heroInner {
+    padding-top: 28px;
+  }
+
+  .heroInner h1 {
+    font-size: 30px;
+  }
+
+  .heroInner p {
+    font-size: 16px;
+    line-height: 25px;
+  }
+}

@@ -1,0 +1,158 @@
+@use '../styles/variables' as *;
+
+.section {
+  padding: 100px 0;
+  background: linear-gradient(153.2037deg, #f9fafb 1.772%, #ffffff 101.65%);
+}
+
+.inner {
+  display: grid;
+  gap: 45px;
+}
+
+.header {
+  display: grid;
+  justify-items: center;
+  text-align: center;
+}
+
+.eyebrow {
+  color: #0f8560;
+  font-family: Inter, sans-serif;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 22px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  opacity: 0.8;
+}
+
+.header h2 {
+  margin: 10px 0 0;
+  color: #000;
+  font-family: Lato, sans-serif;
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: -0.2px;
+}
+
+.header p {
+  margin: 15px 0 0;
+  color: #616161;
+  font-family: Inter, sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 40px;
+}
+
+.card {
+  min-height: 122px;
+  padding: 20px;
+  border-radius: 10px;
+  border: 1px solid #d8e3f3;
+  background: #f3f4f7;
+  display: grid;
+  gap: 16px;
+  align-content: start;
+}
+
+.card h3 {
+  margin: 0;
+  color: #000;
+  font-family: Inter, sans-serif;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: -0.44px;
+}
+
+.card p {
+  margin: 0;
+  color: #616161;
+  font-family: Inter, sans-serif;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+@media (max-width: 991px) {
+  .section {
+    padding: 84px 0;
+  }
+
+  .inner {
+    gap: 48px;
+  }
+
+  .grid {
+    gap: 24px;
+  }
+
+  .header p {
+    max-width: 540px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media (max-width: 767px) {
+  .section {
+    padding: 72px 0;
+  }
+
+  .header {
+    gap: 18px;
+  }
+
+  .header h2 {
+    font-size: 31px;
+  }
+
+  .header p {
+    font-size: 18px;
+    line-height: 1.5;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 575px) {
+  .section {
+    padding: 60px 0;
+  }
+
+  .inner {
+    gap: 36px;
+  }
+
+  .header h2 {
+    font-size: 28px;
+  }
+
+  .header p {
+    font-size: 16px;
+  }
+
+  .card {
+    gap: 12px;
+  }
+
+  .card h3 {
+    font-size: 20px;
+    padding-bottom: 8px;
+  }
+}

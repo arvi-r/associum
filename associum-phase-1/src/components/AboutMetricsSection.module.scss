@@ -1,0 +1,120 @@
+@use '../styles/variables' as *;
+
+.section {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+
+.backdrop {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.textureWrap {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  opacity: 0.5;
+}
+
+.textureWrap img {
+  position: absolute;
+  top: -396.72%;
+  left: 0;
+  width: 100%;
+  height: 520.15%;
+  max-width: none;
+}
+
+.gradient {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(0.7385deg, rgba(10, 17, 30, 0) 21.767%, rgba(9, 18, 34, 0.9) 123.18%),
+    linear-gradient(99.4727deg, #05704e 4.0412%, #09573e 103.36%);
+}
+
+.tiles {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 4px;
+  min-height: 240px;
+  align-items: center;
+  padding: 40px 0;
+}
+
+.tile {
+  min-height: 240px;
+  padding: 32px 28px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  text-align: center;
+}
+
+.tile h2 {
+  margin: 0;
+  color: #fff;
+  font-family: Lato, Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 42px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.tile p {
+  margin: 0;
+  color: #fff;
+  text-align: center;
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: -0.5px;
+  opacity: 0.5;
+}
+
+@media (max-width: 991px) {
+  .tiles {
+    min-height: 0;
+  }
+
+  .tile {
+    min-height: 200px;
+    padding: 28px 18px;
+  }
+
+  .tile h2 {
+    font-size: 34px;
+  }
+}
+
+@media (max-width: 767px) {
+  .tiles {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .tile {
+    min-height: 0;
+    padding: 24px 16px;
+  }
+}
+
+@media (max-width: 575px) {
+  .tile h2 {
+    font-size: 30px;
+  }
+
+  .tile p {
+    font-size: 15px;
+    letter-spacing: -0.2px;
+  }
+}

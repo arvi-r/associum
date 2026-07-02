@@ -1,0 +1,161 @@
+@use '../../styles/variables' as *;
+
+.hero {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background: linear-gradient(346deg, rgba(10, 17, 30, 0.00) -39.28%, #091222 127.62%), linear-gradient(92deg, rgba(5, 112, 78, 0.80) -4.04%, rgba(9, 87, 62, 0.80) 103.36%), url('../assets/pricing/pricing-hero-texture.webp') lightgray 0px -2150.211px / 100% 520.148% no-repeat, linear-gradient(133deg, #202C43 13.5%, #0A111E 130.89%);
+}
+
+.backdrop {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.baseGradient {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, #0a111e 0%, #0f1b33 100%),
+    linear-gradient(90deg, #fff 0%, #fff 100%);
+}
+
+.textureWrap {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+
+.textureWrap img {
+  position: absolute;
+  top: -24.67%;
+  left: 0;
+  width: 100%;
+  height: 124.62%;
+  max-width: none;
+}
+
+.glow {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.heroInner {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-items: center;
+  text-align: center;
+  gap: 60px;
+  align-items: start;
+  min-height: auto;
+  padding: 230px 0 150px;
+}
+
+.copy {
+  display: grid;
+  gap: 35px;
+  justify-items: center;
+  align-content: start;
+}
+
+.copy h1 {
+  margin: 0;
+  color: #f9fafb;
+  text-align: center;
+  font-family: Lato, Inter, system-ui, sans-serif;
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.description {
+  margin: -10px 0 0;
+  max-width: 672px;
+  color: #b7c3d2;
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 28px;
+}
+
+.meta {
+  margin: 0;
+  color: #e6eaef;
+  text-align: center;
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 28px;
+}
+
+.previewCard {
+  width: 100%;
+  height: 328px;
+  border-radius: 8px;
+  background: #fff;
+}
+
+@media (max-width: 1199px) {
+  .heroInner {
+    grid-template-columns: 1fr;
+    min-height: 0;
+    padding: 140px 0 72px;
+  }
+
+  .previewCard {
+    max-width: 520px;
+  }
+}
+
+@media (max-width: 767px) {
+  .heroInner {
+    gap: 36px;
+    padding: 162px 0 64px;
+  }
+
+  .copy h1 {
+    font-size: 38px;
+  }
+
+  .meta {
+    line-height: 26px;
+  }
+}
+
+@media (max-width: 575px) {
+  .heroInner {
+    gap: 28px;
+    padding: 154px 0 56px;
+  }
+
+  .copy {
+    gap: 24px;
+  }
+
+  .copy h1 {
+    font-size: 32px;
+  }
+
+  .description {
+    font-size: 16px;
+    line-height: 25px;
+  }
+
+  .meta {
+    font-size: 15px;
+    line-height: 24px;
+  }
+
+  .previewCard {
+    height: 220px;
+  }
+}

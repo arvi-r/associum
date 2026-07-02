@@ -1,0 +1,23 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { ProductPage } from '../components/pages/ProductPage.jsx';
+import { ProductWorkflowSection } from '../components/ProductWorkflowSection.jsx';
+import { ProductComparisonSection } from '../components/ProductComparisonSection.jsx';
+import { ProductCtaSection } from '../components/ProductCtaSection.jsx';
+---
+<Layout
+  title="Associum — AI Associate That Completes the Full Professional Production Cycle"
+  description="Document intelligence, analytical task execution, report generation, and collaboration — built for finance, consulting, accounting, and legal professionals."
+  ogTitle="Associum — Your AI Associate for Professional Work"
+  ogDescription="Document intelligence, analytical task execution, report generation, and collaboration — built for finance, consulting, accounting, and legal professionals."
+  ogImage="/associo-og-product.jpg"
+  ogImageAlt="Associum product — AI that completes the full professional production cycle"
+  canonical="/product"
+>
+  <main>
+    <ProductPage />
+    <ProductWorkflowSection client:visible />
+    <ProductComparisonSection />
+    <ProductCtaSection />
+  </main>
+</Layout>

@@ -1,0 +1,28 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { ContactPage } from '../components/pages/ContactPage.jsx';
+import { ContactSupportSection } from '../components/ContactSupportSection.jsx';
+import { ContactFaqSection } from '../components/ContactFaqSection.jsx';
+import { CtaBanner } from '../components/CtaBanner.jsx';
+import contactStyles from '../components/pages/ContactPage.module.scss';
+---
+<Layout
+  title="Contact Us — Associum"
+  description="Get in touch with the Associum team for enterprise plans, partnerships, support, or security documentation."
+  ogTitle="Contact Us — Associum"
+  ogDescription="Get in touch with the Associum team for enterprise plans, partnerships, support, or security documentation."
+  canonical="/contact"
+>
+  <main>
+    <ContactPage />
+    <ContactSupportSection client:visible />
+    <ContactFaqSection client:visible />
+    <CtaBanner
+      title="Your first 100 credits are free. No card needed."
+      primaryLabel="Start for Free"
+      primaryHref="https://app.associum.ai/signup"
+      primaryVariant="primary"
+      className={contactStyles.contactCta}
+    />
+  </main>
+</Layout>

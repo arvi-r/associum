@@ -1,0 +1,145 @@
+@use '../styles/variables' as *;
+
+.section {
+  padding: 100px 0;
+  background: linear-gradient(137.12deg, #f3f5f7 1.772%, #ffffff 101.65%);
+}
+
+.inner {
+  display: grid;
+  gap: 45px;
+}
+
+.inner h2 {
+  margin: 0;
+  color: #323741;
+  text-align: center;
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 36px;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: -0.2px;
+}
+
+.groups {
+  display: grid;
+  gap: 20px;
+  max-width: 900px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.group {
+  display: grid;
+  gap: 12px;
+}
+
+.group h3 {
+  margin: 0;
+  color: #323741;
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: -0.2px;
+}
+
+.items {
+  display: grid;
+}
+
+.item {
+  border-bottom: 1px solid #eaedf2;
+}
+
+.trigger {
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 18px 15px;
+  border: 0;
+  background: transparent;
+  text-align: left;
+  cursor: pointer;
+}
+
+.answerWrap {
+  overflow: hidden;
+}
+
+.answerInner {
+  padding: 0 15px 24px;
+}
+
+.question {
+  margin: 0;
+  color: #323741;
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.answer {
+  margin: 0;
+  color: rgba(50, 55, 65, 0.6);
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+.icon {
+  position: relative;
+  width: 24px;
+  height: 24px;
+  flex: 0 0 24px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.iconHorizontal,
+.iconVertical {
+  position: absolute;
+  background: #555f75;
+  border-radius: 10px;
+}
+
+.iconHorizontal {
+  left: 5px;
+  top: 11px;
+  width: 14px;
+  height: 2px;
+}
+
+.iconVertical {
+  left: 11px;
+  top: 5px;
+  width: 2px;
+  height: 14px;
+}
+
+@media (max-width: 767px) {
+  .section {
+    padding: 72px 0;
+  }
+
+  .inner {
+    gap: 32px;
+  }
+
+  .inner h2 {
+    font-size: 30px;
+  }
+
+  .answerInner {
+    padding-inline: 15px;
+  }
+
+  .answer {
+    font-size: 15px;
+    line-height: 22px;
+  }
+}

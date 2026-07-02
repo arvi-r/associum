@@ -1,0 +1,126 @@
+---
+import { ClientRouter } from 'astro:transitions';
+import { NavBar } from '../components/NavBar.jsx';
+import { Footer } from '../components/Footer.jsx';
+import '../styles/global.scss';
+
+// Derived from `site` in astro.config (driven by SITE_URL per environment).
+const SITE_URL = (Astro.site?.href ?? 'https://www.associum.ai/').replace(/\/$/, '');
+
+// Only production should be indexable. DEPLOY_ENV is set by CI; local builds
+// default to production (indexable). Non-production builds (e.g. staging) get a
+// site-wide noindex so they never compete with prod in search results.
+const isProduction = (process.env.DEPLOY_ENV ?? 'production') === 'production';
+
+// Google Tag Manager — production ONLY. Unlike `isProduction` above (which
+// defaults unset → production for indexability), analytics must NOT fire on
+// staging or during local dev/build, so we require an explicit
+// DEPLOY_ENV=production (set by the prod deploy workflow). GTM is the single
+// container that loads GA4, Google Ads conversion tracking, and any future
+// tags — managed in the GTM web UI, so this snippet never needs to change.
+const GTM_ID = 'GTM-KFKV462S';
+const gtmEnabled = process.env.DEPLOY_ENV === 'production';
+
+// Injected verbatim via set:html so Astro does not bundle/hoist the snippet
+// (it must run inline, as high in the <head> as possible).
+const gtmHead = `<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','${GTM_ID}');</script>
+<!-- End Google Tag Manager -->`;
+
+const gtmBody = `<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=${GTM_ID}"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->`;
+
+const {
+  title,
+  description,
+  ogTitle,
+  ogDescription,
+  ogImage = '/associo-og-home.jpg',
+  ogImageAlt,
+  ogType = 'website',
+  ogSiteName = 'Associum',
+  canonical,
+  preloadImages = [],
+  noindex = false,
+} = Astro.props;
+
+// Astro.url.pathname includes a trailing ".html" under build.format: 'file'
+// (and a trailing slash under 'directory'). Normalize to a clean route path
+// so the NavBar active-state comparison works in both modes.
+const cleanPath =
+  Astro.url.pathname.replace(/\.html$/, '').replace(/(.)\/$/, '$1') || '/';
+
+const fullOgImage = ogImage?.startsWith('http') ? ogImage : `${SITE_URL}${ogImage}`;
+const fullCanonical = canonical
+  ? (canonical.startsWith('http') ? canonical : `${SITE_URL}${canonical}`)
+  : null;
+const ogUrl = fullCanonical ?? `${SITE_URL}${cleanPath === '/' ? '/' : cleanPath}`;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    {gtmEnabled && <Fragment set:html={gtmHead} />}
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lato:wght@300;700&family=Space+Grotesk:wght@700&display=swap"
+      rel="stylesheet"
+    />
+
+    {
+      preloadImages.map((src) => (
+        <link rel="preload" as="image" href={src} type="image/webp" />
+      ))
+    }
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=1.0.1" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png?v=1.0.1" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png?v=1.0.1" />
+    <link rel="shortcut icon" href="/favicon.ico?v=1.0.1" />
+    <link rel="manifest" href="/site.webmanifest?v=1.0.1" />
+
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    {(noindex || !isProduction) && (
+      <meta name="robots" content={isProduction ? 'noindex, follow' : 'noindex, nofollow'} />
+    )}
+    {fullCanonical && <link rel="canonical" href={fullCanonical} />}
+
+    {/* Open Graph / Facebook */}
+    <meta property="og:type" content={ogType} />
+    <meta property="og:url" content={ogUrl} />
+    <meta property="og:title" content={ogTitle || title} />
+    <meta property="og:description" content={ogDescription || description} />
+    <meta property="og:image" content={fullOgImage} />
+    {ogImageAlt && <meta property="og:image:alt" content={ogImageAlt} />}
+    <meta property="og:site_name" content={ogSiteName} />
+
+    {/* Twitter */}
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content={ogUrl} />
+    <meta name="twitter:title" content={ogTitle || title} />
+    <meta name="twitter:description" content={ogDescription || description} />
+    <meta name="twitter:image" content={fullOgImage} />
+
+    {/* Client-side routing: prefetched pages swap instantly with a cross-fade and
+        no browser loader. Light re-hydration thanks to the de-hydrated pages. */}
+    <ClientRouter />
+  </head>
+  <body>
+    {gtmEnabled && <Fragment set:html={gtmBody} />}
+    <NavBar client:load pathname={cleanPath} transition:persist />
+    <slot />
+    <Footer />
+  </body>
+</html>

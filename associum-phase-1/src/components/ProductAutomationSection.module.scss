@@ -1,0 +1,385 @@
+@use '../styles/variables' as *;
+
+.section {
+  padding: 0 0 100px;
+  background:
+    linear-gradient(90deg, #f5f7fa 0%, #f5f7fa 100%),
+    linear-gradient(137.87deg, #f9fafb 1.772%, #fff 101.65%);
+}
+
+.cards {
+  display: grid;
+  gap: 60px;
+}
+
+.card {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 520px;
+  gap: 80px;
+  align-items: start;
+  padding: 60px;
+  border-radius: 20px;
+  background: #fcfcfd;
+}
+
+.cardCopy {
+  display: grid;
+  gap: 24px;
+}
+
+.cardCopy h3 {
+  margin: 0;
+  color: #0f0f10;
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: -0.2px;
+}
+
+.cardIntro {
+  margin: 0;
+  color: rgba(15, 15, 16, 0.6);
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+.checklist {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 18px;
+}
+
+.checklist li {
+  display: grid;
+  grid-template-columns: 14.28px minmax(0, 1fr);
+  gap: 12px;
+  align-items: start;
+}
+
+.check {
+  color: #059466;
+  font-family: 'DM Sans', Inter, system-ui, sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 18px;
+}
+
+.checklist li span:last-child {
+  color: rgba(15, 15, 16, 0.6);
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 26px;
+}
+
+.previewStage,
+.knowledgeStage {
+  position: relative;
+  width: 520px;
+  overflow: hidden;
+  border: 1px solid #e7e7e7;
+  border-radius: 8px;
+  background: #f2f4f8;
+}
+
+.previewStage {
+  height: 398px;
+}
+
+.knowledgeStage {
+  height: 398px;
+}
+
+.stageDots {
+  position: absolute;
+  inset: 0;
+}
+
+.stageDots img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.deliverableCard {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 14px 18px;
+  border: 0.897px solid #dde0e8;
+  border-radius: 8.972px;
+  background: #e6eaf1;
+  box-sizing: border-box;
+}
+
+.deliverableCardFaded {
+  opacity: 0.6;
+}
+
+.deliverableCardGhost {
+  opacity: 0.3;
+}
+
+.deliverableCardActive {
+  opacity: 1;
+  padding: 16px 20px;
+  border: 1px solid #dde0e8;
+  border-radius: 10px;
+  background: rgba(230, 234, 241, 0.3);
+  backdrop-filter: blur(3.481px);
+  box-shadow: 0 3.815px 9.537px rgba(0, 0, 0, 0.12);
+}
+
+.deliverableLeft {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+}
+
+.deliverableIconWrap {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 29px;
+  background: rgba(5, 112, 78, 0.12);
+  flex: 0 0 40px;
+}
+
+.deliverableCardFaded .deliverableIconWrap {
+  width: 35.886px;
+  height: 35.886px;
+}
+
+.deliverableCardGhost .deliverableIconWrap {
+  width: 32.385px;
+  height: 32.385px;
+}
+
+.deliverableIconWrap img {
+  width: 22px;
+  height: 22px;
+}
+
+.deliverableCard strong {
+  color: #0f0f10;
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 26px;
+  white-space: nowrap;
+}
+
+.deliverableCardFaded strong {
+  font-size: 16.149px;
+  line-height: 23.326px;
+}
+
+.deliverableCardGhost strong {
+  font-size: 14.573px;
+  line-height: 21.05px;
+}
+
+.deliverableCard span {
+  color: #888e9e;
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 26px;
+  white-space: nowrap;
+}
+
+.deliverableCardFaded span {
+  font-size: 14.354px;
+  line-height: 23.326px;
+}
+
+.deliverableCardGhost span {
+  font-size: 12.954px;
+  line-height: 21.05px;
+}
+
+.ringWrap,
+.peopleCloud {
+  position: absolute;
+  inset: 0;
+}
+
+.ringOuter,
+.ringMiddle,
+.ringInner {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.ringOuter {
+  width: 424px;
+  height: 424px;
+}
+
+.ringMiddle {
+  width: 346px;
+  height: 346px;
+}
+
+.ringInner {
+  width: 258px;
+  height: 258px;
+  top: 199px;
+}
+
+.logoCore {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 152px;
+  height: 152px;
+}
+
+.logoCore img {
+  width: 100%;
+  height: 100%;
+}
+
+.person {
+  position: absolute;
+  border-radius: 999px;
+  box-shadow: 0 10px 22px rgba(10, 17, 30, 0.12);
+}
+
+@media (max-width: 1199px) {
+  .card {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 36px;
+    padding: 36px;
+  }
+
+  .previewStage,
+  .knowledgeStage {
+    justify-self: center;
+  }
+
+  .knowledgeStage {
+    order: 2;
+  }
+}
+
+@media (max-width: 767px) {
+  .section {
+    padding-bottom: 72px;
+  }
+
+  .cards {
+    gap: 32px;
+  }
+
+  .card {
+    padding: 24px;
+    gap: 24px;
+  }
+
+  .cardCopy h3 {
+    font-size: 28px;
+  }
+}
+
+@media (max-width: 575px) {
+  .section {
+    padding-bottom: 56px;
+  }
+
+  .card {
+    padding: 20px;
+    border-radius: 16px;
+  }
+
+  .cardCopy {
+    gap: 18px;
+  }
+
+  .cardCopy h3 {
+    font-size: 26px;
+  }
+
+  .cardIntro,
+  .checklist li span:last-child {
+    font-size: 15px;
+    line-height: 24px;
+  }
+
+  .previewStage,
+  .knowledgeStage {
+    width: 100%;
+    height: 300px;
+  }
+
+  .deliverableCard {
+    gap: 12px;
+    padding: 10px 12px;
+  }
+
+  .deliverableCardActive {
+    padding: 12px 14px;
+  }
+
+  .deliverableCard strong {
+    font-size: 13px;
+    line-height: 18px;
+  }
+
+  .deliverableCard span {
+    font-size: 11px;
+    line-height: 16px;
+  }
+
+  .deliverableIconWrap {
+    width: 28px !important;
+    height: 28px !important;
+    flex-basis: 28px;
+  }
+
+  .deliverableIconWrap img {
+    width: 16px;
+    height: 16px;
+  }
+
+  .ringOuter {
+    width: 290px;
+    height: 290px;
+  }
+
+  .ringMiddle {
+    width: 236px;
+    height: 236px;
+  }
+
+  .ringInner {
+    width: 176px;
+    height: 176px;
+    top: 150px;
+  }
+
+  .logoCore {
+    width: 108px;
+    height: 108px;
+  }
+}

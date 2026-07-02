@@ -1,0 +1,13 @@
+@use '../styles/variables' as *;
+@use '../styles/mixins' as *;
+
+.container {
+  width: min(calc(100% - 32px), 1240px);
+  margin: 0 auto;
+}
+
+@include up($bp-md) {
+  .container {
+    width: min(calc(100% - 40px), 1240px);
+  }
+}

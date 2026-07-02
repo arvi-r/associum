@@ -1,0 +1,471 @@
+@use '../../styles/variables' as *;
+
+.hero {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  padding: 180px 0 120px;
+}
+
+.backdrop {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.baseGradient {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, #0a111e 0%, #0f1b33 100%),
+    linear-gradient(90deg, #fff 0%, #fff 100%);
+}
+
+.textureWrap {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+
+.textureWrap img {
+  position: absolute;
+  top: -24.67%;
+  left: 0;
+  width: 100%;
+  height: 124.62%;
+  max-width: none;
+}
+
+.glow {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.heroInner {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  justify-items: center;
+  gap: 18px;
+  max-width: 980px;
+  margin: 0 auto;
+  padding-top: 70px;
+  text-align: center;
+  transform: translateY(-35px);
+}
+
+.heroInner h1 {
+  margin: 0;
+  width: 100%;
+  color: #f9fafb;
+  font-family: Lato, Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+.heroDates {
+  display: grid;
+  gap: 4px;
+  width: 100%;
+}
+
+.heroDates p,
+.heroSummary {
+  margin: 0;
+  color: #b7c3d2;
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 28px;
+}
+
+.heroSummary {
+  max-width: 960px;
+}
+
+.termsSection {
+  padding: 100px 0;
+  background: linear-gradient(130.01deg, #f9fafb 1.77%, #ffffff 101.65%);
+}
+
+.termsLayout {
+  display: grid;
+  grid-template-columns: 373px minmax(0, 1fr);
+  gap: 40px;
+  align-items: start;
+}
+
+.tocCard {
+  position: sticky;
+  top: 120px;
+  display: grid;
+  gap: 20px;
+  padding: 32px;
+  border: 1px solid #eaedf2;
+  border-radius: 20px;
+  background: #ffffff;
+}
+
+.tocCard h2 {
+  margin: 0;
+  color: #0f0f10;
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.tocList {
+  display: grid;
+  gap: 12px;
+}
+
+.tocLink {
+  color: #0f0f10;
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.8;
+  text-decoration: none;
+  transition: color 180ms ease;
+}
+
+.tocLink:hover {
+  color: #0f8560;
+}
+
+.termsDocument {
+  display: grid;
+  gap: 35px;
+  min-width: 0;
+  padding: 32px 0;
+}
+
+.documentTitle {
+  margin: 0;
+  color: #0f0f10;
+  font-family: Lato, Inter, system-ui, sans-serif;
+  font-size: 32px;
+  font-weight: 900;
+  line-height: 42px;
+}
+
+.termsBlock,
+.subBlock,
+.paragraphGroup,
+.footerNotes,
+.callout {
+  display: grid;
+}
+
+.termsBlock {
+  gap: 8px;
+  scroll-margin-top: 120px;
+}
+
+.subBlock {
+  gap: 8px;
+}
+
+.paragraphGroup,
+.footerNotes,
+.callout {
+  gap: 8px;
+}
+
+.termsBlock h3,
+.termsBlock h4 {
+  margin: 0;
+  color: #0f0f10;
+}
+
+.termsBlock h3 {
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 36px;
+}
+
+.termsBlock h4 {
+  padding-left: 20px;
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 36px;
+}
+
+.termsBlock p,
+.bulletList li,
+.contactTable th,
+.contactTable td {
+  margin: 0;
+  color: #323741;
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 30px;
+}
+
+.subBlock > p {
+  padding-left: 52px;
+}
+
+.bulletList {
+  display: grid;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.bulletList li {
+  position: relative;
+  padding-left: 62px;
+}
+
+.bulletList li::before {
+  content: '';
+  position: absolute;
+  top: 10px;
+  left: 40px;
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  background: #ccd2dd;
+}
+
+.callout {
+  padding: 0;
+}
+
+.contactTableWrap {
+  overflow-x: auto;
+}
+
+.contactTable {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 560px;
+}
+
+.contactTable th,
+.contactTable td {
+  padding: 14px 0;
+  text-align: left;
+  border-bottom: 1px solid #eaedf2;
+}
+
+.contactTable th:first-child,
+.contactTable td:first-child {
+  width: 36%;
+  padding-right: 18px;
+}
+
+.contactTable th {
+  color: #0f0f10;
+  font-weight: 700;
+}
+
+.footerNotes p {
+  color: #5c6574;
+  font-size: 16px;
+  line-height: 26px;
+}
+
+@media (max-width: 1199px) {
+  .termsLayout {
+    grid-template-columns: 320px minmax(0, 1fr);
+    gap: 28px;
+  }
+
+  .tocCard {
+    padding: 28px 24px;
+  }
+
+  .tocLink {
+    font-size: 18px;
+    line-height: 1.7;
+  }
+}
+
+@media (max-width: 991px) {
+  .hero {
+    padding: 164px 0 96px;
+  }
+
+  .heroInner {
+    padding-top: 52px;
+    transform: translateY(0);
+  }
+
+  .heroInner h1 {
+    font-size: 40px;
+  }
+
+  .termsSection {
+    padding: 72px 0;
+  }
+
+  .termsLayout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .tocCard {
+    position: static;
+  }
+
+  .termsDocument {
+    padding-top: 0;
+  }
+
+  .documentTitle {
+    font-size: 30px;
+    line-height: 40px;
+  }
+}
+
+@media (max-width: 767px) {
+  .hero {
+    padding: 148px 0 72px;
+  }
+
+  .heroInner {
+    gap: 14px;
+    padding-top: 40px;
+  }
+
+  .heroInner h1 {
+    font-size: 34px;
+  }
+
+  .heroDates p,
+  .heroSummary {
+    font-size: 17px;
+    line-height: 26px;
+  }
+
+  .termsSection {
+    padding: 64px 0;
+  }
+
+  .tocCard {
+    gap: 16px;
+    padding: 24px 20px;
+    border-radius: 16px;
+  }
+
+  .tocCard h2 {
+    font-size: 22px;
+  }
+
+  .tocLink {
+    font-size: 16px;
+    line-height: 1.6;
+  }
+
+  .termsDocument {
+    gap: 28px;
+  }
+
+  .documentTitle {
+    font-size: 28px;
+    line-height: 38px;
+  }
+
+  .termsBlock {
+    gap: 12px;
+  }
+
+  .termsBlock h3 {
+    font-size: 22px;
+    line-height: 32px;
+  }
+
+  .termsBlock h4 {
+    padding-left: 0;
+    font-size: 18px;
+    line-height: 30px;
+  }
+
+  .termsBlock p,
+  .bulletList li,
+  .contactTable th,
+  .contactTable td {
+    font-size: 16px;
+    line-height: 26px;
+  }
+
+  .subBlock > p {
+    padding-left: 0;
+  }
+
+  .bulletList li {
+    padding-left: 38px;
+  }
+
+  .bulletList li::before {
+    left: 20px;
+    top: 9px;
+  }
+
+  .contactTable {
+    min-width: 0;
+  }
+
+  .contactTable th:first-child,
+  .contactTable td:first-child {
+    width: 44%;
+  }
+}
+
+@media (max-width: 575px) {
+  .hero {
+    padding: 136px 0 64px;
+  }
+
+  .heroInner {
+    padding-top: 56px;
+  }
+
+  .heroInner h1 {
+    font-size: 30px;
+  }
+
+  .heroDates p,
+  .heroSummary {
+    font-size: 16px;
+    line-height: 25px;
+  }
+
+  .termsSection {
+    padding: 56px 0;
+  }
+
+  .tocCard {
+    padding: 20px 16px;
+  }
+
+  .documentTitle {
+    font-size: 26px;
+    line-height: 34px;
+  }
+
+  .termsBlock h3 {
+    font-size: 20px;
+    line-height: 30px;
+  }
+
+  .termsBlock h4 {
+    font-size: 17px;
+    line-height: 28px;
+  }
+
+  .footerNotes p {
+    font-size: 15px;
+    line-height: 24px;
+  }
+}

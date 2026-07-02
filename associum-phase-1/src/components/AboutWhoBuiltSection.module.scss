@@ -1,0 +1,248 @@
+@use '../styles/variables' as *;
+
+.section {
+  background: #fff;
+  padding: 100px 0;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 80px;
+  align-items: start;
+}
+
+.copy {
+  display: grid;
+  gap: 30px;
+}
+
+.headingGroup {
+  display: grid;
+  gap: 14px;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 10px;
+  color: #08C186;
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 22px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  opacity: 1;
+}
+
+.eyebrowLine {
+  width: 24px;
+  height: 1px;
+  display: inline-flex;
+  align-items: center;
+}
+
+.eyebrowLine img {
+  display: block;
+  width: 24px;
+  height: 1px;
+}
+
+.headingGroup h2 {
+  margin: -15px 0 0;
+  color: #0f0f10;
+  font-family: Lato, Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: -0.2px;
+}
+
+.body {
+  display: grid;
+  gap: 26px;
+  min-width: 100%;
+}
+
+.body p {
+  margin: 0;
+  color: #888e9e;
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 26px;
+  letter-spacing: -0.2px;
+}
+
+.closing {
+  margin: 0;
+  color: #323741;
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 26px;
+  letter-spacing: -0.2px;
+}
+
+.brandPanel {
+  position: relative;
+  min-height: 450px;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.brandPanelBackground {
+  position: absolute;
+  inset: 0;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.brandPanelBackground img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.brandPanelOverlay {
+  position: absolute;
+  inset: 0;
+  border-radius: 16px;
+  background:
+    linear-gradient(90deg, #182336 0%, #182336 100%),
+    linear-gradient(90deg, #f6f6f8 0%, #f6f6f8 100%);
+}
+
+.brandLockup {
+  position: relative;
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24.391px;
+}
+
+.brandIcon {
+  width: 78.052px;
+  height: 78.052px;
+  display: block;
+  flex-shrink: 0;
+}
+
+.brandLockup span {
+  color: #f9fafb;
+  font-family: 'Space Grotesk', Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 48.783px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 68.296px;
+  letter-spacing: -1.2196px;
+}
+
+@media (max-width: 991px) {
+  .section {
+    padding: 84px 0;
+  }
+
+  .grid {
+    gap: 48px;
+    grid-template-columns: 1fr;
+  }
+
+  .brandPanel {
+    min-height: 380px;
+  }
+}
+
+@media (max-width: 767px) {
+  .section {
+    padding: 72px 0;
+  }
+
+  .copy {
+    gap: 24px;
+  }
+
+  .headingGroup h2 {
+    font-size: 31px;
+  }
+
+  .body p,
+  .closing {
+    font-size: 17px;
+    line-height: 25px;
+  }
+
+  .brandPanel {
+    min-height: 300px;
+  }
+
+  .brandLockup {
+    gap: 18px;
+  }
+
+  .brandIcon {
+    width: 62px;
+    height: 62px;
+  }
+
+  .brandLockup span {
+    font-size: 38px;
+    line-height: 1.15;
+    letter-spacing: -0.9px;
+  }
+}
+
+@media (max-width: 575px) {
+  .section {
+    padding: 60px 0;
+  }
+
+  .grid {
+    gap: 36px;
+  }
+
+  .headingGroup h2 {
+    font-size: 28px;
+  }
+
+  .body {
+    gap: 22px;
+  }
+
+  .body p,
+  .closing {
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  .brandPanel {
+    min-height: 240px;
+    padding: 8px;
+  }
+
+  .brandLockup {
+    gap: 14px;
+  }
+
+  .brandIcon {
+    width: 54px;
+    height: 54px;
+  }
+
+  .brandLockup span {
+    font-size: 32px;
+    letter-spacing: -0.7px;
+  }
+}
