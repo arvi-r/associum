@@ -42,6 +42,7 @@ import Layout from '../layouts/Layout.astro';
                                 <line x1="17" y1="16" x2="23" y2="16"></line>
                             </svg>
                             <span>Filters</span>
+                            <span class="filter-count" id="filter-count">0</span>
                         </button>
 
                         <!-- Filter Popup -->
@@ -1122,10 +1123,29 @@ import Layout from '../layouts/Layout.astro';
     transition: all 0.2s ease;
 }
 
-.control-btn:hover {
+.control-btn:hover, .btn-filters.active {
     background: #F8FAF9;
     border-color: #0F8560;
     color: #0F8560;
+}
+
+.filter-count {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    background: #0F8560;
+    color: #FFFFFF;
+    font-size: 12px;
+    font-weight: 600;
+    min-width: 20px;
+    height: 20px;
+    padding: 0 6px;
+    border-radius: 10px;
+    margin-left: 2px;
+}
+
+.filter-count.show {
+    display: inline-flex;
 }
 
 .search-box {
@@ -1992,6 +2012,24 @@ function changePage(page) {
 // Filter Templates by search input and active filters
 function applyFilters() {
     const query = searchInput ? searchInput.value.toLowerCase().trim() : '';
+    
+    const totalFilters = activeCategories.length + activeFormats.length;
+    const filterCountEl = document.getElementById('filter-count');
+    
+    if (btnFiltersToggle) {
+        if (totalFilters > 0) {
+            btnFiltersToggle.classList.add('active');
+            if (filterCountEl) {
+                filterCountEl.textContent = totalFilters;
+                filterCountEl.classList.add('show');
+            }
+        } else {
+            btnFiltersToggle.classList.remove('active');
+            if (filterCountEl) {
+                filterCountEl.classList.remove('show');
+            }
+        }
+    }
     
     filteredCards = allCards.filter(card => {
         const title = card.querySelector('.card-title').textContent.toLowerCase();
