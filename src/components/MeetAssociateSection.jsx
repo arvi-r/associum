@@ -14,23 +14,23 @@ const tabData = [
   {
     id: 'spreadsheets',
     title: 'Spreadsheets',
-    capabilities: 'Automated modeling and data structuring.',
-    description: 'Turn unstructured documents into fully structured financial models and spreadsheets in seconds, fully traced back to original sources.'
+    capabilities: 'Complex, audited financial modelling on demand.',
+    description: 'Generate clear, audited Excel-based spreadsheets for any type of financial or business analysis.  Edit and update the models directly to ensure analytical rigor.'
   },
   {
     id: 'reports',
     title: 'Reports',
-    capabilities: 'Draft reports and memos instantly.',
-    description: 'Automatically synthesize your research and spreadsheet data into comprehensive, sign-off ready reports, investment committee memos, and briefs.'
+    capabilities: 'Sophisticated, near-final deliverables ready for your review.',
+    description: 'Generate a near final deliverable in report or slide deck formats from a single prompt.  Use templates to capture your know-how, quality standards, and formatting reliably across any project.'
   }
 ];
 
 export function MeetAssociateSection() {
   const [activeIndex, setActiveIndex] = useState(0);
   const [progress, setProgress] = useState(0);
-  const DURATION = 5000;
+  const DURATION = 10000;
   const INTERVAL = 16;
-  
+
   const sectionRef = useRef(null);
   const isInView = useInView(sectionRef, { amount: 0.2 });
 
@@ -64,7 +64,7 @@ export function MeetAssociateSection() {
     <section ref={sectionRef} className={styles.section}>
       <Container>
         <div className={styles.header} data-reveal="true" style={{ '--reveal-delay': '0.1s' }}>
-          <h2>Meet Your New AI Associate.</h2>
+          <h2>One AI Associate. Every deliverable.</h2>
         </div>
 
         <div className={styles.layout} data-reveal="true" style={{ '--reveal-delay': '0.2s' }}>
@@ -72,21 +72,21 @@ export function MeetAssociateSection() {
             {tabData.map((tab, index) => {
               const isActive = activeIndex === index;
               return (
-                <div 
+                <div
                   key={tab.id}
                   className={`${styles.tab} ${isActive ? styles.active : ''}`}
                   onClick={() => handleTabClick(index)}
                 >
                   {/* Progress Indicator */}
                   <div className={styles.progressContainer}>
-                    <div 
-                      className={styles.progressBar} 
+                    <div
+                      className={styles.progressBar}
                       style={{ width: isActive ? `${progress}%` : '0%' }}
                     />
                   </div>
 
                   <h3 className={styles.tabTitle}>{tab.title}</h3>
-                  
+
                   <AnimatePresence initial={false}>
                     {isActive && (
                       <motion.div
@@ -97,7 +97,7 @@ export function MeetAssociateSection() {
                         className={styles.tabContentWrapper}
                       >
                         <div className={styles.tabContent}>
-                          <span className={styles.capabilities}>CAPABILITIES</span>
+
                           <h4>{tab.capabilities}</h4>
                           <p>{tab.description}</p>
                         </div>
@@ -110,12 +110,12 @@ export function MeetAssociateSection() {
           </div>
 
           <div className={styles.imageContainer}>
-            <video 
-              src={previewVideo} 
-              autoPlay 
-              muted 
-              loop 
-              playsInline 
+            <video
+              src={previewVideo}
+              autoPlay
+              muted
+              loop
+              playsInline
               className={styles.dashboardImage}
             />
           </div>

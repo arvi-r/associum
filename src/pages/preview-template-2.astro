@@ -442,8 +442,8 @@ import Layout from '../layouts/Layout.astro';
 .overlay-content p {
     color: #FFFFFF;
     font-family: 'Inter', sans-serif;
-    font-size: 8px;
-    font-weight: 600;
+    font-size: 6px;
+    font-weight: 500;
     margin: 0;
     line-height: 1.3;
 }
@@ -865,7 +865,7 @@ function renderRelatedTemplates() {
                     ${iconSvg}
                     <span>${item.fileType}</span>
                 </div>
-                <button class="btn-preview" onclick="window.location.href='${item.link}'">Preview Template</button>
+                <button class="btn-preview" onclick="window.location.href=Math.random() > 0.5 ? '/preview-template-1' : '/preview-template-2'">Preview Template</button>
             </div>
         `;
 

@@ -12,7 +12,7 @@ import Layout from '../layouts/Layout.astro';
         <section class="templates-hero">
             <div class="hero-container" data-reveal="true" style="--reveal-delay: 0.1s">
                 <h1 class="hero-title">
-                    <span class="title-professional">Professional Templates </span>
+                    <span class="title-professional">Professional Templates </span><br/>
                     <span class="title-built-for">Built for Real Work</span>
                 </h1>
                 <p class="hero-subtitle">Access a growing library of AI-powered templates designed to produce
@@ -42,7 +42,7 @@ import Layout from '../layouts/Layout.astro';
                                 <line x1="17" y1="16" x2="23" y2="16"></line>
                             </svg>
                             <span>Filters</span>
-                            <span class="filter-count" id="filter-count">0</span>
+                            <span class="filter-count" id="filter-count" style="display: none;"></span>
                         </button>
 
                         <!-- Filter Popup -->
@@ -1007,24 +1007,16 @@ import Layout from '../layouts/Layout.astro';
 .title-professional {
     color: #F9FAFB;
     font-family: 'Lato', sans-serif;
-    font-size: 60px;
+    font-size: 48px;
     font-style: normal;
     font-weight: 700;
     line-height: 119%;
-    display: block;
-    /* Stack or wrap beautifully */
-}
-
-@media (min-width: 769px) {
-    .title-professional {
-        display: inline;
-    }
 }
 
 .title-built-for {
     color: #08C186;
     font-family: 'Lato', sans-serif;
-    font-size: 60px;
+    font-size: 48px;
     font-style: normal;
     font-weight: 700;
     line-height: 119%;
@@ -1254,7 +1246,7 @@ import Layout from '../layouts/Layout.astro';
     color: #FFFFFF;
     font-family: 'Lato', sans-serif;
     font-size: 12px;
-    font-weight: 500;
+    font-weight: 600;
     padding: 6px 12px;
     border-radius: 8px;
     text-transform: uppercase;
@@ -2019,14 +2011,25 @@ function applyFilters() {
     if (btnFiltersToggle) {
         if (totalFilters > 0) {
             btnFiltersToggle.classList.add('active');
+            btnFiltersToggle.style.background = '#F8FAF9';
+            btnFiltersToggle.style.borderColor = '#0F8560';
+            btnFiltersToggle.style.color = '#0F8560';
+            
             if (filterCountEl) {
                 filterCountEl.textContent = totalFilters;
                 filterCountEl.classList.add('show');
+                filterCountEl.style.display = 'inline-flex';
             }
         } else {
             btnFiltersToggle.classList.remove('active');
+            btnFiltersToggle.style.background = '';
+            btnFiltersToggle.style.borderColor = '';
+            btnFiltersToggle.style.color = '';
+            
             if (filterCountEl) {
+                filterCountEl.textContent = '';
                 filterCountEl.classList.remove('show');
+                filterCountEl.style.display = 'none';
             }
         }
     }

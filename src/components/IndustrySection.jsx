@@ -13,6 +13,8 @@ const accordionItems = [
   {
     title: 'Finance',
     subtitle: 'Faster analysis, greater conviction.',
+    href: '/finance',
+    exploreText: 'Finance',
     bullets: [
       'Screen a new investment in 4 minutes, from first document to sourced investment thesis.',
       'Build an IC memo, research report, or pitch book to IC-ready standard in under an hour.',
@@ -23,6 +25,8 @@ const accordionItems = [
   {
     title: 'Consulting',
     subtitle: 'Client-ready. Partner-approved.',
+    href: '/consulting',
+    exploreText: 'Consulting',
     bullets: [
       'Draft a client-ready market sizing analysis in one task.',
       'Turn raw interview transcripts and research inputs into client-ready frameworks.',
@@ -33,6 +37,8 @@ const accordionItems = [
   {
     title: 'Accounting',
     subtitle: 'From numbers to narrative, on cycle.',
+    href: '/accounting',
+    exploreText: 'Accounting',
     bullets: [
       'Generate board packs and management accounts commentary from financial data, ready for FD review.',
       'Produce variance analysis narratives from raw numbers, structured to board standard.',
@@ -41,8 +47,10 @@ const accordionItems = [
     ],
   },
   {
-    title: 'Legal & Compliance',
+    title: 'Compliance',
     subtitle: 'Improved risk and compliance management.',
+    href: '/compliance',
+    exploreText: 'Compliance',
     bullets: [
       'Summarize hundreds of pages of contract clauses into a structured brief, ready for counsel review.',
       'Identify diligence red flags and compliance gaps from a document set, with page-level citations.',
@@ -186,6 +194,13 @@ export function IndustrySection() {
                               <li key={bullet}>{bullet}</li>
                             ))}
                           </ul>
+                          <a href={item.href} className={styles.exploreLink}>
+                            Explore {item.exploreText}
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                              <line x1="5" y1="12" x2="19" y2="12"></line>
+                              <polyline points="12 5 19 12 12 19"></polyline>
+                            </svg>
+                          </a>
                         </div>
                       </motion.div>
                     )}
