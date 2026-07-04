@@ -639,7 +639,7 @@ import { ButtonLink } from '../components/ButtonLink.jsx';
 /* Responsive tweaks */
 @media (max-width: 1120px) {
     .finance-hero {
-        padding: 140px 40px 0 40px;
+        padding: 0px 40px 0 40px;
     }
 
     .scenario-container {
@@ -648,13 +648,13 @@ import { ButtonLink } from '../components/ButtonLink.jsx';
 }
 
 @media (max-width: 1024px) {
-    .finance-hero {
+    .accounting-hero {
         height: auto;
-        padding: 140px 40px 0 40px;
+        padding: 0px 40px 0 40px;
     }
 
     .hero-inner {
-        flex-direction: column;
+        flex-direction: row;
         gap: 40px;
     }
 
@@ -703,7 +703,11 @@ import { ButtonLink } from '../components/ButtonLink.jsx';
 
 @media (max-width: 768px) {
     .finance-hero {
-        padding: 120px 20px 0 20px;
+        padding: 150px 20px 0 20px;
+    }
+
+    .hero-inner {
+        flex-direction: column;
     }
 
     .hero-left {
@@ -716,7 +720,7 @@ import { ButtonLink } from '../components/ButtonLink.jsx';
     }
 
     .hero-actions {
-        /* flex-direction: column; */
+        justify-content: center;
         width: 100%;
         gap: 12px;
     }
