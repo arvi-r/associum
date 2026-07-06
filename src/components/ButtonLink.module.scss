@@ -109,3 +109,13 @@
   line-height: 24px;
   letter-spacing: 0;
 }
+
+@media (max-width: 425px) {
+  .heroPrimary,
+  .heroSecondary {
+    width: 100%;
+    max-width: 100%;
+    justify-content: center;
+    text-align: center;
+  }
+}

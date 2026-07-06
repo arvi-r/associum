@@ -1014,7 +1014,7 @@ import Layout from '../layouts/Layout.astro';
 }
 
 .title-built-for {
-    color: #08C186;
+    color: #FFFFFF;
     font-family: 'Lato', sans-serif;
     font-size: 48px;
     font-style: normal;
@@ -1216,6 +1216,7 @@ import Layout from '../layouts/Layout.astro';
     transform: translateY(-4px);
     box-shadow: 0 12px 24px rgba(10, 17, 30, 0.05);
     border-color: #CCD2DD;
+    cursor: pointer;
 }
 
 .card-image-wrap {
@@ -1725,7 +1726,7 @@ import Layout from '../layouts/Layout.astro';
     }
 
     .cta-wrapper {
-        padding: 30px 24px;
+        padding: 30px 20px;
     }
 
     .cta-title {
@@ -1813,7 +1814,7 @@ import Layout from '../layouts/Layout.astro';
     }
 
     .cta-wrapper {
-        padding: 20px 16px;
+        padding: 30px 20px;
     }
 
     .cta-container {
@@ -1894,6 +1895,15 @@ document.addEventListener('astro:page-load', () => {
 
     // Load static cards from HTML DOM
     allCards = Array.from(document.querySelectorAll('.template-card'));
+
+    // Make entire cards clickable to trigger their preview buttons
+    allCards.forEach(card => {
+        card.addEventListener('click', (e) => {
+            if (e.target.closest('.btn-preview')) return;
+            const btn = card.querySelector('.btn-preview');
+            if (btn) btn.click();
+        });
+    });
 
     // Register event listeners
     if (btnFirst) btnFirst.addEventListener('click', () => changePage(1));

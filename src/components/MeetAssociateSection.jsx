@@ -7,20 +7,17 @@ import previewVideo from '../assets/homepage/video.webm';
 const tabData = [
   {
     id: 'research',
-    title: 'Research',
-    capabilities: 'Deep research and analysis in minutes.',
+    title: 'Deep research and analysis in minutes.',
     description: 'Dive into deep research and analysis with data from your proprietary files, the web, and 3rd party data sources with extensive citations. Organize your research by project and use in later spreadsheet or report generation.'
   },
   {
     id: 'spreadsheets',
-    title: 'Spreadsheets',
-    capabilities: 'Complex, audited financial modelling on demand.',
+    title: 'Complex, audited financial modelling on demand.',
     description: 'Generate clear, audited Excel-based spreadsheets for any type of financial or business analysis.  Edit and update the models directly to ensure analytical rigor.'
   },
   {
     id: 'reports',
-    title: 'Reports',
-    capabilities: 'Sophisticated, near-final deliverables ready for your review.',
+    title: 'Sophisticated deliverables ready for your review.',
     description: 'Generate a near final deliverable in report or slide deck formats from a single prompt.  Use templates to capture your know-how, quality standards, and formatting reliably across any project.'
   }
 ];
@@ -97,8 +94,6 @@ export function MeetAssociateSection() {
                         className={styles.tabContentWrapper}
                       >
                         <div className={styles.tabContent}>
-
-                          <h4>{tab.capabilities}</h4>
                           <p>{tab.description}</p>
                         </div>
                       </motion.div>

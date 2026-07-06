@@ -508,10 +508,23 @@ import Layout from '../layouts/Layout.astro';
 }
 
 .templates-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
     gap: 20px;
     width: 100%;
+    padding-bottom: 20px;
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+}
+
+.templates-grid::-webkit-scrollbar {
+    display: none;
+}
+
+.templates-grid :global(.template-card) {
+    flex: 0 0 350px;
+    scroll-snap-align: start;
 }
 
 /* Template Card (Reused styles) */
@@ -664,8 +677,8 @@ import Layout from '../layouts/Layout.astro';
         border-radius: 0 0 12px 12px;
     }
 
-    .templates-grid {
-        grid-template-columns: repeat(2, 1fr);
+    .btn-get-started {
+        align-self: center;
     }
 }
 
@@ -677,16 +690,10 @@ import Layout from '../layouts/Layout.astro';
     .related-templates {
         padding: 60px 24px;
     }
-
-    .btn-get-started {
-        width: 100%;
-    }
 }
 
 @media (max-width: 480px) {
-    .templates-grid {
-        grid-template-columns: 1fr;
-    }
+
 
     .thumbnails {
         flex-wrap: wrap;
@@ -824,6 +831,22 @@ function renderRelatedTemplates() {
             img: "/assets/images/templates/templates/template-04.png",
             fileType: "PDF Report",
             link: "../preview-template-1/preview-template-1.html"
+        },
+        {
+            title: "Market Research Report",
+            desc: "Analyze industries, competitors, TAM, growth drivers, and market opportunities using AI-powered research.",
+            category: "Research",
+            img: "/assets/images/templates/templates/template-02.png",
+            fileType: "PDF Report",
+            link: "preview-template-1.html"
+        },
+        {
+            title: "Regulatory Change Brief",
+            desc: "Generate macroeconomic analysis, market trends, forecasts, and policy implications.",
+            category: "Research",
+            img: "/assets/images/templates/templates/template-07.png",
+            fileType: "PPT Deck",
+            link: "preview-template-1.html"
         }
     ];
 

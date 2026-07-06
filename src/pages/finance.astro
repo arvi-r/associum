@@ -235,7 +235,7 @@ import { ButtonLink } from '../components/ButtonLink.jsx';
         <section class="automation-section">
             <div class="automation-container">
                 <div class="automation-header">
-                    <span class="automation-label" data-reveal="true" style="--reveal-delay: 0.1s">LESS DOING, MORE JUDGMENT</span>
+                    <span class="automation-label" data-reveal="true" style="--reveal-delay: 0.1s">LESS PAPERWORK, MORE JUDGEMENT</span>
                     <h2 class="automation-title" data-reveal="true" style="--reveal-delay: 0.2s">The work Associum
                         handles</h2>
                     <p class="automation-desc" data-reveal="true" style="--reveal-delay: 0.3s">Associum's agents manage the entire workflow of research and analysis, helping you and your clients make high-stakes decisions with better information, faster. Your judgement and decision-making, Associum's support in building conviction.</p>
@@ -761,6 +761,12 @@ import { ButtonLink } from '../components/ButtonLink.jsx';
         gap: 22px;
     }
 
+    .hero-actions .btn-primary,
+    .hero-actions .btn-outline {
+        width: 100%;
+        justify-content: center;
+    }
+
     .finance-hero {
         padding: 160px 20px 0 20px;
     }
@@ -1026,9 +1032,9 @@ import { ButtonLink } from '../components/ButtonLink.jsx';
     }
 }
 
-@media (max-width: 767px) {
+@media (max-width: 768px) {
     .workflow-container {
-        padding: 40px 20px;
+        padding: 60px 20px;
         gap: 40px;
     }
 
@@ -1416,6 +1422,10 @@ import { ButtonLink } from '../components/ButtonLink.jsx';
         z-index: 2;
     }
 
+    .role-tab.active:not(:first-child) {
+        margin-left: -1px;
+    }
+
     .role-content {
         border-radius: 0 0 16px 16px;
         border-top: none;
@@ -1539,9 +1549,9 @@ import { ButtonLink } from '../components/ButtonLink.jsx';
     }
 }
 
-@media (max-width: 767px) {
+@media (max-width: 768px) {
     .insight-container {
-        padding: 40px 20px;
+        padding: 60px 20px;
     }
 
     .insight-title {
@@ -2035,7 +2045,7 @@ import { ButtonLink } from '../components/ButtonLink.jsx';
 }
 
 /* Responsive */
-@media (max-width: 767px) {
+@media (max-width: 768px) {
     .faq-container {
         padding: 60px 20px;
     }
@@ -2151,9 +2161,9 @@ import { ButtonLink } from '../components/ButtonLink.jsx';
 }
 
 /* Responsive */
-@media (max-width: 767px) {
+@media (max-width: 768px) {
     .cta-wrapper {
-        padding: 40px 20px;
+        padding: 30px 20px;
     }
 
     .cta-title {
@@ -2186,7 +2196,6 @@ import { ButtonLink } from '../components/ButtonLink.jsx';
 @media (max-width: 425px) {
     .roles-tabs {
         width: 100%;
-        gap: 8px;
     }
 
     .role-tab {
@@ -2198,6 +2207,10 @@ import { ButtonLink } from '../components/ButtonLink.jsx';
     .content-title {
         font-size: 22px;
         font-weight: 600;
+    }
+
+    .cta-container {
+        padding: 40px 20px;
     }
 }
 /* Team Impact Section */
@@ -2317,6 +2330,12 @@ import { ButtonLink } from '../components/ButtonLink.jsx';
 @media (max-width: 991px) {
     .team-impact-grid {
         grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 1024px) {
+    .team-impact-section {
+        padding: 60px 40px;
     }
 }
 

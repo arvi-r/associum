@@ -306,3 +306,10 @@
     bottom: -620px;
   }
 }
+
+@media (max-width: 425px) {
+  .heroButton {
+    max-width: 100%;
+    width: 100%;
+  }
+}

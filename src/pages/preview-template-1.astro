@@ -474,10 +474,23 @@ import Layout from '../layouts/Layout.astro';
 }
 
 .templates-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
     gap: 20px;
     width: 100%;
+    padding-bottom: 20px;
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+}
+
+.templates-grid::-webkit-scrollbar {
+    display: none;
+}
+
+.templates-grid :global(.template-card) {
+    flex: 0 0 350px;
+    scroll-snap-align: start;
 }
 
 /* Template Card (Reused styles) */
@@ -630,8 +643,8 @@ import Layout from '../layouts/Layout.astro';
         border-radius: 0 0 12px 12px;
     }
 
-    .templates-grid {
-        grid-template-columns: repeat(2, 1fr);
+    .btn-get-started {
+        align-self: center;
     }
 }
 
@@ -643,16 +656,10 @@ import Layout from '../layouts/Layout.astro';
     .related-templates {
         padding: 60px 24px;
     }
-
-    .btn-get-started {
-        width: 100%;
-    }
 }
 
 @media (max-width: 480px) {
-    .templates-grid {
-        grid-template-columns: 1fr;
-    }
+
 
     .thumbnails {
         flex-wrap: wrap;
@@ -761,6 +768,22 @@ function renderRelatedTemplates() {
             category: "Research",
             img: "/assets/images/templates/templates/template-07.png",
             fileType: "PPT Deck",
+            link: "preview-template-1.html"
+        },
+        {
+            title: "Private Equity Buyout IC Paper",
+            desc: "Present a buyout to your IC with everything needed to make a decision, from thesis to returns.",
+            category: "Finance",
+            img: "/assets/images/templates/templates/template-05.png",
+            fileType: "PDF Report",
+            link: "preview-template-2.html"
+        },
+        {
+            title: "Sector Thematic Research Report",
+            desc: "Establish a structural investment thesis with company profiles, trade ideas, and price targets.",
+            category: "Finance",
+            img: "/assets/images/templates/templates/template-04.png",
+            fileType: "PDF Report",
             link: "preview-template-1.html"
         }
     ];

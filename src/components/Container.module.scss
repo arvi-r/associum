@@ -2,12 +2,21 @@
 @use '../styles/mixins' as *;
 
 .container {
-  width: min(calc(100% - 32px), 1240px);
+  width: 100%;
+  max-width: 100%;
   margin: 0 auto;
+  padding: 0 20px;
+  box-sizing: border-box;
 }
 
-@include up($bp-md) {
+@media (max-width: 1024px) {
   .container {
-    width: min(calc(100% - 40px), 1240px);
+    padding: 0 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 20px;
   }
 }
