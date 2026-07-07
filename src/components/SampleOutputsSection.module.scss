@@ -73,37 +73,36 @@
 
 .card {
   position: relative;
-  flex: 0 0 340px;
-  min-width: 340px;
+  flex: 0 0 290px;
+  min-width: 290px;
+  height: 371px;
   display: flex;
   flex-direction: column;
-  min-height: 252px;
-  padding: 20px 20px 0;
-  border: 1px solid #eaedf2;
-  border-radius: 10px;
+  padding: 15px 0 0;
+  border: 1px solid #ececec;
+  border-radius: 12px;
   background: #fff;
+  box-shadow: 0px 8px 24px 0px rgba(0,0,0,0.04);
   scroll-snap-align: start;
   text-decoration: none;
-  transition:
-    background-color 300ms ease,
-    border-color 300ms ease,
-    transform 300ms cubic-bezier(0.16, 1, 0.3, 1),
-    box-shadow 300ms ease;
+  transition: transform 300ms cubic-bezier(0.16, 1, 0.3, 1), box-shadow 300ms ease;
+  overflow: hidden;
 }
 
 .cardCopy {
   display: grid;
   gap: 8px;
+  padding: 0 23px;
 }
 
 .cardEyebrow {
   margin: 0;
-  color: rgba(58, 69, 65, 0.8);
+  color: #4c9c7d;
   font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  font-size: 15px;
+  font-size: 14px;
   font-weight: 500;
-  line-height: 22px;
-  letter-spacing: 1.5px;
+  line-height: 1.4;
+  letter-spacing: 1.12px;
   text-transform: uppercase;
 }
 
@@ -113,356 +112,34 @@
   font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   font-size: 20px;
   font-weight: 600;
-  line-height: normal;
+  line-height: 1.4;
   letter-spacing: -0.4px;
 }
 
-.folderPreview {
+.imageContainer {
   position: relative;
-  height: 260px;
-  margin-top: auto;
-}
-
-.swapPreview {
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
-}
-
-.swapArt {
-  position: absolute;
-  left: 50%;
-  bottom: 0;
-  width: 314px;
-  height: auto;
-  transform: translateX(-50%) scale(1);
-  transform-origin: center bottom;
-  transition:
-    opacity 600ms cubic-bezier(0.16, 1, 0.3, 1),
-    transform 600ms cubic-bezier(0.16, 1, 0.3, 1),
-    filter 600ms cubic-bezier(0.16, 1, 0.3, 1);
-  filter: drop-shadow(0 14px 28px rgba(17, 17, 26, 0.08));
-  will-change: opacity, transform, filter;
-  backface-visibility: hidden;
-  transform-style: preserve-3d;
-}
-
-.swapArtHover {
-  opacity: 0;
-  transform: translateX(-50%) translateY(4px) scale(0.98);
-  pointer-events: none;
-}
-
-.folderScene {
-  position: absolute;
-  inset: 0;
-  filter: drop-shadow(0 6.921px 10.381px rgba(17, 17, 26, 0.1)) drop-shadow(0 13.842px 24.223px rgba(17, 17, 26, 0.1)) drop-shadow(0 20.763px 34.605px rgba(17, 17, 26, 0.1));
-}
-
-.paperStack {
-  position: absolute;
-  left: 66px;
-  top: 40px;
-  width: 186px;
-  height: 150px;
-}
-
-.paper,
-.coverDoc {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  width: 96px;
-  height: 115px;
-  border-radius: 5.415px;
-  transform-origin: center bottom;
-  transition: transform 320ms cubic-bezier(0.16, 1, 0.3, 1), box-shadow 320ms ease;
-}
-
-.paper {
-  background: #f8f7f7;
-  border: 0.48px solid #f7f6f6;
-}
-
-.paperBack {
-  transform: translate(-50%, -50%) rotate(4.69deg) translate(20px, 8px);
-}
-
-.paperMid {
-  transform: translate(-50%, -50%) rotate(-2.31deg) translate(4px, 4px);
-}
-
-.paperFront {
-  transform: translate(-50%, -50%) rotate(-11.31deg) translate(-15px, -2px);
+  width: 256px;
+  height: 256px;
+  border-radius: 10px 0 0 0;
+  border: 1px solid #e8e4df;
+  border-bottom: none;
+  border-right: none;
   overflow: hidden;
-  border: 0.48px solid #756f6f;
+  margin: auto 0 0 auto;
 }
 
-.paperFront::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background:
-    linear-gradient(135deg, rgba(255, 255, 255, 0.92) 12%, rgba(255, 255, 255, 0.5) 55%, rgba(210, 216, 228, 0.15) 100%),
-    linear-gradient(180deg, #f8f7f7 0%, #f1f1f1 100%);
-}
-
-.paperLines {
-  position: absolute;
-  top: 12px;
-  left: 5px;
-  width: 81px;
-  display: grid;
-  gap: 3px;
-  z-index: 1;
-}
-
-.paperLines span {
-  display: block;
-  height: 7px;
-  border-radius: 14px;
-  background: #ededed;
-}
-
-.paperLines span:first-child {
-  width: 30px;
-}
-
-.paperLines span:last-child {
-  width: 40px;
-}
-
-.coverDoc {
-  z-index: 2;
-  transform: translate(-50%, -50%) rotate(-11.31deg) translate(-15px, -2px);
+.image {
+  width: 100%;
+  height: 100%;
   object-fit: cover;
-  box-shadow: 0 10px 20px rgba(17, 17, 26, 0.14);
-}
-
-.folderShell {
-  position: absolute;
-  left: 66px;
-  top: 110px;
-  width: 186px;
-  height: 115px;
-}
-
-.folderBack {
-  position: absolute;
-  left: 10px;
-  top: 12px;
-  width: 166px;
-  height: 146px;
-  object-fit: contain;
-}
-
-.folderFront {
-  position: absolute;
-  left: 0;
-  top: 22px;
-  width: 186px;
-  height: 115px;
-  object-fit: contain;
-}
-
-.folderLabel {
-  position: absolute;
-  left: 14px;
-  bottom: 16px;
-  z-index: 2;
-  color: #d4d8e4;
-  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  font-size: 11.511px;
-  font-weight: 500;
-  line-height: normal;
-}
-
-.downloadButton {
-  position: absolute;
-  right: 12px;
-  bottom: 12px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 28px;
-  height: 28px;
-  padding: 0;
-  border: 0;
-  border-radius: 25px;
-  background: #eaedf2;
-  cursor: pointer;
-  transition:
-    background-color 220ms ease,
-    transform 220ms cubic-bezier(0.16, 1, 0.3, 1),
-    box-shadow 220ms ease;
-}
-
-.downloadButton img {
-  width: 16px;
-  height: 16px;
+  object-position: top center;
   display: block;
-  transition: transform 220ms cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 @media (hover: hover) and (pointer: fine) {
   .card:hover {
-    background: #F9FAFB;
-    border-color: #CCD2DD;
-    transform: translateY(-2px);
-    box-shadow: 0 12px 24px rgba(17, 17, 26, 0.06);
-  }
-
-  .downloadButton:hover {
-    background: #0f8560;
-    transform: translateY(-2px);
-    box-shadow: none;
-  }
-
-  .downloadButton:hover img {
-    transform: scale(1.06);
-    filter: brightness(0) invert(1);
-  }
-
-  .card:hover .swapArtNormal {
-    opacity: 0;
-    transform: translateX(-50%) translateY(-6px) scale(1.02);
-    filter: drop-shadow(0 10px 20px rgba(17, 17, 26, 0.05));
-  }
-
-  .card:hover .swapArtHover {
-    opacity: 1;
-    transform: translateX(-50%) translateY(0) scale(1.05);
-    filter: drop-shadow(0 16px 32px rgba(17, 17, 26, 0.15));
-  }
-
-  .card:hover .paperBack {
-    transform: translate(-50%, -50%) rotate(4.69deg) translate(24px, -14px);
-  }
-
-  .card:hover .paperMid {
-    transform: translate(-50%, -50%) rotate(-2.31deg) translate(8px, -22px);
-  }
-
-  .card:hover .paperFront,
-  .card:hover .coverDoc {
-    transform: translate(-50%, -50%) rotate(-11.31deg) translate(-20px, -30px);
-  }
-
-  .card:hover .coverDoc {
-    box-shadow: 0 16px 28px rgba(17, 17, 26, 0.2);
-  }
-}
-
-@media (max-width: 767px) {
-  .section {
-    padding: 22px 0 72px;
-  }
-
-  .header {
-    gap: 14px;
-    margin-bottom: 32px;
-  }
-
-  .header h2 {
-    font-size: 30px;
-  }
-
-  .description {
-    font-size: 16px;
-    line-height: 24px;
-  }
-
-  .scroller {
-    gap: 16px;
-    margin: 0;
-    padding: 4px 0 40px;
-  }
-
-  .scrollerSpacer {
-    flex: 0 0 24px;
-    width: 24px;
-  }
-
-  .card {
-    flex-basis: 286px;
-    min-width: 286px;
-  }
-
-  .folderScene,
-  .folderPreview {
-    height: 232px;
-  }
-
-  .swapArt {
-    width: 286px;
-  }
-
-  .paperStack,
-  .folderShell {
-    left: 53px;
-  }
-
-  .folderBack {
-    width: 160px;
-    height: 140px;
-  }
-
-  .folderFront {
-    width: 178px;
-    height: 110px;
-  }
-}
-
-@media (max-width: 575px) {
-  .section {
-    padding: 6px 0 56px;
-  }
-
-  .header h2 {
-    font-size: 28px;
-  }
-
-  .card {
-    flex-basis: 274px;
-    min-width: 274px;
-    padding: 18px 18px 0;
-  }
-
-  .card h3 {
-    font-size: 18px;
-  }
-
-  .folderScene,
-  .folderPreview {
-    height: 220px;
-  }
-
-  .swapArt {
-    width: 268px;
-  }
-
-  .paperStack,
-  .folderShell {
-    left: 44px;
-    width: 174px;
-  }
-
-  .folderBack {
-    width: 152px;
-    height: 132px;
-  }
-
-  .folderFront {
-    width: 168px;
-    height: 104px;
-  }
-
-  .paperBack,
-  .paperMid,
-  .paperFront,
-  .coverDoc {
-    width: 90px;
-    height: 108px;
+    transform: translateY(-4px);
+    box-shadow: 0px 12px 32px 0px rgba(0,0,0,0.08);
   }
 }
 
@@ -530,11 +207,6 @@
   .card {
     flex: 1;
     min-width: 0;
-    min-height: 280px;
-  }
-
-  .swapArt {
-    max-width: 320px;
   }
 
   .controls {
@@ -543,8 +215,40 @@
 }
 
 @media (max-width: 767px) {
+  .section {
+    padding: 22px 0 72px;
+  }
+  .header {
+    gap: 14px;
+    margin-bottom: 32px;
+  }
+  .header h2 {
+    font-size: 30px;
+  }
+  .description {
+    font-size: 16px;
+    line-height: 24px;
+  }
+  .scroller {
+    gap: 16px;
+    margin: 0;
+    padding: 4px 0 40px;
+  }
+  .scrollerSpacer {
+    flex: 0 0 24px;
+    width: 24px;
+  }
   .controls {
     justify-content: center;
     padding-bottom: 0;
+  }
+}
+
+@media (max-width: 575px) {
+  .section {
+    padding: 6px 0 56px;
+  }
+  .header h2 {
+    font-size: 28px;
   }
 }

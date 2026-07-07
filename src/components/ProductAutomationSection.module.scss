@@ -383,3 +383,11 @@
     height: 108px;
   }
 }
+
+@media (max-width: 425px) {
+  .card {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+

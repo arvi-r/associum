@@ -224,7 +224,7 @@ import { ButtonLink } from '../components/ButtonLink.jsx';
                     <p class="insight-desc" data-reveal="true" style="--reveal-delay: 0.4s">You review the work. You verify the sources. The judgment stays with you.</p>
                 </div>
                 <div class="insight-right" style="padding: 0; background: transparent; border: none; overflow: hidden;">
-                    <video autoplay loop muted playsinline style="width: 100%; object-fit: cover; border-radius: 24px;">
+                    <video autoplay loop muted playsinline style="width: 100%; object-fit: cover; border-radius: 24px; border: 1px solid #EAEDF2;">
                         <source src="/assets/images/finance/source/source.mov">
                         Your browser does not support the video tag.
                     </video>
@@ -2171,14 +2171,22 @@ import { ButtonLink } from '../components/ButtonLink.jsx';
     }
 
     .cta-buttons {
-        flex-direction: column;
+        flex-direction: row;
         width: 100%;
-        max-width: 300px;
+        max-width: 400px;
+        margin: 0 auto;
     }
 
     .cta-btn-primary,
     .cta-btn-outline {
         width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .cta-buttons {
+        flex-direction: column;
+        max-width: 100%;
     }
 }
 
@@ -2281,7 +2289,7 @@ import { ButtonLink } from '../components/ButtonLink.jsx';
     font-weight: 700;
     line-height: 22.4px;
     letter-spacing: -0.4px;
-    margin: 0;
+    margin: 0 !important;
 }
 
 .impact-badge {
@@ -2290,10 +2298,7 @@ import { ButtonLink } from '../components/ButtonLink.jsx';
     font-family: Inter, sans-serif;
     font-size: 14px;
     font-weight: 600;
-    line-height: 22.4px;
-    letter-spacing: -0.4px;
-    padding: 0 20px;
-    height: 33px;
+    padding: 6px 16px;
     border-radius: 8px;
     display: flex;
     align-items: center;
@@ -2305,7 +2310,7 @@ import { ButtonLink } from '../components/ButtonLink.jsx';
     font-family: Inter, sans-serif;
     font-size: 14px;
     line-height: 23.1px;
-    margin: 0;
+    margin: 0 !important;
 }
 
 .team-impact-footer {
@@ -2355,6 +2360,29 @@ import { ButtonLink } from '../components/ButtonLink.jsx';
     .team-impact-footer p {
         font-size: 16px;
         line-height: 26px;
+    }
+}
+
+@media (max-width: 480px) {
+    .impact-badge {
+        font-size: 12px;
+        padding: 4px 12px;
+    }
+
+    .impact-card-header h3 {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 375px) {
+    .impact-badge {
+        font-size: 11px;
+        padding: 4px 8px;
+        white-space: nowrap !important;
+    }
+    
+    .impact-card-header h3 {
+        font-size: 16px;
     }
 }
 </style>

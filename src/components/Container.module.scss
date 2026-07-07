@@ -2,21 +2,30 @@
 @use '../styles/mixins' as *;
 
 .container {
-  width: 100%;
-  max-width: 100%;
+  width: min(calc(100% - 32px), 1240px);
   margin: 0 auto;
-  padding: 0 20px;
-  box-sizing: border-box;
+}
+
+@include up($bp-md) {
+  .container {
+    width: min(calc(100% - 40px), 1240px);
+  }
 }
 
 @media (max-width: 1024px) {
   .container {
-    padding: 0 40px;
+    margin: 0 !important;
+    padding-left: 40px !important;
+    padding-right: 40px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
   }
 }
 
 @media (max-width: 768px) {
   .container {
-    padding: 0 20px;
+    padding-left: 20px !important;
+    padding-right: 20px !important;
   }
 }

@@ -714,8 +714,7 @@ import { ButtonLink } from '../components/ButtonLink.jsx';
     font-style: normal;
     font-weight: 400;
     line-height: 28px;
-    /* 140% */
-    /* margin: 12px 0 0 0; */
+    margin: 0;
 }
 
 .team-grid {
@@ -1732,9 +1731,20 @@ import { ButtonLink } from '../components/ButtonLink.jsx';
     .hero-actions,
     .connect-container,
     .metrics-container,
-    .deployment-grid,
-    .cta-buttons {
+    .deployment-grid {
         flex-direction: column;
+    }
+
+    .cta-buttons {
+        flex-direction: row;
+        width: 100%;
+        max-width: 400px;
+        margin: 0 auto;
+    }
+
+    .cta-btn-primary,
+    .cta-btn-outline {
+        width: 100%;
     }
 
     .hero-actions {
@@ -1804,6 +1814,13 @@ import { ButtonLink } from '../components/ButtonLink.jsx';
 
     .metric-divider {
         display: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .cta-buttons {
+        flex-direction: column;
+        max-width: 100%;
     }
 }
 

@@ -1,64 +1,41 @@
 import React from 'react';
 import { Container } from './Container';
 import styles from './SampleOutputsSection.module.scss';
-import pdfViewerIcon from '../assets/homepage/pdf_viewer.svg?url';
-import equityHoverAsset from '../assets/homepage/equity-hover.svg?url';
-import equityNormalAsset from '../assets/homepage/equity-normal.svg?url';
-import strategyHoverAsset from '../assets/homepage/strategy-hover.svg?url';
-import strategyNormalAsset from '../assets/homepage/strategy-normal.svg?url';
-import standardHoverAsset from '../assets/homepage/standard-hover.svg?url';
-import standardNormalAsset from '../assets/homepage/standard-normal.svg?url';
-import complianceHoverAsset from '../assets/homepage/compliance-hover.svg?url';
-import complianceNormalAsset from '../assets/homepage/compliance-normal.svg?url';
+import financeAsset from '../assets/homepage/sample-outputs/finance.png?url';
+import consultingAsset from '../assets/homepage/sample-outputs/consulting.png?url';
+import accountingAsset from '../assets/homepage/sample-outputs/accounting.png?url';
+import complianceAsset from '../assets/homepage/sample-outputs/compliance.png?url';
 
 const sampleCards = [
   {
-    sector: 'Finance',
+    sector: 'FINANCE',
     title: 'Equity Initiation Report',
-    label: 'Finance',
-    previewType: 'swap',
-    normalArt: equityNormalAsset,
-    hoverArt: equityHoverAsset,
-    artAlt: 'Finance sample output folder preview',
+    image: financeAsset,
+    artAlt: 'Finance sample output preview',
     href: 'https://app.associum.ai/s/report/6f36de45-43b7-4a58-8648-eabcaaf779f9',
   },
   {
-    sector: 'Consulting',
-    title: 'Strategy Transformation Deck',
-    previewType: 'swap',
-    normalArt: strategyNormalAsset,
-    hoverArt: strategyHoverAsset,
-    artAlt: 'Consulting sample output folder preview',
+    sector: 'CONSULTING',
+    title: 'Strategy Transformation\nDeck',
+    image: consultingAsset,
+    artAlt: 'Consulting sample output preview',
     href: 'https://app.associum.ai/s/report/70ac7613-37b7-4f9b-b089-166777227852',
   },
   {
-    sector: 'Accounting',
-    title: 'Standards Conversion',
-    previewType: 'swap',
-    normalArt: standardNormalAsset,
-    hoverArt: standardHoverAsset,
-    artAlt: 'Accounting sample output folder preview',
+    sector: 'ACCOUNTING',
+    title: 'Standards conversion',
+    image: accountingAsset,
+    artAlt: 'Accounting sample output preview',
     href: 'https://app.associum.ai/s/report/d28c7850-8dfa-4e58-b0b0-e91159bcfb30',
   },
   {
-    sector: 'Compliance',
-    title: 'Regulatory Change Brief',
-    previewType: 'swap',
-    normalArt: complianceNormalAsset,
-    hoverArt: complianceHoverAsset,
-    artAlt: 'Compliance sample output folder preview',
+    sector: 'COMPLIANCE',
+    title: 'Regulatory change brief',
+    image: complianceAsset,
+    artAlt: 'Compliance sample output preview',
     href: 'https://app.associum.ai/s/report/9fea20a4-d97c-4bba-868a-9cfa9d4c3c28',
   },
 ];
-
-function ArtworkSwapPreview({ normalArt, hoverArt, artAlt }) {
-  return (
-    <div className={`${styles.folderPreview} ${styles.swapPreview}`}>
-      <img className={`${styles.swapArt} ${styles.swapArtNormal}`} src={normalArt} alt={artAlt} />
-      <img className={`${styles.swapArt} ${styles.swapArtHover}`} src={hoverArt} alt="" aria-hidden="true" />
-    </div>
-  );
-}
 
 export function SampleOutputsSection() {
   const scrollerRef = React.useRef(null);
@@ -118,17 +95,18 @@ export function SampleOutputsSection() {
             >
               <div className={styles.cardCopy}>
                 <p className={styles.cardEyebrow}>{card.sector}</p>
-                <h3>{card.title}</h3>
+                <h3>
+                  {card.title.split('\n').map((line, i) => (
+                    <React.Fragment key={i}>
+                      {line}
+                      {i !== card.title.split('\n').length - 1 && <br />}
+                    </React.Fragment>
+                  ))}
+                </h3>
               </div>
 
-              <ArtworkSwapPreview
-                normalArt={card.normalArt}
-                hoverArt={card.hoverArt}
-                artAlt={card.artAlt}
-              />
-
-              <div className={styles.downloadButton} aria-hidden="true">
-                <img src={pdfViewerIcon} alt="" />
+              <div className={styles.imageContainer}>
+                <img className={styles.image} src={card.image} alt={card.artAlt} />
               </div>
             </a>
           ))}

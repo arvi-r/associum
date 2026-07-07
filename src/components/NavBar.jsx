@@ -141,7 +141,7 @@ export function NavBar({ pathname = '/' }) {
                       <a
                         key={menuItem.label}
                         href={menuItem.href.startsWith('#') ? `/${menuItem.href}` : menuItem.href}
-                        className={styles.companyMenuItem}
+                        className={`${styles.companyMenuItem} ${currentPath === normalizePath(menuItem.href) ? styles.companyMenuItemActive : ''}`}
                         role="menuitem"
                         onClick={closeMenu}
                       >
@@ -200,7 +200,7 @@ export function NavBar({ pathname = '/' }) {
                 <div key={item.label} className={styles.mobileGroup}>
                   <button
                     type="button"
-                    className={styles.mobileNavButton}
+                    className={`${styles.mobileNavButton} ${isSubmenuActive(item) ? styles.mobileNavButtonActive : ''}`}
                     aria-expanded={mobileDropdowns[item.label]}
                     onClick={() =>
                       setMobileDropdowns((current) => ({
@@ -226,7 +226,7 @@ export function NavBar({ pathname = '/' }) {
                             ? `/#${menuItem.toLowerCase().replace(/\s+/g, '-')}`
                             : (menuItem.href.startsWith('#') ? `/${menuItem.href}` : menuItem.href)
                         }
-                        className={styles.mobileDropdownItem}
+                        className={`${styles.mobileDropdownItem} ${currentPath === normalizePath(typeof menuItem === 'string' ? '' : menuItem.href) ? styles.mobileDropdownItemActive : ''}`}
                         onClick={() => setMenuOpen(false)}
                       >
                         {typeof menuItem === 'string' ? menuItem : menuItem.label}
@@ -238,6 +238,7 @@ export function NavBar({ pathname = '/' }) {
                 <a
                   key={item.label}
                   href={item.href.startsWith('#') ? `/${item.href}` : item.href}
+                  className={currentPath === normalizePath(item.href) ? styles.mobileNavItemActive : ''}
                   onClick={closeMenu}
                 >
                   {item.label}

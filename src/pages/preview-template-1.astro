@@ -376,10 +376,7 @@ import Layout from '../layouts/Layout.astro';
 }
 
 .thumb-number {
-    font-family: 'Inter', sans-serif;
-    font-size: 14px;
-    color: #4B5563;
-    font-weight: 500;
+    display: none;
 }
 
 .thumb.blurred img {
@@ -653,17 +650,59 @@ import Layout from '../layouts/Layout.astro';
         padding-top: 140px;
     }
 
+    .preview-viewer {
+        display: flex;
+        flex-direction: column;
+        padding: 14px;
+        gap: 14px;
+    }
+
+    .thumbnails {
+        width: 100%;
+        flex-direction: row;
+        justify-content: flex-start;
+        padding: 16px;
+        gap: 16px;
+        overflow-x: auto;
+        overflow-y: hidden;
+    }
+
+    .thumb-wrapper {
+        flex-shrink: 0;
+        width: auto;
+        gap: 0;
+    }
+
+    .thumb {
+        width: 110px;
+        height: 140px;
+    }
+
+    .thumb-number {
+        display: none;
+    }
+
     .related-templates {
         padding: 60px 24px;
     }
 }
 
+@media (max-width: 425px) {
+    .thumbnails {
+        padding: 12px 12px;
+        gap: 12px;
+    }
+    .main-cover[data-astro-cid-7uldfyj7] {
+    padding: 16px;
+}
+}
+
 @media (max-width: 480px) {
-
-
+    /*
     .thumbnails {
         flex-wrap: wrap;
     }
+    */
 }
 </style>
 

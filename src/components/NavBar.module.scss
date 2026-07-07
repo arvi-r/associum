@@ -209,6 +209,10 @@
   outline: none;
 }
 
+.companyMenuItemActive {
+  color: #08c186 !important;
+}
+
 .mobileToggle {
   justify-self: end;
   width: 46px;
@@ -289,6 +293,10 @@
   padding: 8px 0;
 }
 
+.mobileNavItemActive {
+  color: #08c186 !important;
+}
+
 .mobileGroup {
   display: grid;
   gap: 8px;
@@ -312,6 +320,14 @@
   letter-spacing: -0.28px;
   text-transform: capitalize;
   cursor: pointer;
+}
+
+.mobileNavButtonActive {
+  color: #08c186 !important;
+
+  .mobileCaret {
+    filter: brightness(0) saturate(100%) invert(53%) sepia(87%) saturate(1814%) hue-rotate(124deg) brightness(96%) contrast(101%);
+  }
 }
 
 .mobileCaret {
@@ -359,6 +375,10 @@
 .mobileDropdownItem:focus-visible {
   background: rgba(255, 255, 255, 0.08);
   outline: none;
+}
+
+.mobileDropdownItemActive {
+  color: #08c186 !important;
 }
 
 .mobileActions {
