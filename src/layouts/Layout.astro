@@ -5,7 +5,7 @@ import { Footer } from '../components/Footer.jsx';
 import '../styles/global.scss';
 
 // Derived from `site` in astro.config (driven by SITE_URL per environment).
-const SITE_URL = (Astro.site?.href ?? 'https://www.associum.ai/').replace(/\/$/, '');
+const SITE_URL = Astro.url.origin;
 
 // Only production should be indexable. DEPLOY_ENV is set by CI; local builds
 // default to production (indexable). Non-production builds (e.g. staging) get a
