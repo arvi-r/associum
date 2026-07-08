@@ -13,7 +13,6 @@ const cards = [
     description:
       'Analyse data, build models, and produce structured outputs from raw inputs. One environment, no need to switch apps.',
     image: quantitativeAnalysisImage,
-    background: '#ffffff',
     imageClassName: styles.quantitativeAnalysisImage,
   },
   {
@@ -21,7 +20,6 @@ const cards = [
     description:
       'Commission research across any topic. Get structured, accurate, cross-referenced theses — ready to sign off, not rebuild.',
     image: deepResearchImage,
-    background: '#f8faf9',
     imageClassName: styles.deepResearchImage,
   },
   {
@@ -29,7 +27,6 @@ const cards = [
     description:
       'Every document you process becomes part of your private, searchable knowledge base. Surface prior analysis, precedents, and firm context from past engagements in seconds.',
     image: knowledgeBaseImage,
-    background: '#fbfafa',
     imageClassName: styles.knowledgeBaseImage,
   },
   {
@@ -37,14 +34,13 @@ const cards = [
     description:
       "Generate IC memos, board packs, compliance reports, and client briefs using our templates or plain language prompt. Output to your firm's exact standard.",
     image: reportAutomationImage,
-    background: '#fbfbfb',
     imageClassName: styles.reportAutomationImage,
   },
 ];
 
-function Card({ title, description, image, background, imageClassName }) {
+function Card({ title, description, image, imageClassName }) {
   return (
-    <article className={styles.card} style={{ background }}>
+    <article className={styles.card}>
       <div className={styles.cardContent}>
         <h3>{title}</h3>
         <p>{description}</p>
