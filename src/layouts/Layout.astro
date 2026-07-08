@@ -5,10 +5,7 @@ import { Footer } from '../components/Footer.jsx';
 import '../styles/global.scss';
 
 // Derived from `site` in astro.config (driven by SITE_URL per environment).
-const VERCEL_URL = process.env.VERCEL_URL;
-const SITE_URL = (VERCEL_URL && VERCEL_URL.includes('associumv2'))
-  ? 'https://associumv2.vercel.app'
-  : (Astro.site?.href ?? 'https://www.associum.ai/').replace(/\/$/, '');
+const SITE_URL = 'https://associum.ai';
 
 // Only production should be indexable. DEPLOY_ENV is set by CI; local builds
 // default to production (indexable). Non-production builds (e.g. staging) get a

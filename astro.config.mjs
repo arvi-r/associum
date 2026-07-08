@@ -11,7 +11,7 @@ const isProduction = (process.env.DEPLOY_ENV ?? 'production') === 'production';
 export default defineConfig({
   // Per-environment base URL (canonical/OG/sitemap). CI sets SITE_URL for
   // staging vs production; falls back to the production domain for local builds.
-  site: process.env.SITE_URL || 'https://www.associum.ai',
+  site: process.env.SITE_URL || 'https://associum.ai',
   output: 'static',
   // Prefetch linked pages so navigation is instant. `viewport` prefetches links
   // as soon as they're visible (so the nav bar's links are ready before the user
