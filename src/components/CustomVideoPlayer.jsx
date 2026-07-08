@@ -8,7 +8,7 @@ export function CustomVideoPlayer({ src, className, maskImage, poster }) {
   const [progress, setProgress] = useState(0);
   const [showControls, setShowControls] = useState(false);
   const [isMuted, setIsMuted] = useState(true);
-  const [shouldLoad, setShouldLoad] = useState(false);
+  const [shouldLoad, setShouldLoad] = useState(!poster);
   const videoRef = useRef(null);
   const containerRef = useRef(null);
   const controlsTimeoutRef = useRef(null);
@@ -140,7 +140,7 @@ export function CustomVideoPlayer({ src, className, maskImage, poster }) {
       onMouseMove={handleMouseMove}
       onClick={togglePlay}
     >
-      <div className={styles.maskContainer} style={{ maskImage: `url('${maskImage}')`, WebkitMaskImage: `url('${maskImage}')` }}>
+      <div className={styles.maskContainer} style={maskImage ? { maskImage: `url('${maskImage}')`, WebkitMaskImage: `url('${maskImage}')` } : {}}>
         {shouldLoad ? (
           <video
             ref={videoRef}

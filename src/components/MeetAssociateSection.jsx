@@ -3,6 +3,7 @@ import { motion, AnimatePresence, useInView } from 'framer-motion';
 import { Container } from './Container';
 import styles from './MeetAssociateSection.module.scss';
 import previewVideo from '../assets/homepage/video.webm';
+import { CustomVideoPlayer } from './CustomVideoPlayer';
 
 const tabData = [
   {
@@ -105,12 +106,8 @@ export function MeetAssociateSection() {
           </div>
 
           <div className={styles.imageContainer}>
-            <video
+            <CustomVideoPlayer
               src={previewVideo}
-              autoPlay
-              muted
-              loop
-              playsInline
               className={styles.dashboardImage}
             />
           </div>
