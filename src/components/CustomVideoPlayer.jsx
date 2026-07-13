@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import styles from './CustomVideoPlayer.module.scss';
 
-export function CustomVideoPlayer({ src, className, maskImage, poster }) {
+export function CustomVideoPlayer({ src, className, maskImage, poster, playbackRate = 1, onProgressChange, onEnded, loop = true }) {
   const [isPlaying, setIsPlaying] = useState(true);
   const [isFullscreen, setIsFullscreen] = useState(false);
   const [progress, setProgress] = useState(0);
@@ -12,6 +12,12 @@ export function CustomVideoPlayer({ src, className, maskImage, poster }) {
   const videoRef = useRef(null);
   const containerRef = useRef(null);
   const controlsTimeoutRef = useRef(null);
+
+  useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.playbackRate = playbackRate;
+    }
+  }, [playbackRate, shouldLoad]);
 
   useEffect(() => {
     // Only load the heavy video on desktop viewports (> 768px wide)
@@ -65,6 +71,33 @@ export function CustomVideoPlayer({ src, className, maskImage, poster }) {
     }
   };
 
+  useEffect(() => {
+    let animationFrameId;
+
+    const updateProgress = () => {
+      if (videoRef.current && videoRef.current.duration > 0) {
+        const currentProgress = (videoRef.current.currentTime / videoRef.current.duration) * 100;
+        setProgress(currentProgress);
+        if (onProgressChange) {
+          onProgressChange(currentProgress);
+        }
+      }
+      if (isPlaying) {
+        animationFrameId = requestAnimationFrame(updateProgress);
+      }
+    };
+
+    if (isPlaying) {
+      animationFrameId = requestAnimationFrame(updateProgress);
+    }
+
+    return () => {
+      if (animationFrameId) {
+        cancelAnimationFrame(animationFrameId);
+      }
+    };
+  }, [isPlaying, onProgressChange]);
+
   const toggleFullscreen = (e) => {
     e.stopPropagation();
     if (!isFullscreen) {
@@ -92,6 +125,9 @@ export function CustomVideoPlayer({ src, className, maskImage, poster }) {
     if (videoRef.current) {
       const currentProgress = (videoRef.current.currentTime / videoRef.current.duration) * 100;
       setProgress(currentProgress);
+      if (onProgressChange) {
+        onProgressChange(currentProgress);
+      }
     }
   };
 
@@ -148,9 +184,10 @@ export function CustomVideoPlayer({ src, className, maskImage, poster }) {
             className={styles.video}
             autoPlay
             muted={isMuted}
-            loop
+            loop={loop}
             playsInline
             onTimeUpdate={handleTimeUpdate}
+            onEnded={onEnded}
           />
         ) : (
           <img 

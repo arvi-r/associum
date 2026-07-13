@@ -5,7 +5,7 @@ import noTrainingIcon from '../assets/homepage/security-no-model-training.svg?ur
 import encryptedIcon from '../assets/homepage/security-encrypted.svg?url';
 import zeroRetentionIcon from '../assets/homepage/security-zero-retention.svg?url';
 import accessControlIcon from '../assets/homepage/security-access-control.svg?url';
-import isoLogo from '../assets/homepage/iso.webp?url';
+import isoLogo from '../assets/homepage/ISO.svg?url';
 import socLogo from '../assets/homepage/soc.webp?url';
 
 const securityCards = [

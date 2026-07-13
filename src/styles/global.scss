@@ -39,38 +39,44 @@ img {
   display: block;
 }
 
-// Entrance animation — replaces per-component framer-motion. Pure CSS, and
-// crucially it animates TRANSFORM ONLY (never opacity), so content is always at
-// full opacity and can never be stuck hidden — no JS, no IntersectionObserver,
-// no fill-mode edge cases. Optional stagger via `--reveal-delay`; `zoom` scales.
+// Entrance animation — implemented with IntersectionObserver
+// Animates opacity and transform on scroll to match live site behavior.
 @keyframes reveal-up {
   from {
+    opacity: 0;
     transform: translate3d(0, 24px, 0);
   }
   to {
+    opacity: 1;
     transform: translate3d(0, 0, 0);
   }
 }
 
 @keyframes reveal-zoom {
   from {
+    opacity: 0;
     transform: scale(0.97) translate3d(0, 0, 0);
   }
   to {
+    opacity: 1;
     transform: scale(1) translate3d(0, 0, 0);
   }
 }
 
 [data-reveal] {
+  opacity: 0;
+  will-change: transform, opacity;
+}
+
+[data-reveal].is-visible {
   animation: reveal-up 0.7s cubic-bezier(0.16, 1, 0.3, 1) var(--reveal-delay, 0s) both;
-  will-change: transform;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   -webkit-transform-style: preserve-3d;
   transform-style: preserve-3d;
 }
 
-[data-reveal='zoom'] {
+[data-reveal='zoom'].is-visible {
   animation-name: reveal-zoom;
 }
 
