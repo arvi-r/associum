@@ -17,8 +17,8 @@ import { ButtonLink } from '../components/ButtonLink.jsx';
                 <p class="hero-subtitle" data-reveal="true" style="--reveal-delay: 0.2s">Your whole firm can collaborate
                     around AI-driven insights with Associum.</p>
                 <div class="hero-actions" data-reveal="true" style="--reveal-delay: 0.3s">
-                    <ButtonLink href="#" variant="primary" size="heroPrimary">Talk to our Enterprise Team</ButtonLink>
-                    <ButtonLink href="#" variant="outline" size="heroSecondary">See Security Details</ButtonLink>
+                    <ButtonLink href="/enterprise" variant="primary" size="heroPrimary">Talk to our Enterprise Team</ButtonLink>
+                    <ButtonLink href="/security" variant="outline" size="heroSecondary">See Security Details</ButtonLink>
                 </div>
                 <p class="hero-footer-text" data-reveal="true" style="--reveal-delay: 0.4s">SOC 2 Type II &middot; ISO
                     27001 &middot; Zero data retention. Your data
@@ -322,7 +322,7 @@ import { ButtonLink } from '../components/ButtonLink.jsx';
                 </div>
 
                 <div class="cert-action" data-reveal="true" style="--reveal-delay: 0.3s">
-                    <button class="btn-full-security">Full Security Details</button>
+                    <button class="btn-full-security" onclick="window.location.href='/security'">Full Security Details</button>
                 </div>
             </div>
         </section>
@@ -444,7 +444,7 @@ import { ButtonLink } from '../components/ButtonLink.jsx';
             </div>
 
             <div class="pricing-action" data-reveal="true" style="--reveal-delay: 0.2s">
-                <button class="btn-full-security">Talk to our Enterprise Team</button>
+                <button class="btn-full-security" onclick="window.location.href='/enterprise'">Talk to our Enterprise Team</button>
             </div>
         </section>
 
@@ -544,7 +544,7 @@ import { ButtonLink } from '../components/ButtonLink.jsx';
                             respond within one business day.</p>
                     </div>
                     <div class="cta-buttons" data-reveal="true" style="--reveal-delay: 0.3s">
-                        <button class="btn-full-security">Talk to our Enterprise Team</button>
+                        <button class="btn-full-security" onclick="window.location.href='/enterprise'">Talk to our Enterprise Team</button>
                     </div>
                 </div>
             </div>
