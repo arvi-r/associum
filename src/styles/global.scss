@@ -45,24 +45,29 @@ img {
 // no fill-mode edge cases. Optional stagger via `--reveal-delay`; `zoom` scales.
 @keyframes reveal-up {
   from {
-    transform: translateY(24px);
+    transform: translate3d(0, 24px, 0);
   }
   to {
-    transform: none;
+    transform: translate3d(0, 0, 0);
   }
 }
 
 @keyframes reveal-zoom {
   from {
-    transform: scale(0.97);
+    transform: scale(0.97) translate3d(0, 0, 0);
   }
   to {
-    transform: none;
+    transform: scale(1) translate3d(0, 0, 0);
   }
 }
 
 [data-reveal] {
   animation: reveal-up 0.7s cubic-bezier(0.16, 1, 0.3, 1) var(--reveal-delay, 0s) both;
+  will-change: transform;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
 }
 
 [data-reveal='zoom'] {
