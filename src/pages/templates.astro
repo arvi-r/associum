@@ -1,5 +1,327 @@
 ---
 import Layout from '../layouts/Layout.astro';
+const templates = [
+  {
+    image: "/assets/images/templates/templates/accounting/thumbnail_transfer_pricing.webp",
+    category: "Accounting",
+    title: "Transfer Pricing Documentation",
+    desc: "Generate OECD and BEPS-compliant transfer pricing documentation supporting arm's length pricing policies and tax compliance.",
+    format: "PDF Report",
+    formatClass: "PDF",
+    previewUrl: "/preview-template-1",
+    delay: "0.1s"
+  },
+  {
+    image: "/assets/images/templates/templates/finance/thumbnail_comps.webp",
+    category: "Finance",
+    title: "Comparable Companies Analysis",
+    desc: "Perform valuation benchmarking using comparable public companies with trading multiples, peer analysis, and implied valuation ranges.",
+    format: "PDF Report",
+    formatClass: "PDF",
+    previewUrl: "/preview-template-1",
+    delay: "0.2s"
+  },
+  {
+    image: "/assets/images/templates/templates/consulting/thumbnail_market_entry.webp",
+    category: "Consulting",
+    title: "Market Entry Feasibility Report",
+    desc: "Evaluate expansion opportunities through market sizing, competition analysis, customer demand, risks, and go-to-market recommendations.",
+    format: "PDF Report",
+    formatClass: "PDF",
+    previewUrl: "/preview-template-1",
+    delay: "0.3s"
+  },
+  {
+    image: "/assets/images/templates/templates/consulting/thumbnail_digital_transformation_business_case.webp",
+    category: "Consulting",
+    title: "Technology & Digital Transformation Business Case",
+    desc: "Prepare executive business cases for digital transformation investments including benefits, costs, ROI, NPV, IRR, and implementation strategy.",
+    format: "PPT Deck",
+    formatClass: "PPTX",
+    previewUrl: "/preview-template-1",
+    delay: "0.1s"
+  },
+  {
+    image: "/assets/images/templates/templates/accounting/thumbnail_budget_forecast.webp",
+    category: "Accounting",
+    title: "Budget & Forecast Report",
+    desc: "Build comprehensive budgets and financial forecasts with scenarios, assumptions, variance analysis, and management commentary.",
+    format: "PDF Report",
+    formatClass: "PDF",
+    previewUrl: "/preview-template-1",
+    delay: "0.2s"
+  },
+  {
+    image: "/assets/images/templates/templates/consulting/thumbnail_pmi_playbook.webp",
+    category: "Consulting",
+    title: "Post-Merger Integration Playbook",
+    desc: "Develop comprehensive post-merger integration plans covering governance, workstreams, synergies, milestones, and execution strategy.",
+    format: "PDF Report",
+    formatClass: "PDF",
+    previewUrl: "/preview-template-1",
+    delay: "0.3s"
+  },
+  {
+    image: "/assets/images/templates/templates/compliance/thumbnail_reg_change.webp",
+    category: "Compliance",
+    title: "Regulatory Change Impact Brief",
+    desc: "Summarize regulatory changes, assess business impact, identify compliance gaps, and recommend implementation actions.",
+    format: "PDF Report",
+    formatClass: "PDF",
+    previewUrl: "/preview-template-1",
+    delay: "0.1s"
+  },
+  {
+    image: "/assets/images/templates/templates/finance/thumbnail_fin_007.webp",
+    category: "Finance",
+    title: "Fund Due Diligence Questionnaire Response",
+    desc: "Draft comprehensive LP due diligence questionnaire responses covering fund strategy, governance, operations, compliance, and track record.",
+    format: "PDF Report",
+    formatClass: "PDF",
+    previewUrl: "/preview-template-1",
+    delay: "0.2s"
+  },
+  {
+    image: "/assets/images/templates/templates/compliance/thumbnail_fund_governance.webp",
+    category: "Compliance",
+    title: "Fund Governance Report (Annual)",
+    desc: "Prepare annual governance reports covering oversight, compliance, risk management, board activities, and investor reporting.",
+    format: "PDF Report",
+    formatClass: "PDF",
+    previewUrl: "/preview-template-1",
+    delay: "0.3s"
+  },
+  {
+    image: "/assets/images/templates/templates/consulting/thumbnail_exec_memo.webp",
+    category: "Consulting",
+    title: "Executive Briefing Memo",
+    desc: "Draft concise executive briefing memos that summarize critical issues, insights, recommendations, and required decisions.",
+    format: "PDF Report",
+    formatClass: "PDF",
+    previewUrl: "/preview-template-1",
+    delay: "0.1s"
+  },
+  {
+    image: "/assets/images/templates/templates/consulting/thumbnail_con_008.webp",
+    category: "Consulting",
+    title: "Organisational Design & Talent Strategy Blueprint",
+    desc: "Create organizational design blueprints covering structures, roles, governance, workforce planning, and capability development.",
+    format: "PPT Deck",
+    formatClass: "PPTX",
+    previewUrl: "/preview-template-1",
+    delay: "0.2s"
+  },
+  {
+    image: "/assets/images/templates/templates/consulting/thumbnail_strategy_deck.webp",
+    category: "Consulting",
+    title: "Strategy Engagement Final Deck",
+    desc: "Build executive-ready strategy presentations summarizing analysis, recommendations, implementation roadmap, and expected business impact.",
+    format: "PPT Deck",
+    formatClass: "PPTX",
+    previewUrl: "/preview-template-1",
+    delay: "0.3s"
+  },
+  {
+    image: "/assets/images/templates/templates/accounting/thumbnail_controls.webp",
+    category: "Accounting",
+    title: "Financial Controls Assessment",
+    desc: "Assess internal financial controls against frameworks such as COSO or SOX and recommend remediation actions.",
+    format: "PDF Report",
+    formatClass: "PDF",
+    previewUrl: "/preview-template-1",
+    delay: "0.1s"
+  },
+  {
+    image: "/assets/images/templates/templates/consulting/thumbnail_digital_roadmap.webp",
+    category: "Consulting",
+    title: "Technology & Digital Transformation Roadmap",
+    desc: "Design strategic technology transformation roadmaps outlining current state, target architecture, initiatives, timelines, and governance.",
+    format: "PPT Deck",
+    formatClass: "PPTX",
+    previewUrl: "/preview-template-1",
+    delay: "0.2s"
+  },
+  {
+    image: "/assets/images/templates/templates/accounting/thumbnail_board_fin_pack.webp",
+    category: "Accounting",
+    title: "Board Financial Pack",
+    desc: "Create board-ready finance presentations covering performance, forecasts, cash flow, risks, and strategic financial decisions.",
+    format: "PPT Deck",
+    formatClass: "PPTX",
+    previewUrl: "/preview-template-1",
+    delay: "0.3s"
+  },
+  {
+    image: "/assets/images/templates/templates/compliance/thumbnail_dpia.webp",
+    category: "Compliance",
+    title: "Data Privacy Impact Assessment (DPIA)",
+    desc: "Conduct structured Data Privacy Impact Assessments to evaluate privacy risks, regulatory compliance, and mitigation strategies.",
+    format: "PDF Report",
+    formatClass: "PDF",
+    previewUrl: "/preview-template-1",
+    delay: "0.1s"
+  },
+  {
+    image: "/assets/images/templates/templates/accounting/thumbnail_business_valuation.webp",
+    category: "Accounting",
+    title: "Business Valuation Report",
+    desc: "Perform comprehensive business valuations using discounted cash flow, market multiples, precedent transactions, and asset-based methods.",
+    format: "PDF Report",
+    formatClass: "PDF",
+    previewUrl: "/preview-template-1",
+    delay: "0.2s"
+  },
+  {
+    image: "/assets/images/templates/templates/finance/thumbnail_pe_ic_paper.webp",
+    category: "Finance",
+    title: "Private Equity Buyout IC Paper",
+    desc: "Prepare investment committee papers for buyout opportunities, including transaction rationale, valuation, returns analysis, financing, and key risks.",
+    format: "PDF Report",
+    formatClass: "PDF",
+    previewUrl: "/preview-template-1",
+    delay: "0.3s"
+  },
+  {
+    image: "/assets/images/templates/templates/consulting/thumbnail_cost_optimisation.webp",
+    category: "Consulting",
+    title: "Cost Optimisation Business Case",
+    desc: "Build business cases for cost optimization initiatives with savings estimates, implementation plans, ROI, and financial impact.",
+    format: "PDF Report",
+    formatClass: "PDF",
+    previewUrl: "/preview-template-1",
+    delay: "0.1s"
+  },
+  {
+    image: "/assets/images/templates/templates/compliance/thumbnail_cap_table.webp",
+    category: "Compliance",
+    title: "Shareholder / Cap Table Register Update",
+    desc: "Update shareholder registers and capitalization tables reflecting equity issuances, transfers, dilution, and ownership changes.",
+    format: "PDF Report",
+    formatClass: "PDF",
+    previewUrl: "/preview-template-1",
+    delay: "0.2s"
+  },
+  {
+    image: "/assets/images/templates/templates/finance/thumbnail_deal_teaser.webp",
+    category: "Finance",
+    title: "Deal Teaser / One-Pager",
+    desc: "Create compelling confidential deal teasers that highlight a company's strengths while protecting its identity.",
+    format: "PDF Report",
+    formatClass: "PDF",
+    previewUrl: "/preview-template-1",
+    delay: "0.3s"
+  },
+  {
+    image: "/assets/images/templates/templates/compliance/thumbnail_board_resolution.webp",
+    category: "Compliance",
+    title: "Board Resolution & Minutes",
+    desc: "Generate formal board resolutions and meeting minutes with governance records, approvals, actions, and compliance documentation.",
+    format: "PDF Report",
+    formatClass: "PDF",
+    previewUrl: "/preview-template-1",
+    delay: "0.1s"
+  },
+  {
+    image: "/assets/images/templates/templates/compliance/thumbnail_sanctions.webp",
+    category: "Compliance",
+    title: "Sanctions & PEP Screening Report",
+    desc: "Produce KYC screening reports documenting sanctions, politically exposed persons (PEPs), adverse media findings, and compliance conclusions.",
+    format: "PDF Report",
+    formatClass: "PDF",
+    previewUrl: "/preview-template-1",
+    delay: "0.2s"
+  },
+  {
+    image: "/assets/images/templates/templates/finance/thumbnail_portco_review.webp",
+    category: "Finance",
+    title: "Portfolio Company Quarterly Review",
+    desc: "Generate quarterly portfolio company reviews covering operational KPIs, financial performance, strategic initiatives, and value creation progress.",
+    format: "PPT Deck",
+    formatClass: "PPTX",
+    previewUrl: "/preview-template-1",
+    delay: "0.3s"
+  },
+  {
+    image: "/assets/images/templates/templates/accounting/thumbnail_audit_working_paper.webp",
+    category: "Accounting",
+    title: "Audit Working Paper",
+    desc: "Generate structured audit working papers documenting procedures performed, evidence obtained, findings, and audit conclusions.",
+    format: "PDF Report",
+    formatClass: "PDF",
+    previewUrl: "/preview-template-1",
+    delay: "0.1s"
+  },
+  {
+    image: "/assets/images/templates/templates/finance/thumbnail_thematic_research.webp",
+    category: "Finance",
+    title: "Sector Thematic Research Report",
+    desc: "Develop in-depth sector research reports with structural trends, competitive landscape, investment opportunities, and market outlook.",
+    format: "PDF Report",
+    formatClass: "PDF",
+    previewUrl: "/preview-template-1",
+    delay: "0.2s"
+  },
+  {
+    image: "/assets/images/templates/templates/accounting/thumbnail_consolidation.webp",
+    category: "Accounting",
+    title: "Consolidation Reporting Pack",
+    desc: "Produce consolidated financial reporting packs with eliminations, foreign currency translation, reconciliations, and disclosures.",
+    format: "PDF Report",
+    formatClass: "PDF",
+    previewUrl: "/preview-template-1",
+    delay: "0.3s"
+  },
+  {
+    image: "/assets/images/templates/templates/accounting/thumbnail_esg_assurance.webp",
+    category: "Accounting",
+    title: "ESG Assurance Report",
+    desc: "Prepare ESG assurance reports evaluating sustainability disclosures against reporting frameworks, evidence, and assurance standards.",
+    format: "PDF Report",
+    formatClass: "PDF",
+    previewUrl: "/preview-template-1",
+    delay: "0.1s"
+  },
+  {
+    image: "/assets/images/templates/templates/finance/thumbnail_fin_009.webp",
+    category: "Finance",
+    title: "Private Client Portfolio Review",
+    desc: "Generate personalized portfolio performance reviews with asset allocation, returns, risk analysis, and investment recommendations.",
+    format: "PDF Report",
+    formatClass: "PDF",
+    previewUrl: "/preview-template-1",
+    delay: "0.2s"
+  },
+  {
+    image: "/assets/images/templates/templates/accounting/thumbnail_mgmt_accounts.webp",
+    category: "Accounting",
+    title: "Monthly Management Accounts Pack",
+    desc: "Prepare monthly management reporting packs including financial statements, KPIs, variance analysis, forecasts, and executive commentary.",
+    format: "PDF Report",
+    formatClass: "PDF",
+    previewUrl: "/preview-template-1",
+    delay: "0.3s"
+  },
+  {
+    image: "/assets/images/templates/templates/finance/thumbnail_equity_research.webp",
+    category: "Finance",
+    title: "Equity Research Initiation Report",
+    desc: "Produce institutional-grade equity research reports with investment thesis, valuation models, financial analysis, catalysts, and risk assessment.",
+    format: "PDF Report",
+    formatClass: "PDF",
+    previewUrl: "/preview-template-1",
+    delay: "0.1s"
+  },
+  {
+    image: "/assets/images/templates/templates/finance/thumbnail_fin_008.webp",
+    category: "Finance",
+    title: "Macro & Market Research Report",
+    desc: "Create macroeconomic and market research reports featuring economic trends, scenarios, investment implications, and forecasts.",
+    format: "PDF Report",
+    formatClass: "PDF",
+    previewUrl: "/preview-template-1",
+    delay: "0.2s"
+  }
+];
 ---
 
 <Layout title="Professional Templates | Associum">
@@ -100,817 +422,44 @@ import Layout from '../layouts/Layout.astro';
                 </div>
 
                 <div class="templates-grid">
-                    <div class="template-card" data-category="Finance" data-format="PDF Report" data-reveal="true"
-                        style="--reveal-delay: 0.1s">
-                        <div class="card-image-wrap">
-                            <img src="/assets/images/templates/templates/template-01.webp" alt="Economic Research Report"
-                                class="card-img">
-                            <span class="category-badge">Finance</span>
-                        </div>
-                        <div class="card-info">
-                            <h3 class="card-title">Economic Research Report</h3>
-                            <p class="card-desc">Generate institutional-grade investment committee memos with market
-                                analysis, risks, valuation insights, and recommendations.</p>
-                        </div>
-                        <div class="card-footer">
-                            <div class="file-type">
-                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-                                    <polyline points="14 2 14 8 20 8"></polyline>
-                                    <line x1="16" y1="13" x2="8" y2="13"></line>
-                                    <line x1="16" y1="17" x2="8" y2="17"></line>
-                                    <polyline points="10 9 9 9 8 9"></polyline>
-                                </svg>
-                                <span>PDF Report</span>
+                    {templates.map((template) => (
+                        <div class="template-card" data-category={template.category} data-format={template.formatClass === 'PDF' ? 'PDF' : 'PPTX'} data-reveal="true"
+                            style={`--reveal-delay: ${template.delay}`}>
+                            <div class="card-image-wrap">
+                                <img src={template.image} alt={template.title}
+                                    class="card-img">
+                                <span class="category-badge">{template.category}</span>
                             </div>
-                            <button class="btn-preview"
-                                onclick="window.location.href='/preview-template-1'">Preview
-                                Template</button>
-                        </div>
-                    </div>
-
-                    <div class="template-card" data-category="Research" data-format="PDF Report" data-reveal="true"
-                        style="--reveal-delay: 0.2s">
-                        <div class="card-image-wrap">
-                            <img src="/assets/images/templates/templates/template-02.webp" alt="Market Research Report"
-                                class="card-img">
-                            <span class="category-badge">Research</span>
-                        </div>
-                        <div class="card-info">
-                            <h3 class="card-title">Market Research Report</h3>
-                            <p class="card-desc">Analyze industries, competitors, TAM, growth drivers, and market
-                                opportunities using AI-powered research.</p>
-                        </div>
-                        <div class="card-footer">
-                            <div class="file-type">
-                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-                                    <polyline points="14 2 14 8 20 8"></polyline>
-                                    <line x1="16" y1="13" x2="8" y2="13"></line>
-                                    <line x1="16" y1="17" x2="8" y2="17"></line>
-                                    <polyline points="10 9 9 9 8 9"></polyline>
-                                </svg>
-                                <span>PDF Report</span>
+                            <div class="card-info">
+                                <h3 class="card-title">{template.title}</h3>
+                                <p class="card-desc">{template.desc}</p>
                             </div>
-                            <button class="btn-preview"
-                                onclick="window.location.href='/preview-template-2'">Preview
-                                Template</button>
-                        </div>
-                    </div>
-
-                    <div class="template-card" data-category="Operations" data-format="PPT Deck" data-reveal="true"
-                        style="--reveal-delay: 0.3s">
-                        <div class="card-image-wrap">
-                            <img src="/assets/images/templates/templates/template-03.webp" alt="Due Diligence Report"
-                                class="card-img">
-                            <span class="category-badge">Operations</span>
-                        </div>
-                        <div class="card-info">
-                            <h3 class="card-title">Due Diligence Report</h3>
-                            <p class="card-desc">Review company operations, financials, risks, and commercial viability
-                                for investment or acquisition decisions.</p>
-                        </div>
-                        <div class="card-footer">
-                            <div class="file-type">
-                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <rect x="2" y="2" width="20" height="14" rx="2" ry="2"></rect>
-                                    <line x1="12" y1="22" x2="12" y2="16"></line>
-                                    <line x1="8" y1="22" x2="16" y2="22"></line>
-                                    <line x1="12" y1="10" x2="8" y2="10"></line>
-                                    <line x1="12" y1="6" x2="16" y2="6"></line>
-                                </svg>
-                                <span>PPT Deck</span>
+                            <div class="card-footer">
+                                <div class="file-type">
+                                    {template.formatClass === 'PDF' ? (
+                                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                            <polyline points="14 2 14 8 20 8"></polyline>
+                                            <line x1="16" y1="13" x2="8" y2="13"></line>
+                                            <line x1="16" y1="17" x2="8" y2="17"></line>
+                                            <polyline points="10 9 9 9 8 9"></polyline>
+                                        </svg>
+                                    ) : (
+                                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                            <rect x="2" y="2" width="20" height="14" rx="2" ry="2"></rect>
+                                            <line x1="12" y1="22" x2="12" y2="16"></line>
+                                            <line x1="8" y1="22" x2="16" y2="22"></line>
+                                            <line x1="12" y1="10" x2="8" y2="10"></line>
+                                            <line x1="12" y1="6" x2="16" y2="6"></line>
+                                        </svg>
+                                    )}
+                                    <span>{template.format}</span>
+                                </div>
+                                <button class="btn-preview" onclick={`window.location.href='${template.previewUrl}'`}>Preview Template</button>
                             </div>
-                            <button class="btn-preview"
-                                onclick="window.location.href='/preview-template-1'">Preview
-                                Template</button>
                         </div>
-                    </div>
-
-                    <div class="template-card" data-category="Finance" data-format="PDF Report" data-reveal="true"
-                        style="--reveal-delay: 0.1s">
-                        <div class="card-image-wrap">
-                            <img src="/assets/images/templates/templates/template-04.webp"
-                                alt="Equity Research Initiation Report" class="card-img">
-                            <span class="category-badge">Finance</span>
-                        </div>
-                        <div class="card-info">
-                            <h3 class="card-title">Equity Research Initiation Report</h3>
-                            <p class="card-desc">Initiate coverage with an institutional-quality report — thesis,
-                                valuation, financials, and risks.</p>
-                        </div>
-                        <div class="card-footer">
-                            <div class="file-type">
-                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-                                    <polyline points="14 2 14 8 20 8"></polyline>
-                                    <line x1="16" y1="13" x2="8" y2="13"></line>
-                                    <line x1="16" y1="17" x2="8" y2="17"></line>
-                                    <polyline points="10 9 9 9 8 9"></polyline>
-                                </svg>
-                                <span>PDF Report</span>
-                            </div>
-                            <button class="btn-preview"
-                                onclick="window.location.href='/preview-template-2'">Preview
-                                Template</button>
-                        </div>
-                    </div>
-
-                    <div class="template-card" data-category="Finance" data-format="PDF Report" data-reveal="true"
-                        style="--reveal-delay: 0.2s">
-                        <div class="card-image-wrap">
-                            <img src="/assets/images/templates/templates/template-05.webp"
-                                alt="Private Equity Buyout IC Paper" class="card-img">
-                            <span class="category-badge">Finance</span>
-                        </div>
-                        <div class="card-info">
-                            <h3 class="card-title">Private Equity Buyout IC Paper</h3>
-                            <p class="card-desc">Present a buyout to your IC with everything needed to make a decision,
-                                from thesis to returns.</p>
-                        </div>
-                        <div class="card-footer">
-                            <div class="file-type">
-                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-                                    <polyline points="14 2 14 8 20 8"></polyline>
-                                    <line x1="16" y1="13" x2="8" y2="13"></line>
-                                    <line x1="16" y1="17" x2="8" y2="17"></line>
-                                    <polyline points="10 9 9 9 8 9"></polyline>
-                                </svg>
-                                <span>PDF Report</span>
-                            </div>
-                            <button class="btn-preview"
-                                onclick="window.location.href='/preview-template-1'">Preview
-                                Template</button>
-                        </div>
-                    </div>
-
-                    <div class="template-card" data-category="Consulting" data-format="PPT Deck" data-reveal="true"
-                        style="--reveal-delay: 0.3s">
-                        <div class="card-image-wrap">
-                            <img src="/assets/images/templates/templates/template-06.webp"
-                                alt="Strategy Engagement Final Deck" class="card-img">
-                            <span class="category-badge">Consulting</span>
-                        </div>
-                        <div class="card-info">
-                            <h3 class="card-title">Strategy Engagement Final Deck</h3>
-                            <p class="card-desc">Turn engagement findings into a boardroom-ready strategy deck —
-                                situation, options, roadmap, and 100-day plan.</p>
-                        </div>
-                        <div class="card-footer">
-                            <div class="file-type">
-                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <rect x="2" y="2" width="20" height="14" rx="2" ry="2"></rect>
-                                    <line x1="12" y1="22" x2="12" y2="16"></line>
-                                    <line x1="8" y1="22" x2="16" y2="22"></line>
-                                    <line x1="12" y1="10" x2="8" y2="10"></line>
-                                    <line x1="12" y1="6" x2="16" y2="6"></line>
-                                </svg>
-                                <span>PPT Deck</span>
-                            </div>
-                            <button class="btn-preview"
-                                onclick="window.location.href='/preview-template-2'">Preview
-                                Template</button>
-                        </div>
-                    </div>
-
-                    <div class="template-card" data-category="Research" data-format="PPT Deck" data-reveal="true"
-                        style="--reveal-delay: 0.1s">
-                        <div class="card-image-wrap">
-                            <img src="/assets/images/templates/templates/template-07.webp" alt="Regulatory Change Brief"
-                                class="card-img">
-                            <span class="category-badge">Research</span>
-                        </div>
-                        <div class="card-info">
-                            <h3 class="card-title">Regulatory Change Brief</h3>
-                            <p class="card-desc">Generate macroeconomic analysis, market trends, forecasts, and policy
-                                implications.</p>
-                        </div>
-                        <div class="card-footer">
-                            <div class="file-type">
-                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <rect x="2" y="2" width="20" height="14" rx="2" ry="2"></rect>
-                                    <line x1="12" y1="22" x2="12" y2="16"></line>
-                                    <line x1="8" y1="22" x2="16" y2="22"></line>
-                                    <line x1="12" y1="10" x2="8" y2="10"></line>
-                                    <line x1="12" y1="6" x2="16" y2="6"></line>
-                                </svg>
-                                <span>PPT Deck</span>
-                            </div>
-                            <button class="btn-preview"
-                                onclick="window.location.href='/preview-template-1'">Preview
-                                Template</button>
-                        </div>
-                    </div>
-
-                    <div class="template-card" data-category="Compliance" data-format="PDF Report" data-reveal="true"
-                        style="--reveal-delay: 0.2s">
-                        <div class="card-image-wrap">
-                            <img src="/assets/images/templates/templates/template-08.webp" alt="Compliance Assessment"
-                                class="card-img">
-                            <span class="category-badge">Compliance</span>
-                        </div>
-                        <div class="card-info">
-                            <h3 class="card-title">Compliance Assessment</h3>
-                            <p class="card-desc">Evaluate regulatory requirements, identify risks, and create compliance
-                                action plans.</p>
-                        </div>
-                        <div class="card-footer">
-                            <div class="file-type">
-                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-                                    <polyline points="14 2 14 8 20 8"></polyline>
-                                    <line x1="16" y1="13" x2="8" y2="13"></line>
-                                    <line x1="16" y1="17" x2="8" y2="17"></line>
-                                    <polyline points="10 9 9 9 8 9"></polyline>
-                                </svg>
-                                <span>PDF Report</span>
-                            </div>
-                            <button class="btn-preview"
-                                onclick="window.location.href='/preview-template-2'">Preview
-                                Template</button>
-                        </div>
-                    </div>
-
-                    <div class="template-card" data-category="Finance" data-format="PPT Deck" data-reveal="true"
-                        style="--reveal-delay: 0.3s">
-                        <div class="card-image-wrap">
-                            <img src="/assets/images/preview-template-2/preview/preview_fin_008_01.webp"
-                                alt="Portfolio Company Quarterly Review" class="card-img">
-                            <span class="category-badge">Finance</span>
-                        </div>
-                        <div class="card-info">
-                            <h3 class="card-title">Portfolio Company Quarterly Review</h3>
-                            <p class="card-desc">A private equity board-pack style review of a portfolio company's
-                                operational and financial performance against plan.</p>
-                        </div>
-                        <div class="card-footer">
-                            <div class="file-type">
-                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <rect x="2" y="2" width="20" height="14" rx="2" ry="2"></rect>
-                                    <line x1="12" y1="22" x2="12" y2="16"></line>
-                                    <line x1="8" y1="22" x2="16" y2="22"></line>
-                                    <line x1="12" y1="10" x2="8" y2="10"></line>
-                                    <line x1="12" y1="6" x2="16" y2="6"></line>
-                                </svg>
-                                <span>PPT Deck</span>
-                            </div>
-                            <button class="btn-preview"
-                                onclick="window.location.href='/preview-template-1'">Preview
-                                Template</button>
-                        </div>
-                    </div>
-
-                    <div class="template-card" data-category="Finance" data-format="PDF Report" data-reveal="true"
-                        style="--reveal-delay: 0.1s">
-                        <div class="card-image-wrap">
-                            <img src="/assets/images/templates/templates/template-02.webp" alt="LBO Valuation Model Memo"
-                                class="card-img">
-                            <span class="category-badge">Finance</span>
-                        </div>
-                        <div class="card-info">
-                            <h3 class="card-title">LBO Valuation Model Memo</h3>
-                            <p class="card-desc">Perform dynamic leveraged buyout modeling including capital structures,
-                                debt schedules, returns, and sensitivity analysis.</p>
-                        </div>
-                        <div class="card-footer">
-                            <div class="file-type">
-                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-                                    <polyline points="14 2 14 8 20 8"></polyline>
-                                    <line x1="16" y1="13" x2="8" y2="13"></line>
-                                    <line x1="16" y1="17" x2="8" y2="17"></line>
-                                    <polyline points="10 9 9 9 8 9"></polyline>
-                                </svg>
-                                <span>PDF Report</span>
-                            </div>
-                            <button class="btn-preview"
-                                onclick="window.location.href='/preview-template-2'">Preview
-                                Template</button>
-                        </div>
-                    </div>
-
-                    <div class="template-card" data-category="Research" data-format="PDF Report" data-reveal="true"
-                        style="--reveal-delay: 0.2s">
-                        <div class="card-image-wrap">
-                            <img src="/assets/images/templates/templates/template-04.webp"
-                                alt="Competitive Landscape Brief" class="card-img">
-                            <span class="category-badge">Research</span>
-                        </div>
-                        <div class="card-info">
-                            <h3 class="card-title">Competitive Landscape Brief</h3>
-                            <p class="card-desc">Deep-dive competitor product positioning, feature matrices, pricing
-                                models, market share, and strategic gaps.</p>
-                        </div>
-                        <div class="card-footer">
-                            <div class="file-type">
-                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-                                    <polyline points="14 2 14 8 20 8"></polyline>
-                                    <line x1="16" y1="13" x2="8" y2="13"></line>
-                                    <line x1="16" y1="17" x2="8" y2="17"></line>
-                                    <polyline points="10 9 9 9 8 9"></polyline>
-                                </svg>
-                                <span>PDF Report</span>
-                            </div>
-                            <button class="btn-preview"
-                                onclick="window.location.href='/preview-template-1'">Preview
-                                Template</button>
-                        </div>
-                    </div>
-
-                    <div class="template-card" data-category="Operations" data-format="PPT Deck" data-reveal="true"
-                        style="--reveal-delay: 0.3s">
-                        <div class="card-image-wrap">
-                            <img src="/assets/images/templates/templates/template-06.webp"
-                                alt="Operational Efficiency Review" class="card-img">
-                            <span class="category-badge">Operations</span>
-                        </div>
-                        <div class="card-info">
-                            <h3 class="card-title">Operational Efficiency Review</h3>
-                            <p class="card-desc">Audit internal business unit performance, identify cost reductions, and
-                                design process automation opportunities.</p>
-                        </div>
-                        <div class="card-footer">
-                            <div class="file-type">
-                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <rect x="2" y="2" width="20" height="14" rx="2" ry="2"></rect>
-                                    <line x1="12" y1="22" x2="12" y2="16"></line>
-                                    <line x1="8" y1="22" x2="16" y2="22"></line>
-                                    <line x1="12" y1="10" x2="8" y2="10"></line>
-                                    <line x1="12" y1="6" x2="16" y2="6"></line>
-                                </svg>
-                                <span>PPT Deck</span>
-                            </div>
-                            <button class="btn-preview"
-                                onclick="window.location.href='/preview-template-2'">Preview
-                                Template</button>
-                        </div>
-                    </div>
-
-                    <div class="template-card" data-category="Finance" data-format="PDF Report" data-reveal="true"
-                        style="--reveal-delay: 0.1s">
-                        <div class="card-image-wrap">
-                            <img src="/assets/images/templates/templates/template-08.webp"
-                                alt="Corporate Valuation Summary" class="card-img">
-                            <span class="category-badge">Finance</span>
-                        </div>
-                        <div class="card-info">
-                            <h3 class="card-title">Corporate Valuation Summary</h3>
-                            <p class="card-desc">Produce discounted cash flow (DCF), trading comparables, and precedent
-                                transaction valuation summaries.</p>
-                        </div>
-                        <div class="card-footer">
-                            <div class="file-type">
-                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-                                    <polyline points="14 2 14 8 20 8"></polyline>
-                                    <line x1="16" y1="13" x2="8" y2="13"></line>
-                                    <line x1="16" y1="17" x2="8" y2="17"></line>
-                                    <polyline points="10 9 9 9 8 9"></polyline>
-                                </svg>
-                                <span>PDF Report</span>
-                            </div>
-                            <button class="btn-preview"
-                                onclick="window.location.href='/preview-template-1'">Preview
-                                Template</button>
-                        </div>
-                    </div>
-
-                    <div class="template-card" data-category="Finance" data-format="PDF Report" data-reveal="true"
-                        style="--reveal-delay: 0.2s">
-                        <div class="card-image-wrap">
-                            <img src="/assets/images/templates/templates/template-01.webp"
-                                alt="Credit Analysis Memorandum" class="card-img">
-                            <span class="category-badge">Finance</span>
-                        </div>
-                        <div class="card-info">
-                            <h3 class="card-title">Credit Analysis Memorandum</h3>
-                            <p class="card-desc">Evaluate institutional creditworthiness, debt service coverage ratios
-                                (DSCR), leverage metrics, and covenant packages.</p>
-                        </div>
-                        <div class="card-footer">
-                            <div class="file-type">
-                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-                                    <polyline points="14 2 14 8 20 8"></polyline>
-                                    <line x1="16" y1="13" x2="8" y2="13"></line>
-                                    <line x1="16" y1="17" x2="8" y2="17"></line>
-                                    <polyline points="10 9 9 9 8 9"></polyline>
-                                </svg>
-                                <span>PDF Report</span>
-                            </div>
-                            <button class="btn-preview"
-                                onclick="window.location.href='/preview-template-2'">Preview
-                                Template</button>
-                        </div>
-                    </div>
-
-                    <div class="template-card" data-category="Consulting" data-format="PPT Deck" data-reveal="true"
-                        style="--reveal-delay: 0.3s">
-                        <div class="card-image-wrap">
-                            <img src="/assets/images/templates/templates/template-03.webp" alt="IT Strategy & Roadmap"
-                                class="card-img">
-                            <span class="category-badge">Consulting</span>
-                        </div>
-                        <div class="card-info">
-                            <h3 class="card-title">IT Strategy & Roadmap</h3>
-                            <p class="card-desc">Map modern enterprise IT architecture, cloud migration paths, legacy
-                                system integrations, and digital transformation goals.</p>
-                        </div>
-                        <div class="card-footer">
-                            <div class="file-type">
-                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <rect x="2" y="2" width="20" height="14" rx="2" ry="2"></rect>
-                                    <line x1="12" y1="22" x2="12" y2="16"></line>
-                                    <line x1="8" y1="22" x2="16" y2="22"></line>
-                                    <line x1="12" y1="10" x2="8" y2="10"></line>
-                                    <line x1="12" y1="6" x2="16" y2="6"></line>
-                                </svg>
-                                <span>PPT Deck</span>
-                            </div>
-                            <button class="btn-preview"
-                                onclick="window.location.href='/preview-template-1'">Preview
-                                Template</button>
-                        </div>
-                    </div>
-
-                    <div class="template-card" data-category="Research" data-format="PPT Deck" data-reveal="true"
-                        style="--reveal-delay: 0.1s">
-                        <div class="card-image-wrap">
-                            <img src="/assets/images/templates/templates/template-05.webp"
-                                alt="Macroeconomic Outlook 2026" class="card-img">
-                            <span class="category-badge">Research</span>
-                        </div>
-                        <div class="card-info">
-                            <h3 class="card-title">Macroeconomic Outlook 2026</h3>
-                            <p class="card-desc">Forecast inflation trends, interest rate paths, GDP growth corridors,
-                                currency movements, and central bank policies.</p>
-                        </div>
-                        <div class="card-footer">
-                            <div class="file-type">
-                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <rect x="2" y="2" width="20" height="14" rx="2" ry="2"></rect>
-                                    <line x1="12" y1="22" x2="12" y2="16"></line>
-                                    <line x1="8" y1="22" x2="16" y2="22"></line>
-                                    <line x1="12" y1="10" x2="8" y2="10"></line>
-                                    <line x1="12" y1="6" x2="16" y2="6"></line>
-                                </svg>
-                                <span>PPT Deck</span>
-                            </div>
-                            <button class="btn-preview"
-                                onclick="window.location.href='/preview-template-2'">Preview
-                                Template</button>
-                        </div>
-                    </div>
-
-                    <div class="template-card" data-category="Compliance" data-format="PDF Report" data-reveal="true"
-                        style="--reveal-delay: 0.2s">
-                        <div class="card-image-wrap">
-                            <img src="/assets/images/templates/templates/template-07.webp" alt="ESG Performance Audit"
-                                class="card-img">
-                            <span class="category-badge">Compliance</span>
-                        </div>
-                        <div class="card-info">
-                            <h3 class="card-title">ESG Performance Audit</h3>
-                            <p class="card-desc">Measure sustainability impact, carbon accounting metrics, board
-                                diversity governance, and compliance reporting alignments.</p>
-                        </div>
-                        <div class="card-footer">
-                            <div class="file-type">
-                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-                                    <polyline points="14 2 14 8 20 8"></polyline>
-                                    <line x1="16" y1="13" x2="8" y2="13"></line>
-                                    <line x1="16" y1="17" x2="8" y2="17"></line>
-                                    <polyline points="10 9 9 9 8 9"></polyline>
-                                </svg>
-                                <span>PDF Report</span>
-                            </div>
-                            <button class="btn-preview"
-                                onclick="window.location.href='/preview-template-1'">Preview
-                                Template</button>
-                        </div>
-                    </div>
-
-                    <div class="template-card" data-category="Operations" data-format="PDF Report" data-reveal="true"
-                        style="--reveal-delay: 0.3s">
-                        <div class="card-image-wrap">
-                            <img src="/assets/images/templates/templates/template-09.webp"
-                                alt="Quarterly Business Review (QBR)" class="card-img">
-                            <span class="category-badge">Operations</span>
-                        </div>
-                        <div class="card-info">
-                            <h3 class="card-title">Quarterly Business Review (QBR)</h3>
-                            <p class="card-desc">Review sales performance, customer success metrics, churn analysis,
-                                operational milestones, and upcoming targets.</p>
-                        </div>
-                        <div class="card-footer">
-                            <div class="file-type">
-                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-                                    <polyline points="14 2 14 8 20 8"></polyline>
-                                    <line x1="16" y1="13" x2="8" y2="13"></line>
-                                    <line x1="16" y1="17" x2="8" y2="17"></line>
-                                    <polyline points="10 9 9 9 8 9"></polyline>
-                                </svg>
-                                <span>PDF Report</span>
-                            </div>
-                            <button class="btn-preview"
-                                onclick="window.location.href='/preview-template-2'">Preview
-                                Template</button>
-                        </div>
-                    </div>
-
-                    <div class="template-card" data-category="Finance" data-format="PPT Deck" data-reveal="true"
-                        style="--reveal-delay: 0.1s">
-                        <div class="card-image-wrap">
-                            <img src="/assets/images/templates/templates/template-03.webp" alt="M&A Investment Pitchbook"
-                                class="card-img">
-                            <span class="category-badge">Finance</span>
-                        </div>
-                        <div class="card-info">
-                            <h3 class="card-title">M&A Investment Pitchbook</h3>
-                            <p class="card-desc">Outline strategic rationale, transaction structures, synergy estimates,
-                                valuation, and post-merger integration paths.</p>
-                        </div>
-                        <div class="card-footer">
-                            <div class="file-type">
-                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <rect x="2" y="2" width="20" height="14" rx="2" ry="2"></rect>
-                                    <line x1="12" y1="22" x2="12" y2="16"></line>
-                                    <line x1="8" y1="22" x2="16" y2="22"></line>
-                                    <line x1="12" y1="10" x2="8" y2="10"></line>
-                                    <line x1="12" y1="6" x2="16" y2="6"></line>
-                                </svg>
-                                <span>PPT Deck</span>
-                            </div>
-                            <button class="btn-preview"
-                                onclick="window.location.href='/preview-template-1'">Preview
-                                Template</button>
-                        </div>
-                    </div>
-
-                    <div class="template-card" data-category="Research" data-format="PDF Report" data-reveal="true"
-                        style="--reveal-delay: 0.2s">
-                        <div class="card-image-wrap">
-                            <img src="/assets/images/templates/templates/template-05.webp" alt="Consumer Survey Insights"
-                                class="card-img">
-                            <span class="category-badge">Research</span>
-                        </div>
-                        <div class="card-info">
-                            <h3 class="card-title">Consumer Survey Insights</h3>
-                            <p class="card-desc">Summarize focus group data, brand health index rankings, NPS tracking,
-                                demographic trends, and buyer persona updates.</p>
-                        </div>
-                        <div class="card-footer">
-                            <div class="file-type">
-                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-                                    <polyline points="14 2 14 8 20 8"></polyline>
-                                    <line x1="16" y1="13" x2="8" y2="13"></line>
-                                    <line x1="16" y1="17" x2="8" y2="17"></line>
-                                    <polyline points="10 9 9 9 8 9"></polyline>
-                                </svg>
-                                <span>PDF Report</span>
-                            </div>
-                            <button class="btn-preview"
-                                onclick="window.location.href='/preview-template-2'">Preview
-                                Template</button>
-                        </div>
-                    </div>
-
-                    <div class="template-card" data-category="Operations" data-format="PPT Deck" data-reveal="true"
-                        style="--reveal-delay: 0.3s">
-                        <div class="card-image-wrap">
-                            <img src="/assets/images/templates/templates/template-07.webp"
-                                alt="Supply Chain Risk Assessment" class="card-img">
-                            <span class="category-badge">Operations</span>
-                        </div>
-                        <div class="card-info">
-                            <h3 class="card-title">Supply Chain Risk Assessment</h3>
-                            <p class="card-desc">Analyze vendor concentration risks, logistics bottlenecks, tariff
-                                impacts, safety stock inventories, and resilience strategies.</p>
-                        </div>
-                        <div class="card-footer">
-                            <div class="file-type">
-                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <rect x="2" y="2" width="20" height="14" rx="2" ry="2"></rect>
-                                    <line x1="12" y1="22" x2="12" y2="16"></line>
-                                    <line x1="8" y1="22" x2="16" y2="22"></line>
-                                    <line x1="12" y1="10" x2="8" y2="10"></line>
-                                    <line x1="12" y1="6" x2="16" y2="6"></line>
-                                </svg>
-                                <span>PPT Deck</span>
-                            </div>
-                            <button class="btn-preview"
-                                onclick="window.location.href='/preview-template-1'">Preview
-                                Template</button>
-                        </div>
-                    </div>
-
-                    <div class="template-card" data-category="Finance" data-format="PDF Report" data-reveal="true"
-                        style="--reveal-delay: 0.1s">
-                        <div class="card-image-wrap">
-                            <img src="/assets/images/templates/templates/template-09.webp"
-                                alt="Project Finance Model Memo" class="card-img">
-                            <span class="category-badge">Finance</span>
-                        </div>
-                        <div class="card-info">
-                            <h3 class="card-title">Project Finance Model Memo</h3>
-                            <p class="card-desc">Detail infrastructure and project finance cash flows, concessions
-                                agreements, project IRR, and debt sizing summaries.</p>
-                        </div>
-                        <div class="card-footer">
-                            <div class="file-type">
-                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-                                    <polyline points="14 2 14 8 20 8"></polyline>
-                                    <line x1="16" y1="13" x2="8" y2="13"></line>
-                                    <line x1="16" y1="17" x2="8" y2="17"></line>
-                                    <polyline points="10 9 9 9 8 9"></polyline>
-                                </svg>
-                                <span>PDF Report</span>
-                            </div>
-                            <button class="btn-preview"
-                                onclick="window.location.href='/preview-template-2'">Preview
-                                Template</button>
-                        </div>
-                    </div>
-
-                    <div class="template-card" data-category="Finance" data-format="PDF Report" data-reveal="true"
-                        style="--reveal-delay: 0.2s">
-                        <div class="card-image-wrap">
-                            <img src="/assets/images/templates/templates/template-02.webp"
-                                alt="Venture Capital Investment Memo" class="card-img">
-                            <span class="category-badge">Finance</span>
-                        </div>
-                        <div class="card-info">
-                            <h3 class="card-title">Venture Capital Investment Memo</h3>
-                            <p class="card-desc">Recommend early-stage investments with cap table metrics, founder
-                                backgrounds, product moat reviews, and exit modeling.</p>
-                        </div>
-                        <div class="card-footer">
-                            <div class="file-type">
-                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-                                    <polyline points="14 2 14 8 20 8"></polyline>
-                                    <line x1="16" y1="13" x2="8" y2="13"></line>
-                                    <line x1="16" y1="17" x2="8" y2="17"></line>
-                                    <polyline points="10 9 9 9 8 9"></polyline>
-                                </svg>
-                                <span>PDF Report</span>
-                            </div>
-                            <button class="btn-preview"
-                                onclick="window.location.href='/preview-template-1'">Preview
-                                Template</button>
-                        </div>
-                    </div>
-
-                    <div class="template-card" data-category="Consulting" data-format="PPT Deck" data-reveal="true"
-                        style="--reveal-delay: 0.3s">
-                        <div class="card-image-wrap">
-                            <img src="/assets/images/templates/templates/template-04.webp"
-                                alt="Change Management Framework" class="card-img">
-                            <span class="category-badge">Consulting</span>
-                        </div>
-                        <div class="card-info">
-                            <h3 class="card-title">Change Management Framework</h3>
-                            <p class="card-desc">Design organizational realignment playbooks covering stakeholder maps,
-                                communication matrixes, and training models.</p>
-                        </div>
-                        <div class="card-footer">
-                            <div class="file-type">
-                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <rect x="2" y="2" width="20" height="14" rx="2" ry="2"></rect>
-                                    <line x1="12" y1="22" x2="12" y2="16"></line>
-                                    <line x1="8" y1="22" x2="16" y2="22"></line>
-                                    <line x1="12" y1="10" x2="8" y2="10"></line>
-                                    <line x1="12" y1="6" x2="16" y2="6"></line>
-                                </svg>
-                                <span>PPT Deck</span>
-                            </div>
-                            <button class="btn-preview"
-                                onclick="window.location.href='/preview-template-2'">Preview
-                                Template</button>
-                        </div>
-                    </div>
-
-                    <div class="template-card" data-category="Research" data-format="PDF Report" data-reveal="true"
-                        style="--reveal-delay: 0.1s">
-                        <div class="card-image-wrap">
-                            <img src="/assets/images/templates/templates/template-06.webp"
-                                alt="Industry Deep-Dive Report" class="card-img">
-                            <span class="category-badge">Research</span>
-                        </div>
-                        <div class="card-info">
-                            <h3 class="card-title">Industry Deep-Dive Report</h3>
-                            <p class="card-desc">Synthesize supply-demand imbalances, key technological disruptions,
-                                unit economics profiles, and regulatory outlooks.</p>
-                        </div>
-                        <div class="card-footer">
-                            <div class="file-type">
-                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-                                    <polyline points="14 2 14 8 20 8"></polyline>
-                                    <line x1="16" y1="13" x2="8" y2="13"></line>
-                                    <line x1="16" y1="17" x2="8" y2="17"></line>
-                                    <polyline points="10 9 9 9 8 9"></polyline>
-                                </svg>
-                                <span>PDF Report</span>
-                            </div>
-                            <button class="btn-preview"
-                                onclick="window.location.href='/preview-template-1'">Preview
-                                Template</button>
-                        </div>
-                    </div>
-
-                    <div class="template-card" data-category="Compliance" data-format="PDF Report" data-reveal="true"
-                        style="--reveal-delay: 0.2s">
-                        <div class="card-image-wrap">
-                            <img src="/assets/images/templates/templates/template-08.webp"
-                                alt="Anti-Money Laundering Policy" class="card-img">
-                            <span class="category-badge">Compliance</span>
-                        </div>
-                        <div class="card-info">
-                            <h3 class="card-title">Anti-Money Laundering Policy</h3>
-                            <p class="card-desc">Establish firm-wide KYC/AML programs, transaction monitoring protocols,
-                                sanction screening, and reporting pipelines.</p>
-                        </div>
-                        <div class="card-footer">
-                            <div class="file-type">
-                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-                                    <polyline points="14 2 14 8 20 8"></polyline>
-                                    <line x1="16" y1="13" x2="8" y2="13"></line>
-                                    <line x1="16" y1="17" x2="8" y2="17"></line>
-                                    <polyline points="10 9 9 9 8 9"></polyline>
-                                </svg>
-                                <span>PDF Report</span>
-                            </div>
-                            <button class="btn-preview"
-                                onclick="window.location.href='/preview-template-2'">Preview
-                                Template</button>
-                        </div>
-                    </div>
-
-                    <div class="template-card" data-category="Operations" data-format="PPT Deck" data-reveal="true"
-                        style="--reveal-delay: 0.3s">
-                        <div class="card-image-wrap">
-                            <img src="/assets/images/templates/templates/template-01.webp"
-                                alt="Post-Merger Integration Plan" class="card-img">
-                            <span class="category-badge">Operations</span>
-                        </div>
-                        <div class="card-info">
-                            <h3 class="card-title">Post-Merger Integration Plan</h3>
-                            <p class="card-desc">Create standard templates for merging systems, organizational
-                                structures, employee benefits, and billing processes.</p>
-                        </div>
-                        <div class="card-footer">
-                            <div class="file-type">
-                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <rect x="2" y="2" width="20" height="14" rx="2" ry="2"></rect>
-                                    <line x1="12" y1="22" x2="12" y2="16"></line>
-                                    <line x1="8" y1="22" x2="16" y2="22"></line>
-                                    <line x1="12" y1="10" x2="8" y2="10"></line>
-                                    <line x1="12" y1="6" x2="16" y2="6"></line>
-                                </svg>
-                                <span>PPT Deck</span>
-                            </div>
-                            <button class="btn-preview"
-                                onclick="window.location.href='/preview-template-1'">Preview
-                                Template</button>
-                        </div>
-                    </div>
+                    ))}
                 </div>
-
                 <div class="pagination-wrapper" data-reveal="true" style="--reveal-delay: 0.2s">
                     <div class="pagination">
                         <button class="page-btn page-nav-btn" id="btn-first" aria-label="First page">
@@ -1231,11 +780,12 @@ import Layout from '../layouts/Layout.astro';
     width: 100%;
     height: 100%;
     object-fit: cover;
+    transform: scale(1.12);
     transition: transform 0.5s ease;
 }
 
 .template-card:hover .card-img {
-    transform: scale(1.03);
+    transform: scale(1.15);
 }
 
 .category-badge {
