@@ -121,7 +121,8 @@
 }
 
 .imageContainer {
-  background-color: #1A3E34; /* Dark green backdrop */
+  background-color: #f6f6f8;
+  /* #1A3E34 Dark green backdrop */
   border-radius: 20px;
   padding: 20px;
   display: flex;
@@ -156,6 +157,7 @@
     opacity: 0;
     transform: translateY(10px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);

@@ -67,6 +67,7 @@ export function MeetAssociateSection() {
           <div className={styles.tabsContainer}>
             {tabData.map((tab, index) => {
               const isActive = hasInteracted && activeIndex === index;
+              const isOpen = isActive || (!hasInteracted && index === 0);
               return (
                 <div
                   key={tab.id}
@@ -77,14 +78,14 @@ export function MeetAssociateSection() {
                   <div className={styles.progressContainer}>
                     <div
                       className={styles.progressBar}
-                      style={{ width: isActive && hasInteracted ? `${progress}%` : '0%' }}
+                      style={{ width: isActive ? `${progress}%` : '0%' }}
                     />
                   </div>
 
                   <h3 className={styles.tabTitle}>{tab.title}</h3>
 
                   <AnimatePresence initial={false}>
-                    {isActive && (
+                    {isOpen && (
                       <motion.div
                         initial={{ height: 0, opacity: 0 }}
                         animate={{ height: 'auto', opacity: 1 }}
