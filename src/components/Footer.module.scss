@@ -272,6 +272,20 @@
   white-space: nowrap;
 }
 
+@media (min-width: 1441px) {
+  .watermark {
+    max-width: 1440px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .watermarkIcon {
+    width: 172.8px;
+  }
+  .watermark span {
+    font-size: 230.4px;
+  }
+}
+
 @media (max-width: 1199px) {
   .watermarkIcon {
     width: 12vw;

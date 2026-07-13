@@ -560,6 +560,12 @@ import { ButtonLink } from '../components/ButtonLink.jsx';
 
 </Layout>
 
+<style is:global>
+    body {
+        background-color: #ffffff !important;
+    }
+</style>
+
 <style>
 .enterprise-main {
     display: block;
@@ -571,10 +577,10 @@ import { ButtonLink } from '../components/ButtonLink.jsx';
 .enterprise-hero {
     display: flex;
     height: auto;
-    min-height: 100vh;
-    padding: 120px 40px;
+    min-height: 770px;
+    padding: 156px 40px 0;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     background-image: url('../../assets/images/enterprise/hero/herobg.png');
     background-size: cover;
@@ -582,6 +588,13 @@ import { ButtonLink } from '../components/ButtonLink.jsx';
     background-repeat: no-repeat;
     overflow: hidden;
     position: relative;
+}
+
+@media (min-width: 1441px) {
+    .enterprise-hero {
+        justify-content: center;
+        padding: 120px 40px;
+    }
 }
 
 /* Subtle stars/particles approximation */

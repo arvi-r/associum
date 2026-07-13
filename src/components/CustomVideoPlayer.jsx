@@ -16,8 +16,22 @@ export function CustomVideoPlayer({ src, className, maskImage, poster, playbackR
   useEffect(() => {
     if (videoRef.current) {
       videoRef.current.playbackRate = playbackRate;
+      videoRef.current.defaultMuted = true;
+      videoRef.current.muted = true;
     }
   }, [playbackRate, shouldLoad]);
+
+  useEffect(() => {
+    if (shouldLoad && isPlaying && videoRef.current) {
+      // Ensure muted is set before playing
+      videoRef.current.muted = true;
+      videoRef.current.load(); // Force reload for Astro View Transitions
+      const playPromise = videoRef.current.play();
+      if (playPromise !== undefined) {
+        playPromise.catch(error => console.log("Autoplay prevented:", error));
+      }
+    }
+  }, [shouldLoad, isPlaying, src]);
 
   useEffect(() => {
     // Only load the heavy video on desktop viewports (> 768px wide)
