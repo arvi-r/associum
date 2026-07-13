@@ -147,7 +147,7 @@ export function SecurityPage() {
             <div className={styles.heroInner}>
               <div className={styles.copy}>
                 <h1 id="security-hero-title" data-reveal style={{ '--reveal-delay': '0.1s' }}>
-                  Your Work Stays Yours. Always
+                  Your Work Stays Yours. Always.
                 </h1>
                 <p className={styles.description} data-reveal style={{ '--reveal-delay': '0.2s' }}>
                   Data privacy and security are foundational principles for Associum. Your data is

@@ -154,13 +154,12 @@
 
 .previewCard {
   position: sticky;
-  padding: 24px 24px 42px;
+  padding: 24px;
   border-radius: 18px;
   background: #f6f6f8;
-  display: grid;
-  align-content: start;
-  justify-items: center;
   top: 100px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 
@@ -181,7 +180,7 @@
   position: relative;
   width: 100%;
   height: auto;
-  aspect-ratio: 16 / 10;
+  aspect-ratio: 16 / 9;
   margin-top: 0;
 }
 

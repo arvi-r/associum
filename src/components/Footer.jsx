@@ -102,6 +102,12 @@ export function Footer() {
             </div>
           </div>
 
+          <div className={styles.disclaimer}>
+            <p>
+              Associum.ai is an AI-powered research and document analysis platform for informational and educational purposes only. Outputs do not constitute financial, legal, tax, or professional advice of any kind. Always consult a qualified professional before making any consequential decision. Users are responsible for any decisions or recommendations made using Associum.ai's output.
+            </p>
+          </div>
+
           <div className={styles.bottom}>
             <div className={styles.bottomBrand}>
               <p>© 2026 Associum AI · Made for professionals</p>

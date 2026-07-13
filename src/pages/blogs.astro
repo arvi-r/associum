@@ -288,6 +288,8 @@ body {
     cursor: pointer;
     height: 100%;
     /* ensure full height within grid row */
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
 }
 
 :global(.blog-card:hover) {
@@ -303,7 +305,7 @@ body {
     align-self: stretch;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
-    border-bottom: 1px solid var(--Neutral-200, #EAEDF2);
+    border: 1px solid var(--Neutral-200, #EAEDF2);
 }
 
 :global(.blog-card-content) {
@@ -316,6 +318,7 @@ body {
     align-items: flex-start;
     gap: 16px;
     border: 1px solid var(--Neutral-200, #EAEDF2);
+    border-top: none;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
     align-self: stretch;

@@ -37,10 +37,15 @@ export function MeetAssociateSection() {
   const sectionRef = useRef(null);
 
   const handleVideoEnded = () => {
-    if (!hasInteracted) return;
-    const nextIndex = (activeIndex + 1) % tabData.length;
-    setActiveIndex(nextIndex);
-    setProgress(0);
+    if (!hasInteracted) {
+      setHasInteracted(true);
+      setActiveIndex(0);
+      setProgress(0);
+    } else {
+      const nextIndex = (activeIndex + 1) % tabData.length;
+      setActiveIndex(nextIndex);
+      setProgress(0);
+    }
   };
 
   const handleTabClick = (index) => {
@@ -61,7 +66,7 @@ export function MeetAssociateSection() {
         <div className={styles.layout} data-reveal="true" style={{ '--reveal-delay': '0.2s' }}>
           <div className={styles.tabsContainer}>
             {tabData.map((tab, index) => {
-              const isActive = activeIndex === index;
+              const isActive = hasInteracted && activeIndex === index;
               return (
                 <div
                   key={tab.id}
@@ -106,7 +111,7 @@ export function MeetAssociateSection() {
               playbackRate={hasInteracted ? 0.65 : 1}
               onProgressChange={setProgress}
               onEnded={handleVideoEnded}
-              loop={!hasInteracted}
+              loop={false}
             />
           </div>
         </div>

@@ -137,12 +137,12 @@ export function PrivacyPolicyPage() {
 
       <section className={styles.policySection} aria-labelledby="privacy-policy-content-title">
         <Container>
-          <div className={styles.policyCard} data-reveal>
-            <h2 id="privacy-policy-content-title" className={styles.policyTitle} data-reveal>
+          <div className={styles.policyCard}>
+            <h2 id="privacy-policy-content-title" className={styles.policyTitle}>
               Privacy Policy
             </h2>
 
-            <div className={styles.policyBlock} data-reveal>
+            <div className={styles.policyBlock}>
               <h3>Interpretation and Definitions</h3>
 
               <div className={styles.subBlock}>
@@ -161,7 +161,7 @@ export function PrivacyPolicyPage() {
               </div>
             </div>
 
-            <div className={styles.policyBlock} data-reveal>
+            <div className={styles.policyBlock}>
               <h3>Collecting and Using Your Personal Data</h3>
 
               <div className={styles.subBlock}>
@@ -240,7 +240,7 @@ export function PrivacyPolicyPage() {
               </div>
             </div>
 
-            <div className={styles.policyBlock} data-reveal>
+            <div className={styles.policyBlock}>
               <h4>Use of Your Personal Data</h4>
               <p>The Company may use Personal Data for the following purposes:</p>
               <BulletList items={useOfPersonalDataItems} />
@@ -248,7 +248,7 @@ export function PrivacyPolicyPage() {
               <BulletList items={shareItems} />
             </div>
 
-            <div className={styles.policyBlock} data-reveal>
+            <div className={styles.policyBlock}>
               <h4>Retention of Your Personal Data</h4>
               <PolicyParagraphs
                 paragraphs={[
@@ -258,7 +258,7 @@ export function PrivacyPolicyPage() {
               />
             </div>
 
-            <div className={styles.policyBlock} data-reveal>
+            <div className={styles.policyBlock}>
               <h4>Transfer of Your Personal Data</h4>
               <PolicyParagraphs
                 paragraphs={[
@@ -269,7 +269,7 @@ export function PrivacyPolicyPage() {
               />
             </div>
 
-            <div className={styles.policyBlock} data-reveal>
+            <div className={styles.policyBlock}>
               <h4>Delete Your Personal Data</h4>
               <PolicyParagraphs
                 paragraphs={[
@@ -281,7 +281,7 @@ export function PrivacyPolicyPage() {
               />
             </div>
 
-            <div className={styles.policyBlock} data-reveal>
+            <div className={styles.policyBlock}>
               <h4>Disclosure of Your Personal Data</h4>
 
               <div className={styles.subBlock}>
@@ -312,7 +312,7 @@ export function PrivacyPolicyPage() {
               </div>
             </div>
 
-            <div className={styles.policyBlock} data-reveal>
+            <div className={styles.policyBlock}>
               <h4>Security of Your Personal Data</h4>
               <p>
                 The security of Your Personal Data is important to Us, but remember that no
@@ -322,7 +322,7 @@ export function PrivacyPolicyPage() {
               </p>
             </div>
 
-            <div className={styles.policyBlock} data-reveal>
+            <div className={styles.policyBlock}>
               <h4>Children&apos;s Privacy</h4>
               <PolicyParagraphs
                 paragraphs={[
@@ -332,7 +332,7 @@ export function PrivacyPolicyPage() {
               />
             </div>
 
-            <div className={styles.policyBlock} data-reveal>
+            <div className={styles.policyBlock}>
               <h4>Links to Other Websites</h4>
               <PolicyParagraphs
                 paragraphs={[
@@ -342,7 +342,7 @@ export function PrivacyPolicyPage() {
               />
             </div>
 
-            <div className={styles.policyBlock} data-reveal>
+            <div className={styles.policyBlock}>
               <h4>Changes to this Privacy Policy</h4>
               <PolicyParagraphs
                 paragraphs={[
@@ -353,7 +353,7 @@ export function PrivacyPolicyPage() {
               />
             </div>
 
-            <div className={styles.policyBlock} data-reveal>
+            <div className={styles.policyBlock}>
               <h4>Contact Us</h4>
               <p>
                 If you have any questions regarding this Privacy Policy, please contact us{' '}
