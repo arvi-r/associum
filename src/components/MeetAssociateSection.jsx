@@ -34,7 +34,17 @@ export function MeetAssociateSection() {
   const [activeIndex, setActiveIndex] = useState(0);
   const [progress, setProgress] = useState(0);
   const [hasInteracted, setHasInteracted] = useState(false);
+  const [shouldPreload, setShouldPreload] = useState(false);
   const sectionRef = useRef(null);
+
+  useEffect(() => {
+    if (typeof window !== 'undefined' && window.innerWidth > 768) {
+      const timer = setTimeout(() => {
+        setShouldPreload(true);
+      }, 2000);
+      return () => clearTimeout(timer);
+    }
+  }, []);
 
   const handleVideoEnded = () => {
     if (!hasInteracted) {
@@ -58,6 +68,14 @@ export function MeetAssociateSection() {
 
   return (
     <section ref={sectionRef} className={styles.section}>
+      {shouldPreload && (
+        <div style={{ display: 'none' }}>
+          <video src={previewVideo} preload="auto" />
+          {tabData.map(tab => (
+            <video key={tab.id} src={tab.videoSrc} preload="auto" />
+          ))}
+        </div>
+      )}
       <Container>
         <div className={styles.header} data-reveal="true" style={{ '--reveal-delay': '0.1s' }}>
           <h2>One AI Associate. Every deliverable.</h2>
