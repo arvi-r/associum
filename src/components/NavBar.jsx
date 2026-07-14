@@ -27,7 +27,7 @@ const navItems = [
     ] 
   },
   { label: 'Pricing', href: '/pricing' },
-  { label: 'Blogs', href: '/blogs' },
+  { label: 'Blog', href: '/blogs' },
 ];
 function normalizePath(pathname) {
   if (!pathname || pathname === '/') return '/';

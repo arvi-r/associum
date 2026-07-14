@@ -64,15 +64,16 @@ import heroGlow from '../assets/about/about-hero-glow.webp';
         <section class="cta-section">
             <div class="cta-container">
                 <div class="cta-content">
-                    <h2 class="cta-title" data-reveal="true" style="--reveal-delay: 0.1s">Stay Updated With Fresh
-                        Insights
-                    </h2>
-                    <p class="cta-text" data-reveal="true" style="--reveal-delay: 0.2s">Get the latest articles, expert
-                        ideas, and industry trends delivered directly to
-                        your inbox every week.</p>
+                    <h2 class="cta-title" data-reveal="true" style="--reveal-delay: 0.1s">The best work shouldn't require the biggest team.</h2>
+                    <p class="cta-text" data-reveal="true" style="--reveal-delay: 0.2s">Analytical output quality need not be limited by time or team size.</p>
                 </div>
-
-                <a href="#" class="cta-button" data-reveal="true" style="--reveal-delay: 0.3s">Subscribe Now</a>
+                <div class="cta-actions" data-reveal="true" style="--reveal-delay: 0.3s">
+                    <div class="cta-buttons">
+                        <button class="cta-button" onclick="window.location.href='https://app.associum.ai/signup'">Start for Free</button>
+                        <button class="cta-button-outline" onclick="window.location.href='/pricing'">See Pricing</button>
+                    </div>
+                    <p class="cta-note">No credit card required</p>
+                </div>
             </div>
         </section>
     </main>
@@ -549,6 +550,46 @@ body {
     background: linear-gradient(301deg, #09523b 3.57%, #059466 158.11%);
     box-shadow: inset 0 0 0 0.5px #0f8560;
 }
+
+.cta-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+}
+.cta-buttons {
+    display: flex;
+    gap: 16px;
+}
+.cta-button-outline {
+    display: inline-flex;
+    padding: 16px 32px;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    border-radius: 8px;
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #FFF;
+    font-family: Inter, sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+.cta-button-outline:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+.cta-button {
+    border: none;
+    cursor: pointer;
+}
+.cta-note {
+    color: #8C99AE;
+    font-family: Inter, sans-serif;
+    font-size: 14px;
+    margin: 0;
+}
 @media screen and (max-width: 1024px) {
     .blogs-content-section {
         padding: 60px 40px 100px 40px;
@@ -744,6 +785,19 @@ body {
 
     .cta-container {
         padding: 30px 20px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .cta-actions {
+        width: 100%;
+    }
+    .cta-buttons {
+        flex-direction: column;
+        width: 100%;
+    }
+    .cta-button, .cta-button-outline {
+        width: 100%;
     }
 }
 </style>

@@ -17,7 +17,7 @@ const footerColumns = [
       { label: 'Security', href: '/security' },
       { label: 'Templates', href: '/templates' },
       { label: 'Pricing', href: '/pricing' },
-      { label: 'Blogs', href: '/blogs' },
+      { label: 'Blog', href: '/blogs' },
     ],
   },
   {
