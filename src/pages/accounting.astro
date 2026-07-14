@@ -195,7 +195,7 @@ import { ButtonLink } from '../components/ButtonLink.jsx';
                                     <p id="role-sample-desc">Review-ready working paper from testing data to documented
                                         conclusion, fully cross-referenced.</p>
                                 </div>
-                                <button class="sample-btn">Preview Template</button>
+                                <button class="sample-btn" id="role-sample-btn" onclick="window.open('https://associum.ai/templates/audit-working-paper-template', '_blank')">Preview Template</button>
                             </div>
                         </div>
                     </div>
@@ -2435,7 +2435,8 @@ document.addEventListener('astro:page-load', () => {
                 'You review and sign-off, applying your judgment, not your word processing skills.'
             ],
             sampleTitle: 'Audit Working Paper',
-            sampleDesc: 'Review-ready working paper from testing data to documented conclusion, fully cross-referenced.'
+            sampleDesc: 'Review-ready working paper from testing data to documented conclusion, fully cross-referenced.',
+            sampleLink: 'https://associum.ai/templates/audit-working-paper-template'
         },
         'internal-finance': {
             label: 'INTERNAL FINANCE AND CONTROLS',
@@ -2448,7 +2449,8 @@ document.addEventListener('astro:page-load', () => {
                 'You spend time on aligning performance with business goals and maintaining the control environment.'
             ],
             sampleTitle: 'Controls Remediation Plan',
-            sampleDesc: 'Prioritised remediation plan from control testing results, ready for management sign-off.'
+            sampleDesc: 'Prioritised remediation plan from control testing results, ready for management sign-off.',
+            sampleLink: 'https://associum.ai/templates/financial-controls-assessment-template'
         },
         'valuations': {
             label: 'VALUATIONS',
@@ -2461,7 +2463,8 @@ document.addEventListener('astro:page-load', () => {
                 'You can focus on the judgment calls, not the mechanical valuation work.'
             ],
             sampleTitle: 'Business Valuation Report',
-            sampleDesc: 'Defensible valuation report from model output to fully sourced methodology and conclusion.'
+            sampleDesc: 'Defensible valuation report from model output to fully sourced methodology and conclusion.',
+            sampleLink: 'https://associum.ai/templates/business-valuation-report-template'
         },
         'non-financial': {
             label: 'NON-FINANCIAL ASSURANCE',
@@ -2473,8 +2476,9 @@ document.addEventListener('astro:page-load', () => {
                 'Drafts the assurance report with evidence properly referenced.',
                 'Better alignment with standards, without the analytic and documentation burden.'
             ],
-            sampleTitle: 'ESG Assurance Report',
-            sampleDesc: 'Standards-aligned assurance report from sustainability data to evidenced conclusion.'
+            sampleTitle: 'Fund Governance Report',
+            sampleDesc: 'Standards-aligned assurance report from sustainability data to evidenced conclusion.',
+            sampleLink: 'https://associum.ai/templates/esg-assurance-report-template'
         }
     };
 
@@ -2513,6 +2517,10 @@ document.addEventListener('astro:page-load', () => {
 
             sampleTitle.textContent = data.sampleTitle;
             sampleDesc.textContent = data.sampleDesc;
+            const sampleBtn = document.getElementById('role-sample-btn');
+            if(sampleBtn && data.sampleLink) {
+                sampleBtn.onclick = () => window.open(data.sampleLink, '_blank');
+            }
 
             contentBox.style.opacity = '1';
         }, 200);

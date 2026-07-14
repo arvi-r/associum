@@ -154,12 +154,16 @@
 
 .previewCard {
   position: sticky;
-  padding: 24px;
-  border-radius: 18px;
-  background: #f6f6f8;
   top: 100px;
   width: 100%;
   box-sizing: border-box;
+  background-color: #E5E7EB;
+  border-radius: 40px;
+  padding: 4.5%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 24px 48px rgba(0, 0, 0, 0.15), 0px 4px 12px rgba(0, 0, 0, 0.05);
 }
 
 
@@ -182,13 +186,17 @@
   height: auto;
   aspect-ratio: 16 / 9;
   margin-top: 0;
+  border-radius: 16px;
+  overflow: hidden;
+  -webkit-mask-image: -webkit-radial-gradient(white, black);
+  background-color: #000;
 }
 
 .previewVideo {
   width: 100%;
   height: 100%;
-  object-fit: contain;
-  filter: drop-shadow(0 8px 12px rgba(17, 17, 26, 0.1)) drop-shadow(0 16px 28px rgba(17, 17, 26, 0.1));
+  object-fit: cover;
+  display: block;
 }
 
 .previewTag {
@@ -244,7 +252,8 @@
   .previewCard {
     position: relative;
     top: 0;
-    padding: 28px 16px 28px;
+    padding: 4.5%;
+    border-radius: 32px;
   }
 
   .desktopPreviewWrapper {
@@ -259,6 +268,7 @@
     height: auto;
     aspect-ratio: 16 / 10;
     margin-top: 20px;
+    border-radius: 12px;
   }
 
   .accordionColumn {
@@ -307,7 +317,8 @@
   }
 
   .previewCard {
-    padding: 22px 12px 22px;
+    padding: 4.5%;
+    border-radius: 24px;
   }
 
   .previewMedia {
@@ -315,6 +326,7 @@
     height: auto;
     aspect-ratio: 16 / 10;
     margin-top: 16px;
+    border-radius: 8px;
   }
 
   .accordionColumn {

@@ -121,34 +121,40 @@
 }
 
 .imageContainer {
-  background-color: #f6f6f8;
-  /* #1A3E34 Dark green backdrop */
-  border-radius: 20px;
-  padding: 20px;
+  background-color: #E5E7EB;
+  border-radius: 40px;
+  padding: 4.5%;
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: hidden;
+  box-shadow: 0px 24px 48px rgba(0, 0, 0, 0.15), 0px 4px 12px rgba(0, 0, 0, 0.05);
 
   @media (max-width: 991px) {
-    padding: 24px;
+    padding: 4.5%;
+    border-radius: 32px;
   }
 
   @media (max-width: 425px) {
-    padding: 12px;
-    border-radius: 12px;
+    padding: 4.5%;
+    border-radius: 24px;
   }
 }
 
 .dashboardImage {
   width: 100%;
   height: auto;
-  border-radius: 12px;
-  box-shadow: 0px 24px 48px rgba(0, 0, 0, 0.2);
+  border-radius: 16px;
   display: block;
+  overflow: hidden;
+  -webkit-mask-image: -webkit-radial-gradient(white, black);
+  background-color: #000; /* Prevent white flashes */
+
+  @media (max-width: 991px) {
+    border-radius: 12px;
+  }
 
   @media (max-width: 425px) {
-    border-radius: 6px;
+    border-radius: 8px;
   }
 }
 

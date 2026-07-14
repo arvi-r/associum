@@ -195,7 +195,7 @@ import { ButtonLink } from '../components/ButtonLink.jsx';
                                     <p id="role-sample-desc">Statutory resolutions and minutes drafted from board packs,
                                         consistent across entities and filings.</p>
                                 </div>
-                                <button class="sample-btn">Preview Template</button>
+                                <button class="sample-btn" id="role-sample-btn" onclick="window.open('https://associum.ai/templates/board-resolution-minutes-template', '_blank')">Preview Template</button>
                             </div>
                         </div>
                     </div>
@@ -2445,7 +2445,8 @@ document.addEventListener('astro:page-load', () => {
                 'You manage governance, not repetitive documentation.'
             ],
             sampleTitle: 'Board Resolution Pack',
-            sampleDesc: 'Statutory resolutions and minutes drafted from board packs, consistent across entities and filings.'
+            sampleDesc: 'Statutory resolutions and minutes drafted from board packs, consistent across entities and filings.',
+            sampleLink: 'https://associum.ai/templates/board-resolution-minutes-template'
         },
         'regulatory-compliance': {
             label: 'REGULATORY COMPLIANCE',
@@ -2458,7 +2459,8 @@ document.addEventListener('astro:page-load', () => {
                 'You can respond more quickly and confidently to regulatory shifts and mitigate their impacts.'
             ],
             sampleTitle: 'Regulatory Gap Analysis',
-            sampleDesc: 'Policy impact assessment and update recommendations mapped directly from new regulatory guidance.'
+            sampleDesc: 'Policy impact assessment and update recommendations mapped directly from new regulatory guidance.',
+            sampleLink: 'https://associum.ai/templates/regulatory-change-impact-brief-template'
         },
         'governance-esg': {
             label: 'GOVERNANCE & ESG',
@@ -2470,8 +2472,9 @@ document.addEventListener('astro:page-load', () => {
                 'Drafts the assurance report with evidence properly referenced.',
                 'Better alignment with standards, without the analytic and documentation burden.'
             ],
-            sampleTitle: 'ESG Assurance Report',
-            sampleDesc: 'Standards-aligned assurance report from sustainability data to evidenced conclusion.'
+            sampleTitle: 'Fund Governance Report',
+            sampleDesc: 'Standards-aligned assurance report from sustainability data to evidenced conclusion.',
+            sampleLink: 'https://associum.ai/templates/fund-governance-report-annual-template'
         },
         'kyc': {
             label: 'KYC',
@@ -2480,11 +2483,12 @@ document.addEventListener('astro:page-load', () => {
             features: [
                 'Reads KYC documents, screening results, and risk questionnaires.',
                 'Structures findings against your risk assessment framework.',
-                'Drafts the customer due diligence file, ready for review and sign-off.',
+                'Drafts the Sanctions & PEP Screening Report, ready for review and sign-off.',
                 'More files cleared per cycle, fewer hours spent on write-up.'
             ],
-            sampleTitle: 'Customer Due Diligence File',
-            sampleDesc: 'Review-ready CDD file from screening and documentation to a structured risk assessment.'
+            sampleTitle: 'Sanctions & PEP Screening Report',
+            sampleDesc: 'Review-ready screening record from raw database hits to a documented clear-or-escalate decision.',
+            sampleLink: 'https://associum.ai/templates/sanctions-pep-screening-report-template'
         }
     };
 
@@ -2523,6 +2527,10 @@ document.addEventListener('astro:page-load', () => {
 
             sampleTitle.textContent = data.sampleTitle;
             sampleDesc.textContent = data.sampleDesc;
+            const sampleBtn = document.getElementById('role-sample-btn');
+            if(sampleBtn && data.sampleLink) {
+                sampleBtn.onclick = () => window.open(data.sampleLink, '_blank');
+            }
 
             contentBox.style.opacity = '1';
         }, 200);
