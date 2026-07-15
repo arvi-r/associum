@@ -325,7 +325,7 @@
     width: 100%;
     height: auto;
     aspect-ratio: 16 / 10;
-    margin-top: 16px;
+    margin-top:  0 ;
     border-radius: 8px;
   }
 
@@ -335,4 +335,15 @@
 
   /* Removed small mobile previewActions and previewButton styles */
 
+}
+@media (max-width: 768px) {
+  .previewMedia {
+    margin-top: 0 !important;
+  }
+}
+
+@media (max-width: 425px) {
+  .previewCard {
+    border-radius: 12px !important;
+  }
 }
