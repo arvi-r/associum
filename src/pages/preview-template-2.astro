@@ -824,7 +824,7 @@ function renderRelatedTemplates() {
             desc: "Establish a structural investment thesis with company profiles, trade ideas, and price targets.",
             category: "Finance",
             img: "/assets/images/templates/templates/template-04.webp",
-            fileType: "PDF Report",
+            fileType: "Report",
             link: "../preview-template-1/preview-template-1.html"
         },
         {
@@ -832,7 +832,7 @@ function renderRelatedTemplates() {
             desc: "Present a buyout to your IC with everything needed to make a decision, from thesis to returns.",
             category: "Finance",
             img: "/assets/images/templates/templates/template-05.webp",
-            fileType: "PDF Report",
+            fileType: "Report",
             link: "../preview-template-1/preview-template-1.html"
         },
         {
@@ -840,7 +840,7 @@ function renderRelatedTemplates() {
             desc: "Initiate coverage with an institutional-quality report — thesis, valuation, financials, and risks.",
             category: "Finance",
             img: "/assets/images/templates/templates/template-04.webp",
-            fileType: "PDF Report",
+            fileType: "Report",
             link: "../preview-template-1/preview-template-1.html"
         },
         {
@@ -848,7 +848,7 @@ function renderRelatedTemplates() {
             desc: "Analyze industries, competitors, TAM, growth drivers, and market opportunities using AI-powered research.",
             category: "Research",
             img: "/assets/images/templates/templates/template-02.webp",
-            fileType: "PDF Report",
+            fileType: "Report",
             link: "preview-template-1.html"
         },
         {
@@ -856,7 +856,7 @@ function renderRelatedTemplates() {
             desc: "Generate macroeconomic analysis, market trends, forecasts, and policy implications.",
             category: "Research",
             img: "/assets/images/templates/templates/template-07.webp",
-            fileType: "PPT Deck",
+            fileType: "Slides",
             link: "preview-template-1.html"
         }
     ];
@@ -883,7 +883,7 @@ function renderRelatedTemplates() {
         const card = document.createElement('div');
         card.className = 'template-card';
 
-        const iconSvg = item.fileType === 'PPT Deck' ? pptIconSvg : pdfIconSvg;
+        const iconSvg = item.fileType === 'Slides' ? pptIconSvg : pdfIconSvg;
 
         card.innerHTML = `
             <div class="card-image-wrap">

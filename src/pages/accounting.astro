@@ -749,9 +749,21 @@ import { ButtonLink } from '../components/ButtonLink.jsx';
 }
 
 @media (max-width: 575px) {
+    .hero-actions {
+        flex-direction: column;
+        width: 100%;
+        gap: 22px;
+    }
+
+    .hero-actions > * {
+        width: 100%;
+        justify-content: center;
+        text-align: center;
+    }
+
     .hero-title {
         font-size: 32px;
-        line-height: 34px;
+        line-height: 1.1;
     }
 
     .scenario-label {
@@ -760,25 +772,13 @@ import { ButtonLink } from '../components/ButtonLink.jsx';
 }
 
 @media (max-width: 425px) {
-    .hero-actions {
-        flex-direction: column;
-        width: 100%;
-        gap: 22px;
-    }
-
-    .hero-actions .btn-primary,
-    .hero-actions .btn-outline {
-        width: 100%;
-        justify-content: center;
-    }
-
     .finance-hero {
         padding: 160px 20px 0 20px;
     }
 
     .hero-title {
         font-size: 32px;
-        line-height: normal;
+        line-height: 1.1;
     }
 
     .hero-desc {
@@ -2532,6 +2532,13 @@ document.addEventListener('astro:page-load', () => {
             tabs.forEach(t => t.classList.remove('active'));
             // Add active to clicked
             tab.classList.add('active');
+
+            // Scroll tab into center on mobile
+            if (window.innerWidth <= 425) {
+                const container = tab.parentElement;
+                const scrollLeft = tab.offsetLeft - (container.offsetWidth / 2) + (tab.offsetWidth / 2);
+                container.scrollTo({ left: scrollLeft, behavior: 'smooth' });
+            }
 
             // Update content
             const role = tab.getAttribute('data-role');

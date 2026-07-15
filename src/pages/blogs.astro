@@ -69,10 +69,12 @@ import heroGlow from '../assets/about/about-hero-glow.webp';
                 </div>
                 <div class="cta-actions" data-reveal="true" style="--reveal-delay: 0.3s">
                     <div class="cta-buttons">
-                        <button class="cta-button" onclick="window.location.href='https://app.associum.ai/signup'">Start for Free</button>
-                        <button class="cta-button-outline" onclick="window.location.href='/pricing'">See Pricing</button>
+                        <div class="cta-primary-group">
+                            <button class="cta-button" onclick="window.location.href='https://app.associum.ai/signup'">Start for Free</button>
+                            <p class="cta-note">No credit card required</p>
+                        </div>
+                        <button class="cta-button-outline" onclick="window.location.href='/pricing'">Talk with Sales</button>
                     </div>
-                    <p class="cta-note">No credit card required</p>
                 </div>
             </div>
         </section>
@@ -559,7 +561,14 @@ body {
 }
 .cta-buttons {
     display: flex;
+    align-items: flex-start;
     gap: 16px;
+}
+.cta-primary-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
 }
 .cta-button-outline {
     display: inline-flex;
@@ -586,9 +595,9 @@ body {
     cursor: pointer;
 }
 .cta-note {
-    color: #8C99AE;
+    color: #FFF;
     font-family: Inter, sans-serif;
-    font-size: 14px;
+    font-size: 13px;
     margin: 0;
 }
 @media screen and (max-width: 1024px) {
@@ -789,7 +798,7 @@ body {
     }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 575px) {
     .cta-actions {
         width: 100%;
     }
@@ -797,7 +806,7 @@ body {
         flex-direction: column;
         width: 100%;
     }
-    .cta-button, .cta-button-outline {
+    .cta-button, .cta-button-outline, .cta-primary-group {
         width: 100%;
     }
 }

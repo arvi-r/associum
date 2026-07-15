@@ -578,9 +578,9 @@ import { ButtonLink } from '../components/ButtonLink.jsx';
     display: flex;
     height: auto;
     min-height: 770px;
-    padding: 156px 40px 0;
+    padding: 120px 40px;
     flex-direction: column;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
     background-image: url('../../assets/images/enterprise/hero/herobg.png');
     background-size: cover;
@@ -590,12 +590,7 @@ import { ButtonLink } from '../components/ButtonLink.jsx';
     position: relative;
 }
 
-@media (min-width: 1441px) {
-    .enterprise-hero {
-        justify-content: center;
-        padding: 120px 40px;
-    }
-}
+
 
 /* Subtle stars/particles approximation */
 .enterprise-hero::before {
@@ -1639,7 +1634,10 @@ import { ButtonLink } from '../components/ButtonLink.jsx';
 
 @media (max-width: 1024px) {
 
-    .enterprise-hero,
+    .enterprise-hero {
+        padding:  100px 40px;
+    }
+
     .team-section,
     .connect-section,
     .metrics-section,
@@ -1700,7 +1698,10 @@ import { ButtonLink } from '../components/ButtonLink.jsx';
 
 @media (max-width: 768px) {
 
-    .enterprise-hero,
+    .enterprise-hero {
+        padding:  100px 24px;
+    }
+
     .team-section,
     .connect-section,
     .metrics-section,
@@ -1837,9 +1838,30 @@ import { ButtonLink } from '../components/ButtonLink.jsx';
     }
 }
 
+@media (max-width: 575px) {
+    .enterprise-hero {
+        justify-content: flex-start;
+        padding: 160px 20px 0 20px;
+    }
+
+    .hero-actions {
+        flex-direction: column;
+        width: 100%;
+    }
+    
+    .hero-actions > * {
+        width: 100%;
+        justify-content: center;
+        text-align: center;
+    }
+}
+
 @media (max-width: 425px) {
 
-    .enterprise-hero,
+    .enterprise-hero {
+        padding: 160px 16px 0 16px;
+    }
+
     .team-section,
     .connect-section,
     .metrics-section,
@@ -1853,12 +1875,7 @@ import { ButtonLink } from '../components/ButtonLink.jsx';
 
     .hero-title {
         font-size: 32px;
-        line-height: normal;
-    }
-
-    .hero-actions {
-        flex-direction: column;
-        width: 100%;
+        line-height: 1.1;
     }
 
     .connect-label,
@@ -1912,10 +1929,9 @@ import { ButtonLink } from '../components/ButtonLink.jsx';
 }
 
 @media (max-width: 375px) {
-
     .enterprise-hero {
-        padding: 32px;
-        margin-top: 50px;
+        padding: 160px 16px 0 16px;
+        margin-top: 0;
     }
 
     .team-section,
