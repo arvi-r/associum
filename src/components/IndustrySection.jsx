@@ -64,8 +64,7 @@ const outputButtons = ['Sell-side stock research', 'Buyside IC memo'];
 
 export function IndustrySection() {
   const [openIndex, setOpenIndex] = useState(0);
-  const [progress, setProgress] = useState(0);
-  const [hasBeenInView, setHasBeenInView] = useState(false);
+    const [hasBeenInView, setHasBeenInView] = useState(false);
   const [isDesktop, setIsDesktop] = useState(true);
   const DURATION = 5000; // 5 seconds per item
   const INTERVAL = 16; // ~60fps for smooth animation
@@ -84,29 +83,18 @@ export function IndustrySection() {
   }, [isInView]);
 
   React.useEffect(() => {
-    if (!isInView) return; // Pause animation when off-screen
+    if (!isInView) return;
 
-    const timer = setInterval(() => {
-      setProgress((prev) => {
-        const next = prev + (INTERVAL / DURATION) * 100;
-        return next > 100 ? 100 : next;
-      });
-    }, INTERVAL);
-
-    return () => clearInterval(timer);
-  }, [isInView]);
-
-  React.useEffect(() => {
-    if (progress >= 100) {
+    const timer = setTimeout(() => {
       const nextIndex = (openIndex + 1) % accordionItems.length;
       setOpenIndex(nextIndex);
-      setProgress(0);
-    }
-  }, [progress, openIndex]);
+    }, DURATION);
+
+    return () => clearTimeout(timer);
+  }, [isInView, openIndex]);
 
   const handleTriggerClick = (index) => {
     setOpenIndex(index);
-    setProgress(0);
   };
 
   const renderPreviewCard = (className = '') => (
@@ -166,7 +154,10 @@ export function IndustrySection() {
                   <div className={styles.progressContainer}>
                     <div
                       className={styles.progressBar}
-                      style={{ width: isOpen ? `${progress}%` : '0%' }}
+                      style={{ 
+                        width: isOpen ? '100%' : '0%',
+                        transition: isOpen ? `width ${DURATION}ms linear` : 'none'
+                      }}
                     />
                   </div>
                   <button
